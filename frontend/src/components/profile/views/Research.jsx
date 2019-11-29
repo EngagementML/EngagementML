@@ -83,7 +83,7 @@ class Research extends Component {
 
             <Col
               // The following is the same as col-lg-6 col-md-6 col-sm-10 col-12
-              lg={4}
+              lg={6}
               md={12}
               sm={12}
               xs={12}
@@ -123,7 +123,7 @@ class Research extends Component {
 
             <Col
               // The following is the same as col-lg-6 col-md-6 col-sm-10 col-12
-              lg={4}
+              lg={6}
               md={12}
               sm={12}
               xs={12}
@@ -164,7 +164,7 @@ class Research extends Component {
             {/* Col #3 */}
             <Col
               // The following is the same as col-lg-6 col-md-6 col-sm-10 col-12
-              lg={4}
+              lg={6}
               md={12}
               sm={12}
               xs={12}
@@ -204,7 +204,7 @@ class Research extends Component {
 
             <Col
               // The following is the same as col-lg-6 col-md-6 col-sm-10 col-12
-              lg={4}
+              lg={6}
               md={12}
               sm={12}
               xs={12}
@@ -244,7 +244,7 @@ class Research extends Component {
 
             <Col
               // The following is the same as col-lg-6 col-md-6 col-sm-10 col-12
-              lg={4}
+              lg={6}
               md={12}
               sm={12}
               xs={12}
@@ -285,7 +285,7 @@ class Research extends Component {
             {/* Col #3 */}
             <Col
               // The following is the same as col-lg-6 col-md-6 col-sm-10 col-12
-              lg={4}
+              lg={6}
               md={12}
               sm={12}
               xs={12}
