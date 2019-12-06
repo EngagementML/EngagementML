@@ -44,7 +44,7 @@ class Icons extends Component {
   profileList() {
     return this.state.profiles.map((profile, i) => {
       return (
-        <Col lg={3} md={3} sm={4} xs={6} className="font-icon-list" key={i}>
+        <Col lg={3} md={4} sm={6} xs={12} className="font-icon-list" key={i}>
           <div style={{ marginBottom: "2rem" }}>
             <div
               className="g-card m-2"
