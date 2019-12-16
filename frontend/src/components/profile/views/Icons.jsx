@@ -8,26 +8,27 @@ import Card from "../components/Card/Card";
 
 
 class Icons extends Component {
-
   state = {
     
-  }
-  
+  };
+
   async componentDidMount() {
-   await axios
+    await axios
       // .get("http://localhost:5000/profiles/")
       .get("https://engagementml.herokuapp.com/profiles/")
       .then(res => {
         // console.log(res, res.data);
         this.setState({
-          profiles: res.data
+          profiles: res.data,
+          filteredItems: res.data,
         });
       })
       .catch(function(error) {
         console.log(error);
       });
 
-      await axios.get("https://engagementml.herokuapp.com/posts/")
+    await axios
+      .get("https://engagementml.herokuapp.com/posts/")
       .then(res => {
         // console.log(res, res.data);
         this.setState({
@@ -39,16 +40,32 @@ class Icons extends Component {
       });
   }
 
-  
+  filterProfiles = e => {
+    // console.log(this.props);
+    let filteredItems = this.state.profiles.filter(profile => {
+      if (profile.username) {
+        return (
+          profile.username.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          profile.full_name.toLowerCase().includes(e.target.value.toLowerCase())
+        );
+      }
+    });
+    this.setState({
+      filteredItems,
+      search: e.target.value
+    });
+    console.log(filteredItems, filteredItems.length);
+  };
+
 
   profileList() {
-    return this.state.profiles.map((profile, i) => {
+    return this.state.filteredItems.map((profile, i) => {
       return (
         <Col lg={3} md={4} sm={6} xs={12} className="font-icon-list" key={i}>
           <div style={{ marginBottom: "2rem" }}>
             <div
               className="g-card m-2"
-              style={{ width: "12rem", height: "27rem" }}
+              style={{ width: "13rem", height: "27rem" }}
             >
               {/* For full width Do 60rem for width above and 30rem for height on g card */}
               <div className="card-container">
@@ -65,8 +82,10 @@ class Icons extends Component {
                   >
                     <p className="card-text">
                       <h4>{profile.username}</h4>
-                      <br/>
-                      <h6>#{i+1} {profile.full_name}</h6>
+                      <br />
+                      <h6>
+                        #{i + 1} {profile.full_name}
+                      </h6>
                     </p>
                   </div>
                 </div>
@@ -76,9 +95,7 @@ class Icons extends Component {
                       <h4>{profile.full_name}</h4>
                     </div>
                     <br></br>
-                    <p>
-                    {profile.biography}
-                    </p>
+                    <p>{profile.biography}</p>
                     <div className="card-text backInfo">
                       <strong>Followers:</strong>{" "}
                       {profile.edge_followed_by.count.toLocaleString(
@@ -130,9 +147,7 @@ class Icons extends Component {
 
   render() {
     // console.log("this is props pon di icon page >>", this.props.profiles);
-    if (
-      this.state.profiles !== undefined
-    ) {
+    if (this.state.profiles !== undefined) {
       return (
         <div className="content">
           <Container fluid="true">
@@ -142,35 +157,46 @@ class Icons extends Component {
                   title="Tracking List - IG Influencers"
                   ctAllIcons
                   category={
-                    <span>
-                      Crafted by AI from{" "}
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://engagementml.herokuapp.com"
-                      >
-                        EngagementML
-                      </a>
-                    </span>
+                    <React.Fragment>
+                      <span>
+                        Crafted by AI from{" "}
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="https://engagementml.herokuapp.com"
+                        >
+                          EngagementML
+                        </a>
+                      </span>
+                      <br />
+                      <br />
+
+                      <input
+                        value={this.state.search}
+                        onChange={(e) =>this.filterProfiles(e)}
+                        type="text"
+                        placeholder="Search for your influencer..."
+                        // className="form-scontrol home"
+                      />
+                    
+                    </React.Fragment>
                   }
-                  content={
-                    <Row>
-                      {this.profileList()}
-                    </Row>
-                  }
+                  content={<Row>{this.profileList()}</Row>}
                 />
               </Col>
             </Row>
           </Container>
         </div>
-      ) } else {
-         return (
-           <div>
-             <h3 className='loading' style={{textAlign: 'center'}}>Loading...</h3>
-           </div>
-         );
-
-      }
+      );
+    } else {
+      return (
+        <div>
+          <h3 className="loading" style={{ textAlign: "center" }}>
+            Loading...
+          </h3>
+        </div>
+      );
+    }
   }
 }
 
