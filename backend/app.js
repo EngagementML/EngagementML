@@ -152,7 +152,10 @@ app.route("/posts/:id").get((req, res) => {
       owner_id: 1,
       comment_count: 1,
       date:1,
-      like_count: 1
+      like_count: 1,
+      is_video: 1,
+      thumbnail: 1,
+      text:1,
     },
     (err, instaposts) => {
       if (err) {
