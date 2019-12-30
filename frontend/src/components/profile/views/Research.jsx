@@ -86,7 +86,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https:engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Likes.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Likes.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center">
                                         <p className="card-text">Flip me!</p>
                                     </div>
@@ -119,7 +119,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https:engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Comments_Counts.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Comments_Counts.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center">
                                         <p className="card-text">Flip me!</p>
                                     </div>
@@ -154,7 +154,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https:engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Video_view_Count.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Video_view_Count.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center">
                                         <p className="card-text">Flip me!</p>
                                     </div>
@@ -187,7 +187,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https:engagementmlapp.s3.amazonaws.com/${this.state.industry}/Link_Count_VS_Like_Count.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Link_Count_VS_Like_Count.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center">
                                         <p className="card-text">Flip me!</p>
                                     </div>
@@ -221,7 +221,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https:engagementmlapp.s3.amazonaws.com/${this.state.industry}/Text_Lenght_VS_Hashtag_Count.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Text_Lenght_VS_Hashtag_Count.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center">
                                         <p className="card-text">Flip me!</p>
                                     </div>
@@ -254,7 +254,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https:engagementmlapp.s3.amazonaws.com/${this.state.industry}/Text_Length_Vs_Like_Count.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Text_Length_Vs_Like_Count.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center">
                                         <p className="card-text">Flip me!</p>
                                     </div>
@@ -287,7 +287,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https:engagementmlapp.s3.amazonaws.com/${this.state.industry}/Correlation_Matrix.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Correlation_Matrix.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center" style={{background:"white"}}>
                                         <p className="card-text">Flip me!</p>
                                     </div>
@@ -324,7 +324,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https:engagementmlapp.s3.amazonaws.com/${this.state.industry}/word_cloud.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/word_cloud.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center" style={{background:"white"}}>
                                         <p className="card-text">Flip me!</p>
                                     </div>
@@ -357,7 +357,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https:engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_Vs_Like_Count_-_Segmented_by_Business_Categories.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_Vs_Like_Count_-_Segmented_by_Business_Categories.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center" style={{background:"white"}}>
                                         <p className="card-text">Flip me!</p>
                                     </div>
