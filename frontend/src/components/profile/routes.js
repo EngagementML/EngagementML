@@ -33,6 +33,13 @@ const dashboardRoutes = [
     layout: "/profile/admin"
   },
   {
+    path: "/posts",
+    name: "My Posts",
+    icon: "pe-7s-leaf",
+    component: Posts,
+    layout: "/profile/admin"
+  },
+  {
     path: "/user",
     name: "Edit Profile",
     icon: "pe-7s-user",
@@ -41,7 +48,7 @@ const dashboardRoutes = [
   },
   {
     path: "/research",
-    name: "ml Data",
+    name: "ML Data",
     icon: "pe-7s-search",
     component: Research,
     layout: "/profile/admin"
@@ -60,13 +67,6 @@ const dashboardRoutes = [
     component: Icons,
     layout: "/profile/admin"
   },
-  {
-    path: "/posts",
-    name: "Posts",
-    icon: "pe-7s-leaf",
-    component: Posts,
-    layout: "/profile/admin"
-  },
   // {
   //   path: "/notifications",
   //   name: "Notifications",
@@ -81,7 +81,7 @@ const dashboardRoutes = [
     icon: "pe-7s-rocket",
     component: Upgrade,
     layout: "/profile/admin"
-  } 
+  }
 ];
 
 export default dashboardRoutes;

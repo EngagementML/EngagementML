@@ -109,11 +109,15 @@ class Posts extends Component {
                         ).toFixed(2)}
                         %
                       </h5>
+                      <i className="pe-7s-leaf text-success" />
+                      <br />
+                      <br />
                       <h6>
                         <strong>Like Count:</strong>{" "}
                         {posts.like_count.toLocaleString(navigator.language, {
                           minimumFractionDigits: 0
                         })}
+                        <br />
                         <br />
                         <strong>Comment Count: </strong>{" "}
                         {posts.comment_count.toLocaleString(
@@ -127,12 +131,16 @@ class Posts extends Component {
                 <div className="card-back d-flex flex-row justify-content-center">
                   <div className="backContent">
                     <div className="card-text backTitle">
-                      <strong>Posted Date</strong><br/>
+                      <h4>{this.state.profile.username}</h4>
+                      <h5>{this.state.profile.full_name}</h5>
+                      <br />
+                      <strong>Date Posted</strong>
+                      <br />
                       {this.renderDate(posts.date)}
                     </div>
                     <br></br>
                     <p>{posts.text}</p>
-                    <div className="card-text backInfo">
+                    {/* <div className="card-text backInfo">
                       <strong>Likes:</strong>{" "}
                       {posts.like_count.toLocaleString(navigator.language, {
                         minimumFractionDigits: 0
@@ -147,7 +155,7 @@ class Posts extends Component {
                           { minimumFractionDigits: 0 }
                         )}
                       </p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
