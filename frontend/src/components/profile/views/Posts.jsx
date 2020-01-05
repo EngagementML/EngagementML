@@ -74,6 +74,17 @@ class Posts extends Component {
             let time = month + "/" + date + "/" + year;
             return String(time);
   }
+
+  onImgErrorSmall = (e) => {
+    console.log(e.target)
+    e.target.src =
+      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg";
+    // disable onerror to prevent endless loop
+    e.target.onError = "";
+    return true;
+  }
+
+
   
 
   postList() {
@@ -90,7 +101,8 @@ class Posts extends Component {
                 <div className="card-front  d-flex flex-column justify-content-between">
                   <img
                     className="card-img-top img-fluid"
-                    alt={posts.owner_id}
+                    onError={(e)=>this.onImgErrorSmall(e)}
+                    alt={this.state.profile.username}
                     // style={{ width: "100%" }}
                     src={posts.thumbnail}
                   />
