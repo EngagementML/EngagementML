@@ -24,7 +24,7 @@ import {
   legendBar
 } from "../variables/Variables.jsx";
 
- // Configuration    
+ // Configuration Array for the Formating of the Follower Count
 const countFormat =
 [
   { // 0 - 999
