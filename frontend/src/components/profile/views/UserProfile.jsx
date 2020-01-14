@@ -200,70 +200,49 @@ class UserProfile extends Component {
                     content={
                       <>
                         <img
-                          src={
-                            this.state.posts[this.state.posts.length - 1]
-                              .thumbnail
-                          }
+                          src={this.state.posts[0].thumbnail}
                           alt="Post"
                           onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
 
                         <img
-                          src={
-                            this.state.posts[this.state.posts.length - 2]
-                              .thumbnail
-                          }
+                          src={this.state.posts[1].thumbnail}
                           alt="Post"
                           onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
 
                         <img
-                          src={
-                            this.state.posts[this.state.posts.length - 3]
-                              .thumbnail
-                          }
+                          src={this.state.posts[2].thumbnail}
                           alt="Post"
                           onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
 
                         <img
-                          src={
-                            this.state.posts[this.state.posts.length - 4]
-                              .thumbnail
-                          }
+                          src={this.state.posts[3].thumbnail}
                           alt="Post"
                           onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
 
                         <img
-                          src={
-                            this.state.posts[this.state.posts.length - 5]
-                              .thumbnail
-                          }
+                          src={this.state.posts[4].thumbnail}
                           alt="Post"
                           onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
 
                         <img
-                          src={
-                            this.state.posts[this.state.posts.length - 6]
-                              .thumbnail
-                          }
+                          src={this.state.posts[5].thumbnail}
                           alt="Post"
                           onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
 
                         <img
-                          src={
-                            this.state.posts[this.state.posts.length - 7]
-                              .thumbnail
-                          }
+                          src={this.state.posts[6].thumbnail}
                           alt="Post"
                           onError={e => this.onImgErrorSmall(e)}
                           width="50px"
