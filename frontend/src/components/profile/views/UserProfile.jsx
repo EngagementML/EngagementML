@@ -138,6 +138,126 @@ class UserProfile extends Component {
         <div className="content">
           <Container fluid="true">
             <Row>
+              <Col md={4}>
+                <UserCard
+                  bgImage="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3"
+                  avatar={
+                    this.state.profile === {}
+                      ? profile
+                      : this.state.profile.profile_pic_url_hd
+                  }
+                  name={this.state.igUsername}
+                  userName={this.state.name}
+                  description={
+                    <div>
+                      {this.state.about}
+                      <br />
+                      <br />
+                      {this.state.profile.biography}
+                      <br />
+                      <br />
+                      <strong>Followers: </strong>{" "}
+                      {this.state.profile.edge_followed_by.count.toLocaleString(
+                        navigator.language,
+                        { minimumFractionDigits: 0 }
+                      )}
+                      <br />
+                      <strong>Total IG Posts: </strong>{" "}
+                      {this.state.profile.edge_owner_to_timeline_media.count.toLocaleString(
+                        navigator.language,
+                        { minimumFractionDigits: 0 }
+                      )}
+                    </div>
+                  }
+                  socials={
+                    <div style={{ paddingBottom: "10px" }}>
+                      <strong>Industry : {this.state.industry}</strong>
+                      <br />
+                      {/* <Button simple>
+                      <i className="fa fa-facebook-square" />
+                    </Button>
+                    <Button simple>
+                      <i className="fa fa-twitter" />
+                    </Button>
+                    <Button simple>
+                      <i className="fa fa-google-plus-square" />
+                    </Button> */}
+                    </div>
+                  }
+                />
+                <Col md={12} style={{ textAlign: "center" }}>
+                  <Card
+                    title="Lastest Posts"
+                    content={
+                      <>
+                        <img
+                          src={
+                            this.state.posts[this.state.posts.length - 1]
+                              .thumbnail
+                          }
+                          alt="Post"
+                          width="50px"
+                        />
+
+                        <img
+                          src={
+                            this.state.posts[this.state.posts.length - 2]
+                              .thumbnail
+                          }
+                          alt="Post"
+                          width="50px"
+                        />
+
+                        <img
+                          src={
+                            this.state.posts[this.state.posts.length - 3]
+                              .thumbnail
+                          }
+                          alt="Post"
+                          width="50px"
+                        />
+
+                        <img
+                          src={
+                            this.state.posts[this.state.posts.length - 4]
+                              .thumbnail
+                          }
+                          alt="Post"
+                          width="50px"
+                        />
+
+                        <img
+                          src={
+                            this.state.posts[this.state.posts.length - 5]
+                              .thumbnail
+                          }
+                          alt="Post"
+                          width="50px"
+                        />
+
+                        <img
+                          src={
+                            this.state.posts[this.state.posts.length - 6]
+                              .thumbnail
+                          }
+                          alt="Post"
+                          width="50px"
+                        />
+
+                        <img
+                          src={
+                            this.state.posts[this.state.posts.length - 7]
+                              .thumbnail
+                          }
+                          alt="Post"
+                          width="50px"
+                        />
+
+                      </>
+                    }
+                  />
+                </Col>
+              </Col>
               <Col md={8}>
                 <Card
                   title="Edit Profile"
@@ -274,51 +394,6 @@ class UserProfile extends Component {
                       </Button>
                       <div className="clearfix" />
                     </form>
-                  }
-                />
-              </Col>
-              <Col md={4}>
-                <UserCard
-                  bgImage="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3"
-                  avatar={
-                    this.state.profile === {}
-                      ? profile
-                      : this.state.profile.profile_pic_url_hd
-                  }
-                  name={this.state.igUsername}
-                  userName={this.state.name}
-                  description={
-                    <div>
-                      {this.state.about}
-                      <br />
-                      <br />
-                      <strong>Followers: </strong>{" "}
-                      {this.state.profile.edge_followed_by.count.toLocaleString(
-                        navigator.language,
-                        { minimumFractionDigits: 0 }
-                      )}
-                      <br />
-                      <strong>Total IG Posts: </strong>{" "}
-                      {this.state.profile.edge_owner_to_timeline_media.count.toLocaleString(
-                        navigator.language,
-                        { minimumFractionDigits: 0 }
-                      )}
-                    </div>
-                  }
-                  socials={
-                    <div style={{ paddingBottom: "10px" }}>
-                      <strong>Industry : {this.state.industry}</strong>
-                      <br />
-                      {/* <Button simple>
-                      <i className="fa fa-facebook-square" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-google-plus-square" />
-                    </Button> */}
-                    </div>
                   }
                 />
               </Col>
