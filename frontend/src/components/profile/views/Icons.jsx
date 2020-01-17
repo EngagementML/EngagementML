@@ -152,6 +152,19 @@ class Icons extends Component {
         <div className="content">
           <Container fluid="true">
             <Row>
+              <Col
+                lg={12}
+                md={12}
+                sm={12}
+                xs={12}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  paddingBottom: "15px"
+                }}
+              >
+                <h2>Search IG Influencers</h2>
+              </Col>
               <Col md={12}>
                 <Card
                   title="Tracking List - IG Influencers"
@@ -173,12 +186,11 @@ class Icons extends Component {
 
                       <input
                         value={this.state.search}
-                        onChange={(e) =>this.filterProfiles(e)}
+                        onChange={e => this.filterProfiles(e)}
                         type="text"
                         placeholder="Search for your influencer..."
                         // className="form-scontrol home"
                       />
-                    
                     </React.Fragment>
                   }
                   content={<Row>{this.profileList()}</Row>}

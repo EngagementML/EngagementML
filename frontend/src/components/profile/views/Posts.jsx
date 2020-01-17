@@ -184,15 +184,26 @@ class Posts extends Component {
         <div className="content">
           <Container fluid="true">
             <Row>
+              <Col
+                lg={12}
+                md={12}
+                sm={12}
+                xs={12}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  paddingBottom: "15px"
+                }}
+              >
+                <h2>
+                  Post Engagement Analysis
+                </h2>
+              </Col>
               <Col md={12}>
                 <Card
                   title={
                     <React.Fragment>
-                      <img
-                        src={logo}
-                        alt='EngagementML'
-                        width='400'
-                      />
+                      <img src={logo} alt="EngagementML" width="400" />
                     </React.Fragment>
                   }
                   ctAllIcons
