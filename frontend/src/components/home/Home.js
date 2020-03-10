@@ -11,7 +11,6 @@ class Home extends Component {
   render() {
     return (
       <>
-        <Navigation />
         <HomeComp />
         <Footer />
       </>

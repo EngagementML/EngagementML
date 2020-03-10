@@ -6,6 +6,9 @@ import SignUp from './components/auth/SignUp';
 import LogIn from './components/auth/LogIn';
 import Profile from './components/profile/Profile'
 import actions from './services/index'
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 
 class App extends Component {
   
@@ -29,23 +32,43 @@ class App extends Component {
 
     return (
     <BrowserRouter>
-      {this.state.email}
-      <nav>
-        <NavLink to="/">Home |</NavLink>
-  
-        {this.state.email ? 
-          <Fragment>
-           <NavLink onClick={this.logOut} to='/'>Log Out |</NavLink> 
-           <NavLink to="/profile">Profile|</NavLink>
-           </Fragment>
-           :
-           <Fragment>
-           <NavLink to="/sign-up">Sign Up |</NavLink>
-           <NavLink to="/log-in">Log In |</NavLink>
-           </Fragment>
-          }
-        
-      </nav>
+      <Navbar bg="light" expand="lg">
+          <Navbar.Brand href="/#">GucciPlate</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link as={Link} to='/About'>About</Nav.Link>
+              <Nav.Link as={Link} to='Roadmap'>Roadmap</Nav.Link>
+              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                <NavDropdown.Item href="https://github.com/grpecunia">Github</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to='/Contact'>
+                  Contact
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="https://riverapecunia.com">
+                  Developer
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+            {this.state.email ? 
+            <Fragment>
+              <Form inline>
+                <Button variant="outline-danger mr-1">{this.state.email}</Button>
+                <Button onClick={this.logOut} variant="outline-success mr-1">Log Out</Button>
+                <Button as={Link} to="/profile" variant="outline-primary">Profile</Button>
+              </Form>
+            </Fragment>
+            :
+            <Fragment>
+              <Form inline>
+                <Button as={Link} to="/log-in" variant="outline-success  mr-1">Log In</Button>
+                <Button as={Link} to="/sign-up" variant="outline-primary">Sign Up</Button>
+              </Form>
+            </Fragment>
+            }
+            </Navbar.Collapse>
+      </Navbar>
+      
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route exact path="/sign-up" render={(props)=><SignUp {...props} setUser={this.setUser} />} />

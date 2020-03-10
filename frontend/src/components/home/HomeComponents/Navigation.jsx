@@ -25,12 +25,13 @@ class Navigation extends Component {
               </NavDropdown>
             </Nav>
             <Form inline>
-              <FormControl
+              {/* <FormControl
                 type="text"
                 placeholder="Search"
                 className="mr-sm-2"
-              />
-              <Button variant="outline-success">Search</Button>
+              /> */}
+              <Button variant="outline-success">Log In</Button>
+              <Button variant="outline-primary">Sign Up</Button>
             </Form>
           </Navbar.Collapse>
         </Navbar>
