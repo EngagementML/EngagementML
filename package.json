@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "instagram-scraper": "^1.0.6",
     "instagram-scraping": "^1.0.13"
   }
 }
