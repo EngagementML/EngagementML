@@ -12,7 +12,7 @@ const Profile = (props) => {
         <div className="main-panel ps ps--active-y" id="main-panel">
   
   
-  <div className="content">
+  <div className="content container">
     
     <div className="row">
       <div className="col-md-6">
