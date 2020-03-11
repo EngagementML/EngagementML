@@ -80,7 +80,7 @@ class HomeComp extends Component {
                 <article className="from-left">
                   <a href="images/fulls/01.jpg" className="image fit">
                     <img
-                      src="images/thumbs/01.jpg"
+                      src="images/image12.jpg"
                       title="The Anonymous Red"
                       alt=""
                     />
@@ -99,6 +99,7 @@ class HomeComp extends Component {
                   <a href="images/fulls/03.jpg" className="image fit">
                     <img src="images/thumbs/03.jpg" title="Air Lounge" alt="" />
                   </a>
+                  
                 </article>
                 <article className="from-right">
                   <a href="images/fulls/04.jpg" className="image fit">
@@ -115,8 +116,8 @@ class HomeComp extends Component {
                   </a>
                 </article>
                 <article className="from-right">
-                  <a href="images/fulls/06.jpg" className="image fit">
-                    <img src="images/thumbs/06.jpg" title="Bent IX" alt="" />
+                  <a href="/src/images/image 12.jpg" className="image fit">
+                    <img src="/images/image 12.jpg" title="Bent IX" alt="" />
                   </a>
                 </article>
               </div>

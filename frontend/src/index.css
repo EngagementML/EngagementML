@@ -108,3 +108,28 @@ footer>div>div>div:nth-child(4)>ul>li>a {
   color: #ffffff;
 }
 
+.input-group-append {
+  margin-left: -45px !important;
+}
+
+.main.style2 {
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  padding: 12em 0 12em 0 !important;
+  overflow: hidden;
+}
+
+.main.style1  {
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  padding: 10em 0 12em 0 !important;
+  overflow: hidden;
+}
