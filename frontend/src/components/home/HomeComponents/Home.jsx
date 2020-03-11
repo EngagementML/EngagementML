@@ -99,6 +99,7 @@ class HomeComp extends Component {
                   <a href="images/fulls/03.jpg" className="image fit">
                     <img src="images/thumbs/03.jpg" title="Air Lounge" alt="" />
                   </a>
+                  
                 </article>
                 <article className="from-right">
                   <a href="images/fulls/04.jpg" className="image fit">
