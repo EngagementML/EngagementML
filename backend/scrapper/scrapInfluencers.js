@@ -1,4 +1,8 @@
 let ig = require("instagram-scraping");
+
+function instagramScraper ()
+{
+
 let data;
 let influencers = [
   "cristiano",
@@ -75,3 +79,7 @@ influencers.forEach(username => {
     );
   });
 });
+
+}
+
+module.exports=instagramScraper

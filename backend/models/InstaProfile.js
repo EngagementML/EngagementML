@@ -6,7 +6,7 @@ const InstaProfileSchema = new Schema(
     {
         biography: String,
         blocked_by_viewer: Boolean,
-        restricted_by_viewer: null,
+        restricted_by_viewer: Boolean,
         country_block: Boolean,
         external_url: String,
         external_url_linkshimmed: String,
@@ -33,7 +33,7 @@ const InstaProfileSchema = new Schema(
         profile_pic_url_hd: String,
         requested_by_viewer: Boolean,
         username: String,
-        connected_fb_page: null,
+        connected_fb_page: Boolean,
         edge_felix_video_timeline: Object,
         edge_owner_to_timeline_media: Object,
         edge_saved_media: Object,
