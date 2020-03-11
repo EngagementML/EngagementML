@@ -10,7 +10,7 @@ class Home extends Component {
     return (
       <>
         <HomeComp />
-        {/* <Footer /> */}
+       
       </>
     );
   }
