@@ -130,6 +130,6 @@ footer>div>div>div:nth-child(4)>ul>li>a {
   -moz-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
-  padding: 12em 0 12em 0 !important;
+  padding: 10em 0 12em 0 !important;
   overflow: hidden;
 }
