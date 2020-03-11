@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class Footer extends Component {
   render() {
@@ -21,7 +21,7 @@ class Footer extends Component {
           >
             <div className="row" style={{ display: "align-space-evenly" }}>
               <div className="col-md-6 mt-md-0 mt-3">
-                <h5>About the GucciPlate Application Project</h5>
+                <h5>About the EngamentML Application Project</h5>
                 <p>
                   This is an open source application intended as boilerplate
                   for programmers that want a simple Bootstrap template to engage in fast prototyping for React Applications. <br />
@@ -106,19 +106,8 @@ class Footer extends Component {
           <br />
         </footer>
         <div className="footer-copyright text-center py-3">
-          Developed by:{" "}
-          <a
-            style={{ color: "white" }}
-            href="https://riverapecunia.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GRP
-          </a>{" "}
-          |{" "}
-          <Link style={{ color: "white" }} to="/">
-            GucciPlate
-          </Link>{" "}
+          EngagementML
+          {" "}
           | All rights reserved © {new Date().getFullYear()}
         </div>
       </React.Fragment>
