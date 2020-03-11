@@ -1,27 +1,26 @@
 import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";
+import logo from '../../../images/engagementML.png'
 
 class HomeComp extends Component {
   render() {
     return (
       <React.Fragment>
         <div>
-
           {/* Intro */}
           <section id="intro" className="main style1 dark fullscreen">
             <div className="content">
               <header>
-                <h2>Hey.</h2>
+                <h2>
+                  {" "}
+                  <img src={logo} alt="Logo" />
+                </h2>
               </header>
               <p>
-                Welcome to <strong>Big Picture</strong> a responsive site
-                template designed by <a href="https://html5up.net">HTML5 UP</a>
+                Welcome to <strong>EngagementML</strong> a machine learning applications
+                developed for social media management strategy.
                 <br />
-                and released for free under the{" "}
-                <a href="https://html5up.net/license">
-                  Creative Commons Attribution license
-                </a>
-                .
+                and released for free under the MIT license
               </p>
               <footer>
                 <a href="#one" className="button style2 down">
@@ -34,7 +33,7 @@ class HomeComp extends Component {
           <section id="one" className="main style2 right dark fullscreen">
             <div className="content box style2">
               <header>
-                <h2>What I Do</h2>
+                <h2>What EngagementML does?</h2>
               </header>
               <p>
                 Lorem ipsum dolor sit amet et sapien sed elementum egestas
@@ -51,7 +50,7 @@ class HomeComp extends Component {
           <section id="two" className="main style2 left dark fullscreen">
             <div className="content box style2">
               <header>
-                <h2>Who I Am</h2>
+                <h2>How can EngagementML help you?</h2>
               </header>
               <p>
                 Lorem ipsum dolor sit amet et sapien sed elementum egestas
@@ -68,7 +67,7 @@ class HomeComp extends Component {
           <section id="work" className="main style3 primary">
             <div className="content">
               <header>
-                <h2>My Work</h2>
+                <h2>Case Studies</h2>
                 <p>
                   Lorem ipsum dolor sit amet et sapien sed elementum egestas
                   dolore condimentum. Fusce blandit ultrices sapien, in accumsan
@@ -127,7 +126,7 @@ class HomeComp extends Component {
           <section id="contact" className="main style3 secondary">
             <div className="content">
               <header>
-                <h2>Say Hello.</h2>
+                <h2>Questions? Comments? Send us a note!</h2>
                 <p>
                   Lorem ipsum dolor sit amet et sapien sed elementum egestas
                   dolore condimentum.

@@ -1,3 +1,5 @@
+@import url("fontawesome-all.min.css");
+
 body {
   padding: 0;
   margin: 0;
@@ -105,3 +107,4 @@ footer>div>div>div:nth-child(4)>ul>li>a {
   background-color: #004E98;
   color: #ffffff;
 }
+
