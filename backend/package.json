@@ -15,6 +15,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "hbs": "^4.1.0",
+    "instagram-scraping": "^1.0.13",
     "mongoose": "^5.9.3",
     "morgan": "^1.9.1",
     "node-sass-middleware": "^0.11.0",

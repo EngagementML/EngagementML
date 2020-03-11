@@ -1,0 +1,1 @@
+// Should have a schema with the scrapped data

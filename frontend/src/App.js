@@ -8,6 +8,7 @@ import Profile from './components/profile/Profile'
 import actions from './services/index'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Footer from './components/home/HomeComponents/Footer';
 
 
 class App extends Component {
@@ -37,9 +38,7 @@ class App extends Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link as={Link} to='/About'>About</Nav.Link>
-              <Nav.Link as={Link} to='Roadmap'>Roadmap</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown title="More" id="basic-nav-dropdown">
                 <NavDropdown.Item href="https://github.com/grpecunia">Github</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to='/Contact'>
                   Contact
@@ -77,6 +76,7 @@ class App extends Component {
         
         <Route component={NotFound} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
   }
