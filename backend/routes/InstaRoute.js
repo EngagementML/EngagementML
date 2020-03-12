@@ -4,6 +4,13 @@ const express = require('express');
 const router = express.Router();
 const InstaScraper = require("../scrapper/scrapInfluencers")
 
-console.log(InstaScraper())
+let data = InstaScraper()
+console.log(data)
 
-// findbyid
+// router.post()('/scrapper', (req, res, next) => {
+//     let data = InstaScraper()
+//     InstaProfile.findOneAndUpdate(data.user.id, req.data, {upsert: true}, function(err, doc) {
+//         if (err) return res.send(500, {error: err});
+//         return res.send('Succesfully saved.');
+//     });
+// });
