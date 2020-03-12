@@ -78,7 +78,7 @@ class HomeComp extends Component {
               {/* Gallery  */}
               <div className="gallery">
                 <article className="from-left">
-                  <a href="images/fulls/01.jpg" className="image fit">
+                  <a href="" className="image fit">
                     <img
                       src="images/image12.jpg"
                       title="The Anonymous Red"

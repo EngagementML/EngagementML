@@ -8,6 +8,7 @@ waitForData = async () => {
      let data = await InstaScraper();
     console.log("data in route: ", data)
 }
+<<<<<<< HEAD
 
 waitForData()
 
@@ -19,7 +20,10 @@ router.post()('/scrapper', (req, res, next) => {
         return res.send('Succesfully saved.');
     });
 });
+=======
+>>>>>>> 6a86b12668c54d4fb7492195a1944ec9ee960a8f
 
+waitForData()
 
 // async function holdUp() {
 //      setTimeout(() => {
