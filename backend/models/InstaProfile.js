@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+
 // const Data = require("../scrapper/mock.json")
 // console.log(Data[0].user)
 
