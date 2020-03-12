@@ -76,5 +76,6 @@ console.log('client', client)
 // })
 
 waitForData() 
+console.log("Hi")
 
 module.exports = app;
