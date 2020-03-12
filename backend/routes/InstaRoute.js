@@ -10,13 +10,8 @@ waitForData = async () => {
 
     console.log("data in route: ", data)
 }
-    //  let data = InstaScraper();
 
-    waitForData()
-
-
-
-
+waitForData()
 
 // async function holdUp() {
 //      setTimeout(() => {
