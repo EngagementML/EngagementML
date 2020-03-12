@@ -4,8 +4,12 @@ const express = require('express');
 const router = express.Router();
 const InstaScraper = require("../scrapper/scrapInfluencers")
 
-let data = InstaScraper()
-console.log(data)
+waitForData = async () => {
+     let data = await InstaScraper();
+    console.log("data in route: ", data)
+}
+
+waitForData()
 
 router.post()('/scrapper', (req, res, next) => {
     let data = InstaScraper()
@@ -15,3 +19,13 @@ router.post()('/scrapper', (req, res, next) => {
         return res.send('Succesfully saved.');
     });
 });
+
+
+// async function holdUp() {
+//      setTimeout(() => {
+//         let data = InstaScraper()
+//     }, 5000)
+//      await return (data)
+// }
+
+// holdUp()
