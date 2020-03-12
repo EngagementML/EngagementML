@@ -9,7 +9,7 @@ const path = require('path');
 const cors = require('cors');
 const session = require('express-session');
 const passport = require('./config/passport');
-
+const waitForData = require('./routes/InstaRoute')
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ironplate'
 console.log('Connecting DB to ', MONGODB_URI)
@@ -74,4 +74,7 @@ console.log('client', client)
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
 // })
+
+waitForData() 
+
 module.exports = app;

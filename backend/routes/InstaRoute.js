@@ -6,31 +6,42 @@ const InstaScraper = require("../scrapper/scrapInfluencers")
 
 
 waitForData = async () => {
-     let data = await InstaScraper();
+    let data = await InstaScraper();
 
-    console.log("data in route: ", data)
+    //console.log("data in route: ", data)
+    // console.log('whynow', data[0].user, data[1].user, data[0].medias, data[1].medias)
+
+
+    data.forEach(profile => {
+        console.log(profile.user.id)
+        InstaProfile.findOneAndUpdate(
+            {id: profile.user.id}, 
+            {...profile.user}, 
+            {upsert:true}
+            )
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+
+        profile.medias.forEach(media => {
+            console.log(media, '??????', media.media_id)
+            InstaPosts.findOneAndUpdate(
+                {media_id: media.media_id}, 
+                {...media}, 
+                {upsert:true}
+                )
+                .then(res => console.log(res))
+                .catch(err => console.log(err))
+        })    
+
+
+
+    })
+    // InstaProfile.insertMany(data).then(res => {
+    //     console.log('r' ,res)
+    // }).catch(err => {
+    //     console.log('e', err)
+    // })
 }
 
-waitForData()
 
-// async function holdUp() {
-//      setTimeout(() => {
-//         let data = InstaScraper()
-//     }, 5000)
-//      await return (data)
-// }
-
-// holdUp()
-
-
-// router.post()('/scrapper', (req, res, next) => {
-//     let data = InstaScraper()
-//     InstaProfile.findOneAndUpdate(data.user.id, req.data.user, {upsert: true}, function(err, doc) {
-//         if (err) return res.send(500, {error: err});
-//         // return res.send('Users -- Succesfully saved.');
-//         InstaPosts.findByIdAndUpdate(id, updateObj, {new: true}, function(err, model) {
-//             if (err) return res.send(500, {error: err});
-//             return res.send('Succesfully saved.');
-//         })
-//     });
-// });
+module.exports = waitForData
