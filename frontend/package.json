@@ -8,7 +8,6 @@
     "chartist": "^0.11.4",
     "font-awesome": "^4.7.0",
     "node-sass": "^4.13.1",
-    "postcss-loader": "^3.0.0",
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.0-beta.17",
     "react-chartist": "^0.14.3",
@@ -26,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "compile:sass": "node-sass  ./src/components/profile/assets/sass/light-bootstrap-dashboard-react.scss ./src/scss.css -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,5 +42,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }
