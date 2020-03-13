@@ -8,15 +8,15 @@ const InstaPostsSchema = new Schema(
         media_id:String,
         shortcode:String,
         text: String,
-        // comment_count: Number,
-        // like_count: Number,
-        // display_url:String,
-        // owner_id:String,
-        // date: Number,
-        // thumbnail:String,
-        // thumbnail_resource:String,
-        // is_video: Boolean,
-        // video_view_count: Number
+        comment_count: Number,
+        like_count: Number,
+        display_url:String,
+        owner_id:String,
+        date: Number,
+        thumbnail:String,
+        thumbnail_resource: Array,
+        is_video: Boolean,
+        video_view_count: Number
       }
 );
 

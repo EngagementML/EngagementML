@@ -1,8 +1,24 @@
 import React, { Component } from "react";
-import { Carousel } from "react-bootstrap";
+// import { Carousel } from "react-bootstrap";
 import logo from '../../../images/engagementML.png'
+// import { Link } from 'react-router-dom'
+import { Link, animateScroll as scroll } from "react-scroll";
 
+// const Scroll    = require('react-scroll');
+// const Link       = Scroll.Link;
+// const DirectLink = Scroll.DirectLink;
+// const Element    = Scroll.Element;
+// const Events     = Scroll.Events;
+// const scroll     = Scroll.animateScroll;
+// const scrollSpy  = Scroll.scrollSpy;
+
+// const durationFn = function(deltaTop) {
+//     return deltaTop;
+// };
+  
 class HomeComp extends Component {
+
+
   render() {
     return (
       <React.Fragment>
@@ -17,13 +33,21 @@ class HomeComp extends Component {
                 </h2>
               </header>
               <p>
-                Welcome to <strong>EngagementML</strong> a machine learning applications
-                developed for social media management strategy.
+                Welcome to <strong>EngagementML</strong> a machine learning
+                applications developed for social media management strategy.
                 <br />
                 and released for free under the MIT license
               </p>
               <footer>
-                <a href="#one" className="button style2 down">
+                <a
+                  as={Link}
+                  href="/#one"
+                  className="button style2 down"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
                   More
                 </a>
               </footer>
@@ -42,7 +66,15 @@ class HomeComp extends Component {
                 euismod in. Curabitur egestas consectetur magna.
               </p>
             </div>
-            <a href="#two" className="button style2 down anchored">
+            <a
+              as={Link}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              href="/#two"
+              className="button style2 down anchored"
+            >
               Next
             </a>
           </section>
@@ -59,7 +91,15 @@ class HomeComp extends Component {
                 euismod in. Curabitur egestas consectetur magna.
               </p>
             </div>
-            <a href="#work" className="button style2 down anchored">
+            <a
+              as={Link}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              href="#work"
+              className="button style2 down anchored"
+            >
               Next
             </a>
           </section>
@@ -99,7 +139,6 @@ class HomeComp extends Component {
                   <a href="images/fulls/03.jpg" className="image fit">
                     <img src="images/thumbs/03.jpg" title="Air Lounge" alt="" />
                   </a>
-                  
                 </article>
                 <article className="from-right">
                   <a href="images/fulls/04.jpg" className="image fit">

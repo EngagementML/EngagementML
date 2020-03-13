@@ -23,7 +23,7 @@ const Profile = (props) => {
     if(!props.user.email){ 
         props.history.push('/log-in') 
     }   
-    console.log(props)
+    console.log(props.user.email)
     return (
       <div>
         {/* {props.match.url === "/profile" ? (
@@ -36,8 +36,8 @@ const Profile = (props) => {
         {/* <Admin /> */}
         <BrowserRouter>
           <Switch>
-            <Route path="/" render={props => <AdminLayout {...props} />} />
-            <Redirect from="/profile" to="/profile/admin/dashboard" />
+            <Route path="/" render={props => <AdminLayout {...props} user={props}/>} />
+            <Redirect from="/profile" to="/profile/admin/dashboard" render={props} />
           </Switch>
         </BrowserRouter>
 

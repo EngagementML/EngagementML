@@ -33,6 +33,7 @@ import Button from "../components/CustomButton/CustomButton.jsx";
 // import avatar from "../assets/img/faces/face-3.jpg";
 
 class UserProfile extends Component {
+
   render() {
     return (
       <div className="content">
@@ -51,7 +52,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "eML",
-                          defaultValue: "eML0001",
+                          defaultValue: "eML-username",
                           disabled: true
                         },
                         {

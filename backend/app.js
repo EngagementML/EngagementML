@@ -75,7 +75,7 @@ console.log('client', client)
 //   res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
 // })
 
-waitForData() 
+// waitForData() 
 console.log("Hi")
 
 module.exports = app;
