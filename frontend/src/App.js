@@ -1,14 +1,14 @@
 import React, {Component, Fragment} from 'react';
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import NotFound from './components/404/NotFound.js';
 import SignUp from './components/auth/SignUp';
 import LogIn from './components/auth/LogIn';
 import Profile from './components/profile/Profile'
 import actions from './services/index'
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Footer from './components/home/HomeComponents/Footer';
+// import Footer from './components/home/HomeComponents/Footer';
 import logo from './images/engagementML.png'
 
 
@@ -47,9 +47,9 @@ class App extends Component {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
+            <Nav className="ml-auto">
               <NavDropdown title="More" id="basic-nav-dropdown">
-                <NavDropdown.Item href="https://github.com/grpecunia">Github</NavDropdown.Item>
+                <NavDropdown.Item href="https://github.com/EngagementML">Github</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to='/Contact'>
                   Contact
                 </NavDropdown.Item>
@@ -114,7 +114,7 @@ class App extends Component {
 
           <Route component={NotFound} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     );
   }

@@ -1,20 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../profile/assets/css/animate.min.css";
+import "../profile/assets/sass/light-bootstrap-dashboard-react.scss?v=1.3.0";
+import "../profile/assets/css/demo.css";
+import "../profile/assets/css/pe-icon-7-stroke.css";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+
+
+import AdminLayout from "../profile/layouts/Admin.jsx";
+
+// ReactDOM.render(
+//   <BrowserRouter>
+//     <Switch>
+//       <Route path="/admin" render={props => <AdminLayout {...props} />} />
+//       <Redirect from="/" to="/admin/dashboard" />
+//     </Switch>
+//   </BrowserRouter>,
+//   document.getElementById("root")
+// );
 
 const Profile = (props) => {
     if(!props.user.email){ 
         props.history.push('/log-in') 
     }   
     return (
-        <div>
-            Profile
+      <div>
+        {/* <Admin /> */}
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" render={props => <AdminLayout {...props} />} />
+            <Redirect from="/profile" to="/profile/admin/dashboard" />
+          </Switch>
+        </BrowserRouter>
+
+        {/* Profile
             Welcome {props.user.email} !!! 
 
         <div className="main-panel ps ps--active-y" id="main-panel">
   
-  
-  <div className="content container">
-    
-    <div className="row">
+   
+        <div className="content container">
+
+
+        <div className="row">
       <div className="col-md-6">
         <div className="card  card-tasks">
           <div className="card-header ">
@@ -233,9 +261,9 @@ const Profile = (props) => {
         </div>
       </div>
     </div>
-  </div>
-  </div>
-</div>
+  </div> 
+        </div> */}
+      </div>
     );
 }
 
