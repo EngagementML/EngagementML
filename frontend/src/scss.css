@@ -1377,7 +1377,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   .navbar .btn-simple {
     font-size: 16px; }
   .navbar.fixed {
-    width: calc(100% - $sidebar-width);
+    width: calc(100% - sidebar-width);
     right: 0;
     left: auto;
     border-radius: 0; }
@@ -2924,8 +2924,8 @@ body > .navbar-collapse[data-color="purple"]:after {
     border-top-color: white; }
   .dropdown-menu {
     display: none; }
-  .navbar-fixed-top {
-    -webkit-backface-visibility: hidden; }
+  /* .navbar-fixed-top {
+    -webkit-backface-visibility: hidden; } */
   #bodyClick {
     height: 100%;
     width: 100%;
