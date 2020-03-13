@@ -14,7 +14,7 @@ const InstaPostsSchema = new Schema(
         owner_id:String,
         date: Number,
         thumbnail:String,
-        thumbnail_resource: Array,
+        thumbnail_resource:Array,
         is_video: Boolean,
         video_view_count: Number
       }
