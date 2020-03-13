@@ -47,19 +47,19 @@ class UserProfile extends Component {
                       ncols={["col-md-5", "col-md-3", "col-md-4"]}
                       properties={[
                         {
-                          label: "Company (disabled)",
+                          label: "eML Username",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "Company",
-                          defaultValue: "Creative Code Inc.",
+                          placeholder: "eML",
+                          defaultValue: "eML0001",
                           disabled: true
                         },
                         {
-                          label: "Username",
+                          label: "IG Username",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Username",
-                          defaultValue: "michael23"
+                          defaultValue: "eML2020"
                         },
                         {
                           label: "Email address",

@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import logo from './images/engagementML.png'
 
 
+
 class App extends Component {
   
   state = { }
@@ -62,7 +63,7 @@ class App extends Component {
             {this.state.email ? (
               <Fragment>
                 <Form inline>
-                  <Button as={Link} to="/profile" variant="info mr-1">
+                  <Button as={Link} to="/profile/admin/dashboard" variant="info mr-1">
                     {this.state.email}
                   </Button>
                   <Button
@@ -107,8 +108,8 @@ class App extends Component {
             render={props => <LogIn {...props} setUser={this.setUser} />}
           />
           <Route
-            exact
-            path="/profile"
+            // exact
+            path="/profile/admin"
             render={props => <Profile {...props} user={this.state} />}
           />
 

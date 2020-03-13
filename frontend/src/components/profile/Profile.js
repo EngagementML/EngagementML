@@ -23,8 +23,16 @@ const Profile = (props) => {
     if(!props.user.email){ 
         props.history.push('/log-in') 
     }   
+    console.log(props)
     return (
       <div>
+        {/* {props.match.url === "/profile" ? (
+          <h2 style={{ textAlign: "center", paddingTop: "20px" }}>
+            Welcome to your eML - {props.user.email}
+          </h2>
+        ) : (
+          " "
+        )} */}
         {/* <Admin /> */}
         <BrowserRouter>
           <Switch>

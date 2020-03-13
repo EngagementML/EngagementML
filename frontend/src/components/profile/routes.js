@@ -20,9 +20,9 @@ import UserProfile from "../profile/views/UserProfile.jsx";
 import TableList from "../profile/views/TableList.jsx";
 import Typography from "../profile/views/Typography.jsx";
 import Icons from "../profile/views/Icons.jsx";
-import Maps from "../profile/views/Maps.jsx";
-import Notifications from "../profile/views/Notifications.jsx";
-import Upgrade from "../profile/views/Upgrade.jsx";
+// import Maps from "../profile/views/Maps.jsx";
+// import Notifications from "../profile/views/Notifications.jsx";
+// import Upgrade from "../profile/views/Upgrade.jsx";
 
 const dashboardRoutes = [
   {
@@ -34,54 +34,54 @@ const dashboardRoutes = [
   },
   {
     path: "/user",
-    name: "User Profile",
+    name: "Edit Profile",
     icon: "pe-7s-user",
     component: UserProfile,
     layout: "/profile/admin"
   },
   {
     path: "/table",
-    name: "Table List",
-    icon: "pe-7s-note2",
+    name: "Recommendations",
+    icon: "pe-7s-star",
     component: TableList,
     layout: "/profile/admin"
   },
   {
     path: "/typography",
-    name: "Typography",
-    icon: "pe-7s-news-paper",
+    name: "Research",
+    icon: "pe-7s-search",
     component: Typography,
     layout: "/profile/admin"
   },
   {
     path: "/icons",
-    name: "Icons",
-    icon: "pe-7s-science",
+    name: "Compare",
+    icon: "pe-7s-repeat",
     component: Icons,
     layout: "/profile/admin"
-  },
-  {
-    path: "/maps",
-    name: "Maps",
-    icon: "pe-7s-map-marker",
-    component: Maps,
-    layout: "/profile/admin"
-  },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    icon: "pe-7s-bell",
-    component: Notifications,
-    layout: "/profile/admin"
-  },
-  {
-    upgrade: true,
-    path: "/upgrade",
-    name: "Upgrade to PRO",
-    icon: "pe-7s-rocket",
-    component: Upgrade,
-    layout: "/profile/admin"
   }
+  // {
+  //   path: "/maps",
+  //   name: "Maps",
+  //   icon: "pe-7s-map-marker",
+  //   component: Maps,
+  //   layout: "/profile/admin"
+  // },
+  // {
+  //   path: "/notifications",
+  //   name: "Notifications",
+  //   icon: "pe-7s-bell",
+  //   component: Notifications,
+  //   layout: "/profile/admin"
+  // },
+  // {
+  //   upgrade: true,
+  //   path: "/upgrade",
+  //   name: "Upgrade to PRO",
+  //   icon: "pe-7s-rocket",
+  //   component: Upgrade,
+  //   layout: "/profile/admin"
+  // }
 ];
 
 export default dashboardRoutes;
