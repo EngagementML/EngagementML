@@ -1,15 +1,22 @@
 import React, {Component, Fragment} from 'react';
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Home from './components/home/Home';
 import NotFound from './components/404/NotFound.js';
 import SignUp from './components/auth/SignUp';
 import LogIn from './components/auth/LogIn';
 import Profile from './components/profile/Profile'
 import actions from './services/index'
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Footer from './components/home/HomeComponents/Footer';
+// import Footer from './components/home/HomeComponents/Footer';
 import logo from './images/engagementML.png'
+import AdminLayout from "./components/profile/layouts/Admin.jsx";
+// import Dashboard from "./components/profile/views/Dashboard.jsx";
+// import UserProfile from "./components/profile/views/UserProfile.jsx";
+// import TableList from "./components/profile/views/TableList.jsx";
+// import Typography from "./components/profile/views/Typography.jsx";
+// import Icons from "./components/profile/views/Icons.jsx";
+
 
 
 class App extends Component {
@@ -19,7 +26,7 @@ class App extends Component {
   async componentDidMount() {
     let user = await actions.isLoggedIn()
     this.setState({...user.data})
-    console.log('coolest ')
+    console.log('coolest ',user)
 
   }
 
@@ -47,10 +54,12 @@ class App extends Component {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
+            <Nav className="ml-auto">
               <NavDropdown title="More" id="basic-nav-dropdown">
-                <NavDropdown.Item href="https://github.com/grpecunia">Github</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to='/Contact'>
+                <NavDropdown.Item href="https://github.com/EngagementML">
+                  Github
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/Contact">
                   Contact
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
@@ -62,11 +71,15 @@ class App extends Component {
             {this.state.email ? (
               <Fragment>
                 <Form inline>
-                  <Button as={Link} to="/profile" variant="info mr-1">
+                  <Button
+                    as={Link}
+                    to="/profile/admin/dashboard"
+                    variant="info mr-1"
+                  >
                     {this.state.email}
                   </Button>
                   <Button
-                    as={Link}
+                    // as={Link}
                     onClick={this.logOut}
                     variant="outline-warning mr-1"
                     className="btn"
@@ -111,10 +124,24 @@ class App extends Component {
             path="/profile"
             render={props => <Profile {...props} user={this.state} />}
           />
+          <Route
+            path="/profile/admin/"
+            render={props => <AdminLayout {...props} user={this.state} />}
+          />
+
+          {/* <Route
+            exact
+            path="/profile/admin/user"
+            render={props => <AdminLayout {...props} user={this.state} />}
+          /> */}
 
           <Route component={NotFound} />
+
+          {/* http://localhost:3000/profile/admin/dashboard */}
+
+          {/* <Redirect from="/profile" to="/profile/admin/dashboard" /> */}
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     );
   }

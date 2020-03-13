@@ -5,14 +5,21 @@
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "chartist": "^0.11.4",
     "font-awesome": "^4.7.0",
+    "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.0-beta.17",
+    "react-chartist": "^0.14.3",
     "react-dom": "^16.13.0",
+    "react-google-maps": "^9.4.5",
     "react-icons": "^3.9.0",
+    "react-notification-system": "^0.3.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "react-scroll": "^1.7.16",
+    "react-toggle": "^4.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
