@@ -11,6 +11,11 @@ import { Link } from "react-router-dom";
 // import Footer from './components/home/HomeComponents/Footer';
 import logo from './images/engagementML.png'
 import AdminLayout from "./components/profile/layouts/Admin.jsx";
+// import Dashboard from "./components/profile/views/Dashboard.jsx";
+// import UserProfile from "./components/profile/views/UserProfile.jsx";
+// import TableList from "./components/profile/views/TableList.jsx";
+// import Typography from "./components/profile/views/Typography.jsx";
+// import Icons from "./components/profile/views/Icons.jsx";
 
 
 
@@ -21,7 +26,7 @@ class App extends Component {
   async componentDidMount() {
     let user = await actions.isLoggedIn()
     this.setState({...user.data})
-    console.log('coolest ')
+    console.log('coolest ',user)
 
   }
 
@@ -115,14 +120,26 @@ class App extends Component {
             render={props => <LogIn {...props} setUser={this.setUser} />}
           />
           <Route
-            // exact
-            path="/profile/admin"
+            exact
+            path="/profile"
             render={props => <Profile {...props} user={this.state} />}
           />
+          <Route
+            path="/profile/admin/"
+            render={props => <AdminLayout {...props} user={this.state} />}
+          />
+
+          {/* <Route
+            exact
+            path="/profile/admin/user"
+            render={props => <AdminLayout {...props} user={this.state} />}
+          /> */}
 
           <Route component={NotFound} />
-          <Route path="/" render={props => <AdminLayout {...props} />} />
-          <Redirect from="/profile" to="/profile/admin/dashboard" />
+
+          {/* http://localhost:3000/profile/admin/dashboard */}
+
+          {/* <Redirect from="/profile" to="/profile/admin/dashboard" /> */}
         </Switch>
         {/* <Footer /> */}
       </BrowserRouter>

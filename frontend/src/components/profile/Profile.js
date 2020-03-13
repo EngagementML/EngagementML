@@ -4,20 +4,9 @@ import "../profile/assets/css/animate.min.css";
 import "../profile/assets/sass/light-bootstrap-dashboard-react.scss?v=1.3.0";
 import "../profile/assets/css/demo.css";
 import "../profile/assets/css/pe-icon-7-stroke.css";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+// import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+// import AdminLayout from "../profile/layouts/Admin.jsx";
 
-
-import AdminLayout from "../profile/layouts/Admin.jsx";
-
-// ReactDOM.render(
-//   <BrowserRouter>
-//     <Switch>
-//       <Route path="/admin" render={props => <AdminLayout {...props} />} />
-//       <Redirect from="/" to="/admin/dashboard" />
-//     </Switch>
-//   </BrowserRouter>,
-//   document.getElementById("root")
-// );
 
 const Profile = (props) => {
     if(!props.user.email){ 
@@ -34,12 +23,19 @@ const Profile = (props) => {
           " "
         )} */}
         {/* <Admin /> */}
-        <BrowserRouter>
+        {/* <BrowserRouter>
           <Switch>
-            <Route path="/" render={props => <AdminLayout {...props} user={props}/>} />
-            <Redirect from="/profile" to="/profile/admin/dashboard" render={props} />
+            <Route
+              path="/"
+              render={props => <AdminLayout {...props}  />}
+            />
+            <Redirect
+              from="/profile"
+              to="/profile/admin/dashboard"
+              render={props}
+            />
           </Switch>
-        </BrowserRouter>
+        </BrowserRouter> */}
 
         {/* Profile
             Welcome {props.user.email} !!! 

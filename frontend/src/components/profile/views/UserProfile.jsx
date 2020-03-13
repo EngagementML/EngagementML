@@ -35,6 +35,8 @@ import Button from "../components/CustomButton/CustomButton.jsx";
 class UserProfile extends Component {
 
   render() {
+    // console.log(props)
+    // console.log(this.props);
     return (
       <div className="content">
         <Container fluid="true">
@@ -52,7 +54,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "eML",
-                          defaultValue: "eML-username",
+                          defaultValue: 'this.props.user',
                           disabled: true
                         },
                         {

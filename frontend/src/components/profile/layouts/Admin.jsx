@@ -170,6 +170,8 @@ class Admin extends Component {
     }
   }
   render() {
+
+    // console.log(this.props)
     return (
       <>
         <NotificationSystem ref="notificationSystem" style={style} />
