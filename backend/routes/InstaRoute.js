@@ -5,8 +5,7 @@ const router = express.Router();
 const InstaScraper = require("../scrapper/scrapInfluencers")
 waitForData = async () => {
     let data = await InstaScraper();
-    //console.log("data in route: ", data)
-    // console.log('whynow', data[0].user, data[1].user, data[0].medias, data[1].medias)
+   
     data.forEach(profile => {
         console.log(profile.user.id)
         InstaProfile.findOneAndUpdate(
