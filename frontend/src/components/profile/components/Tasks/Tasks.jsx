@@ -32,9 +32,6 @@ export class Tasks extends Component {
     const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
     const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
     const tasks_title = [
-      'Sign contract for "What are conference organizers afraid of?"',
-      "Lines From Great Russian Literature? Or E-mails From My Boss?",
-      "Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroi",
       "Create 4 Invisible User Experiences you Never Knew About",
       'Read "Following makes Medium better"',
       "Unfollow 5 enemies from twitter"
@@ -55,13 +52,13 @@ export class Tasks extends Component {
           <td className="td-actions text-right">
             <OverlayTrigger placement="top" overlay={edit}>
               <Button bsStyle="info" simple type="button" bsSize="xs">
-                <i className="fa fa-edit" />
+                <i className="pe-7s-tools" />
               </Button>
             </OverlayTrigger>
 
             <OverlayTrigger placement="top" overlay={remove}>
               <Button bsStyle="danger" simple type="button" bsSize="xs">
-                <i className="fa fa-times" />
+                <i className="pe-7s-trash" />
               </Button>
             </OverlayTrigger>
           </td>

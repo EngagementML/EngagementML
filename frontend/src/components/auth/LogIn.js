@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import actions from '../../services/index'
 import logo from '../../images/engagementML.png'
 import { Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { FaKey, FaUser } from "react-icons/fa";
 
 class LogIn extends Component {
@@ -16,7 +16,7 @@ class LogIn extends Component {
       .then(user => {
         this.props.setUser({ ...user.data })
         // console.log(this.props)
-        this.props.history.push('/profile')
+        this.props.history.push('/profile/admin/dashboard')
       })
       .catch(({ response }) => console.error(response.data));
   };

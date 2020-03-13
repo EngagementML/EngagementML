@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Home from './components/home/Home';
 import NotFound from './components/404/NotFound.js';
 import SignUp from './components/auth/SignUp';
@@ -10,6 +10,8 @@ import { Navbar, Nav, NavDropdown, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 // import Footer from './components/home/HomeComponents/Footer';
 import logo from './images/engagementML.png'
+import AdminLayout from "./components/profile/layouts/Admin.jsx";
+
 
 
 class App extends Component {
@@ -49,8 +51,10 @@ class App extends Component {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
               <NavDropdown title="More" id="basic-nav-dropdown">
-                <NavDropdown.Item href="https://github.com/EngagementML">Github</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to='/Contact'>
+                <NavDropdown.Item href="https://github.com/EngagementML">
+                  Github
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/Contact">
                   Contact
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
@@ -62,11 +66,15 @@ class App extends Component {
             {this.state.email ? (
               <Fragment>
                 <Form inline>
-                  <Button as={Link} to="/profile" variant="info mr-1">
+                  <Button
+                    as={Link}
+                    to="/profile/admin/dashboard"
+                    variant="info mr-1"
+                  >
                     {this.state.email}
                   </Button>
                   <Button
-                    as={Link}
+                    // as={Link}
                     onClick={this.logOut}
                     variant="outline-warning mr-1"
                     className="btn"
@@ -107,12 +115,14 @@ class App extends Component {
             render={props => <LogIn {...props} setUser={this.setUser} />}
           />
           <Route
-            exact
-            path="/profile"
+            // exact
+            path="/profile/admin"
             render={props => <Profile {...props} user={this.state} />}
           />
 
           <Route component={NotFound} />
+          <Route path="/" render={props => <AdminLayout {...props} />} />
+          <Redirect from="/profile" to="/profile/admin/dashboard" />
         </Switch>
         {/* <Footer /> */}
       </BrowserRouter>
