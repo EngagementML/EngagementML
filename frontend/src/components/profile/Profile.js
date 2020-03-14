@@ -10,7 +10,7 @@ const Profile = (props) => {
     if(!props.user.email){ 
         props.history.push('/log-in') 
     }   
-    console.log(props.user.email)
+    
     return (
       <div>
         {/* {props.match.url === "/profile" ? (

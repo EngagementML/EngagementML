@@ -36,7 +36,7 @@ class UserProfile extends Component {
 
   render() {
     // console.log(props)
-    // console.log(this.props);
+    // console.log(this.user);
     return (
       <div className="content">
         <Container fluid="true">
@@ -52,7 +52,7 @@ class UserProfile extends Component {
                         {
                           label: "eML Username",
                           type: "text",
-                          bsClass: "form-control",
+                          bsclass: "form-control",
                           placeholder: "eML",
                           defaultValue: 'this.props.user',
                           disabled: true
@@ -60,14 +60,14 @@ class UserProfile extends Component {
                         {
                           label: "IG Username",
                           type: "text",
-                          bsClass: "form-control",
+                          bsclass: "form-control",
                           placeholder: "Username",
                           defaultValue: "eML2020"
                         },
                         {
                           label: "Email address",
                           type: "email",
-                          bsClass: "form-control",
+                          bsclass: "form-control",
                           placeholder: "Email"
                         }
                       ]}
@@ -78,14 +78,14 @@ class UserProfile extends Component {
                         {
                           label: "First name",
                           type: "text",
-                          bsClass: "form-control",
+                          bsclass: "form-control",
                           placeholder: "First name",
                           defaultValue: "Mike"
                         },
                         {
                           label: "Last name",
                           type: "text",
-                          bsClass: "form-control",
+                          bsclass: "form-control",
                           placeholder: "Last name",
                           defaultValue: "Andrew"
                         }
@@ -97,7 +97,7 @@ class UserProfile extends Component {
                         {
                           label: "Adress",
                           type: "text",
-                          bsClass: "form-control",
+                          bsclass: "form-control",
                           placeholder: "Home Adress",
                           defaultValue:
                             "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
@@ -110,21 +110,21 @@ class UserProfile extends Component {
                         {
                           label: "City",
                           type: "text",
-                          bsClass: "form-control",
+                          bsclass: "form-control",
                           placeholder: "City",
                           defaultValue: "Mike"
                         },
                         {
                           label: "Country",
                           type: "text",
-                          bsClass: "form-control",
+                          bsclass: "form-control",
                           placeholder: "Country",
                           defaultValue: "Andrew"
                         },
                         {
                           label: "Postal Code",
                           type: "number",
-                          bsClass: "form-control",
+                          bsclass: "form-control",
                           placeholder: "ZIP Code"
                         }
                       ]}
@@ -136,15 +136,15 @@ class UserProfile extends Component {
                           <FormLabel>About Me</FormLabel>
                           <FormControl
                             rows="5"
-                            componentClass="textarea"
-                            bsClass="form-control"
+                            componentclass="textarea"
+                            bsclass="form-control"
                             placeholder="Here can be your description"
                             defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
                           />
                         </FormGroup>
                       </Col>
                     </Row>
-                    <Button bsStyle="info" pullRight fill type="submit">
+                    <Button bsstyle="info" pullRight fill type="submit">
                       Update Profile
                     </Button>
                     <div className="clearfix" />

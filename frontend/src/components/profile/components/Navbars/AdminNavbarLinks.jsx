@@ -16,7 +16,7 @@
 
 */
 import React, { Component } from "react";
-import { NavItem, Nav, NavDropdown, Dropdown } from "react-bootstrap";
+import { NavItem, Nav, NavDropdown } from "react-bootstrap";
 import DropdownItem from "react-bootstrap/DropdownItem";
 
 class AdminNavbarLinks extends Component {

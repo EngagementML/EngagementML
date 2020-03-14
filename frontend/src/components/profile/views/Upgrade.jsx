@@ -92,7 +92,7 @@ class Icons extends Component {
                             round
                             fill
                             disabled
-                            bsStyle="default"
+                            bsstyle="default"
                           >
                             Current Version
                           </Button>
@@ -103,7 +103,7 @@ class Icons extends Component {
                             href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro-react/?ref=lbdr-upgrade-page"
                             round
                             fill
-                            bsStyle="info"
+                            bsstyle="info"
                           >
                             Upgrade to PRO
                           </Button>

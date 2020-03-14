@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 // import { Carousel } from "react-bootstrap";
 import logo from '../../../images/engagementML.png'
-// import { Link } from 'react-router-dom'
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from 'react-router-dom'
+// import { Link, animateScroll as scroll } from "react-scroll";
 
 // const Scroll    = require('react-scroll');
 // const Link       = Scroll.Link;

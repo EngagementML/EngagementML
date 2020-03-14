@@ -47,6 +47,7 @@ class Dashboard extends Component {
     return legend;
   }
   render() {
+    console.log(this.props);
     return (
       <div className="content">
         <Container fluid="true">

@@ -10,6 +10,7 @@ import { Navbar, Nav, NavDropdown, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from './images/engagementML.png'
 import AdminLayout from "./components/profile/layouts/Admin.jsx";
+import UserProfile from "../src/components/profile/views/UserProfile"
 
 
 
@@ -135,11 +136,17 @@ class App extends Component {
             render={props => <AdminLayout {...props} user={this.state} />}
           />
 
-          {/* <Route
+          <Route
             exact
             path="/profile/admin/user"
-            render={props => <AdminLayout {...props} user={this.state} />}
-          /> */}
+            render={props => (
+              <UserProfile
+                {...props}
+                user={this.state}
+                setUser={this.setUser}
+              />
+            )}
+          />
 
           <Route component={NotFound} />
 
