@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import NotFound from './components/404/NotFound.js';
 import SignUp from './components/auth/SignUp';
@@ -8,14 +8,9 @@ import Profile from './components/profile/Profile'
 import actions from './services/index'
 import { Navbar, Nav, NavDropdown, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-// import Footer from './components/home/HomeComponents/Footer';
 import logo from './images/engagementML.png'
 import AdminLayout from "./components/profile/layouts/Admin.jsx";
-// import Dashboard from "./components/profile/views/Dashboard.jsx";
-// import UserProfile from "./components/profile/views/UserProfile.jsx";
-// import TableList from "./components/profile/views/TableList.jsx";
-// import Typography from "./components/profile/views/Typography.jsx";
-// import Icons from "./components/profile/views/Icons.jsx";
+
 
 
 
@@ -41,7 +36,7 @@ class App extends Component {
 
     return (
       <BrowserRouter>
-        <Navbar bg="light" expand="lg">
+        <Navbar collapseOnSelect bg="light" expand="lg">
           <Navbar.Brand href="/#">
             <img
               src={logo}
@@ -52,10 +47,21 @@ class App extends Component {
             />{" "}
             EngagementML
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle
+            // onToggle
+            className="navbar-toggler"
+            aria-controls="#basic-navbar-nav"
+            data-toggle="collapse"
+          />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <NavDropdown title="More" id="basic-nav-dropdown">
+              <NavDropdown
+                title="More"
+                id="basic-nav-dropdown"
+                className="navbar-dropdown-toggler"
+                // aria-controls="#basic-navbar-dropdown"
+                data-toggle="collapse"
+              >
                 <NavDropdown.Item href="https://github.com/EngagementML">
                   Github
                 </NavDropdown.Item>

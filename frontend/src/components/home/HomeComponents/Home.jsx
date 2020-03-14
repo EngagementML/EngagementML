@@ -43,8 +43,8 @@ class HomeComp extends Component {
                   as={Link}
                   href="/#one"
                   className="button style2 down"
-                  spy={true}
-                  smooth={true}
+                  spy="true"
+                  smooth="true"
                   offset={-70}
                   duration={500}
                 >
@@ -68,8 +68,8 @@ class HomeComp extends Component {
             </div>
             <a
               as={Link}
-              spy={true}
-              smooth={true}
+              spy="true"
+              smooth="true"
               offset={-70}
               duration={500}
               href="/#two"
@@ -93,11 +93,11 @@ class HomeComp extends Component {
             </div>
             <a
               as={Link}
-              spy={true}
-              smooth={true}
+              spy="true"
+              smooth="true"
               offset={-70}
               duration={500}
-              href="#work"
+              href="/#work"
               className="button style2 down anchored"
             >
               Next
@@ -118,7 +118,7 @@ class HomeComp extends Component {
               {/* Gallery  */}
               <div className="gallery">
                 <article className="from-left">
-                  <a href="" className="image fit">
+                  <a href="/" className="image fit">
                     <img
                       src="images/image12.jpg"
                       title="The Anonymous Red"

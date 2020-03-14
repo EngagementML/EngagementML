@@ -1,11 +1,9 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../../scss.css";
 import "../profile/assets/css/animate.min.css";
-// import "../profile/assets/sass/light-bootstrap-dashboard-react.scss?v=1.3.0";
 import "../profile/assets/css/demo.css";
 import "../profile/assets/css/pe-icon-7-stroke.css";
-// import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-// import AdminLayout from "../profile/layouts/Admin.jsx";
 
 
 const Profile = (props) => {
