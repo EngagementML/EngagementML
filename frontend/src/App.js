@@ -8,7 +8,7 @@ import Profile from './components/profile/Profile'
 import actions from './services/index'
 import { Navbar, Nav, NavDropdown, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import logo from './images/engagementML.png'
+import logo from './images/engagementMLb.png'
 import AdminLayout from "./components/profile/layouts/Admin.jsx";
 import UserProfile from "../src/components/profile/views/UserProfile"
 
@@ -30,7 +30,12 @@ class App extends Component {
   
   logOut = async () => {
     let res = await actions.logOut()
-    this.setUser({email:null, createdAt: null, updatedAt: null, _id: null }) //FIX 
+    this.setUser({
+      email: null,
+      createdAt: null,
+      updatedAt: null,
+      _id: null
+    }) //FIX  - we need to figure a way to upon logout -> push to home page **
   }
 
   render(){
@@ -41,12 +46,11 @@ class App extends Component {
           <Navbar.Brand href="/#">
             <img
               src={logo}
-              width="30"
-              height="30"
+              width="200"
+              height="40"
               className="d-inline-block align-top"
-              alt="React Bootstrap logo"
-            />{" "}
-            EngagementML
+              alt="EngagementML"
+            />
           </Navbar.Brand>
           <Navbar.Toggle
             // onToggle

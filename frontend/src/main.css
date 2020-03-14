@@ -768,7 +768,7 @@ input, select, textarea {
 			input[type="reset"].style2.down,
 			.button.style2.down,
 			button.style2.down {
-				background-image: url("./images/arrow.svg");
+				background-image: url("./images/arrow.png");
 			}
 
 /* Form */
@@ -2254,8 +2254,8 @@ input, select, textarea {
 /* Intro */
 
 	#intro {
-		background: url("../src/images/image0.jpg"),
-		url("../src/images/image0.jpg");
+		background: url("../src/images/header.jpeg"),
+		url("../src/images/header.jpeg");
 		background-size: cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;

@@ -17,7 +17,7 @@
 */
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-
+import logo from "../../../../images/engagementML.png";
 import AdminNavbarLinks from "../Navbars/AdminNavbarLinks.jsx";
 
 // import logo from "../assets/img/reactlogo.png";
@@ -50,17 +50,18 @@ class Sidebar extends Component {
         data-color={this.props.color}
         data-image={this.props.image}
       >
-          {this.props.hasImage ? (
-            <div className="sidebar-background" style={sidebarBackground} />
-          ) : (
-            null
-          )}
+        {this.props.hasImage ? (
+          <div className="sidebar-background" style={sidebarBackground} />
+        ) : null}
         <div className="logo">
-          <a
-            href="/"
-            className="simple-text logo-normal"
-          >
-            Engagement-ML
+          <a href="/">
+            <img
+              src={logo}
+              width="180"
+              height="36"
+              className="d-inline-block align-top"
+              alt="EngagementML"
+            />
           </a>
         </div>
         <div className="sidebar-wrapper">

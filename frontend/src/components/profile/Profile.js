@@ -1,9 +1,9 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../scss.css";
 import "../profile/assets/css/animate.min.css";
 import "../profile/assets/css/demo.css";
 import "../profile/assets/css/pe-icon-7-stroke.css";
+import "../../scss.css";
 
 
 const Profile = (props) => {

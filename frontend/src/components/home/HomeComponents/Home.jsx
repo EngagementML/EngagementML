@@ -27,10 +27,12 @@ class HomeComp extends Component {
           <section id="intro" className="main style1 dark fullscreen">
             <div className="content">
               <header>
-                <h2>
-                  {" "}
-                  <img src={logo} alt="Logo" />
-                </h2>
+                <img
+                  width="100%"
+                  style={{ alignContent: "center" }}
+                  src={logo}
+                  alt="Logo"
+                />
               </header>
               <p>
                 Welcome to <strong>EngagementML</strong> a machine learning
@@ -60,10 +62,9 @@ class HomeComp extends Component {
                 <h2>What EngagementML does?</h2>
               </header>
               <p>
-                Lorem ipsum dolor sit amet et sapien sed elementum egestas
-                dolore condimentum. Fusce blandit ultrices sapien, in accumsan
-                orci rhoncus eu. Sed sodales venenatis arcu, id varius justo
-                euismod in. Curabitur egestas consectetur magna.
+                This application lets its user analyze the data from the last 12
+                IG posts and runs our complex machine learning algorythm using
+                linear regression to predict the future engagement rate.
               </p>
             </div>
             <a
@@ -85,10 +86,8 @@ class HomeComp extends Component {
                 <h2>How can EngagementML help you?</h2>
               </header>
               <p>
-                Lorem ipsum dolor sit amet et sapien sed elementum egestas
-                dolore condimentum. Fusce blandit ultrices sapien, in accumsan
-                orci rhoncus eu. Sed sodales venenatis arcu, id varius justo
-                euismod in. Curabitur egestas consectetur magna.
+                We can help you by the power of prediction and reccomendation from your top competitors or infuencers in your industry and excel in their content and engagement strategy.
+                your account.
               </p>
             </div>
             <a
@@ -107,12 +106,9 @@ class HomeComp extends Component {
           <section id="work" className="main style3 primary">
             <div className="content">
               <header>
-                <h2>Case Studies</h2>
+                <h2>Our Case Studies</h2>
                 <p>
-                  Lorem ipsum dolor sit amet et sapien sed elementum egestas
-                  dolore condimentum. Fusce blandit ultrices sapien, in accumsan
-                  orci rhoncus eu. Sed sodales venenatis arcu, id varius justo
-                  euismod in. Curabitur egestas consectetur magna vitae.
+                  Read some of our case social media studies with EngagementML
                 </p>
               </header>
               {/* Gallery  */}
@@ -166,10 +162,9 @@ class HomeComp extends Component {
           <section id="contact" className="main style3 secondary">
             <div className="content">
               <header>
-                <h2>Questions? Comments? Send us a note!</h2>
+                <h2>Questions / Comments</h2>
                 <p>
-                  Lorem ipsum dolor sit amet et sapien sed elementum egestas
-                  dolore condimentum.
+                  Interested in learning more about EngagementML or have a questions for us? Drop us a line!
                 </p>
               </header>
               <div className="box">

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import actions from '../../services/index'
-import logo from '../../images/engagementML.png'
+import logo from '../../images/engagementMLb.png'
 import { Button } from 'react-bootstrap'
 // import { Link } from 'react-router-dom';
 import { FaKey, FaUser } from "react-icons/fa";
@@ -31,7 +31,7 @@ class LogIn extends Component {
             <div className="user_card">
               <div className="d-flex justify-content-center">
                 <div className="brand_logo_container">
-                  <img src={logo} className="brand_logo" alt="Logo" />
+                  <img src={logo} width='100%' className="brand_logo" alt="Logo" />
                 </div>
               </div>
               <div className="d-flex justify-content-center form_container">
@@ -89,7 +89,7 @@ class LogIn extends Component {
               <div className="mt-4">
                 <div className="d-flex justify-content-center links">
                   Don't have an account?{" "}
-                  <a href="/#" className="ml-2">
+                  <a href="/sign-up" className="ml-2">
                     Sign Up
                   </a>
                 </div>

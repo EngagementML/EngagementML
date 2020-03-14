@@ -36,7 +36,7 @@ class UserProfile extends Component {
 
   render() {
     // console.log(props)
-    // console.log(this.user);
+    console.log(this.props.setUser);
     return (
       <div className="content">
         <Container fluid="true">
