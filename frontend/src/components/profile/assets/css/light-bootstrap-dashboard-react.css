@@ -1376,11 +1376,11 @@ body > .navbar-collapse[data-color="purple"]:after {
     font-size: 14px; }
   .navbar .btn-simple {
     font-size: 16px; }
-  /* .navbar.fixed {
-    width: calc(100% - $sidebar-width);
+  .navbar.fixed {
+    /* width: calc(100% - $sidebar-width); */
     right: 0;
     left: auto;
-    border-radius: 0; } */
+    border-radius: 0; }
 
 .navbar-nav > li > .dropdown-menu {
   border-radius: 10px;
