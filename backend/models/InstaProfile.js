@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 // const Data = require("../scrapper/mock.json")
 // console.log(Data[0].user)
 
-const InstaProfileSchema = new Schema(
+const instaProfileSchema = new Schema(
     {
         biography: String,
         blocked_by_viewer: Boolean,
@@ -42,4 +42,4 @@ const InstaProfileSchema = new Schema(
     }
 );
 
-module.exports = model('InstaProfile', InstaProfileSchema);
+module.exports = model('InstaProfile', instaProfileSchema);
