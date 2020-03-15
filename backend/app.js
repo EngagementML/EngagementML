@@ -100,7 +100,7 @@ app.route("/profiles").get((req, res, next) => {
       "edge_followed_by.count": 1,
       _id: 0
     },
-    { full_name : 1 },
+    { "edge_followed_by.count": -1 },
     (err, instaprofiles) => {
       if (err) {
         console.log(err);

@@ -25,11 +25,11 @@ class App extends Component {
   async componentDidMount() {
     let user = await actions.isLoggedIn()
     this.setState({...user.data})
-    console.log('coolest ',user)
+    console.log('Current User >> ',user)
 
     axios
-      .get("http://localhost:5000/profiles/")
-      // .get("https://engagementml.herokuapp.com/profiles/")
+      // .get("http://localhost:5000/profiles/")
+      .get("https://engagementml.herokuapp.com/profiles/")
       .then(res => {
         // console.log(res, res.data);
         this.setState({
