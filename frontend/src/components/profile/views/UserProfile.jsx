@@ -24,7 +24,7 @@ import {
   FormLabel,
   FormControl
 } from "react-bootstrap";
-
+import axios from "axios";
 import { Card } from "../components/Card/Card.jsx";
 import { FormInputs } from "../components/FormInputs/FormInputs.jsx";
 import { UserCard } from "../components/UserCard/UserCard.jsx";
@@ -33,10 +33,110 @@ import Button from "../components/CustomButton/CustomButton.jsx";
 // import avatar from "../assets/img/faces/face-3.jpg";
 
 class UserProfile extends Component {
+  
+  state = {
+    email: "",
+    name: "",
+    fname: "",
+    lname: "",
+    igUsername: "",
+    image: "",
+    about: "",
+  };
+
+  componentDidMount() {
+    axios
+      // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
+      .get("https://engagementml.herokuapp.com/eML/user/" + this.props.match.params.id)
+      .then(response => {
+        this.setState({
+          email: response.data.email,
+          name: response.data.name,
+          fname: response.data.fname,
+          lname: response.data.lname,
+          igUsername: response.data.igUsername,
+          image: response.data.image,
+          about: response.data.about
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+
+  onChangeEmail(e) {
+    this.setState({
+      email: e.target.value
+    });
+  }
+
+  onChangeName(e) {
+    this.setState({
+      name: e.target.value
+    });
+  }
+
+  onChangeFname(e) {
+    this.setState({
+      fname: e.target.value
+    });
+  }
+
+  onChangeLname(e) {
+    this.setState({
+      lname: e.target.value
+    });
+  }
+
+  onChangeIgUsername(e) {
+    this.setState({
+      igUsername: e.target.value
+    });
+  }
+
+  onChangeIgUsername(e) {
+    this.setState({
+      igUsername: e.target.value
+    });
+  }
+
+  onChangeImage(e) {
+    this.setState({
+      image: e.target.value
+    });
+  }
+
+  onChangeAbout(e) {
+    this.setState({
+      about: e.target.value
+    });
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    const obj = {
+      email: this.state.data.email,
+      name: this.state.data.name,
+      fname: this.state.data.fname,
+      lname: this.state.data.lname,
+      igUsername: this.state.data.igUsername,
+      image: this.state.data.image,
+      about: this.state.data.about
+    };
+    console.log(obj);
+    axios
+      .post(
+        "http://localhost:5000/eML/users/update/" + this.props.match.params.id,
+        obj
+      )
+      .then(res => console.log(res.data));
+
+    this.props.history.push("/");
+  }
 
   render() {
-    // console.log(props)
-    console.log(this.props.setUser);
+    console.log(this)
+    // console.log(this.props, this.state);
     return (
       <div className="content">
         <Container fluid="true">
@@ -54,7 +154,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsclass: "form-control",
                           placeholder: "eML",
-                          defaultValue: 'this.props.user',
+                          defaultValue: "this.props.user",
                           disabled: true
                         },
                         {
@@ -155,7 +255,7 @@ class UserProfile extends Component {
             <Col md={4}>
               <UserCard
                 bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
-                avatar='https://source.unsplash.com/random/400x400?celebrity'
+                avatar="https://i.imgur.com/iMovaBD.png"
                 name="Mike Andrew"
                 userName="michael24"
                 description={
