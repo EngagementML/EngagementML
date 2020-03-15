@@ -48,12 +48,19 @@ class Icons extends Component {
   profileList() {
     return this.state.profiles.map((profile, i) => {
       return (
-        <Col lg={2} md={3} sm={4} xs={6} className="font-icon-list" key={i}>
+        <Col lg={3} md={3} sm={4} xs={6} className="font-icon-list" key={i}>
           <div className="font-icon-detail">
+            <h4>{profile.username}</h4>
+            <br />
+            {/* <br /> */}
             <img style={{ width: "100%" }} src={profile.profile_pic_url_hd} />
             <br />
             <br />
-            <h6>{profile.username}</h6>
+            <h6>{profile.full_name}</h6>
+            <br />
+            <p>
+              <strong>Followers:</strong> {profile.edge_followed_by.count}
+            </p>
           </div>
         </Col>
       );
@@ -72,7 +79,7 @@ class Icons extends Component {
                 ctAllIcons
                 category={
                   <span>
-                    Handcrafted by our friends from{" "}
+                    Handcrafted by your friends from{" "}
                     <a
                       target="_blank"
                       rel="noopener noreferrer"

@@ -93,8 +93,14 @@ setInterval(
 app.route("/profiles").get((req, res, next) => {
   InstaProfile.find(
     {},
-    { full_name: 1, username: 1, profile_pic_url_hd: 1, _id: 0 },
-    {username: 1},
+    {
+      full_name: 1,
+      username: 1,
+      profile_pic_url_hd: 1,
+      "edge_followed_by.count": 1,
+      _id: 0
+    },
+    { full_name : 1 },
     (err, instaprofiles) => {
       if (err) {
         console.log(err);
@@ -108,7 +114,7 @@ app.route("/profiles").get((req, res, next) => {
 //Route to return all available profiles 
 app.route("/profile/:username").get((req, res) => {
   let username = req.params.username;
-  InstaProfile.findOne({username : username}, { full_name:1, biography :1, username: 1, _id:0 }, (err, instaprofiles) => {
+  InstaProfile.findOne({username : username}, { full_name:1, biography :1, username: 1, _id:0}, (err, instaprofiles) => {
     if (err) {
       console.log(err);
     } else {
