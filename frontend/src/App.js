@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import logo from './images/engagementMLb.png'
 import AdminLayout from "./components/profile/layouts/Admin.jsx";
 import UserProfile from "../src/components/profile/views/UserProfile"
+import MetaTags from "react-meta-tags";
 
 
 
@@ -42,6 +43,42 @@ class App extends Component {
 
     return (
       <BrowserRouter>
+        <MetaTags>
+          <title>
+            EngagementML - Optimizing your Social Media Strategy with Machine
+            Learning
+          </title>
+          <meta
+            property="og:url"
+            content="https://engagementml.herokuapp.com"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="EngagementML - Optimizing your Social Media Strategy with Machine Learning"
+          />
+          <meta
+            property="og:description"
+            content="Optimizing your Social Media Strategy with Machine Learning"
+          />
+          <meta property="og:image" content="../src/images/header.jpeg" />
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:site"
+            content="https://engagementml.herokuapp.com"
+          />
+          <meta name="twitter:creator" content="Gustavo Rivera Pecunia" />
+          <meta
+            name="twitter:title"
+            content="EngagementML - Optimizing your Social Media Strategy with Machine Learning"
+          />
+          <meta
+            name="twitter:description"
+            content="Optimizing your Social Media Strategy with Machine Learning"
+          />
+          <meta name="twitter:image" content="../src/images/header.jpeg" />
+        </MetaTags>
         <Navbar collapseOnSelect bg="light" expand="lg">
           <Navbar.Brand href="/#">
             <img
