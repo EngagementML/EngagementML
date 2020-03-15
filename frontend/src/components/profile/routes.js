@@ -18,7 +18,7 @@
 import Dashboard from "../profile/views/Dashboard.jsx"
 import UserProfile from "../profile/views/UserProfile.jsx";
 import TableList from "../profile/views/TableList.jsx";
-import Typography from "../profile/views/Typography.jsx";
+import Research from "../profile/views/Research.jsx";
 import Icons from "../profile/views/Icons.jsx";
 // import Maps from "../profile/views/Maps.jsx";
 // import Notifications from "../profile/views/Notifications.jsx";
@@ -47,10 +47,10 @@ const dashboardRoutes = [
     layout: "/profile/admin"
   },
   {
-    path: "/typography",
+    path: "/research",
     name: "Research",
     icon: "pe-7s-search",
-    component: Typography,
+    component: Research,
     layout: "/profile/admin"
   },
   {

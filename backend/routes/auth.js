@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+// const InstaProfile = require('../models/InstaProfile')
 const passport = require('../config/passport');
 
 router.post('/signup', (req, res, next) => {
@@ -42,5 +43,10 @@ router.get('/profile', isAuth, (req, res, next) => {
 function isAuth(req, res, next) {
   req.isAuthenticated() ? next() : res.status(401).json({ msg: 'Log in first' });
 }
+
+// router.get('/igprofiles') ((req, res, next) => {
+//   InstaProfile.find(req.full_name)
+//     .then((full_name) => res.status(200).json({ full_name }))
+// });
 
 module.exports = router;

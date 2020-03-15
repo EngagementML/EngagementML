@@ -10,6 +10,10 @@ const cors = require('cors');
 const session = require('express-session');
 const passport = require('./config/passport');
 const waitForData = require('./routes/InstaRoute')
+const InstaProfile = require('./models/InstaProfile')
+const InstaPost = require("./models/InstaPosts");
+const FollowList = require('./models/FollowList')
+
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ironplate'
 console.log('Connecting DB to ', MONGODB_URI)
@@ -75,7 +79,71 @@ console.log('client', client)
 //   res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
 // })
 
-// waitForData() 
-  console.log("Hi")
+
+// waitForData() is the function that scrappes and pulls the Top 50 Influencer IG List into the DB
+// ** dropped the sraper function inside an interval of sligtly less than 24 hrs ** GRP
+setInterval(
+  function(){
+    waitForData();
+  }, 84000000 )
+
+
+
+//Route to return all available profiles 
+app.route("/profiles").get((req, res, next) => {
+  InstaProfile.find(
+    {},
+    { full_name: 1, username: 1, _id: 0 },
+    (err, instaprofiles) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(instaprofiles);
+      }
+    }
+  );
+});
+
+//Route to return all available profiles 
+app.route("/profile/:username").get((req, res) => {
+  let username = req.params.username;
+  InstaProfile.findOne({username : username}, { full_name:1, biography :1, username: 1, _id:0 }, (err, instaprofiles) => {
+    if (err) {
+      console.log(err);
+    } else {
+    res.json(instaprofiles);
+    }
+  });
+});
+
+//Route to return all available profiles 
+app.route("/posts").get((req, res, next) => {
+  InstaPost.find((err, instapost) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(instapost);
+    }
+  });
+});
+
+//Route to add a new username to follow (add to FollowList array)
+app.route("/addToFollow").post((req, res, next) => {
+  let newToTrack = new FollowList(req.body);
+  newToTrack.save()
+    .then(newToTrack => {
+      res
+        .status(200)
+        .json({
+          newToTrack: "Added username to FollowList successfully!"
+        });
+    })
+    .catch(err => {
+      res.status(400).send("Adding to FollowList failed!!");
+    });
+});
+
+
+  // console.log("Hi")
 
 module.exports = app;
