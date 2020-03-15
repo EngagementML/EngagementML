@@ -17,11 +17,16 @@
 */
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import axios from "axios"
+// import axios from "axios"
 import Card from "../components/Card/Card.jsx";
 
+
+// axios.get("http://localhost:5000/profiles").then(res => console.log(res.data));
+
 class Research extends Component {
+
   render() {
+  
     return (
       <div className="content">
         <Container fluid="true">

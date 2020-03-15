@@ -12,6 +12,8 @@ import logo from './images/engagementMLb.png'
 import AdminLayout from "./components/profile/layouts/Admin.jsx";
 import UserProfile from "../src/components/profile/views/UserProfile"
 import MetaTags from "react-meta-tags";
+import axios from "axios";
+
 
 
 
@@ -24,6 +26,20 @@ class App extends Component {
     let user = await actions.isLoggedIn()
     this.setState({...user.data})
     console.log('coolest ',user)
+
+    axios
+      // .get("http://localhost:5000/profiles/")
+      .get("https://engagementml.herokuapp.com/profiles/")
+      .then(res => {
+        // console.log(res, res.data);
+        this.setState({
+          profiles: res.data
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  
 
   }
 
@@ -174,7 +190,7 @@ class App extends Component {
           />
           <Route
             path="/profile/admin/"
-            render={props => <AdminLayout {...props} user={this.state} />}
+            render={props => <AdminLayout {...props} profiles={this.state.profiles} user={this.state} />}
           />
 
           <Route

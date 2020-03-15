@@ -93,7 +93,8 @@ setInterval(
 app.route("/profiles").get((req, res, next) => {
   InstaProfile.find(
     {},
-    { full_name: 1, username: 1, _id: 0 },
+    { full_name: 1, username: 1, profile_pic_url_hd: 1, _id: 0 },
+    {username: 1},
     (err, instaprofiles) => {
       if (err) {
         console.log(err);
@@ -118,7 +119,7 @@ app.route("/profile/:username").get((req, res) => {
 
 //Route to return all available profiles 
 app.route("/posts").get((req, res, next) => {
-  InstaPost.find((err, instapost) => {
+  InstaPost.find({}, {date: 1, text: 1, owner_id: 1, like_count:1, comment_count:1, is_video: 1}, (err, instapost) => {
     if (err) {
       console.log(err);
     } else {
@@ -144,6 +145,5 @@ app.route("/addToFollow").post((req, res, next) => {
 });
 
 
-  // console.log("Hi")
 
 module.exports = app;
