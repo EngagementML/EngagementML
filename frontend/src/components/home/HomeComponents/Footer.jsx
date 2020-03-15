@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
+import logo from "../../../images/engagementML.png";
+
 
 class Footer extends Component {
   render() {
@@ -8,7 +10,7 @@ class Footer extends Component {
         <footer
           className="page-footer font-small blue pt-4"
           style={{
-            backgroundColor: "#3A6EA5",
+            backgroundColor: "cornflowerblue",
             paddingTop: "40px",
             paddingBottom: "20px",
             color: "white",
@@ -21,10 +23,15 @@ class Footer extends Component {
           >
             <div className="row" style={{ display: "align-space-evenly" }}>
               <div className="col-md-6 mt-md-0 mt-3">
-                <h5>About the EngamentML Application Project</h5>
+                <h5>
+                  About the{" "}
+                  <img src={logo} width="200" height="40" alt="EngagementML" />{" "}
+                  Application Project
+                </h5>
                 <p>
-                  This is an open source application intended as boilerplate
-                  for programmers that want a simple Bootstrap template to engage in fast prototyping for React Applications. <br />
+                  This is an open source application intended as boilerplate for
+                  programmers that want a simple Bootstrap template to engage in
+                  fast prototyping for React Applications. <br />
                 </p>
               </div>
 
@@ -106,9 +113,8 @@ class Footer extends Component {
           <br />
         </footer>
         <div className="footer-copyright text-center py-3">
-          EngagementML
-          {" "}
-          | All rights reserved © {new Date().getFullYear()}
+          <img src={logo} width="200" height="40" alt="EngagementML" /> | All
+          rights reserved © {new Date().getFullYear()}
         </div>
       </React.Fragment>
     );

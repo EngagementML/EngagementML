@@ -25,7 +25,7 @@ class App extends Component {
   async componentDidMount() {
     let user = await actions.isLoggedIn()
     this.setState({...user.data})
-    console.log('coolest ',user)
+    console.log('Current User >> ',user)
 
     axios
       .get("http://localhost:5000/profiles/")

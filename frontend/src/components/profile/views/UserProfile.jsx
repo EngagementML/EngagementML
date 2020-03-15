@@ -25,6 +25,7 @@ import {
   FormControl
 } from "react-bootstrap";
 import axios from "axios";
+import actions from "../../../services/index";
 import { Card } from "../components/Card/Card.jsx";
 import { FormInputs } from "../components/FormInputs/FormInputs.jsx";
 import { UserCard } from "../components/UserCard/UserCard.jsx";
@@ -44,7 +45,12 @@ class UserProfile extends Component {
     about: "",
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+
+    let user = await actions.isLoggedIn()
+    this.setState({...user.data})
+    console.log('Current User >> ',user)
+
     axios
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get("https://engagementml.herokuapp.com/eML/user/" + this.props.match.params.id)
@@ -151,10 +157,10 @@ class UserProfile extends Component {
                       properties={[
                         {
                           label: "eML Username",
-                          type: "text",
+                          type: "email",
                           bsclass: "form-control",
                           placeholder: "eML",
-                          defaultValue: "this.props.user",
+                          defaultValue: this.state.email,
                           disabled: true
                         },
                         {
@@ -162,13 +168,13 @@ class UserProfile extends Component {
                           type: "text",
                           bsclass: "form-control",
                           placeholder: "Username",
-                          defaultValue: "eML2020"
+                          defaultValue: this.state.igUsername
                         },
                         {
-                          label: "Email address",
-                          type: "email",
+                          label: "Nickname",
+                          type: "text",
                           bsclass: "form-control",
-                          placeholder: "Email"
+                          placeholder: this.state.name
                         }
                       ]}
                     />
@@ -180,14 +186,14 @@ class UserProfile extends Component {
                           type: "text",
                           bsclass: "form-control",
                           placeholder: "First name",
-                          defaultValue: "Mike"
+                          defaultValue: this.state.fname
                         },
                         {
                           label: "Last name",
                           type: "text",
                           bsclass: "form-control",
                           placeholder: "Last name",
-                          defaultValue: "Andrew"
+                          defaultValue: this.state.lname
                         }
                       ]}
                     />
@@ -200,7 +206,7 @@ class UserProfile extends Component {
                           bsclass: "form-control",
                           placeholder: "Home Adress",
                           defaultValue:
-                            "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                            "Miami, Florida"
                         }
                       ]}
                     />
@@ -208,18 +214,18 @@ class UserProfile extends Component {
                       ncols={["col-md-4", "col-md-4", "col-md-4"]}
                       properties={[
                         {
-                          label: "City",
+                          label: "Industry",
                           type: "text",
                           bsclass: "form-control",
-                          placeholder: "City",
-                          defaultValue: "Mike"
+                          placeholder: "Industry",
+                          defaultValue: "Marketing"
                         },
                         {
                           label: "Country",
                           type: "text",
                           bsclass: "form-control",
                           placeholder: "Country",
-                          defaultValue: "Andrew"
+                          defaultValue: "US"
                         },
                         {
                           label: "Postal Code",
@@ -239,7 +245,7 @@ class UserProfile extends Component {
                             componentclass="textarea"
                             bsclass="form-control"
                             placeholder="Here can be your description"
-                            defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
+                            defaultValue={this.state.about}
                           />
                         </FormGroup>
                       </Col>
@@ -255,9 +261,13 @@ class UserProfile extends Component {
             <Col md={4}>
               <UserCard
                 bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
-                avatar="https://i.imgur.com/iMovaBD.png"
-                name="Mike Andrew"
-                userName="michael24"
+                avatar={
+                  this.state.image == ''
+                    ? "https://i.imgur.com/iMovaBD.png"
+                    : this.state.image
+                }
+                name={this.state.name}
+                userName={this.state.igUsername}
                 description={
                   <span>
                     "Lamborghini Mercy

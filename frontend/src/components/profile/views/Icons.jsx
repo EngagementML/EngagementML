@@ -19,7 +19,7 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import axios from 'axios'
 import Card from "../components/Card/Card";
-import { iconsArray } from "../variables/Variables.jsx";
+// import { iconsArray } from "../variables/Variables.jsx";
 
 // axios.get("http://localhost:5000/profiles").then(res => console.log(res.data));
 

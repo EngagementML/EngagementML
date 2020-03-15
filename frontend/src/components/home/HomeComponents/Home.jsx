@@ -22,8 +22,8 @@ class HomeComp extends Component {
               </header>
               <p>
                 Welcome to <strong>EngagementML</strong> a machine learning
-                applications developed for social media management strategy
-                and released under the MIT license.
+                applications developed for social media management strategy and
+                released under the MIT license.
               </p>
               <footer>
                 <a
@@ -71,7 +71,9 @@ class HomeComp extends Component {
                 <h2>How can EngagementML help you?</h2>
               </header>
               <p>
-                We can help you by the power of predicting and reccomending strategies based on your top competitors or infuencers in your industry. Excel in your content and engagement strategy!
+                We can help you by the power of predicting and reccomending
+                strategies based on your top competitors or infuencers in your
+                industry. Excel in your content and engagement strategy!
               </p>
             </div>
             <a
@@ -92,51 +94,82 @@ class HomeComp extends Component {
               <header>
                 <h2>Our Case Studies</h2>
                 <p>
-                  Read some of our case social media studies with EngagementML
+                  Track and follow your competitors and infuencers with
+                  EngagementML
                 </p>
               </header>
               {/* Gallery  */}
               <div className="gallery">
                 <article className="from-left">
-                  <a href="/" className="image fit">
+                  <a
+                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/78964845_582853779208367_1558803722329391104_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=MaFcSJEOyz8AX-Ck7bI&oh=0206e796d9fcca04c441ffba6be22aa3&oe=5EA47B7C"
+                    className="image fit"
+                  >
                     <img
-                      src="images/image12.jpg"
-                      title="The Anonymous Red"
+                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/78964845_582853779208367_1558803722329391104_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=MaFcSJEOyz8AX-Ck7bI&oh=0206e796d9fcca04c441ffba6be22aa3&oe=5EA47B7C"
+                      title="Drake"
                       alt=""
                     />
                   </a>
                 </article>
                 <article className="from-right">
-                  <a href="images/fulls/02.jpg" className="image fit">
+                  <a
+                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/71594249_1125833014288751_8012044229767331840_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=5Y-RG_D12YMAX92Inoy&oh=7568e195b25d372e12db1c7542063d03&oe=5EA20F3A"
+                    className="image fit"
+                  >
                     <img
-                      src="images/thumbs/02.jpg"
-                      title="Airchitecture II"
+                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/71594249_1125833014288751_8012044229767331840_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=5Y-RG_D12YMAX92Inoy&oh=7568e195b25d372e12db1c7542063d03&oe=5EA20F3A"
+                      title="Jennifer Aniston"
                       alt=""
                     />
                   </a>
                 </article>
                 <article className="from-left">
-                  <a href="images/fulls/03.jpg" className="image fit">
-                    <img src="images/thumbs/03.jpg" title="Air Lounge" alt="" />
-                  </a>
-                </article>
-                <article className="from-right">
-                  <a href="images/fulls/04.jpg" className="image fit">
-                    <img src="images/thumbs/04.jpg" title="Carry on" alt="" />
-                  </a>
-                </article>
-                <article className="from-left">
-                  <a href="images/fulls/05.jpg" className="image fit">
+                  <a
+                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/87485911_2595250347427294_7578127957344911360_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=dX6me_iuGlAAX-EOeE3&oh=f849a55d014fe72a797b47e64d244192&oe=5EA3CDEF"
+                    className="image fit"
+                  >
                     <img
-                      src="images/thumbs/05.jpg"
-                      title="The sparkling shell"
+                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/87485911_2595250347427294_7578127957344911360_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=dX6me_iuGlAAX-EOeE3&oh=f849a55d014fe72a797b47e64d244192&oe=5EA3CDEF"
+                      title="Shakira"
                       alt=""
                     />
                   </a>
                 </article>
                 <article className="from-right">
-                  <a href="/src/images/image 12.jpg" className="image fit">
-                    <img src="/images/image 12.jpg" title="Bent IX" alt="" />
+                  <a
+                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/71718204_448894825985782_2989796854381674496_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=6hPWKuGMvGwAX-HkJOy&oh=55da1033e98cce0bb1a3a8912a7a2865&oe=5E9F2CA9"
+                    className="image fit"
+                  >
+                    <img
+                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/71718204_448894825985782_2989796854381674496_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=6hPWKuGMvGwAX-HkJOy&oh=55da1033e98cce0bb1a3a8912a7a2865&oe=5E9F2CA9"
+                      title="Billie Eilish"
+                      alt=""
+                    />
+                  </a>
+                </article>
+                <article className="from-left">
+                  <a
+                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/72873456_425339975028135_3038321055589466112_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=MKkZivG9pn8AX-XN7_P&oh=a0e437709b7e20de627957a616131007&oe=5E9C9FA3"
+                    className="image fit"
+                  >
+                    <img
+                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/72873456_425339975028135_3038321055589466112_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=MKkZivG9pn8AX-XN7_P&oh=a0e437709b7e20de627957a616131007&oe=5E9C9FA3"
+                      title="Priyanka Chopra"
+                      alt=""
+                    />
+                  </a>
+                </article>
+                <article className="from-right">
+                  <a
+                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/60069326_2844010522491121_8257963186574065664_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=tzw6nxWj6JIAX_uKbbu&oh=df8754150a8b8a54b71d1984dee08085&oe=5EA45B85"
+                    className="image fit"
+                  >
+                    <img
+                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/60069326_2844010522491121_8257963186574065664_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=tzw6nxWj6JIAX_uKbbu&oh=df8754150a8b8a54b71d1984dee08085&oe=5EA45B85"
+                      title="James Rodriguez"
+                      alt=""
+                    />
                   </a>
                 </article>
               </div>
@@ -148,7 +181,8 @@ class HomeComp extends Component {
               <header>
                 <h2>Questions / Comments</h2>
                 <p>
-                  Interested in learning more about EngagementML or have a questions for us? Drop us a line!
+                  Interested in learning more about EngagementML or have a
+                  questions for us? Drop us a line!
                 </p>
               </header>
               <div className="box">
