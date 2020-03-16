@@ -2323,4 +2323,45 @@ input, select, textarea {
 			}
 
         }
-        
+		
+		
+/* SignUp Forms */
+
+/* #signUpCopy {
+	-moz-transition: -moz-transform 3s ease;
+	-webkit-transition: -webkit-transform 3s ease;
+	-ms-transition: -ms-transform 3s ease;
+	transition: transform 3s ease;
+	-moz-transform: translateY(0);
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+	position: relative;
+}
+
+#signUpCopy.inactive {
+	-moz-transform: translateY(100%);
+	-webkit-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	transform: translateY(100%);
+} */
+
+#signUpCopy {
+	transition: background-color 0.5s ease;
+	background-color: transparent;
+	border-radius: 3rem;
+	padding-top:1rem;
+	color:white;
+  }
+
+#signUpCopy:hover {
+	background-color:rgba(0, 0, 0, 0.25);
+	/* background-image: url("./images/Instagram-Ads-o-que-é-benefícios-e-como-anunciar-social.png") */
+  }
+
+input::placeholder { 
+	color: whitesmoke;
+	opacity: 0.5; 
+	font-family: 'Courier New', Courier, monospace;
+}
+

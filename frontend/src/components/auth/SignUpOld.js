@@ -1,8 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import actions from '../../services/index'
 import logo from "../../images/engagementMLb.png";
-import IGback from '../../images/igback.jpg'
-// frontend\src\images\instagram-background.jpg
 import { Button } from "react-bootstrap";
 import { FaKey, FaUser } from "react-icons/fa";
 
@@ -18,14 +16,10 @@ class SignUp extends Component {
                 this.props.setUser({...user.data})  
             }).catch(({ response }) => console.error(response.data));
     }
-
     render() {
-        let backsy = {
-            backgroundImage: IGback,
-        }
         return (
-            <Fragment>
-            <div className="container h-100" style={backsy}>
+          <Fragment>
+            <div className="container h-100">
               <div className="d-flex justify-content-center h-100">
                 <div className="user_card">
                   <div className="d-flex justify-content-center">
