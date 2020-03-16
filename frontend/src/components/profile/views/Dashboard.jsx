@@ -55,17 +55,17 @@ class Dashboard extends Component {
             <Col lg={3} sm={6}>
               <StatsCard
                 bigIcon={<i className="pe-7s-leaf text-success" />}
-                statsText="Capacity"
-                statsValue="105GB"
+                statsText="eML Rate"
+                statsValue="2.3%"
                 statsIcon={<i className="pe-7s-refresh-2" />}
                 statsIconText="Updated now"
               />
             </Col>
             <Col lg={3} sm={6}>
               <StatsCard
-                bigIcon={<i className="pe-7s-wallet text-warning" />}
-                statsText="Revenue"
-                statsValue="$1,345"
+                bigIcon={<i className="pe-7s-key text-warning" />}
+                statsText="Last Post"
+                statsValue="1 day"
                 statsIcon={<i className="pe-7s-refresh-2" />}
                 statsIconText="Last day"
               />
@@ -73,8 +73,8 @@ class Dashboard extends Component {
             <Col lg={3} sm={6}>
               <StatsCard
                 bigIcon={<i className="pe-7s-graph1 text-danger" />}
-                statsText="Errors"
-                statsValue="23"
+                statsText="Fixes"
+                statsValue="14"
                 statsIcon={<i className="pe-7s-refresh-2" />}
                 statsIconText="In the last hour"
               />
@@ -85,7 +85,7 @@ class Dashboard extends Component {
                 statsText="Followers"
                 statsValue="+45"
                 statsIcon={<i className="pe-7s-refresh-2" />}
-                statsIconText="Updated now"
+                statsIconText="Updated today"
               />
             </Col>
           </Row>
@@ -94,9 +94,9 @@ class Dashboard extends Component {
               <Card
                 statsIcon="fa fa-history"
                 id="chartHours"
-                title="Users Behavior"
+                title="User Engagement by Time of Day"
                 category="24 Hours performance"
-                stats="Updated 3 minutes ago"
+                stats="Updated today"
                 content={
                   <div className="ct-chart">
                     <ChartistGraph
@@ -115,9 +115,9 @@ class Dashboard extends Component {
             <Col md={4}>
               <Card
                 statsIcon="fa fa-clock-o"
-                title="Email Statistics"
-                category="Last Campaign Performance"
-                stats="Campaign sent 2 days ago"
+                title="Post Type"
+                category="Last 12 Posts"
+                stats="Updated today"
                 content={
                   <div
                     id="chartPreferences"
@@ -137,8 +137,8 @@ class Dashboard extends Component {
             <Col md={6}>
               <Card
                 id="chartActivity"
-                title="2020 Sales"
-                category="All products including Taxes"
+                title="Engagement Levels"
+                category="You vs. Competitor"
                 stats="Data information certified"
                 statsIcon="fa fa-check"
                 content={
@@ -159,8 +159,8 @@ class Dashboard extends Component {
 
             <Col md={6}>
               <Card
-                title="Tasks"
-                category="Backend development"
+                title="eML Recommendations"
+                category="Fix to Optimize your Strategy"
                 stats="Updated 3 minutes ago"
                 statsIcon="fa fa-history"
                 content={

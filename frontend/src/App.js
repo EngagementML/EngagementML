@@ -28,8 +28,8 @@ class App extends Component {
     console.log('Current User >> ',user)
 
     axios
-      // .get("http://localhost:5000/profiles/")
-      .get("https://engagementml.herokuapp.com/profiles/")
+      .get("http://localhost:5000/profiles/")
+      // .get("https://engagementml.herokuapp.com/profiles/")
       .then(res => {
         // console.log(res, res.data);
         this.setState({
@@ -118,7 +118,7 @@ class App extends Component {
                 id="basic-nav-dropdown"
                 className="navbar-dropdown-toggler"
                 // aria-controls="#basic-navbar-dropdown"
-                data-toggle="collapse"
+                data-toggle="dropdown"
               >
                 <NavDropdown.Item href="https://github.com/EngagementML">
                   Github

@@ -54,9 +54,9 @@
         }
     }
 
-    body > .navbar-collapse.collapse{
-        display: none !important;
-    }
+    // body > .navbar-collapse.collapse{
+    //     display: none !important;
+    // }
 
     .card{
         form{
@@ -339,9 +339,9 @@
     .dropdown-menu {
         display: none;
     }
-    .navbar-fixed-top {
-        -webkit-backface-visibility: hidden;
-    }
+    // .navbar-fixed-top {
+    //     -webkit-backface-visibility: hidden;
+    // }
     #bodyClick {
         height: 100%;
         width: 100%;

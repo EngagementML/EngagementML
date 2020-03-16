@@ -34,7 +34,6 @@ import Button from "../components/CustomButton/CustomButton.jsx";
 // import avatar from "../assets/img/faces/face-3.jpg";
 
 class UserProfile extends Component {
-  
   state = {
     email: "",
     name: "",
@@ -42,27 +41,26 @@ class UserProfile extends Component {
     lname: "",
     igUsername: "",
     image: "",
-    about: "",
+    about: ""
   };
 
   async componentDidMount() {
-
-    let user = await actions.isLoggedIn()
-    this.setState({...user.data})
-    console.log('Current User >> ',user)
+    let user = await actions.isLoggedIn();
+    this.setState({ ...user.data });
+    console.log("Current User >> ", user);
 
     axios
-      // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
-      .get("https://engagementml.herokuapp.com/eML/user/" + this.props.match.params.id)
-      .then(response => {
+      .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
+      // .get("https://engagementml.herokuapp.com/eML/user/" + this.props.match.params.id)
+      .then(res => {
         this.setState({
-          email: response.data.email,
-          name: response.data.name,
-          fname: response.data.fname,
-          lname: response.data.lname,
-          igUsername: response.data.igUsername,
-          image: response.data.image,
-          about: response.data.about
+          email: res.data.email,
+          name: res.data.name,
+          fname: res.data.fname,
+          lname: res.data.lname,
+          igUsername: res.data.igUsername,
+          image: res.data.image,
+          about: res.data.about
         });
       })
       .catch(function(error) {
@@ -100,17 +98,11 @@ class UserProfile extends Component {
     });
   }
 
-  onChangeIgUsername(e) {
-    this.setState({
-      igUsername: e.target.value
-    });
-  }
-
-  onChangeImage(e) {
-    this.setState({
-      image: e.target.value
-    });
-  }
+  // onChangeImage(e) {
+  //   this.setState({
+  //     image: e.target.value
+  //   });
+  // }
 
   onChangeAbout(e) {
     this.setState({
@@ -120,29 +112,37 @@ class UserProfile extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    console.log('submit triggered....')
     const obj = {
-      email: this.state.data.email,
-      name: this.state.data.name,
-      fname: this.state.data.fname,
-      lname: this.state.data.lname,
-      igUsername: this.state.data.igUsername,
-      image: this.state.data.image,
-      about: this.state.data.about
+      email: this.state.email,
+      name: this.state.name,
+      fname: this.state.fname,
+      lname: this.state.lname,
+      igUsername: this.state.igUsername,
+      image: this.state.image,
+      about: this.state.about
     };
     console.log(obj);
     axios
-      .post(
-        "http://localhost:5000/eML/users/update/" + this.props.match.params.id,
-        obj
-      )
+      .post("http://localhost:5000/eML/users/update/" + this.state._id, obj)
       .then(res => console.log(res.data));
 
-    this.props.history.push("/");
+    // this.props.history.push("/")
+    alert('User Profile has been updated!');
   }
 
+  
+
   render() {
-    console.log(this)
+    console.log(this);
     // console.log(this.props, this.state);
+    // this.onChangeEmail = this.onChangeEmail.bind(this);
+    // this.onChangeName = this.onChangeName.bind(this);
+    // this.onChangeFname = this.onChangeFname.bind(this);
+    // this.onChangeLname = this.onChangeLname.bind(this);
+    // this.onChangeIgUsername = this.onChangeIgUsername.bind(this);
+    // // this.onChangeImage = this.onChangeImage.bind(this);
+    // this.onChangeAbout = this.onChangeAbout.bind(this);
     return (
       <div className="content">
         <Container fluid="true">
@@ -151,7 +151,7 @@ class UserProfile extends Component {
               <Card
                 title="Edit Profile"
                 content={
-                  <form>
+                  <form onSubmit={e => this.onSubmit(e)}>
                     <FormInputs
                       ncols={["col-md-5", "col-md-3", "col-md-4"]}
                       properties={[
@@ -168,13 +168,15 @@ class UserProfile extends Component {
                           type: "text",
                           bsclass: "form-control",
                           placeholder: "Username",
-                          defaultValue: this.state.igUsername
+                          defaultValue: this.state.igUsername,
+                          
                         },
                         {
                           label: "Nickname",
                           type: "text",
                           bsclass: "form-control",
-                          placeholder: this.state.name
+                          placeholder: "eML #1 Fan",
+                          defaultValue: this.state.name
                         }
                       ]}
                     />
@@ -194,6 +196,7 @@ class UserProfile extends Component {
                           bsclass: "form-control",
                           placeholder: "Last name",
                           defaultValue: this.state.lname
+
                         }
                       ]}
                     />
@@ -205,8 +208,7 @@ class UserProfile extends Component {
                           type: "text",
                           bsclass: "form-control",
                           placeholder: "Home Adress",
-                          defaultValue:
-                            "Miami, Florida"
+                          defaultValue: "Miami, Florida"
                         }
                       ]}
                     />
@@ -262,7 +264,7 @@ class UserProfile extends Component {
               <UserCard
                 bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
                 avatar={
-                  this.state.image == ''
+                  this.state.image == ""
                     ? "https://i.imgur.com/iMovaBD.png"
                     : this.state.image
                 }
