@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+// const InstaProfile = require('../models/InstaProfile')
 const passport = require('../config/passport');
 
 router.post('/signup', (req, res, next) => {
@@ -14,6 +15,51 @@ router.post('/signup', (req, res, next) => {
       console.log(err)
       res.status(500).json({ err })
     });
+});
+
+// Route to update eML User Profile
+router.route("/eML/users/update/:id").post(function(req, res) {
+  User.findById(req.params.id, (err, user) => {
+    if (!user) res.status(404).send("User is not found");
+    else user.email = req.body.email;
+    user.name = req.body.name;
+    user.fname = req.body.fname;
+    user.lname = req.body.lname;
+    user.image = req.body.image;
+    user.about = req.body.about;
+    user.igUsername = req.body.igUsername;
+
+    user
+      .save()
+      .then(user => {
+        res.json("User updated!");
+      })
+      .catch(err => {
+        res.status(400).send("Update not possible for User");
+      });
+  });
+});
+
+//Route returns all eML Users
+router.route("/eML/users").get((req, res, next) => {
+  User.find({},(err, user) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(user);
+    }
+  })
+});
+
+//Route should return info specific to user params ** need to test **
+router.route("/eML/user/:id").get((req, res, next) => {
+  User.findById(req.params.id, (err, user) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(user);
+    }
+  });
 });
 
 
@@ -42,5 +88,10 @@ router.get('/profile', isAuth, (req, res, next) => {
 function isAuth(req, res, next) {
   req.isAuthenticated() ? next() : res.status(401).json({ msg: 'Log in first' });
 }
+
+// router.get('/igprofiles') ((req, res, next) => {
+//   InstaProfile.find(req.full_name)
+//     .then((full_name) => res.status(200).json({ full_name }))
+// });
 
 module.exports = router;

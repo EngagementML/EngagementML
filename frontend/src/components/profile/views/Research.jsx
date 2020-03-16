@@ -17,22 +17,36 @@
 */
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
+// import axios from "axios"
 import Card from "../components/Card/Card.jsx";
 
-class Typography extends Component {
+
+// axios.get("http://localhost:5000/profiles").then(res => console.log(res.data));
+
+class Research extends Component {
+
   render() {
+  
     return (
       <div className="content">
         <Container fluid="true">
           <Row>
             <Col md={12}>
               <Card
-                title="Light Bootstrap Table Heading"
-                category="Created using Roboto Font Family"
+                title="EngagementML Research Platform"
+                category="SoMe + Machine Learning = <3"
                 content={
                   <div>
                     <div className="typo-line">
+                      <h4>
+                        <p className="category">Track-them</p>Light Bootstrap
+                        Table Heading
+                      </h4>
+                    </div>
+
+
+
+                    {/* <div className="typo-line">
                       <h1>
                         <p className="category">Header 1</p>Light Bootstrap
                         Table Heading{" "}
@@ -51,18 +65,13 @@ class Typography extends Component {
                         Table Heading
                       </h3>
                     </div>
-                    <div className="typo-line">
-                      <h4>
-                        <p className="category">Header 4</p>Light Bootstrap
-                        Table Heading
-                      </h4>
-                    </div>
+
                     <div className="typo-line">
                       <h5>
                         <p className="category">Header 5</p>Light Bootstrap
                         Table Heading
                       </h5>
-                    </div>
+                    </div> */}
                     <div className="typo-line">
                       <h6>
                         <p className="category">Header 6</p>Light Bootstrap
@@ -143,4 +152,4 @@ class Typography extends Component {
   }
 }
 
-export default Typography;
+export default Research;

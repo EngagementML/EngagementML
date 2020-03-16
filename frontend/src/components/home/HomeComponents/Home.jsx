@@ -1,23 +1,9 @@
 import React, { Component } from "react";
-// import { Carousel } from "react-bootstrap";
 import logo from '../../../images/engagementML.png'
 import { Link } from 'react-router-dom'
-// import { Link, animateScroll as scroll } from "react-scroll";
 
-// const Scroll    = require('react-scroll');
-// const Link       = Scroll.Link;
-// const DirectLink = Scroll.DirectLink;
-// const Element    = Scroll.Element;
-// const Events     = Scroll.Events;
-// const scroll     = Scroll.animateScroll;
-// const scrollSpy  = Scroll.scrollSpy;
-
-// const durationFn = function(deltaTop) {
-//     return deltaTop;
-// };
   
 class HomeComp extends Component {
-
 
   render() {
     return (
@@ -36,9 +22,8 @@ class HomeComp extends Component {
               </header>
               <p>
                 Welcome to <strong>EngagementML</strong> a machine learning
-                applications developed for social media management strategy.
-                <br />
-                and released for free under the MIT license
+                applications developed for social media management strategy and
+                released under the MIT license.
               </p>
               <footer>
                 <a
@@ -64,7 +49,7 @@ class HomeComp extends Component {
               <p>
                 This application lets its user analyze the data from the last 12
                 IG posts and runs our complex machine learning algorythm using
-                linear regression to predict the future engagement rate.
+                regression analysis to predict the future engagement rate.
               </p>
             </div>
             <a
@@ -86,8 +71,9 @@ class HomeComp extends Component {
                 <h2>How can EngagementML help you?</h2>
               </header>
               <p>
-                We can help you by the power of prediction and reccomendation from your top competitors or infuencers in your industry and excel in their content and engagement strategy.
-                your account.
+                We can help you by the power of predicting and reccomending
+                strategies based on your top competitors or infuencers in your
+                industry. Excel in your content and engagement strategy!
               </p>
             </div>
             <a
@@ -108,51 +94,82 @@ class HomeComp extends Component {
               <header>
                 <h2>Our Case Studies</h2>
                 <p>
-                  Read some of our case social media studies with EngagementML
+                  Track and follow your competitors and infuencers with
+                  EngagementML
                 </p>
               </header>
               {/* Gallery  */}
               <div className="gallery">
                 <article className="from-left">
-                  <a href="/" className="image fit">
+                  <a
+                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/78964845_582853779208367_1558803722329391104_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=MaFcSJEOyz8AX-Ck7bI&oh=0206e796d9fcca04c441ffba6be22aa3&oe=5EA47B7C"
+                    className="image fit"
+                  >
                     <img
-                      src="images/image12.jpg"
-                      title="The Anonymous Red"
+                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/78964845_582853779208367_1558803722329391104_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=MaFcSJEOyz8AX-Ck7bI&oh=0206e796d9fcca04c441ffba6be22aa3&oe=5EA47B7C"
+                      title="Drake"
                       alt=""
                     />
                   </a>
                 </article>
                 <article className="from-right">
-                  <a href="images/fulls/02.jpg" className="image fit">
+                  <a
+                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/71594249_1125833014288751_8012044229767331840_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=5Y-RG_D12YMAX92Inoy&oh=7568e195b25d372e12db1c7542063d03&oe=5EA20F3A"
+                    className="image fit"
+                  >
                     <img
-                      src="images/thumbs/02.jpg"
-                      title="Airchitecture II"
+                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/71594249_1125833014288751_8012044229767331840_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=5Y-RG_D12YMAX92Inoy&oh=7568e195b25d372e12db1c7542063d03&oe=5EA20F3A"
+                      title="Jennifer Aniston"
                       alt=""
                     />
                   </a>
                 </article>
                 <article className="from-left">
-                  <a href="images/fulls/03.jpg" className="image fit">
-                    <img src="images/thumbs/03.jpg" title="Air Lounge" alt="" />
-                  </a>
-                </article>
-                <article className="from-right">
-                  <a href="images/fulls/04.jpg" className="image fit">
-                    <img src="images/thumbs/04.jpg" title="Carry on" alt="" />
-                  </a>
-                </article>
-                <article className="from-left">
-                  <a href="images/fulls/05.jpg" className="image fit">
+                  <a
+                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/87485911_2595250347427294_7578127957344911360_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=dX6me_iuGlAAX-EOeE3&oh=f849a55d014fe72a797b47e64d244192&oe=5EA3CDEF"
+                    className="image fit"
+                  >
                     <img
-                      src="images/thumbs/05.jpg"
-                      title="The sparkling shell"
+                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/87485911_2595250347427294_7578127957344911360_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=dX6me_iuGlAAX-EOeE3&oh=f849a55d014fe72a797b47e64d244192&oe=5EA3CDEF"
+                      title="Shakira"
                       alt=""
                     />
                   </a>
                 </article>
                 <article className="from-right">
-                  <a href="/src/images/image 12.jpg" className="image fit">
-                    <img src="/images/image 12.jpg" title="Bent IX" alt="" />
+                  <a
+                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/71718204_448894825985782_2989796854381674496_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=6hPWKuGMvGwAX-HkJOy&oh=55da1033e98cce0bb1a3a8912a7a2865&oe=5E9F2CA9"
+                    className="image fit"
+                  >
+                    <img
+                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/71718204_448894825985782_2989796854381674496_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=6hPWKuGMvGwAX-HkJOy&oh=55da1033e98cce0bb1a3a8912a7a2865&oe=5E9F2CA9"
+                      title="Billie Eilish"
+                      alt=""
+                    />
+                  </a>
+                </article>
+                <article className="from-left">
+                  <a
+                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/72873456_425339975028135_3038321055589466112_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=MKkZivG9pn8AX-XN7_P&oh=a0e437709b7e20de627957a616131007&oe=5E9C9FA3"
+                    className="image fit"
+                  >
+                    <img
+                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/72873456_425339975028135_3038321055589466112_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=MKkZivG9pn8AX-XN7_P&oh=a0e437709b7e20de627957a616131007&oe=5E9C9FA3"
+                      title="Priyanka Chopra"
+                      alt=""
+                    />
+                  </a>
+                </article>
+                <article className="from-right">
+                  <a
+                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/60069326_2844010522491121_8257963186574065664_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=tzw6nxWj6JIAX_uKbbu&oh=df8754150a8b8a54b71d1984dee08085&oe=5EA45B85"
+                    className="image fit"
+                  >
+                    <img
+                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/60069326_2844010522491121_8257963186574065664_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=tzw6nxWj6JIAX_uKbbu&oh=df8754150a8b8a54b71d1984dee08085&oe=5EA45B85"
+                      title="James Rodriguez"
+                      alt=""
+                    />
                   </a>
                 </article>
               </div>
@@ -164,7 +181,8 @@ class HomeComp extends Component {
               <header>
                 <h2>Questions / Comments</h2>
                 <p>
-                  Interested in learning more about EngagementML or have a questions for us? Drop us a line!
+                  Interested in learning more about EngagementML or have a
+                  questions for us? Drop us a line!
                 </p>
               </header>
               <div className="box">
@@ -195,214 +213,6 @@ class HomeComp extends Component {
             </div>
           </section>
         </div>
-
-        {/* <Carousel>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://source.unsplash.com/random/1600x800?instagram"
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h2>GucciPlate</h2>
-              <p>We don't play with avocados, we eat them</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://source.unsplash.com/random/1600x800?facebook"
-              alt="Third slide"
-            />
-
-            <Carousel.Caption>
-              <h2>GucciPlate</h2>
-              <p> And they are delicious</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://source.unsplash.com/random/1600x800?computer"
-              alt="Third slide"
-            />
-
-            <Carousel.Caption>
-              <h2>GucciPlate</h2>
-              <p>That's now a spanish avocado :)</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-        <div className="container">
-          <div
-            className="row featurette"
-            style={{ paddingBottom: "50px", paddingTop: "40px" }}
-            id="howTo"
-          >
-            <div
-              className="col-md-7"
-              style={{ paddingTop: "40px", paddingBottom: "40px" }}
-            >
-              <br />
-              <h2 className="featurette-heading">
-                What is <span className="text-muted">GucciPlate?</span>
-              </h2>
-              <p className="lead">
-                Very simple! It is a react bootstraped with bunch of gumbo, love
-                and a few other spices.
-              </p>
-              <a href="/#top">
-                <button className="btn btn-success center">Learn More</button>
-              </a>
-              <br />
-            </div>
-            <div
-              className="col-md-5"
-              style={{ paddingTop: "40px", paddingBottom: "40px" }}
-            >
-              <img
-                className="featurette-image img-fluid mx-auto"
-                src="https://source.unsplash.com/random/1600x800?learning"
-                alt="Avocado"
-              />
-            </div>
-          </div>
-          <hr
-            className="featurette-divider"
-            style={{ paddingTop: "40px", paddingBottom: "40px" }}
-          />
-          <div className="container">
-            <img
-              className="featurette-image img-fluid mx-auto"
-              src="https://source.unsplash.com/random/1600x800?modern"
-              alt=""
-            />
-          </div>
-          <br></br>
-          <br></br>
-          <hr
-            className="featurette-divider"
-            style={{ paddingTop: "40px", paddingBottom: "40px" }}
-          />
-          <div className="row props" style={{ paddingBottom: "60px" }}>
-            <div
-              className="col-lg-3"
-              style={{
-                paddingBottom: "40px",
-                paddingTop: "40px",
-                backgroundColor: "#e9ecef",
-                textAlign: "center",
-                alignItems: "center"
-              }}
-            >
-              <img
-                className="rounded-circle"
-                src="https://source.unsplash.com/random/900x900?woman"
-                alt=""
-                width="140"
-                height="140"
-              />
-              <br />
-              <br />
-              <h2>The CEO</h2>
-              <br />
-            </div>
-            <br />
-            <br />
-            <div
-              className="col-lg-3 offset-1"
-              style={{
-                paddingBottom: "40px",
-                paddingTop: "40px",
-                backgroundColor: "#e9ecef",
-                textAlign: "center",
-                alignItems: "center"
-              }}
-            >
-              <img
-                className="rounded-circle"
-                src="https://source.unsplash.com/random/800x800?man"
-                alt=""
-                width="140"
-                height="140"
-              />
-              <br />
-              <br />
-              <h2>The CTO</h2>
-              <br />
-            </div>
-            <br />
-            <br />
-            <div
-              className="col-lg-3 offset-1"
-              style={{
-                paddingBottom: "40px",
-                paddingTop: "40px",
-                backgroundColor: "#e9ecef",
-                textAlign: "center",
-                alignItems: "center"
-              }}
-            >
-              <img
-                className="rounded-circle"
-                src="https://source.unsplash.com/random/800x800?woman"
-                alt=""
-                width="140"
-                height="140"
-              />
-              <br />
-              <br />
-              <h2>The CFO</h2>
-              <br />
-            </div>
-          </div>
-          <hr
-            className="featurette-divider"
-            style={{ paddingTop: "40px", paddingBottom: "40px" }}
-          />
-
-          <Carousel>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="https://source.unsplash.com/random/1600x800?technology"
-                alt="First slide"
-              />
-              <Carousel.Caption>
-                <h2>GucciPlate</h2>
-                <p>We don't play with avocados, we eat them</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="https://source.unsplash.com/random/1600x800?tech"
-                alt="Third slide"
-              />
-
-              <Carousel.Caption>
-                <h2>GucciPlate</h2>
-                <p> And they are delicious</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="https://source.unsplash.com/random/1600x800?computer"
-                alt="Third slide"
-              />
-
-              <Carousel.Caption>
-                <h2>GucciPlate</h2>
-                <p>That's now a spanish avocado :)</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-          <div
-            className="container"
-            style={{ paddingTop: "40px", paddingBottom: "40px" }}
-          ></div>
-        </div> */}
       </React.Fragment>
     );
   }
