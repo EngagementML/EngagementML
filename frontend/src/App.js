@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import NotFound from './components/404/NotFound.js';
+import SignUp2 from './components/auth/SignUp-copy';
 import SignUp from './components/auth/SignUp';
 import LogIn from './components/auth/LogIn';
 import Profile from './components/profile/Profile'
