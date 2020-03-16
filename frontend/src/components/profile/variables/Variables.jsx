@@ -497,7 +497,7 @@ var dataPie = {
   series: [40, 20, 40]
 };
 var legendPie = {
-  names: ["Open", "Bounce", "Unsubscribe"],
+  names: ["Image  ", "Video  ", "IGTV  "],
   types: ["info", "danger", "warning"]
 };
 
@@ -548,8 +548,8 @@ var responsiveSales = [
   ]
 ];
 var legendSales = {
-  names: ["Open", "Click", "Click Second Time"],
-  types: ["info", "danger", "warning"]
+  names: ["Role Model  ", "You - eML  ", "Competitor  "],
+  types: ["info", "warning", "danger"]
 };
 
 // Data for Bar Chart
@@ -594,7 +594,7 @@ var responsiveBar = [
   ]
 ];
 var legendBar = {
-  names: ["Tesla Model S", "BMW 5 Series"],
+  names: ["You - eML  ", "Competitor  "],
   types: ["info", "danger"]
 };
 

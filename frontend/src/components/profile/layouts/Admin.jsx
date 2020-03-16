@@ -29,6 +29,8 @@ import { style } from "../variables/Variables.jsx";
 import routes from "../routes.js";
 
 import image from "../assets/img/sidebar-5.jpg";
+import "font-awesome/css/font-awesome.min.css";
+
 
 class Admin extends Component {
   constructor(props) {

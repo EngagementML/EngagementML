@@ -2258,7 +2258,7 @@ input, select, textarea {
 		url("../src/images/header.jpeg");
 		background-size: cover;
 		background-attachment: fixed, fixed;
-		background-position: top left, bottom center;
+		background-position: bottom center, bottom center;
 		background-repeat: repeat, no-repeat;
 	}
 
@@ -2269,7 +2269,7 @@ input, select, textarea {
 		/* background-size: 256px 256px, cover; */
 		background-size:  cover;
 		background-attachment: fixed, fixed;
-		background-position: top left, center center;
+		background-position: bottom center, center center;
 	}
 
 /* Two */
@@ -2279,7 +2279,7 @@ input, select, textarea {
 		/* background-size: 256px 256px, cover; */
 		background-size:  cover;
 		background-attachment: fixed, fixed;
-		background-position: top left, center center;
+		background-position: bottom center, center center;
 	}
 
 /* Contact */

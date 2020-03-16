@@ -51,6 +51,8 @@ class HomeComp extends Component {
                 IG posts and runs our complex machine learning algorythm using
                 regression analysis to predict the future engagement rate.
               </p>
+              <br />
+              <br />
             </div>
             <a
               as={Link}
@@ -75,6 +77,8 @@ class HomeComp extends Component {
                 strategies based on your top competitors or infuencers in your
                 industry. Excel in your content and engagement strategy!
               </p>
+              <br />
+              <br />
             </div>
             <a
               as={Link}

@@ -119,7 +119,7 @@ class App extends Component {
                 id="basic-nav-dropdown"
                 className="navbar-dropdown-toggler"
                 // aria-controls="#basic-navbar-dropdown"
-                data-toggle="collapse"
+                data-toggle="dropdown"
               >
                 <NavDropdown.Item href="https://github.com/EngagementML">
                   Github
