@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import actions from '../../services/index'
 import logo from "../../images/engagementML.png";
 import IGback from '../../images/igback.jpg'

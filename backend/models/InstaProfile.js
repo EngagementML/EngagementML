@@ -39,6 +39,7 @@ const InstaProfileSchema = new Schema(
         edge_owner_to_timeline_media: Object,
         edge_saved_media: Object,
         edge_media_collections: Object,
+        emlcategory: String,
     }
 );
 

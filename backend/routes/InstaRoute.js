@@ -3,6 +3,7 @@ const InstaPosts    = require('../models/InstaPosts');
 const express = require('express');
 const router = express.Router();
 const InstaScraper = require("../scrapper/scrapInfluencers")
+
 waitForData = async () => {
     let data = await InstaScraper();
    

@@ -28,6 +28,7 @@ router.route("/eML/users/update/:id").post(function(req, res) {
     user.image = req.body.image;
     user.about = req.body.about;
     user.igUsername = req.body.igUsername;
+    user.industry = req.body.industry;
 
     user
       .save()

@@ -19,10 +19,7 @@ import React, { Component } from "react";
 import {
   Container,
   Row,
-  Col,
-  FormGroup,
-  FormLabel,
-  FormControl
+  Col
 } from "react-bootstrap";
 import axios from "axios";
 import actions from "../../../services/index";
@@ -30,6 +27,8 @@ import { Card } from "../components/Card/Card.jsx";
 import { FormInputs } from "../components/FormInputs/FormInputs.jsx";
 import { UserCard } from "../components/UserCard/UserCard.jsx";
 import Button from "../components/CustomButton/CustomButton.jsx";
+
+const industryOptions = ['Food', 'Travel', 'Fashion & Style', 'Photography', 'Lifestyle', 'Design', 'Beauty', 'Sports & Fitness' ]
 
 // import avatar from "../assets/img/faces/face-3.jpg";
 
@@ -43,6 +42,8 @@ class UserProfile extends Component {
     image: "",
     about: ""
   };
+
+  
 
   async componentDidMount() {
     let user = await actions.isLoggedIn();
@@ -60,7 +61,8 @@ class UserProfile extends Component {
           lname: res.data.lname,
           igUsername: res.data.igUsername,
           image: res.data.image,
-          about: res.data.about
+          about: res.data.about,
+          industry: res.data.industry,
         });
       })
       .catch(function(error) {
@@ -68,46 +70,12 @@ class UserProfile extends Component {
       });
   }
 
-  onChangeEmail(e) {
-    this.setState({
-      email: e.target.value
-    });
-  }
 
-  onChangeName(e) {
+  onChange = (e) => {
+    console.log(e.target.name, e.target.value)
     this.setState({
-      name: e.target.value
-    });
-  }
-
-  onChangeFname(e) {
-    this.setState({
-      fname: e.target.value
-    });
-  }
-
-  onChangeLname(e) {
-    this.setState({
-      lname: e.target.value
-    });
-  }
-
-  onChangeIgUsername(e) {
-    this.setState({
-      igUsername: e.target.value
-    });
-  }
-
-  // onChangeImage(e) {
-  //   this.setState({
-  //     image: e.target.value
-  //   });
-  // }
-
-  onChangeAbout(e) {
-    this.setState({
-      about: e.target.value
-    });
+      [e.target.name] : e.target.value
+    })
   }
 
   onSubmit(e) {
@@ -120,7 +88,8 @@ class UserProfile extends Component {
       lname: this.state.lname,
       igUsername: this.state.igUsername,
       image: this.state.image,
-      about: this.state.about
+      about: this.state.about,
+      industry: this.state.industry
     };
     console.log(obj);
     axios
@@ -169,14 +138,17 @@ class UserProfile extends Component {
                           bsclass: "form-control",
                           placeholder: "Username",
                           defaultValue: this.state.igUsername,
-                          
+                          onChange: this.onChange,
+                          name: "igUsername"
                         },
                         {
                           label: "Nickname",
                           type: "text",
                           bsclass: "form-control",
                           placeholder: "eML #1 Fan",
-                          defaultValue: this.state.name
+                          defaultValue: this.state.name,
+                          onChange: this.onChange,
+                          name: "name"
                         }
                       ]}
                     />
@@ -188,15 +160,18 @@ class UserProfile extends Component {
                           type: "text",
                           bsclass: "form-control",
                           placeholder: "First name",
-                          defaultValue: this.state.fname
+                          defaultValue: this.state.fname,
+                          onChange: this.onChange,
+                          name: "fname"
                         },
                         {
                           label: "Last name",
                           type: "text",
                           bsclass: "form-control",
                           placeholder: "Last name",
-                          defaultValue: this.state.lname
-
+                          defaultValue: this.state.lname,
+                          onChange: this.onChange,
+                          name: "lname"
                         }
                       ]}
                     />
@@ -217,10 +192,11 @@ class UserProfile extends Component {
                       properties={[
                         {
                           label: "Industry",
-                          type: "text",
+                          type: "select",
+                          options: industryOptions,
                           bsclass: "form-control",
                           placeholder: "Industry",
-                          defaultValue: "Marketing"
+                          defaultValue: this.state.industry
                         },
                         {
                           label: "Country",
@@ -240,16 +216,22 @@ class UserProfile extends Component {
 
                     <Row>
                       <Col md={12}>
-                        <FormGroup controlId="formControlsTextarea">
-                          <FormLabel>About Me</FormLabel>
-                          <FormControl
-                            rows="5"
-                            componentclass="textarea"
-                            bsclass="form-control"
-                            placeholder="Here can be your description"
-                            defaultValue={this.state.about}
+                          <FormInputs
+                            ncols={["col-md-12"]}
+                            properties={[
+                              {
+                                label: "About me",
+                                type: "textarea",
+                                rows: 5,
+                                bsclass: "form-control",
+                                placeholder: "Tell us about yourself",
+                                defaultValue: this.state.about,
+                                onChange: this.onChange,
+                                name: "about"
+                              }
+                            ]}
                           />
-                        </FormGroup>
+                        
                       </Col>
                     </Row>
                     <Button bsstyle="info" pullRight fill type="submit">
@@ -264,7 +246,7 @@ class UserProfile extends Component {
               <UserCard
                 bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
                 avatar={
-                  this.state.image == ""
+                  this.state.image === ""
                     ? "https://i.imgur.com/iMovaBD.png"
                     : this.state.image
                 }

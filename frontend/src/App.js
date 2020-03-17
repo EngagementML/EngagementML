@@ -28,15 +28,15 @@ class App extends Component {
     console.log('Current User >> ',user)
 
     axios
-      // .get("http://localhost:5000/profiles/")
-      .get("https://engagementml.herokuapp.com/profiles/")
+      .get("http://localhost:5000/profiles/")
+      // .get("https://engagementml.herokuapp.com/profiles/")
       .then(res => {
         // console.log(res, res.data);
         this.setState({
           profiles: res.data
         });
       })
-      .catch(function(error) {
+      .catch((error) => {
         console.log(error);
       });
   
@@ -52,7 +52,8 @@ class App extends Component {
       createdAt: null,
       updatedAt: null,
       _id: null
-    }) //FIX  - we need to figure a way to upon logout -> push to home page **
+    })
+    //FIX  - we need to figure a way to upon logout -> push to home page **
   }
 
   render(){
