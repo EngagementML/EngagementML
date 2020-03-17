@@ -1,10 +1,19 @@
+require('dotenv').config();
 const InstaProfile  = require('../models/InstaProfile');
 const InstaPosts    = require('../models/InstaPosts');
 const express = require('express');
 const router = express.Router();
-const InstaScraper = require("../scrapper/scrapInfluencers")
+const InstaScraper = require("../scrapper/scrapInfluencers");
+const mongoose = require('mongoose');
 
 waitForData = async () => {
+    const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ironplate'
+    console.log('Connecting DB to ', MONGODB_URI)
+
+mongoose
+  .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then((x) => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
+  .catch((err) => console.error('Error connecting to mongo', err));
     let data = await InstaScraper();
    
     data.forEach(profile => {
@@ -23,7 +32,10 @@ waitForData = async () => {
                 {...media}, 
                 {upsert:true}
                 )
-                .then(res => console.log(res))
+                .then(res => {
+                    console.log(res);
+                    mongoose.disconnect();
+                })
                 .catch(err => console.log("Cat",err))
         })
     })
