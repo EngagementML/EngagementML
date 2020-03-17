@@ -16,7 +16,7 @@ mongoose
   .catch((err) => console.error('Error connecting to mongo', err));
     let data = await InstaScraper();
    
-    data.forEach(profile => {
+    await data.forEach(profile => {
         console.log(profile.user.id)
         InstaProfile.findOneAndUpdate(
             {id: profile.user.id}, 
@@ -34,11 +34,11 @@ mongoose
                 )
                 .then(res => {
                     console.log(res);
-                    mongoose.disconnect();
                 })
                 .catch(err => console.log("Cat",err))
         })
     })
+    mongoose.disconnect();
 }
 
 module.exports = waitForData
