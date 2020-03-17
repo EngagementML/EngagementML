@@ -27,9 +27,7 @@ class App extends Component {
     this.setState({...user.data})
     console.log('Current User >> ',user)
 
-    axios
-      // .get("http://localhost:5000/profiles/")
-      .get("https://engagementml.herokuapp.com/profiles/")
+    axios.get("https://engagementml.herokuapp.com/profiles/")
       .then(res => {
         // console.log(res, res.data);
         this.setState({

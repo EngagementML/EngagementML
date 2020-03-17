@@ -68,31 +68,31 @@ class UserProfile extends Component {
       });
   }
 
-  onChangeEmail(e) {
+  onChangeEmail= (e) =>  {
     this.setState({
       email: e.target.value
     });
   }
 
-  onChangeName(e) {
+  onChangeName= (e) =>  {
     this.setState({
       name: e.target.value
     });
   }
 
-  onChangeFname(e) {
+  onChangeFname= (e) =>  {
     this.setState({
       fname: e.target.value
     });
   }
 
-  onChangeLname(e) {
+  onChangeLname= (e) =>  {
     this.setState({
       lname: e.target.value
     });
   }
 
-  onChangeIgUsername(e) {
+  onChangeIgUsername= (e) =>  {
     this.setState({
       igUsername: e.target.value
     });
@@ -104,13 +104,13 @@ class UserProfile extends Component {
   //   });
   // }
 
-  onChangeAbout(e) {
+  onChangeAbout = (e) => {
     this.setState({
       about: e.target.value
     });
   }
 
-  onSubmit(e) {
+  onSubmit= (e) =>  {
     e.preventDefault();
     console.log('submit triggered....')
     const obj = {
@@ -122,7 +122,7 @@ class UserProfile extends Component {
       image: this.state.image,
       about: this.state.about
     };
-    console.log(obj);
+    console.log(obj, this);
     axios
       .post("http://localhost:5000/eML/users/update/" + this.state._id, obj)
       .then(res => console.log(res.data));
