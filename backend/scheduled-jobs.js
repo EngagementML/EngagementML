@@ -1,4 +1,4 @@
-const waitForData = require('./backend/routes/InstaRoute')
+const waitForData = require('./routes/InstaRoute')
 
 function sayHello() {
     console.log('Hello');

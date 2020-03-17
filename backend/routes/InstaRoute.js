@@ -15,7 +15,7 @@ waitForData = async () => {
             {upsert:true}
             )
             .then(res => console.log(res))
-            .catch(err => console.log(err))
+            .catch(err => console.log("Panda",err))
         profile.medias.forEach(media => {
             console.log(media, '??????', media.media_id)
             InstaPosts.findOneAndUpdate(
@@ -24,7 +24,7 @@ waitForData = async () => {
                 {upsert:true}
                 )
                 .then(res => console.log(res))
-                .catch(err => console.log(err))
+                .catch(err => console.log("Cat",err))
         })
     })
 }
