@@ -82,10 +82,12 @@ console.log('client', client)
 
 // waitForData() is the function that scrappes and pulls the Top 50 Influencer IG List into the DB
 // ** dropped the sraper function inside an interval of sligtly less than 24 hrs ** GRP
-setInterval(
-  function(){
-    waitForData();
-  }, 84000000 )
+// setInterval(
+//   function(){
+//     waitForData();
+//   }, 84000000 )
+
+// waitForData()
 
 
 

@@ -10,6 +10,7 @@ const userSchema = new Schema(
     igUsername: String,
     image: String,
     about: String,
+    industry: {type: String, enum: ['Food', 'Travel', 'Fashion & Style', 'Photography', 'Lifestyle', 'Design', 'Beauty', 'Sports & Fitness' ]}	
   },
   {
     timestamps: true,
