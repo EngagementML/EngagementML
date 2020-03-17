@@ -84,6 +84,7 @@ instagramScraper = async () => {
     // "kyliejenner",
     // "selenagomez",
     // "leomessi",
+    "marko",
     // "billieeilish",
     // "kendalljenner",
     // "arianagrande",
