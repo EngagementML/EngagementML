@@ -13,7 +13,8 @@ const waitForData = require('./routes/InstaRoute')
 const InstaProfile = require('./models/InstaProfile')
 const InstaPost = require("./models/InstaPosts");
 const FollowList = require('./models/FollowList')
-// require("./nodepy");
+require("./nodepy");
+
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ironplate'
 console.log('Connecting DB to ', MONGODB_URI)

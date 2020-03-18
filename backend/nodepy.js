@@ -5,9 +5,10 @@ let pyshell = new PythonShell("my_script.py");
 pyshell.send("hello");
 pyshell.on("message", function(message) {
   // received a message sent from the Python script (a simple "print" statement)
-  console.log(message, '???????'); 
+  console.log(message, '!!!!'); 
   console.log(typeof(message)); 
 });
+
 // end the input stream and allow the process to exit
 pyshell.end(function(err, code, signal) {
   if (err) throw err;
