@@ -27,7 +27,9 @@ class UserProfile extends Component {
     igUsername: "",
     image: "",
     about: "",
-    industry: ""
+    industry: "",
+    // role: [],
+    // competitor:[],
   };
 
   
@@ -50,6 +52,8 @@ class UserProfile extends Component {
           image: res.data.image,
           about: res.data.about,
           industry: res.data.industry,
+          // role: res.data.role,
+          // competitor: res.data.competitor,
         });
       })
       .catch(function(error) {
@@ -76,7 +80,9 @@ class UserProfile extends Component {
       igUsername: this.state.igUsername,
       image: this.state.image,
       about: this.state.about,
-      industry: this.state.industry
+      industry: this.state.industry,
+      // role: this.state.role,
+      // competitor: this.state.competitor,
     };
     console.log(obj, this);
     axios
@@ -159,37 +165,26 @@ class UserProfile extends Component {
                       ncols={["col-md-6", "col-md-6"]}
                       properties={[
                         {
-                          label: "Country",
+                          label: "Competitor",
                           type: "text",
                           bsclass: "form-control",
                           placeholder: "Country",
-                          // defaultValue: this.state.fname,
+                          // defaultValue: this.state.competitor,
                           // onChange: this.onChange,
-                          name: "country"
+                          name: "coompetitor"
                         },
                         {
                           label: "Role Model",
                           type: "text",
                           bsclass: "form-control",
                           placeholder: "Role-Model",
-                          // defaultValue: this.state.lname,
+                          // defaultValue: this.state.role,
                           // onChange: this.onChange,
                           name: "role"
                         }
                       ]}
                     />
-                    {/* <FormInputs
-                      ncols={["col-md-12"]}
-                      properties={[
-                        {
-                          label: "Adress",
-                          type: "text",
-                          bsclass: "form-control",
-                          placeholder: "Home Adress",
-                          defaultValue: "Miami, Florida"
-                        }
-                      ]}
-                    /> */}
+                    
                     <Form.Group name="industry">
                       <Form.Label>Industry</Form.Label>
                       <Form.Control
@@ -208,33 +203,6 @@ class UserProfile extends Component {
                         <option>Travel</option>
                       </Form.Control>
                     </Form.Group>
-                    {/* <FormInputs
-                      ncols={["col-md-4", "col-md-4", "col-md-4"]}
-                      properties={[
-                        {
-                          label: "Industry",
-                          type: "select",
-                          option: industryOptions,
-                          bsclass: "form-control",
-                          placeholder: "Industry",
-                          defaultValue: this.state.industry
-                        },
-                        {
-                          label: "Country",
-                          type: "text",
-                          bsclass: "form-control",
-                          placeholder: "Country",
-                          defaultValue: "US"
-                        },
-                        {
-                          label: "Postal Code",
-                          type: "number",
-                          bsclass: "form-control",
-                          placeholder: "ZIP Code"
-                        }
-                      ]}
-                    /> */}
-
                     <Row>
                       <Col md={12}>
                         <FormInputs
@@ -254,7 +222,7 @@ class UserProfile extends Component {
                         />
                       </Col>
                     </Row>
-                    <Button bsstyle="info" pullRight fill type="submit">
+                    <Button className="success pullRight fill" type="submit">
                       Update Profile
                     </Button>
                     <div className="clearfix" />

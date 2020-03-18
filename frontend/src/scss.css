@@ -13,8 +13,13 @@
 
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
+
+
  */
-/*      light colors         */
+
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+
+ /*      light colors         */
 @keyframes spin {
   from {
     transform: rotate(0deg); }
