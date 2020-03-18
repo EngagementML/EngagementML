@@ -38,7 +38,7 @@ mongoose
                 .catch(err => console.log("Cat",err))
         })
     })
-    mongoose.disconnect();
+    // mongoose.disconnect();
 }
 
 module.exports = waitForData
