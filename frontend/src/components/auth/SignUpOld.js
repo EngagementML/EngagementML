@@ -17,6 +17,7 @@ class SignUp extends Component {
             }).catch(({ response }) => console.error(response.data));
     }
     render() {
+      
         return (
           <Fragment>
             <div className="container h-100">

@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import actions from '../../services/index'
-import logo from '../../images/engagementMLb.png'
+import logo from "../../images/engagementML.png";
 import { Button } from 'react-bootstrap'
+import IGbackBlue from '../../images/backgroundBlue.png'
 // import { Link } from 'react-router-dom';
 import { FaKey, FaUser } from "react-icons/fa";
 
@@ -24,17 +25,18 @@ class LogIn extends Component {
   
 
   render() {
+
     return (
-      <Fragment>
-        <div className="container h-100">
+      <div style={{backgroundImage:`url(${IGbackBlue})`, backgroundRepeat:"no-repeat", backgroundSize:"cover", height:"100vh"}}>
+      <div className="container h-100">
           <div className="d-flex justify-content-center h-100">
-            <div className="user_card">
+            <div className="d-flex flex-column justify-content-center">
               <div className="d-flex justify-content-center">
                 <div className="brand_logo_container">
                   <img src={logo} width='100%' className="brand_logo" alt="Logo" />
                 </div>
               </div>
-              <div className="d-flex justify-content-center form_container">
+              <div className="d-flex justify-content-center form_container" id="signUpCopy">
                 <form onSubmit={this.handleSubmit}>
                   <div className="input-group mb-3">
                     <div className="input-group-append">
@@ -43,6 +45,8 @@ class LogIn extends Component {
                       </span>
                     </div>
                     <input
+                      placeholder="Email here "
+                      style={{border: "0",outline: "0", background: "transparent", borderBottom: '0.15rem solid #e5e6e7', borderRadius:"0"}}
                       name="email"
                       type="email"
                       onChange={this.handleChange}
@@ -55,13 +59,15 @@ class LogIn extends Component {
                       </span>
                     </div>
                     <input
+                      placeholder="Password here "
+                      style={{border: "0",outline: "0", background: "transparent", borderBottom: '0.15rem solid #e5e6e7', borderRadius:"0"}}
                       name="password"
                       type="password"
                       onChange={this.handleChange}
                     />
                   </div>
-                  <div className="form-group">
-                    <div className="custom-control custom-checkbox">
+                  <div className="form-group mt-4">
+                    <div className="custom-control custom-checkbox" style={{border: "0",outline: "0", background: "transparent", borderBottom: '0.15rem solid #e5e6e7', borderRadius:"0",fontFamily: `Courier New, Courier, monospace`,color: 'whitesmoke', opacity: '0.5' }}>
                       <input
                         type="checkbox"
                         className="custom-control-input"
@@ -75,21 +81,18 @@ class LogIn extends Component {
                       </label>
                     </div>
                   </div>
-                  <div className="d-flex justify-content-center mt-3 login_container">
+                  <div className="d-flex justify-content-center mt-5 login_container">
                     
-                      <Button
-                      type="submit"
-                      value="Log In"
-                    >{" "}
-                      Log In{" "}
+                      <Button type="submit" value="Log In" style={{borderColor:'#e5e6e7',color:"#e5e6e7"}}>
+                      Log In
                     </Button>
                   </div>
                 </form>
               </div>
               <div className="mt-4">
-                <div className="d-flex justify-content-center links">
+                <div className="d-flex justify-content-center links" style={{color:"whitesmoke",opacity:"0.5"}}>
                   Don't have an account?{" "}
-                  <a href="/sign-up" className="ml-2">
+                  <a href="/sign-up" className="ml-2" style={{textDecoration:"underline"}}>
                     Sign Up
                   </a>
                 </div>
@@ -100,18 +103,7 @@ class LogIn extends Component {
             </div>
           </div>
         </div>
-
-        {/* <h2>LogIn</h2>
-            <form onSubmit={this.handleSubmit}>
-              <input name="email" type="email" onChange={this.handleChange} />
-              <input
-                name="password"
-                type="password"
-                onChange={this.handleChange}
-              />
-              <input type="submit" value="Log In" />
-            </form> */}
-      </Fragment>
+      </div>
     );
   }
 }
