@@ -5,7 +5,7 @@ import IGback from '../../images/igback.jpg'
 // frontend\src\images\instagram-background.jpg
 import { Button } from "react-bootstrap";
 import { FaKey, FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class SignUp extends Component {
     state = {
