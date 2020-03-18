@@ -3,8 +3,9 @@ let ig = require("instagram-scraping");
 instagramScraper = async () => {
   let influencers = [
 
+    "iampecu",
     //Photography Category
-    // "benlowy",
+    "benlowy",
     // "muradosmann",
     // "yamashitaphoto",
     // "stacykranitz", 
@@ -104,7 +105,7 @@ instagramScraper = async () => {
     // "robertdowneyjr",
     // "iamcardib",
     // "virat.kohli",
-    "lelepons",
+    // "lelepons",
     // "kourtneykardash",
     // "jlo",
     // "narendramodi",
