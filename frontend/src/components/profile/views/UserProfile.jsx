@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import {
   Container,
   Row,
-  Col
+  Col,
+  Form
 } from "react-bootstrap";
 import axios from "axios";
 import actions from "../../../services/index";
@@ -23,7 +24,8 @@ class UserProfile extends Component {
     lname: "",
     igUsername: "",
     image: "",
-    about: ""
+    about: "",
+    industry: ""
   };
 
   
@@ -87,14 +89,7 @@ class UserProfile extends Component {
 
   render() {
     console.log(this);
-    // console.log(this.props, this.state);
-    // this.onChangeEmail = this.onChangeEmail.bind(this);
-    // this.onChangeName = this.onChangeName.bind(this);
-    // this.onChangeFname = this.onChangeFname.bind(this);
-    // this.onChangeLname = this.onChangeLname.bind(this);
-    // this.onChangeIgUsername = this.onChangeIgUsername.bind(this);
-    // // this.onChangeImage = this.onChangeImage.bind(this);
-    // this.onChangeAbout = this.onChangeAbout.bind(this);
+    
     return (
       <div className="content">
         <Container fluid="true">
@@ -159,6 +154,29 @@ class UserProfile extends Component {
                       ]}
                     />
                     <FormInputs
+                      ncols={["col-md-6", "col-md-6"]}
+                      properties={[
+                        {
+                          label: "Country",
+                          type: "text",
+                          bsclass: "form-control",
+                          placeholder: "Country",
+                          // defaultValue: this.state.fname,
+                          // onChange: this.onChange,
+                          name: "country"
+                        },
+                        {
+                          label: "Role Model",
+                          type: "text",
+                          bsclass: "form-control",
+                          placeholder: "Role-Model",
+                          // defaultValue: this.state.lname,
+                          // onChange: this.onChange,
+                          name: "role"
+                        }
+                      ]}
+                    />
+                    {/* <FormInputs
                       ncols={["col-md-12"]}
                       properties={[
                         {
@@ -169,14 +187,32 @@ class UserProfile extends Component {
                           defaultValue: "Miami, Florida"
                         }
                       ]}
-                    />
-                    <FormInputs
+                    /> */}
+                    <Form.Group name="industry">
+                      <Form.Label>Industry</Form.Label>
+                      <Form.Control
+                        as="select"
+                        value={this.state.industry}
+                        onChange={this.onChange}
+                        name="industry"
+                      >
+                        <option>Beauty</option>
+                        <option>Design</option>
+                        <option>Fashion & Style</option>
+                        <option>Food</option>
+                        <option>Lifestyle</option>
+                        <option>Photography</option>
+                        <option>Sports & Fitness</option>
+                        <option>Travel</option>
+                      </Form.Control>
+                    </Form.Group>
+                    {/* <FormInputs
                       ncols={["col-md-4", "col-md-4", "col-md-4"]}
                       properties={[
                         {
                           label: "Industry",
                           type: "select",
-                          options: industryOptions,
+                          option: industryOptions,
                           bsclass: "form-control",
                           placeholder: "Industry",
                           defaultValue: this.state.industry
@@ -195,26 +231,25 @@ class UserProfile extends Component {
                           placeholder: "ZIP Code"
                         }
                       ]}
-                    />
+                    /> */}
 
                     <Row>
                       <Col md={12}>
-                          <FormInputs
-                            ncols={["col-md-12"]}
-                            properties={[
-                              {
-                                label: "About me",
-                                type: "textarea",
-                                rows: 5,
-                                bsclass: "form-control",
-                                placeholder: "Tell us about yourself",
-                                defaultValue: this.state.about,
-                                onChange: this.onChange,
-                                name: "about"
-                              }
-                            ]}
-                          />
-                        
+                        <FormInputs
+                          ncols={["col-md-12"]}
+                          properties={[
+                            {
+                              label: "About me",
+                              type: "textarea",
+                              rows: 5,
+                              bsclass: "form-control",
+                              placeholder: "Tell us about yourself",
+                              defaultValue: this.state.about,
+                              onChange: this.onChange,
+                              name: "about"
+                            }
+                          ]}
+                        />
                       </Col>
                     </Row>
                     <Button bsstyle="info" pullRight fill type="submit">
@@ -233,17 +268,9 @@ class UserProfile extends Component {
                     ? "https://i.imgur.com/iMovaBD.png"
                     : this.state.image
                 }
-                name={this.state.name}
-                userName={this.state.igUsername}
-                description={
-                  <span>
-                    "Lamborghini Mercy
-                    <br />
-                    Your chick she so thirsty
-                    <br />
-                    I'm in that two seat Lambo"
-                  </span>
-                }
+                name={this.state.igUsername}
+                userName={this.state.industry}
+                description={this.state.about}
                 socials={
                   <div>
                     <Button simple>
