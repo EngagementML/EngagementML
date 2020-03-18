@@ -41,7 +41,7 @@ const dashboardRoutes = [
   },
   {
     path: "/table",
-    name: "Recommendations",
+    name: "Hashtags",
     icon: "pe-7s-star",
     component: TableList,
     layout: "/profile/admin"

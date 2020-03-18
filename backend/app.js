@@ -13,7 +13,7 @@ const waitForData = require('./routes/InstaRoute')
 const InstaProfile = require('./models/InstaProfile')
 const InstaPost = require("./models/InstaPosts");
 const FollowList = require('./models/FollowList')
-require("./nodepy");
+// require("./nodepy");
 
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ironplate'
@@ -79,11 +79,6 @@ console.log('client', client)
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
 // })
-
-
-// waitForData()
-
-
 
 //Route to return all available profiles 
 app.route("/profiles").get((req, res, next) => {

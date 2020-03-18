@@ -159,7 +159,7 @@ class Dashboard extends Component {
 
             <Col md={6}>
               <Card
-                title="eML Recommendations"
+                title="eML Hashtags"
                 category="Fix to Optimize your Strategy"
                 stats="Updated 3 minutes ago"
                 statsIcon="fa fa-history"

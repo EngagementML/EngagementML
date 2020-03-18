@@ -1,3 +1,22 @@
+// import { useEffect, useState } from 'react';
+
+// // Axios
+
+// const [currentHashtags, setHashtags] = useState([]);
+
+// useEffect(() => {
+
+//   // The following works
+//   // https://api.ritekit.com/v1/stats/multiple-hashtags?tags=php&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9
+//   // https://api.ritekit.com/v1/stats/hashtag-suggestions?text=seo&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9
+//   const HashtagCall = `https://api.ritekit.com/v1/stats/hashtag-suggestions?text=seo&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
+//   axios.get(HashtagCall).then(result => {
+//       console.log("Full Result", result.data)
+//       setHashtags([...currentHashtags, result.data])
+//   })
+//       .catch(() => console.log("Can’t access " + HashtagCall))
+// }, []);
+
 var defaultWidth =
   window.screen.width > 768
     ? (window.screen.width * 1) / 3
@@ -246,8 +265,7 @@ var style = {
 //
 
 // const thArray = ["ID", "Name", "Salary", "Country", "City"];
-const thArray = ["Hashtag", "Exposure", "Images", "Links", "Mentions"];
-
+const thArray = ["Hashtag", "Name", "Salary", "Country", "City"];
 let tdArray = [
   ["1", "Chaba Rice", "$36,738", "Niger", "Oud-Turnhout"],
   ["2", "Minerva Hooper", "$23,789", "Curaçao", "Sinaai-Waas"],
@@ -256,7 +274,6 @@ let tdArray = [
   ["5", "Doris Greene", "$63,542", "Malawi", "Feldkirchen in Kärnten"],
   ["6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
 ];
-
 
 //
 // //
@@ -580,7 +597,7 @@ var legendBar = {
   types: ["info", "danger"]
 };
 
-export {
+module.exports = {
   style, // For notifications (App container and Notifications view)
   thArray,
   tdArray, // For tables (TableList view)

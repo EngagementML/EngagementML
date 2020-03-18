@@ -1,36 +1,34 @@
-/*!
-
-=========================================================
-* Light Bootstrap Dashboard React - v1.3.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React, { Component } from "react";
 import { Container, Row, Col, Table } from "react-bootstrap";
-
+import axios from "axios";
 import Card from "../components/Card/Card.jsx";
-import { thArray, tdArray } from "../variables/Variables.jsx";
+import { thArray } from "../variables/Variables.jsx";
 
 class TableList extends Component {
+
+state = {tag:"seo"}
+  
+componentDidMount(){
+  
+  const HashtagCall = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/stats/hashtag-suggestions?text=${this.state.tag}&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
+    axios.get(HashtagCall).then(result => {
+    console.log("Full Result", result)
+    this.setState({ hashtagResult: result.data })
+  })
+    .catch((err) => console.log("Can’t access " + HashtagCall, err))
+}
+
   render() {
+    if (this.state.hashtagResult !== undefined ) {
+    console.log("Current State at Render", this.state)
     return (
       <div className="content">
         <Container fluid="true">
           <Row>
             <Col md={12}>
               <Card
-                title="Striped Table with Hover"
-                category="Here is a subtitle for this table"
+                title="Industry Hashtags"
+                category="Get creative"
                 ctTableFullWidth
                 ctTableResponsive
                 content={
@@ -43,56 +41,38 @@ class TableList extends Component {
                       </tr>
                     </thead>
                     <tbody>
-                      {tdArray.map((prop, key) => {
+
+                      {this.state.hashtagResult.data.map((currentTag) => {
                         return (
-                          <tr key={key}>
-                            {prop.map((prop, key) => {
-                              return <td key={key}>{prop}</td>;
-                            })}
+                          <tr>
+                            <td>{"#"+currentTag.hashtag}</td>
+                            <td>{currentTag.exposure}</td>
+                            <td>{currentTag.images}</td>
+                            <td>{currentTag.links}</td>
+                            <td>{currentTag.mentions}</td>
                           </tr>
-                        );
-                      })}
+                        )
+                        })
+                      }
+
                     </tbody>
                   </Table>
                 }
               />
             </Col>
 
-            <Col md={12}>
-              <Card
-                plain
-                title="Striped Table with Hover"
-                category="Here is a subtitle for this table"
-                ctTableFullWidth
-                ctTableResponsive
-                content={
-                  <Table hover>
-                    <thead>
-                      <tr>
-                        {thArray.map((prop, key) => {
-                          return <th key={key}>{prop}</th>;
-                        })}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {tdArray.map((prop, key) => {
-                        return (
-                          <tr key={key}>
-                            {prop.map((prop, key) => {
-                              return <td key={key}>{prop}</td>;
-                            })}
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </Table>
-                }
-              />
-            </Col>
+           
           </Row>
         </Container>
       </div>
     );
+  } else {
+    return (
+        <React.Fragment>
+            <p style={{ color: "black" }}>Loading Hashtag Stuff... </p>
+        </React.Fragment>
+        )
+    }
   }
 }
 
