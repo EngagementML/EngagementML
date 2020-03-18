@@ -132,7 +132,7 @@ class App extends Component {
               <Fragment>
                 <Form inline>
                   <Button
-                    // as={Link}
+                    as={Link}
                     to="/profile/admin/dashboard"
                     variant="info mr-1"
                   >

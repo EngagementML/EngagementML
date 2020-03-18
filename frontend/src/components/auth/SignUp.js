@@ -5,6 +5,7 @@ import IGback from '../../images/igback.jpg'
 // frontend\src\images\instagram-background.jpg
 import { Button } from "react-bootstrap";
 import { FaKey, FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 class SignUp extends Component {
     state = {
@@ -67,7 +68,8 @@ class SignUp extends Component {
                         />
                       </div>
                       <div className="d-flex justify-content-center mt-5 login_container">
-                        <Button type="submit" value="Sign Up" style={{borderColor:'#e5e6e7',color:"#e5e6e7"}}>
+                        {/* <Button as={Link} to="/profile/admin/dashboard" type="submit" value="Sign Up" style={{borderColor:'#e5e6e7',color:"#e5e6e7"}}> */}
+                        <Button type="submit" value="Sign Up" style={{borderColor:'#e5e6e7',color:"#e5e6e7"}}>  
                           Sign Up
                         </Button>
                       </div>
