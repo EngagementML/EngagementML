@@ -39,7 +39,7 @@ class UserProfile extends Component {
     this.setState({ ...user.data });
     console.log("Current User >> ", user);
 
-    axios 
+    await axios 
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get("https://engagementml.herokuapp.com/eML/user/" + this.props.match.params.id)
       .then(res => {
@@ -86,7 +86,7 @@ class UserProfile extends Component {
     };
     console.log(obj, this);
     axios
-      .post("http://localhost:5000/eML/users/update/" + this.state._id, obj)
+      .post("http://engagementml.herokuapp.com/eML/users/update/" + this.state._id, obj)
       .then(res => console.log(res.data));
 
     // this.props.history.push("/")
