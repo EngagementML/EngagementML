@@ -22,6 +22,7 @@
     "node-sass-middleware": "^0.11.0",
     "passport": "^0.4.1",
     "passport-local-mongoose": "^6.0.1",
+    "python-shell": "^1.0.8",
     "sass-loader": "^8.0.2",
     "serve-favicon": "^2.5.0",
     "webpack": "^4.42.0"
