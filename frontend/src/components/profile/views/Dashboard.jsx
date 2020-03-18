@@ -272,7 +272,7 @@ var legendSales = {
           <Col lg={3} sm={6}>
             <StatsCard
               bigIcon={<i className="pe-7s-graph1 text-danger" />}
-              statsText="Rate Change"
+              statsText="Engagement Change"
               statsValue={
                 this.state.posts !== []
                   ? (

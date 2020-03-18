@@ -246,7 +246,7 @@ var style = {
 //
 
 // const thArray = ["ID", "Name", "Salary", "Country", "City"];
-const thArray = ["Hashtag", "Impressions", "Image Posts", "Post Links", "Post Mentions"];
+const thArray = ["Hashtag", "Impressions", "Image Posts", "Post Links", "Post Mentions","# Usage vs Exposure"];
 
 let tdArray = [
   ["1", "Chaba Rice", "$36,738", "Niger", "Oud-Turnhout"],

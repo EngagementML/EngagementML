@@ -112,6 +112,18 @@ var responsiveSales = [
   ]
 ];
 
+const pickColor = (color) => {
+  if(color == 0){
+    return "Extremely Niche"
+  } else if (color == 1){
+    return "Too many people currently using it"
+  } else if (color == 2){
+    return "Use this to get seen over time"
+  } else {
+    return "Use this to get seen now"
+  }
+}
+
 
 
     return (
@@ -194,7 +206,7 @@ var responsiveSales = [
                 ctTableFullWidth
                 ctTableResponsive
                 content={
-                  <Table striped hover>
+                  <Table striped hover style= {{ overflowX: "scroll" }}>
                     <thead>
                       <tr>
                         {thArray.map((prop, key) => {
@@ -216,6 +228,7 @@ var responsiveSales = [
                             <td style={{textAlign:"right"}}>{currentTag.images}</td>
                             <td style={{textAlign:"right"}}>{currentTag.links}</td>
                             <td style={{textAlign:"right"}}>{currentTag.mentions}</td>
+                            <td style={{textAlign:"right"}}>{pickColor(currentTag.color)}</td>
                           </tr>
                         )
                         })
