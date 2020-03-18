@@ -11,8 +11,10 @@ import { Card } from "../components/Card/Card.jsx";
 import { FormInputs } from "../components/FormInputs/FormInputs.jsx";
 import { UserCard } from "../components/UserCard/UserCard.jsx";
 import Button from "../components/CustomButton/CustomButton.jsx";
+import "font-awesome/css/font-awesome.min.css";
 
-const industryOptions = ['Food', 'Travel', 'Fashion & Style', 'Photography', 'Lifestyle', 'Design', 'Beauty', 'Sports & Fitness' ]
+
+// const industryOptions = ['Food', 'Travel', 'Fashion & Style', 'Photography', 'Lifestyle', 'Design', 'Beauty', 'Sports & Fitness' ]
 
 // import avatar from "../assets/img/faces/face-3.jpg";
 
