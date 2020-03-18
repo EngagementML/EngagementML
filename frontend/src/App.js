@@ -14,10 +14,6 @@ import UserProfile from "../src/components/profile/views/UserProfile"
 import MetaTags from "react-meta-tags";
 import axios from "axios";
 
-
-
-
-
 class App extends Component {
   
   state = { }
@@ -112,7 +108,7 @@ class App extends Component {
           />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <NavDropdown
+              {/* <NavDropdown
                 title="More"
                 id="basic-nav-dropdown"
                 className="navbar-dropdown-toggler"
@@ -129,20 +125,22 @@ class App extends Component {
                 <NavDropdown.Item href="https://riverapecunia.com">
                   Developer
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
+              {/* This above is the dropdown navbar */}
             </Nav>
             {this.state.email ? (
               <Fragment>
                 <Form inline>
                   <Button
-                    as={Link}
+                    // as={Link}
                     to="/profile/admin/dashboard"
                     variant="info mr-1"
                   >
                     {this.state.email}
                   </Button>
                   <Button
-                    // as={Link}
+                    as={Link}
+                    to="/"
                     onClick={this.logOut}
                     variant="outline-warning mr-1"
                     className="btn"

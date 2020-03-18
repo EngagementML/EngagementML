@@ -82,7 +82,6 @@ class LogIn extends Component {
                     </div>
                   </div>
                   <div className="d-flex justify-content-center mt-5 login_container">
-                    
                       <Button type="submit" value="Log In" style={{borderColor:'#e5e6e7',color:"#e5e6e7"}}>
                       Log In
                     </Button>
