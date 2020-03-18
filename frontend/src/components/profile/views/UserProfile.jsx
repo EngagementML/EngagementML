@@ -184,9 +184,9 @@ class UserProfile extends Component {
                         }
                       ]}
                     />
-                    
+
                     <Form.Group name="industry">
-                      <Form.Label>Industry</Form.Label>
+                      <Form.Label>Change your Industry</Form.Label>
                       <Form.Control
                         as="select"
                         value={this.state.industry}
@@ -239,11 +239,13 @@ class UserProfile extends Component {
                     : this.state.image
                 }
                 name={this.state.igUsername}
-                userName={this.state.industry}
+                userName={this.state.name}
                 description={this.state.about}
                 socials={
-                  <div>
-                    <Button simple>
+                  <div style={{paddingBottom: '10px'}}>
+                    <strong>Industry : {this.state.industry}</strong>
+                    <br />
+                    {/* <Button simple>
                       <i className="fa fa-facebook-square" />
                     </Button>
                     <Button simple>
@@ -251,7 +253,7 @@ class UserProfile extends Component {
                     </Button>
                     <Button simple>
                       <i className="fa fa-google-plus-square" />
-                    </Button>
+                    </Button> */}
                   </div>
                 }
               />
