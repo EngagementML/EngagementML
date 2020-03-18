@@ -168,7 +168,7 @@ class UserProfile extends Component {
                           label: "Competitor",
                           type: "text",
                           bsclass: "form-control",
-                          placeholder: "Country",
+                          placeholder: "Competitors",
                           // defaultValue: this.state.competitor,
                           // onChange: this.onChange,
                           name: "coompetitor"
