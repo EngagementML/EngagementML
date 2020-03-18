@@ -16,8 +16,10 @@ class SignUp extends Component {
     handleSubmit =  e => {
         e.preventDefault()
             actions.signUp(this.state).then(user=> {
-                this.props.setUser({...user.data})  
-            }).catch(({ response }) => console.error(response.data));
+                this.props.setUser({...user.data})
+                this.props.history.push("/profile/admin/user");  
+                console.log(this.props)
+            }).catch(({ response }) => console.error(response.data))
     }
 
     render() {
