@@ -104,7 +104,7 @@ app.route("/profiles").get((req, res, next) => {
   );
 });
 
-//Route to return all available profiles 
+//Route to username profile 
 app.route("/profile/:username").get((req, res) => {
   let username = req.params.username;
   InstaProfile.findOne(
@@ -116,6 +116,7 @@ app.route("/profile/:username").get((req, res) => {
       profile_pic_url_hd: 1,
       "edge_follow.count": 1,
       "edge_followed_by.count": 1,
+      id: 1,
       _id: 0
     },
     (err, instaprofiles) => {
@@ -123,6 +124,27 @@ app.route("/profile/:username").get((req, res) => {
         console.log(err);
       } else {
         res.json(instaprofiles);
+      }
+    }
+  );
+});
+
+//Route to username posts 
+app.route("/posts/:id").get((req, res) => {
+  let owner_id = req.params.id;
+  InstaPost.find(
+    { owner_id : owner_id },
+    {
+      _id: 1,
+      owner_id: 1,
+      comment_count: 1,
+      like_count: 1,
+    },
+    (err, instaposts) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(instaposts);
       }
     }
   );

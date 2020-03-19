@@ -12,7 +12,7 @@ import logo from './images/engagementMLb.png'
 import AdminLayout from "./components/profile/layouts/Admin.jsx";
 import UserProfile from "../src/components/profile/views/UserProfile"
 import Dashboard from "../src/components/profile/views/Dashboard"
-import StatsCard from "../src/components/profile/components/StatsCard/StatsCard"
+// import StatsCard from "../src/components/profile/components/StatsCard/StatsCard"
 import MetaTags from "react-meta-tags";
 import axios from "axios";
 

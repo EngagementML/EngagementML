@@ -47,7 +47,7 @@ class Dashboard extends Component {
     this.setState({ ...user.data });
     // console.log("Current User >> ", user);
 
-     axios
+     await axios
       // .get("http://localhost:5000/profile/" + this.state.igUsername)
       .get("https://engagementml.herokuapp.com/profile/" + this.state.igUsername)
       .then(res => {
@@ -60,7 +60,18 @@ class Dashboard extends Component {
         console.log(error);
       });
 
-     axios
+     await axios.get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
+      .then(res => {
+        // console.log(res, res.data);
+        this.setState({
+          posts: res.data
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+     await axios
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get(
         "https://engagementml.herokuapp.com/eML/user/" +
@@ -102,7 +113,7 @@ class Dashboard extends Component {
     // if (this.state.profile.edge_followed_by.count !== undefined) {
       console.log(this.props);
       console.log(this.state);
-if (this.state.email !== undefined && this.state.profile !== undefined) {
+if (this.state.email !== undefined && this.state.profile !== undefined && this.state.posts !== undefined ) {
   return (
     <div className="content">
       <Container fluid="true">
@@ -111,32 +122,61 @@ if (this.state.email !== undefined && this.state.profile !== undefined) {
             <StatsCard
               bigIcon={<i className="pe-7s-leaf text-success" />}
               statsText="eML Rate"
-              statsValue="2.3%"
+              statsValue={
+                this.state.posts !== []
+                  ? (
+                      ((this.state.posts[0].like_count +
+                        this.state.posts[0].comment_count) /
+                        this.state.profile.edge_followed_by.count) *
+                      100
+                    ).toFixed(1) + "%"
+                  : "N/A"
+              }
               statsIcon={<i className="pe-7s-refresh-2" />}
-              statsIconText="Updated now"
+              statsIconText="Lastest Post"
             />
           </Col>
           <Col lg={3} sm={6}>
             <StatsCard
-              bigIcon={<i className="pe-7s-key text-warning" />}
-              statsText="Last Post"
-              statsValue="1 day"
+              bigIcon={<i className="pe-7s-graph1 text-secondary" />}
+              statsText="Rate Change"
+              statsValue={
+                this.state.posts !== []
+                  ? (
+                      ((this.state.posts[0].like_count +
+                        this.state.posts[0].comment_count) /
+                        this.state.profile.edge_followed_by.count) *
+                        100 -
+                      ((this.state.posts[1].like_count +
+                        this.state.posts[1].comment_count) /
+                        this.state.profile.edge_followed_by.count) *
+                        100
+                    ).toFixed(1) + "%"
+                  : "N/A"
+              }
               statsIcon={<i className="pe-7s-refresh-2" />}
-              statsIconText="Last day"
+              statsIconText="Last Two Posts"
             />
           </Col>
           <Col lg={3} sm={6}>
             <StatsCard
-              bigIcon={<i className="pe-7s-graph1 text-danger" />}
-              statsText="Fixes"
-              statsValue="7"
+              bigIcon={<i className="pe-7s-leaf text-warning" />}
+              statsText="eML Rate"
+              statsValue={
+                this.state.profile !== []
+                  ? (((this.state.posts[1].like_count +
+                      this.state.posts[1].comment_count) /
+                      this.state.profile.edge_followed_by.count) *
+                    100).toFixed(1) + '%'
+                  : "N/A"
+              }
               statsIcon={<i className="pe-7s-refresh-2" />}
-              statsIconText="In the last hour"
+              statsIconText="Previous Post"
             />
           </Col>
           <Col lg={3} sm={6}>
             <StatsCard
-              bigIcon={<i className="pe-7s-users text-info " />}
+              bigIcon={<i className="pe-7s-users text-primary " />}
               statsText="Followers"
               statsValue={
                 this.state.profile !== []
