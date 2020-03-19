@@ -25,8 +25,15 @@ class SignUp extends Component {
     render() {
        
         return (
-            <div style={{backgroundImage:`url(${IGback})`, backgroundRepeat:"no-repeat", backgroundSize:"cover", height:"100vh"}}>
-            <div className="container h-100" >
+          <div
+            style={{
+              backgroundImage: `url(${IGback})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              height: "100vh"
+            }}
+          >
+            <div className="container h-100">
               <div className="d-flex justify-content-center h-100">
                 <div className="d-flex flex-column justify-content-center">
                   <div className="d-flex justify-content-center">
@@ -39,19 +46,41 @@ class SignUp extends Component {
                       />
                     </div>
                   </div>
-                  <div className="d-flex justify-content-center form_container" id="signUpCopy">
+                  <div
+                    className="d-flex justify-content-center form_container"
+                    id="signUpCopy"
+                  >
                     <form onSubmit={this.handleSubmit}>
-                      <div className="input-group mb-3" >
-                        <div className="input-group-append" >
+                      <div className="input-group mb-3">
+                        <div className="input-group-append">
                           <span className="input-group-text">
                             <FaUser />
                           </span>
                         </div>
                         <input
                           placeholder="Email here "
-                          style={{border: "0",outline: "0", background: "transparent", borderBottom: '0.15rem solid #e5e6e7', borderRadius:"0"}}
+                          style={{
+                            border: "0",
+                            outline: "0",
+                            background: "transparent",
+                            borderBottom: "0.15rem solid #e5e6e7",
+                            borderRadius: "0"
+                          }}
                           name="email"
                           type="email"
+                          onChange={this.handleChange}
+                        />
+                        <input
+                          placeholder="IG Username"
+                          style={{
+                            border: "0",
+                            outline: "0",
+                            background: "transparent",
+                            borderBottom: "0.15rem solid #e5e6e7",
+                            borderRadius: "0"
+                          }}
+                          name="igUsername"
+                          type="text"
                           onChange={this.handleChange}
                         />
                       </div>
@@ -63,7 +92,13 @@ class SignUp extends Component {
                         </div>
                         <input
                           placeholder="Password here "
-                          style={{border: "0",outline: "0", background: "transparent", borderBottom: '0.15rem solid #e5e6e7', borderRadius:"0"}}
+                          style={{
+                            border: "0",
+                            outline: "0",
+                            background: "transparent",
+                            borderBottom: "0.15rem solid #e5e6e7",
+                            borderRadius: "0"
+                          }}
                           name="password"
                           type="password"
                           onChange={this.handleChange}
@@ -71,13 +106,16 @@ class SignUp extends Component {
                       </div>
                       <div className="d-flex justify-content-center mt-5 login_container">
                         {/* <Button as={Link} to="/profile/admin/dashboard" type="submit" value="Sign Up" style={{borderColor:'#e5e6e7',color:"#e5e6e7"}}> */}
-                        <Button type="submit" value="Sign Up" style={{borderColor:'#e5e6e7',color:"#e5e6e7"}}>  
+                        <Button
+                          type="submit"
+                          value="Sign Up"
+                          style={{ borderColor: "#e5e6e7", color: "#e5e6e7" }}
+                        >
                           Sign Up
                         </Button>
                       </div>
                     </form>
                   </div>
-                  
                 </div>
               </div>
             </div>
