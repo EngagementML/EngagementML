@@ -47,7 +47,7 @@ class Dashboard extends Component {
     this.setState({ ...user.data });
     // console.log("Current User >> ", user);
 
-     axios
+     await axios
       // .get("http://localhost:5000/profile/" + this.state.igUsername)
       .get("https://engagementml.herokuapp.com/profile/" + this.state.igUsername)
       .then(res => {
@@ -60,7 +60,7 @@ class Dashboard extends Component {
         console.log(error);
       });
 
-    axios.get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
+     await axios.get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
       .then(res => {
         // console.log(res, res.data);
         this.setState({
@@ -71,7 +71,7 @@ class Dashboard extends Component {
         console.log(error);
       });
 
-     axios
+     await axios
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get(
         "https://engagementml.herokuapp.com/eML/user/" +
