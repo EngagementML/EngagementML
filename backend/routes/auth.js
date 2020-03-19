@@ -1,12 +1,38 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-// const InstaProfile = require('../models/InstaProfile')
+const InstaProfile = require('../models/InstaProfile')
+const InstaPosts    = require('../models/InstaPosts');
 const passport = require('../config/passport');
+const singleScrape = require("../scrapper/singleScrape/random")
 
 router.post('/signup', (req, res, next) => {
   User.register(req.body, req.body.password)
-    .then((user) => { 
+    .then(async (user) => { 
+        let data = await singleScrape(req.body.igUsername);
+   
+    await data.forEach(profile => {
+        console.log(profile.user.id)
+        InstaProfile.findOneAndUpdate(
+            {id: profile.user.id}, 
+            {...profile.user}, 
+            {upsert:true}
+            )
+            .then(res => console.log(res))
+            .catch(err => console.log("Panda",err))
+        profile.medias.forEach(media => {
+            console.log(media, '??????', media.media_id)
+            InstaPosts.findOneAndUpdate(
+                {media_id: media.media_id}, 
+                {...media}, 
+                {upsert:true}
+                )
+                .then(res => {
+                    console.log(res);
+                })
+                .catch(err => console.log("Cat",err))
+        })
+    })
         req.login(user, function(err,result){
           res.status(201).json(user)
         })

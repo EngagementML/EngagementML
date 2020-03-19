@@ -478,10 +478,13 @@ var dataPie = {
   labels: ["40%", "20%", "40%"],
   series: [40, 20, 40]
 };
+
 var legendPie = {
   names: ["Image  ", "Video  ", "IGTV  "],
   types: ["info", "danger", "warning"]
 };
+
+
 
 // Data for Line Chart
 var dataSales = {

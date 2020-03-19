@@ -1,6 +1,6 @@
 let ig = require("instagram-scraping");
 
-singleScraper = async () => {
+singleScraper = async (igName) => {
 
   // let currentDate= new Date()
   
@@ -13,15 +13,20 @@ singleScraper = async () => {
   //   )
   //   .then(res => console.log(res))
 
-  let influencers = [
+  let influencers =  [
     // Get the username from mongo here or from the state of the dashboard
-    "wwe"
+    igName
   ];
 
   let posts = [];
   let user = {};
   let data = {};
   let promises = [];
+
+  // ig.scraperUserPage(username).then(result => {
+  //     return result
+  //   }).catch(err => console.error(err))
+
 
   let dataArr = influencers.map(username => {
     console.log(username)

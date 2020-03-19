@@ -24,9 +24,9 @@ import { Card } from "../components/Card/Card.jsx";
 import { StatsCard } from "../components/StatsCard/StatsCard.jsx";
 import { Tasks } from "../components/Tasks/Tasks.jsx";
 import {
+  dataSales,
   dataPie,
   legendPie,
-  dataSales,
   optionsSales,
   responsiveSales,
   legendSales,
@@ -35,6 +35,16 @@ import {
   responsiveBar,
   legendBar
 } from "../variables/Variables.jsx";
+
+// var dataPie = {
+//   labels: ["40%", "20%", "40%"],
+//   series: [40, 20, 40]
+// };
+
+// var legendPie = {
+//   names: ["Image  ", "Video  ", "IGTV  "],
+//   types: ["info", "danger", "warning"]
+// };
 
 class Dashboard extends Component {
   
@@ -109,6 +119,13 @@ class Dashboard extends Component {
     return legend;
   }
 
+  splitPostType = () => {
+    this.state.posts.reduce((sums, entry) => {
+      sums[entry.is_video] = (sums[entry.is_video] || 0) + 1;
+      return sums;
+    }, {});
+  }
+
   render() {
     // if (this.state.profile.edge_followed_by.count !== undefined) {
       console.log(this.props);
@@ -138,7 +155,7 @@ if (this.state.email !== undefined && this.state.profile !== undefined && this.s
           </Col>
           <Col lg={3} sm={6}>
             <StatsCard
-              bigIcon={<i className="pe-7s-graph1 text-secondary" />}
+              bigIcon={<i className="pe-7s-graph1 text-danger" />}
               statsText="Rate Change"
               statsValue={
                 this.state.posts !== []
