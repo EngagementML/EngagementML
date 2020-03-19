@@ -60,6 +60,17 @@ class Dashboard extends Component {
         console.log(error);
       });
 
+    axios.get("https://engagementml.herokuapp.com/posts/" + this.state.id)
+      .then(res => {
+        // console.log(res, res.data);
+        this.setState({
+          posts: res.data
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
      axios
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get(
@@ -111,7 +122,11 @@ if (this.state.email !== undefined && this.state.profile !== undefined) {
             <StatsCard
               bigIcon={<i className="pe-7s-leaf text-success" />}
               statsText="eML Rate"
-              statsValue="2.3%"
+              statsValue={
+                this.state.profile !== []
+                  ? this.state.profile.edge_followed_by.count
+                  : "N/A"
+              }
               statsIcon={<i className="pe-7s-refresh-2" />}
               statsIconText="Updated now"
             />
@@ -120,7 +135,11 @@ if (this.state.email !== undefined && this.state.profile !== undefined) {
             <StatsCard
               bigIcon={<i className="pe-7s-key text-warning" />}
               statsText="Last Post"
-              statsValue="1 day"
+              statsValue={
+                this.state.profile !== []
+                  ? this.state.profile.edge_followed_by.count
+                  : "N/A"
+              }
               statsIcon={<i className="pe-7s-refresh-2" />}
               statsIconText="Last day"
             />
@@ -129,7 +148,11 @@ if (this.state.email !== undefined && this.state.profile !== undefined) {
             <StatsCard
               bigIcon={<i className="pe-7s-graph1 text-danger" />}
               statsText="Fixes"
-              statsValue="7"
+              statsValue={
+                this.state.profile !== []
+                  ? this.state.profile.edge_followed_by.count
+                  : "N/A"
+              }
               statsIcon={<i className="pe-7s-refresh-2" />}
               statsIconText="In the last hour"
             />

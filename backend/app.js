@@ -102,7 +102,7 @@ app.route("/profiles").get((req, res, next) => {
   );
 });
 
-//Route to return all available profiles 
+//Route to username profile 
 app.route("/profile/:username").get((req, res) => {
   let username = req.params.username;
   InstaProfile.findOne(
@@ -121,6 +121,27 @@ app.route("/profile/:username").get((req, res) => {
         console.log(err);
       } else {
         res.json(instaprofiles);
+      }
+    }
+  );
+});
+
+//Route to username posts 
+app.route("/posts/:owner_id").get((req, res) => {
+  let id = req.params.owner_id;
+  InstaProfile.find(
+    { owner_id : id },
+    {
+      _id: 1,
+      owner_id: 1,
+      comment_count: 1,
+      like_count: 1,
+    },
+    (err, instaposts) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(instaposts);
       }
     }
   );
