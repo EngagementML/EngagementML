@@ -30,6 +30,7 @@ class UserProfile extends Component {
     industry: "",
     // role: [],
     // competitor:[],
+    profile: [],
   };
 
   
@@ -59,6 +60,24 @@ class UserProfile extends Component {
       .catch(function(error) {
         console.log(error);
       });
+
+    
+  
+  
+    await axios
+      // .get("http://localhost:5000/profiles/")
+      .get("https://engagementml.herokuapp.com/profile/" + this.state.igUsername)
+      .then(res => {
+        // console.log(res, res.data);
+        this.setState({
+          profile: res.data
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  
+
   }
 
 

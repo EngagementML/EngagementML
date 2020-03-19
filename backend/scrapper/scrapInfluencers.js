@@ -2,14 +2,77 @@ let ig = require("instagram-scraping");
 
 instagramScraper = async () => {
   let influencers = [
-
+    
+    // "grpecunia",
     // "iampecu",
+
+    //Sports & Fitness
+    // "massy.arias",
+    // "eddiehallwsm",
+    // "ty_haney",
+    // "hannahbronfman",
+    // "progressive_calisthenics",
+    // "eakinwale",
+    // "omniyogagirl",
+    // "kemomarriott",
+    // "akiniko",
+    // "sjanaelise",
+    // "blogilates",
+    // "kayla_itsines",
+    // "jenselter",
+    // "simeonpanda",
+
+    //Beauty Category
+    // "michellephan",
+    // "shaaanxo",
+    // "jeffreestar",
+    // "kandeejohnson",
+    // "mannymua733",
+    // "vegas_nay",
+    // "ssssamanthaa",
+    // "hudabeauty",
+    // "gossmakeupartist",
+    // "zoesugg",
+    // "jamescharles",
+    // "makeupshayla",
+
+    //Lifestyle Category
+    // "jannid",
+    // "proudlock",
+    // "brunchboys",
+    // "jaylifeandstyle",
+    // "jessiekass",
+    // "designdschungel",
+    // "adoriandeck",
+    // "hinddeer",
+    // "atacadas",
+    // "simplykennedy_",
+    // "sydneyleroux",
+    // "joannagaines",
+    // "lilly",
+    // "rosannapansino",
+
+    //Design Category
+    // "mariekondo",
+    // "ashleytstark",
+    // "casachicks",
+    // "deer.home",
+    // "minimaliving",
+    // "jennikayne",
+    // "brightbazaar",
+    // "studiomcgee",
+    // "vintagerevivals",
+    // "nataliemyers",
+    // "designsponge",
+    // "saudahsaleeminteriors",
+    // "ninawilliamsblog",
+
     //Photography Category
     // "benleowy",
     // "muradosmann",
     // "yamashitaphoto",
-    // "stacykranitz", 
-    // "jimmy_chin", 
+    // "stacykranitz",
+    // "jimmy_chin",
     // "pinkhassov",
     // "dustingia",
     // "lindseychilds",

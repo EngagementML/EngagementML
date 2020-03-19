@@ -18,7 +18,8 @@
 import React, { Component } from "react";
 import ChartistGraph from "react-chartist";
 import { Container, Row, Col } from "react-bootstrap";
-
+import axios from "axios";
+import actions from "../../../services/index";
 import { Card } from "../components/Card/Card.jsx";
 import { StatsCard } from "../components/StatsCard/StatsCard.jsx";
 import { Tasks } from "../components/Tasks/Tasks.jsx";
@@ -36,6 +37,34 @@ import {
 } from "../variables/Variables.jsx";
 
 class Dashboard extends Component {
+
+  state = {
+    profile: [],
+  }
+
+  async componentDidMount() {
+    let user = await actions.isLoggedIn();
+    this.setState({ ...user.data });
+    console.log("Current User >> ", user);
+
+    await axios
+      // .get("http://localhost:5000/profiles/")
+      .get(
+        "https://engagementml.herokuapp.com/profile/" +
+          this.state.igUsername
+      )
+      .then(res => {
+        // console.log(res, res.data);
+        this.setState({
+          profile: res.data
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+
+
   createLegend(json) {
     var legend = [];
     for (var i = 0; i < json["names"].length; i++) {
@@ -48,6 +77,7 @@ class Dashboard extends Component {
   }
   render() {
     console.log(this.props);
+    console.log(this.state)
     return (
       <div className="content">
         <Container fluid="true">
@@ -83,7 +113,7 @@ class Dashboard extends Component {
               <StatsCard
                 bigIcon={<i className="pe-7s-users text-info " />}
                 statsText="Followers"
-                statsValue="+45"
+                statsValue={this.state.profile !== [] ? this.state.profile.edge_followed_by : "N/A"}
                 statsIcon={<i className="pe-7s-refresh-2" />}
                 statsIconText="Updated today"
               />
