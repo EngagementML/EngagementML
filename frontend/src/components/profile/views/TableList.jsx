@@ -29,12 +29,12 @@ getData() {
 
   // There's something wrong with the history api link
 
-  // const HashtagCallWordHistory = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/stats/history/${this.state.tag}&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
-  //   axios.get(HashtagCallWordHistory).then(result => {
-  //   console.log("Full Result Word History", result)
-  //   this.setState({ hashtagResultWordHistory: result.data })
-  // })
-  //   .catch((err) => console.log("Can’t access " + HashtagCallWordHistory, err))
+  const HashtagCallWordHistory = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/stats/history/${this.state.tag}?client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
+    axios.get(HashtagCallWordHistory).then(result => {
+    console.log("Full Result Word History", result)
+    this.setState({ hashtagResultWordHistory: result.data })
+  })
+    .catch((err) => console.log("Can’t access " + HashtagCallWordHistory, err))
 }
 
 changeTag = async (e) => {
