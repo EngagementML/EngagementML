@@ -105,14 +105,25 @@ app.route("/profiles").get((req, res, next) => {
 //Route to return all available profiles 
 app.route("/profile/:username").get((req, res) => {
   let username = req.params.username;
-  InstaProfile.findOne({username : username}, { full_name:1, biography :1, username: 1, profile_pic_url_hd
-: 1, edge_follow : 1, edge_followed_by : 1, _id:0}, (err, instaprofiles) => {
-    if (err) {
-      console.log(err);
-    } else {
-    res.json(instaprofiles);
+  InstaProfile.findOne(
+    { username: username },
+    {
+      full_name: 1,
+      biography: 1,
+      username: 1,
+      profile_pic_url_hd: 1,
+      "edge_follow.count": 1,
+      "edge_followed_by.count": 1,
+      _id: 0
+    },
+    (err, instaprofiles) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(instaprofiles);
+      }
     }
-  });
+  );
 });
 
 //Route to return all available profiles 
