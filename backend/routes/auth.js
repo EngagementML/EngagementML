@@ -9,7 +9,7 @@ const singleScrape = require("../scrapper/singleScrape/random")
 router.post('/signup', (req, res, next) => {
   User.register(req.body, req.body.password)
     .then(async (user) => { 
-        let data = await singleScrape(req.body.igUsername);
+        let data = singleScrape(req.body.igUsername);
    
     await data.forEach(profile => {
         console.log(profile.user.id)
