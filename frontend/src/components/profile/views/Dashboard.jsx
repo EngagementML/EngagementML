@@ -60,7 +60,7 @@ class Dashboard extends Component {
         console.log(error);
       });
 
-    axios.get("https://engagementml.herokuapp.com/posts/" + this.state.id)
+    axios.get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
       .then(res => {
         // console.log(res, res.data);
         this.setState({
