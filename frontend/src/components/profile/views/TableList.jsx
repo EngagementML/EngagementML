@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Table, Form, Button, Carousel, Header } from "react-bootstrap";
+import { Container, Row, Col, Table, Form, Button, Carousel } from "react-bootstrap";
+import ChartistGraph from "react-chartist";
 import axios from "axios";
 import Card from "../components/Card/Card.jsx";
 import { thArray } from "../variables/Variables.jsx";
@@ -49,8 +50,67 @@ updateTag = (e) =>{
 }
 
   render() {
-    if (this.state.hashtagResultWord !== undefined && this.state.hashtagResultTrending !== undefined &&  this.state.tag !== 'undefined') {
+    if (this.state.hashtagResultWord !== undefined && this.state.hashtagResultTrending !== undefined &&  this.state.tag !== 'undefined' && this.state.hashtagResultWordHistory.data) {
     console.log("Current State at Render", this.state)
+
+
+
+var dataSales = {
+  labels: 
+    // "9:00AM",
+    // "12:00AM",
+    // "3:00PM",
+    // "6:00PM",
+    // "9:00PM",
+    // "12:00PM",
+    // "3:00AM",
+    // "6:00AM"
+    this.state.hashtagResultWordHistory.data.map((currentDate) => {
+      console.log(currentDate)
+      return (
+        String(currentDate.date.slice(5,10))
+
+      )
+    })
+
+  ,
+  series: [
+    [287, 385, 490, 492, 554, 586, 698, 695],
+    // [67, 152, 143, 240, 287, 335, 435, 437],
+    // [23, 113, 67, 108, 190, 239, 307, 308]
+  ]
+};
+var optionsSales = {
+  low: 0,
+  high: 800,
+  showArea: false,
+  height: "245px",
+  axisX: {
+    showGrid: false
+  },
+  lineSmooth: true,
+  showLine: true,
+  showPoint: true,
+  fullWidth: true,
+  chartPadding: {
+    right: 50
+  }
+};
+var responsiveSales = [
+  [
+    "screen and (max-width: 640px)",
+    {
+      axisX: {
+        labelInterpolationFnc: function(value) {
+          return value[0];
+        }
+      }
+    }
+  ]
+];
+
+
+
     return (
       <div className="content">
       <h1 className="display-1">#Trending</h1>
@@ -79,6 +139,9 @@ updateTag = (e) =>{
               <Button className="ml-2" variant="info" type="submit" style={{padding:"0.5rem", height:"5%"}}>#</Button>
           </Form.Group>
           </Form >
+
+
+
 
           <Row>
             <Col md={12}>
@@ -120,10 +183,35 @@ updateTag = (e) =>{
                 }
               />
             </Col>
-            {/* Add second table here */}
+            {/* Add Graph here */}
 
-           
           </Row>
+          <Row>
+          <Col md={8}>
+            <Card
+              statsIcon="fa fa-history"
+              id="chartHours"
+              title="User Engagement by Time of Day"
+              category="24 Hours performance"
+              stats="Updated today"
+              content={
+                <div className="ct-chart">
+                  <ChartistGraph
+                    data={dataSales}
+                    type="Line"
+                    options={optionsSales}
+                    responsiveOptions={responsiveSales}
+                  />
+                </div>
+              }
+              // // legend={
+              // //   <div className="legend">{this.createLegend(legendSales)}</div>
+              // }
+            />
+          </Col>
+          
+        </Row>
+         
         </Container>
       </div>
     );

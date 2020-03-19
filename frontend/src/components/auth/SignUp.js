@@ -5,6 +5,7 @@ import IGback from '../../images/igback.jpg'
 // frontend\src\images\instagram-background.jpg
 import { Button } from "react-bootstrap";
 import { FaKey, FaUser } from "react-icons/fa";
+// import waitForSingleData from "../../../../backend/routes/singleInstaRoute/SingleRoute"
 // import { Link } from "react-router-dom";
 
 class SignUp extends Component {
@@ -13,12 +14,13 @@ class SignUp extends Component {
     } 
     handleChange = e => this.setState({[e.target.name]: e.target.value})
 
-    handleSubmit =  e => {
-        e.preventDefault()
-            actions.signUp(this.state).then(user=> {
+    handleSubmit =  async e => {
+        e.preventDefault( )
+            actions.signUp(this.state).then( async user => {
                 this.props.setUser({...user.data})
-                this.props.history.push("/profile/admin/user");  
-                console.log(this.props)
+                this.props.history.push("/profile/admin/user")
+                // console.log(this.props)
+                 
             }).catch(({ response }) => console.error(response.data))
     }
 
