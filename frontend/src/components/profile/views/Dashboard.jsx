@@ -113,7 +113,11 @@ class Dashboard extends Component {
               <StatsCard
                 bigIcon={<i className="pe-7s-users text-info " />}
                 statsText="Followers"
-                statsValue='55'
+                statsValue={
+                  this.state.profile === []
+                    ? "N/A"
+                    : Number(this.state.profile.edge_followed_by.count)
+                }
                 statsIcon={<i className="pe-7s-refresh-2" />}
                 statsIconText="Updated today"
               />
