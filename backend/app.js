@@ -114,6 +114,7 @@ app.route("/profile/:username").get((req, res) => {
       profile_pic_url_hd: 1,
       "edge_follow.count": 1,
       "edge_followed_by.count": 1,
+      id: 1,
       _id: 0
     },
     (err, instaprofiles) => {
