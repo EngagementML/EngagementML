@@ -9,8 +9,8 @@ class TableList extends Component {
 state = {tag:"seo"}
   
 componentDidMount(){
-  // https://cors-anywhere.herokuapp.com/
-  const HashtagCall = `https://api.ritekit.com/v1/stats/hashtag-suggestions?text=${this.state.tag}&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
+  
+  const HashtagCall = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/stats/hashtag-suggestions?text=${this.state.tag}&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
     axios.get(HashtagCall).then(result => {
     console.log("Full Result", result)
     this.setState({ hashtagResult: result.data })
