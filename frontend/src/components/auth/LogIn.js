@@ -66,7 +66,8 @@ class LogIn extends Component {
                       onChange={this.handleChange}
                     />
                   </div>
-                  <div className="form-group mt-4">
+                  {/* This below is the remember me checkbox */}
+                  {/* <div className="form-group mt-4">
                     <div className="custom-control custom-checkbox" style={{border: "0",outline: "0", background: "transparent", borderBottom: '0.15rem solid #e5e6e7', borderRadius:"0",fontFamily: `Courier New, Courier, monospace`,color: 'whitesmoke', opacity: '0.5' }}>
                       <input
                         type="checkbox"
@@ -80,7 +81,7 @@ class LogIn extends Component {
                         Remember me
                       </label>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="d-flex justify-content-center mt-5 login_container">
                       <Button type="submit" value="Log In" style={{borderColor:'#e5e6e7',color:"#e5e6e7"}}>
                       Log In
