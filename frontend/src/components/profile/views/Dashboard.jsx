@@ -113,7 +113,7 @@ class Dashboard extends Component {
     // if (this.state.profile.edge_followed_by.count !== undefined) {
       console.log(this.props);
       console.log(this.state);
-if (this.state.email !== undefined && this.state.profile !== undefined) {
+if (this.state.email !== undefined && this.state.profile !== undefined && this.state.posts !== undefined ) {
   return (
     <div className="content">
       <Container fluid="true">
@@ -123,43 +123,60 @@ if (this.state.email !== undefined && this.state.profile !== undefined) {
               bigIcon={<i className="pe-7s-leaf text-success" />}
               statsText="eML Rate"
               statsValue={
-                this.state.profile !== []
-                  ? this.state.profile.edge_followed_by.count
+                this.state.posts !== []
+                  ? (
+                      ((this.state.posts[0].like_count +
+                        this.state.posts[0].comment_count) /
+                        this.state.profile.edge_followed_by.count) *
+                      100
+                    ).toFixed(1) + "%"
                   : "N/A"
               }
               statsIcon={<i className="pe-7s-refresh-2" />}
-              statsIconText="Updated now"
+              statsIconText="Lastest Post"
             />
           </Col>
           <Col lg={3} sm={6}>
             <StatsCard
-              bigIcon={<i className="pe-7s-key text-warning" />}
-              statsText="Last Post"
+              bigIcon={<i className="pe-7s-graph1 text-secondary" />}
+              statsText="Rate Change"
+              statsValue={
+                this.state.posts !== []
+                  ? (
+                      ((this.state.posts[0].like_count +
+                        this.state.posts[0].comment_count) /
+                        this.state.profile.edge_followed_by.count) *
+                        100 -
+                      ((this.state.posts[1].like_count +
+                        this.state.posts[1].comment_count) /
+                        this.state.profile.edge_followed_by.count) *
+                        100
+                    ).toFixed(1) + "%"
+                  : "N/A"
+              }
+              statsIcon={<i className="pe-7s-refresh-2" />}
+              statsIconText="Last Two Posts"
+            />
+          </Col>
+          <Col lg={3} sm={6}>
+            <StatsCard
+              bigIcon={<i className="pe-7s-leaf text-warning" />}
+              statsText="eML Rate"
               statsValue={
                 this.state.profile !== []
-                  ? this.state.profile.edge_followed_by.count
+                  ? (((this.state.posts[1].like_count +
+                      this.state.posts[1].comment_count) /
+                      this.state.profile.edge_followed_by.count) *
+                    100).toFixed(1) + '%'
                   : "N/A"
               }
               statsIcon={<i className="pe-7s-refresh-2" />}
-              statsIconText="Last day"
+              statsIconText="Previous Post"
             />
           </Col>
           <Col lg={3} sm={6}>
             <StatsCard
-              bigIcon={<i className="pe-7s-graph1 text-danger" />}
-              statsText="Fixes"
-              statsValue={
-                this.state.profile !== []
-                  ? this.state.profile.edge_followed_by.count
-                  : "N/A"
-              }
-              statsIcon={<i className="pe-7s-refresh-2" />}
-              statsIconText="In the last hour"
-            />
-          </Col>
-          <Col lg={3} sm={6}>
-            <StatsCard
-              bigIcon={<i className="pe-7s-users text-info " />}
+              bigIcon={<i className="pe-7s-users text-primary " />}
               statsText="Followers"
               statsValue={
                 this.state.profile !== []
