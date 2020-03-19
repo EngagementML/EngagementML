@@ -128,8 +128,8 @@ app.route("/profile/:username").get((req, res) => {
 });
 
 //Route to username posts 
-app.route("/posts/:owner_id").get((req, res) => {
-  let owner_id = req.params.owner_id;
+app.route("/posts/:id").get((req, res) => {
+  let owner_id = req.params.id;
   InstaPost.find(
     { owner_id : owner_id },
     {
