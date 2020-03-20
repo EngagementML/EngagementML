@@ -20,7 +20,6 @@ import { Container, Row, Col } from "react-bootstrap";
 // import axios from "axios"
 import Card from "../components/Card/Card.jsx";
 
-
 // axios.get("http://localhost:5000/profiles").then(res => console.log(res.data));
 
 class Research extends Component {
@@ -33,19 +32,63 @@ class Research extends Component {
           <Row>
             <Col md={12}>
               <Card
-                title="EngagementML Research Platform"
+                title="EngagementML Research Model"
                 category="SoMe + Machine Learning = <3"
                 content={
                   <div>
-                    <div className="typo-line">
+                    <h4>Followers vs Video View Counts</h4>
+                    <img
+                      src="https://egagementml.s3.us-east-1.amazonaws.com/Followers%20VS%20Video%20View%20Counts.png"
+                      alt="Followers Vs Likes"
+                    />
+                    <br />
+                    <br />
+                    <h4>Followers vs Likes</h4>
+                    <img
+                      src="https://egagementml.s3.us-east-1.amazonaws.com/Followers%20Vs%20Likes.png"
+                      alt="Followers vs Video View Counts"
+                    />
+                    <br />
+                    <br />
+                    <h4>Followers vs Comment Counts</h4>
+                    <img
+                      src="https://egagementml.s3.us-east-1.amazonaws.com/Follwers%20VS%20Comment%20Counts.png"
+                      alt="Followers vs Comment Counts"
+                    />
+                    <br />
+                    <br />
+                    <h4>Text Length vs Hashtag Counts</h4>
+                    <img
+                      src="https://egagementml.s3.amazonaws.com/Text+Length+VS+Hashtag+Count.png"
+                      alt="Text vs Hashtag"
+                    />
+                    <br />
+                    <br />
+                    <h4>Links vs Likes</h4>
+                    <img
+                      src="https://egagementml.s3.us-east-1.amazonaws.com/Link%20Count%20VS%20Like%20Count.png"
+                      alt="Links vs Likes"
+                    />
+                    <br />
+                    <br />
+                    <h4>Text Length vs Hashtag Count</h4>
+                    <img
+                      src="https://egagementml.s3.us-east-1.amazonaws.com/Text%20Length%20VS%20Hashtag%20Count.png"
+                      alt="Text Length vs Hashtag Count"
+                    />
+                    <br />
+                    <br />
+                    <h4>eML Correlation Matrix</h4>
+                    <img
+                      src="https://egagementml.s3.us-east-1.amazonaws.com/Correlation%20Matrix.png"
+                      alt="Correlation"
+                    />
+                    {/* <div className="typo-line">
                       <h4>
                         <p className="category">Track-them</p>Light Bootstrap
                         Table Heading
                       </h4>
-                    </div>
-
-
-
+                    </div> */}
                     {/* <div className="typo-line">
                       <h1>
                         <p className="category">Header 1</p>Light Bootstrap
@@ -72,7 +115,7 @@ class Research extends Component {
                         Table Heading
                       </h5>
                     </div> */}
-                    <div className="typo-line">
+                    {/* <div className="typo-line">
                       <h6>
                         <p className="category">Header 6</p>Light Bootstrap
                         Table Heading
@@ -97,21 +140,20 @@ class Research extends Component {
                         </p>
                         <small>Steve Jobs, CEO Apple</small>
                       </blockquote>
-                    </div>
-
-                    <div className="typo-line">
+                    </div> */}
+                    {/* <div className="typo-line">
                       <p className="category">Muted Text</p>
                       <p className="text-muted">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing
                         elit, sed diam nonummy nibh euismod tincidunt ut
                         laoreet.
                       </p>
-                    </div>
-                    <div className="typo-line">
-                      {/* <!--
+                    </div> */}
+                    {/* <div className="typo-line"> */}
+                    {/* <!--
                                              there are also "text-info", "text-success", "text-warning", "text-danger" clases for the text
                                              --> */}
-                      <p className="category">Coloured Text</p>
+                    {/* <p className="category">Coloured Text</p>
                       <p className="text-primary">
                         Text Primary - Light Bootstrap Table Heading and complex
                         bootstrap dashboard you've ever seen on the internet.
@@ -132,15 +174,14 @@ class Research extends Component {
                         Text Danger - Light Bootstrap Table Heading and complex
                         bootstrap dashboard you've ever seen on the internet.
                       </p>
-                    </div>
-
-                    <div className="typo-line">
+                    </div> */}
+                    {/* <div className="typo-line">
                       <h2>
                         <p className="category">Small Tag</p>Header with small
                         subtitle <br />
                         <small>".small" is a tag for the headers</small>{" "}
                       </h2>
-                    </div>
+                    </div> */}
                   </div>
                 }
               />
