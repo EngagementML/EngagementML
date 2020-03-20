@@ -50,7 +50,7 @@ updateTag = (e) =>{
 }
 
   render() {
-    if (this.state.hashtagResultWord !== undefined && this.state.hashtagResultTrending !== undefined &&  this.state.tag !== 'undefined' && this.state.hashtagResultWordHistory !== undefined && this.state.hashtagResultWordHistory !== undefined) {
+    if (this.state.hashtagResultWord !== undefined && this.state.hashtagResultTrending !== undefined &&  this.state.tag !== 'undefined' && this.state.hashtagResultWordHistory !== undefined && this.state.hashtagResultWordHistory.data !== undefined) {
     console.log("Current State at Render", this.state)
 
 
@@ -74,11 +74,17 @@ var dataSales = {
     })
 
   ,
-  series: [
-    [287, 385, 490, 492, 554, 586, 698, 695],
+  series: 
+    this.state.hashtagResultWordHistory.data.map((currentExposure) => {
+      console.log("Hereeeeeeee",currentExposure)
+      return (
+        String(currentExposure.exposure)
+      )
+    })
+    // [287, 385, 490, 492, 554, 586, 698, 695],
     // [67, 152, 143, 240, 287, 335, 435, 437],
     // [23, 113, 67, 108, 190, 239, 307, 308]
-  ]
+  
 };
 var optionsSales = {
   low: 0,

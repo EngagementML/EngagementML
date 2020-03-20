@@ -12,3 +12,24 @@ setuptools==42.0.2
 six==1.14.0
 sqlparse==0.3.0
 wheel==0.33.6
+
+
+
+
+
+
+
+
+
+# import pandas as pd
+# # import numpy as np
+# # import re
+# # import datetime
+# import statistics
+# import seaborn as sns
+# from matplotlib import pyplot
+# from wordcloud import WordCloud
+# import matplotlib.pyplot as plt
+# # from pymongo import MongoClient
+# import nltk
+# import gensim
