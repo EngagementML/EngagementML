@@ -217,10 +217,12 @@ var responsiveSales = [
     );
   } else {
     return (
-        <React.Fragment>
-            <p style={{ color: "black" }}>Loading Hashtag Stuff... </p>
-        </React.Fragment>
-        )
+      <div>
+        <h3 className="loading" style={{ textAlign: "center" }}>
+          Loading...
+        </h3>
+      </div>
+    );
     }
   }
 }

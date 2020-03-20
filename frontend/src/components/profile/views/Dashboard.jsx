@@ -295,7 +295,9 @@ if (this.state.email !== undefined && this.state.profile !== undefined && this.s
 } else {
   return (
     <div>
-      <h3>Loading...</h3>
+      <h3 className="loading" style={{ textAlign: "center" }}>
+        Loading...
+      </h3>
     </div>
   );
 }

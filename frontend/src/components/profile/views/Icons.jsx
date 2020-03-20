@@ -27,7 +27,7 @@ import Card from "../components/Card/Card";
 class Icons extends Component {
 
   state = {
-    profiles : []
+    
   }
   
   componentDidMount() {
@@ -69,55 +69,47 @@ class Icons extends Component {
 
   render() {
     console.log("this is props pon di icon page >>", this.props.profiles);
-    return (
-      <div className="content">
-        <Container fluid="true">
-          <Row>
-            <Col md={12}>
-              <Card
-                title="Top Infuencers"
-                ctAllIcons
-                category={
-                  <span>
-                    Handcrafted by your friends from{" "}
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://engagementml.herokuapp.com"
-                    >
-                      EngagementML
-                    </a>
-                  </span>
-                }
-                content={
-                  <Row>
+    if (
+      this.state.profiles !== undefined
+    ) {
+      return (
+        <div className="content">
+          <Container fluid="true">
+            <Row>
+              <Col md={12}>
+                <Card
+                  title="Top Infuencers"
+                  ctAllIcons
+                  category={
+                    <span>
+                      Handcrafted by your friends from{" "}
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://engagementml.herokuapp.com"
+                      >
+                        EngagementML
+                      </a>
+                    </span>
+                  }
+                  content={
+                    <Row>
+                      {this.profileList()}
+                    </Row>
+                  }
+                />
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      ) } else {
+         return (
+           <div>
+             <h3 className='loading' style={{textAlign: 'center'}}>Loading...</h3>
+           </div>
+         );
 
-                  {this.profileList()}
-                    {/* {profiles.map((profile, key) => {
-                      return (
-                        <Col
-                          lg={2}
-                          md={3}
-                          sm={4}
-                          xs={6}
-                          className="font-icon-list"
-                          key={key}
-                        >
-                          <div className="font-icon-detail">
-                            <img src={profile.profile_pic_url_hd} />
-                            <p>{profile.username}</p>
-                          </div>
-                        </Col>
-                      );
-                    })} */}
-                  </Row>
-                }
-              />
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    );
+      }
   }
 }
 
