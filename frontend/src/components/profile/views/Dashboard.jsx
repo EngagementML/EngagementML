@@ -197,7 +197,7 @@ if (this.state.email !== undefined && this.state.profile !== undefined && this.s
               statsText="Followers"
               statsValue={
                 this.state.profile !== []
-                  ? this.state.profile.edge_followed_by.count
+                  ? this.state.profile.edge_followed_by.count.toLocaleString(navigator.language, { minimumFractionDigits: 0 })
                   : "N/A"
               }
               statsIcon={<i className="pe-7s-refresh-2" />}
@@ -282,7 +282,9 @@ if (this.state.email !== undefined && this.state.profile !== undefined && this.s
               content={
                 <div className="table-full-width">
                   <table className="table">
+                    {/* <Tasks className="flex-row" style={{display: "flex",alignItems: "center"}}/> */}
                     <Tasks />
+
                   </table>
                 </div>
               }

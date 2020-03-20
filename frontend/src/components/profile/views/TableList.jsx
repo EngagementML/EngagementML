@@ -53,7 +53,7 @@ updateTag = (e) =>{
     if (this.state.hashtagResultWord !== undefined && this.state.hashtagResultTrending !== undefined &&  this.state.tag !== 'undefined' && this.state.hashtagResultWordHistory !== undefined && this.state.hashtagResultWordHistory.data !== undefined) {
     console.log("Current State at Render", this.state)
 
-
+let values=[]
 
 var dataSales = {
   labels: 
@@ -74,21 +74,26 @@ var dataSales = {
     })
 
   ,
-  series: 
+  series: [
     this.state.hashtagResultWordHistory.data.map((currentExposure) => {
       console.log("Hereeeeeeee",currentExposure)
+      values.push(currentExposure.exposure)
       return (
         String(currentExposure.exposure)
       )
     })
+  ]
     // [287, 385, 490, 492, 554, 586, 698, 695],
     // [67, 152, 143, 240, 287, 335, 435, 437],
     // [23, 113, 67, 108, 190, 239, 307, 308]
   
 };
+
+// let sum = values.reduce((previous, current) => current += previous);
+
 var optionsSales = {
   low: 0,
-  high: 800,
+  high: ((((values.reduce((previous, current) => current += previous))/values.length)+((values.reduce((previous, current) => current += previous))))*0.18),
   showArea: false,
   // height: "245px",
   axisX: {
@@ -148,12 +153,41 @@ var responsiveSales = [
 
 
 
+          <Row>
+          <Col md={12}>
+            <Card
+              statsIcon="fa fa-history"
+              id="chartHours"
+              title={"#"+this.state.tag+" Impressions"}
+              category="Last 30"
+              stats="Updated today"
+              content={
+                // <div className="ct-chart" style={{fontSize:"20"}}>
+                <div className="ct-chart">
+                  <ChartistGraph
+                    data={dataSales}
+                    type="Line"
+                    options={optionsSales}
+                    responsiveOptions={responsiveSales}
+                    // style={{fontSize:"0.5rem"}}
+                  />
+                </div>
+              }
+              // // legend={
+              // //   <div className="legend">{this.createLegend(legendSales)}</div>
+              // }
+            />
+          </Col>
+          
+        </Row>
+
+
 
           <Row>
             <Col md={12}>
               <Card
-                title="Industry Hashtags"
-                category="Get creative"
+                title={"#"+this.state.tag+" & Related Hashtags"}
+                category="Per hour"
                 ctTableFullWidth
                 ctTableResponsive
                 content={
@@ -192,31 +226,7 @@ var responsiveSales = [
             {/* Add Graph here */}
 
           </Row>
-          <Row>
-          <Col md={12}>
-            <Card
-              statsIcon="fa fa-history"
-              id="chartHours"
-              title="User Engagement by Time of Day"
-              category="24 Hours performance"
-              stats="Updated today"
-              content={
-                <div className="ct-chart">
-                  <ChartistGraph
-                    data={dataSales}
-                    type="Line"
-                    options={optionsSales}
-                    responsiveOptions={responsiveSales}
-                  />
-                </div>
-              }
-              // // legend={
-              // //   <div className="legend">{this.createLegend(legendSales)}</div>
-              // }
-            />
-          </Col>
-          
-        </Row>
+         
          
         </Container>
       </div>
