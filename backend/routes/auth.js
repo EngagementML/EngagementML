@@ -12,7 +12,7 @@ router.post('/signup', (req, res, next) => {
         let data = singleScrape(req.body.igUsername);
    
     await data.forEach(profile => {
-        console.log(profile.user.id)
+        console.log("Data",data, profile.user.id)
         InstaProfile.findOneAndUpdate(
             {id: profile.user.id}, 
             {...profile.user}, 
