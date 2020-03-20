@@ -50,7 +50,7 @@ updateTag = (e) =>{
 }
 
   render() {
-    if (this.state.hashtagResultWord !== undefined && this.state.hashtagResultTrending !== undefined &&  this.state.tag !== 'undefined' && this.state.hashtagResultWordHistory.data) {
+    if (this.state.hashtagResultWord !== undefined && this.state.hashtagResultTrending !== undefined &&  this.state.tag !== 'undefined' && this.state.hashtagResultWordHistory !== undefined && this.state.hashtagResultWordHistory !== undefined) {
     console.log("Current State at Render", this.state)
 
 
@@ -84,7 +84,7 @@ var optionsSales = {
   low: 0,
   high: 800,
   showArea: false,
-  height: "245px",
+  // height: "245px",
   axisX: {
     showGrid: false
   },
@@ -187,7 +187,7 @@ var responsiveSales = [
 
           </Row>
           <Row>
-          <Col md={8}>
+          <Col md={12}>
             <Card
               statsIcon="fa fa-history"
               id="chartHours"

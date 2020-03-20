@@ -1829,7 +1829,8 @@ body > .navbar-collapse[data-color="purple"]:after {
     position: absolute; }
   .card .ct-chart {
     margin: 30px 0 30px;
-    height: 245px; }
+    height: 245px;
+   }
   .card .table tbody td:first-child,
   .card .table thead th:first-child {
     padding-left: 15px; }
