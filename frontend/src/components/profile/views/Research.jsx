@@ -36,6 +36,41 @@ class Research extends Component {
                 category="SoMe + Machine Learning = <3"
                 content={
                   <div>
+                    <h3>eML - Post Analysis</h3>
+                    <img
+                      src="https://egagementml.s3.amazonaws.com/post+analysis.png"
+                      alt="Post Analysis"
+                    />
+                    <br />
+                    <br />
+                    <h3>eML - Post General Recommendations</h3>
+                    <img
+                      src="https://egagementml.s3.amazonaws.com/post+general+recommendations.jpg"
+                      alt="Post General Recommendations"
+                    />
+                    <br />
+                    <br />
+                    <h3>eML - Post Per Day Recommendations</h3>
+                    <img
+                      src="https://egagementml.s3.amazonaws.com/post+per+day+recommendation.jpg"
+                      alt="Post Per Day Recommendations"
+                    />
+                    <br />
+                    <br />
+                    <h3>eML - Post Per Hour</h3>
+                    <img
+                      src="https://egagementml.s3.amazonaws.com/post+per+hour+recommendation.jpg"
+                      alt="Post Per Hour Recommendations"
+                    />
+                    <br />
+                    <br />
+                    <h3>WordCloud</h3>
+                    <img
+                      src="https://egagementml.s3.amazonaws.com/wordcloud+food+.png"
+                      alt="Word Cloud"
+                    />
+                    <br />
+                    <br />
                     <h4>Followers vs Video View Counts</h4>
                     <img
                       src="https://egagementml.s3.us-east-1.amazonaws.com/Followers%20VS%20Video%20View%20Counts.png"
