@@ -499,9 +499,9 @@ var dataSales = {
     "6:00AM"
   ],
   series: [
-    [287, 385, 490, 492, 554, 586, 698, 695],
-    [67, 152, 143, 240, 287, 335, 435, 437],
-    [23, 113, 67, 108, 190, 239, 307, 308]
+    [Math.floor((Math.random() * 50) + 200), Math.floor((Math.random() * 50) + 400), Math.floor((Math.random() * 50) + 300), Math.floor((Math.random() * 50) + 300), Math.floor((Math.random() * 50) + 300), Math.floor((Math.random() * 50) + 300), Math.floor((Math.random() * 50) + 300), Math.floor((Math.random() * 50) + 300)],
+    [Math.floor((Math.random() * 50) + 200), Math.floor((Math.random() * 50) + 450), Math.floor((Math.random() * 50) + 450), Math.floor((Math.random() * 50) + 450), Math.floor((Math.random() * 50) + 450), Math.floor((Math.random() * 50) + 450), Math.floor((Math.random() * 50) + 450), Math.floor((Math.random() * 50) + 450)],
+    [Math.floor((Math.random() * 50) + 200), Math.floor((Math.random() * 50) + 475), Math.floor((Math.random() * 50) + 675), Math.floor((Math.random() * 50) + 675), Math.floor((Math.random() * 50) + 675), Math.floor((Math.random() * 50) + 675), Math.floor((Math.random() * 50) + 675), Math.floor((Math.random() * 50) + 675)]
   ]
 };
 var optionsSales = {
@@ -533,7 +533,7 @@ var responsiveSales = [
   ]
 ];
 var legendSales = {
-  names: ["Role Model  ", "You - eML  ", "Competitor  "],
+  names: ["Competitor  ", "Role Model  ", "You - eML  "],
   types: ["info", "warning", "danger"]
 };
 
@@ -554,8 +554,8 @@ var dataBar = {
     "Dec"
   ],
   series: [
-    [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
-    [412, 243, 280, 580, 453, 353, 300, 364, 368, 410, 636, 695]
+    [Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400)],
+    [Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400), Math.floor((Math.random() * 80) + 400)]
   ]
 };
 var optionsBar = {
