@@ -32,9 +32,9 @@ export class Tasks extends Component {
     const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
     const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
     const tasks_title = [
-      "Create 4 Invisible User Experiences you Never Knew About",
-      'Read "Following makes Medium better"',
-      "Unfollow 5 enemies from twitter"
+      "Posts eML - 500 charaters and 5 hashtags ",
+      "Links eML - Up to 2 external links ",
+      "Accounts eML - 60 % Higher engagement with verified accounts "
     ];
     var tasks = [];
     var number;
