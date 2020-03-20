@@ -32,6 +32,7 @@ singleScraper = async () => {
   let dataArr = influencers.map(username => {
     console.log(username)
     return ig.scrapeUserPage(username).then(result => {
+      console.log(result)
       return result
     }).catch(err => console.error(err))
   });
