@@ -37,6 +37,10 @@ ol, ul {
 	list-style: none;
 }
 
+.loading {
+	animation: blinkingText 1.2s infinite;
+}
+
 blockquote, q {
 	quotes: none;
 }

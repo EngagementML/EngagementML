@@ -33,13 +33,13 @@ class Notifications extends Component {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://github.com/igorprado"
+                  href="https://github.com/engagamentml"
                 >
-                  Igor Prado
+                  eML
                 </a>
                 . Please checkout the{" "}
                 <a
-                  href="http://igorprado.com/react-notification-system/"
+                  href="http://engagementml.herokuapp.com/"
                   rel="noopener noreferrer"
                   target="_blank"
                 >

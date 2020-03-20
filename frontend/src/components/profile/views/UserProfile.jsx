@@ -116,155 +116,155 @@ class UserProfile extends Component {
 
   render() {
     console.log(this);
-    
-    return (
-      <div className="content">
-        <Container fluid="true">
-          <Row>
-            <Col md={8}>
-              <Card
-                title="Edit Profile"
-                content={
-                  <form onSubmit={e => this.onSubmit(e)}>
-                    <FormInputs
-                      ncols={["col-md-5", "col-md-3", "col-md-4"]}
-                      properties={[
-                        {
-                          label: "eML Username",
-                          type: "email",
-                          bsclass: "form-control",
-                          placeholder: "eML",
-                          defaultValue: this.state.email,
-                          disabled: true
-                        },
-                        {
-                          label: "IG Username",
-                          type: "text",
-                          bsclass: "form-control",
-                          placeholder: "Username",
-                          defaultValue: this.state.igUsername,
-                          onChange: this.onChange,
-                          name: "igUsername"
-                        },
-                        {
-                          label: "Nickname",
-                          type: "text",
-                          bsclass: "form-control",
-                          placeholder: "eML #1 Fan",
-                          defaultValue: this.state.name,
-                          onChange: this.onChange,
-                          name: "name"
-                        }
-                      ]}
-                    />
-                    <FormInputs
-                      ncols={["col-md-6", "col-md-6"]}
-                      properties={[
-                        {
-                          label: "First name",
-                          type: "text",
-                          bsclass: "form-control",
-                          placeholder: "First name",
-                          defaultValue: this.state.fname,
-                          onChange: this.onChange,
-                          name: "fname"
-                        },
-                        {
-                          label: "Last name",
-                          type: "text",
-                          bsclass: "form-control",
-                          placeholder: "Last name",
-                          defaultValue: this.state.lname,
-                          onChange: this.onChange,
-                          name: "lname"
-                        }
-                      ]}
-                    />
-                    <FormInputs
-                      ncols={["col-md-6", "col-md-6"]}
-                      properties={[
-                        {
-                          label: "Competitor",
-                          type: "text",
-                          bsclass: "form-control",
-                          placeholder: "Competitors",
-                          // defaultValue: this.state.competitor,
-                          // onChange: this.onChange,
-                          name: "coompetitor"
-                        },
-                        {
-                          label: "Role Model",
-                          type: "text",
-                          bsclass: "form-control",
-                          placeholder: "Role-Model",
-                          // defaultValue: this.state.role,
-                          // onChange: this.onChange,
-                          name: "role"
-                        }
-                      ]}
-                    />
+    if (this.state.email !== undefined) {
+      return (
+        <div className="content">
+          <Container fluid="true">
+            <Row>
+              <Col md={8}>
+                <Card
+                  title="Edit Profile"
+                  content={
+                    <form onSubmit={e => this.onSubmit(e)}>
+                      <FormInputs
+                        ncols={["col-md-5", "col-md-3", "col-md-4"]}
+                        properties={[
+                          {
+                            label: "eML Username",
+                            type: "email",
+                            bsclass: "form-control",
+                            placeholder: "eML",
+                            defaultValue: this.state.email,
+                            disabled: true
+                          },
+                          {
+                            label: "IG Username",
+                            type: "text",
+                            bsclass: "form-control",
+                            placeholder: "Username",
+                            defaultValue: this.state.igUsername,
+                            onChange: this.onChange,
+                            name: "igUsername"
+                          },
+                          {
+                            label: "Nickname",
+                            type: "text",
+                            bsclass: "form-control",
+                            placeholder: "eML #1 Fan",
+                            defaultValue: this.state.name,
+                            onChange: this.onChange,
+                            name: "name"
+                          }
+                        ]}
+                      />
+                      <FormInputs
+                        ncols={["col-md-6", "col-md-6"]}
+                        properties={[
+                          {
+                            label: "First name",
+                            type: "text",
+                            bsclass: "form-control",
+                            placeholder: "First name",
+                            defaultValue: this.state.fname,
+                            onChange: this.onChange,
+                            name: "fname"
+                          },
+                          {
+                            label: "Last name",
+                            type: "text",
+                            bsclass: "form-control",
+                            placeholder: "Last name",
+                            defaultValue: this.state.lname,
+                            onChange: this.onChange,
+                            name: "lname"
+                          }
+                        ]}
+                      />
+                      <FormInputs
+                        ncols={["col-md-6", "col-md-6"]}
+                        properties={[
+                          {
+                            label: "Competitor",
+                            type: "text",
+                            bsclass: "form-control",
+                            placeholder: "Competitors",
+                            // defaultValue: this.state.competitor,
+                            // onChange: this.onChange,
+                            name: "coompetitor"
+                          },
+                          {
+                            label: "Role Model",
+                            type: "text",
+                            bsclass: "form-control",
+                            placeholder: "Role-Model",
+                            // defaultValue: this.state.role,
+                            // onChange: this.onChange,
+                            name: "role"
+                          }
+                        ]}
+                      />
 
-                    <Form.Group name="industry">
-                      <Form.Label>Change your Industry</Form.Label>
-                      <Form.Control
-                        as="select"
-                        value={this.state.industry}
-                        onChange={this.onChange}
-                        name="industry"
-                      >
-                        <option>Beauty</option>
-                        <option>Design</option>
-                        <option>Fashion & Style</option>
-                        <option>Food</option>
-                        <option>Lifestyle</option>
-                        <option>Photography</option>
-                        <option>Sports & Fitness</option>
-                        <option>Travel</option>
-                      </Form.Control>
-                    </Form.Group>
-                    <Row>
-                      <Col md={12}>
-                        <FormInputs
-                          ncols={["col-md-12"]}
-                          properties={[
-                            {
-                              label: "About me",
-                              type: "textarea",
-                              rows: 5,
-                              bsclass: "form-control",
-                              placeholder: "Tell us about yourself",
-                              defaultValue: this.state.about,
-                              onChange: this.onChange,
-                              name: "about"
-                            }
-                          ]}
-                        />
-                      </Col>
-                    </Row>
-                    <Button className="success pullRight fill" type="submit">
-                      Update Profile
-                    </Button>
-                    <div className="clearfix" />
-                  </form>
-                }
-              />
-            </Col>
-            <Col md={4}>
-              <UserCard
-                bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
-                avatar={
-                  this.state.image === ""
-                    ? "https://i.imgur.com/iMovaBD.png"
-                    : this.state.image
-                }
-                name={this.state.igUsername}
-                userName={this.state.name}
-                description={this.state.about}
-                socials={
-                  <div style={{paddingBottom: '10px'}}>
-                    <strong>Industry : {this.state.industry}</strong>
-                    <br />
-                    {/* <Button simple>
+                      <Form.Group name="industry">
+                        <Form.Label>Change your Industry</Form.Label>
+                        <Form.Control
+                          as="select"
+                          value={this.state.industry}
+                          onChange={this.onChange}
+                          name="industry"
+                        >
+                          <option>Beauty</option>
+                          <option>Design</option>
+                          <option>Fashion & Style</option>
+                          <option>Food</option>
+                          <option>Lifestyle</option>
+                          <option>Photography</option>
+                          <option>Sports & Fitness</option>
+                          <option>Travel</option>
+                        </Form.Control>
+                      </Form.Group>
+                      <Row>
+                        <Col md={12}>
+                          <FormInputs
+                            ncols={["col-md-12"]}
+                            properties={[
+                              {
+                                label: "About me",
+                                type: "textarea",
+                                rows: 5,
+                                bsclass: "form-control",
+                                placeholder: "Tell us about yourself",
+                                defaultValue: this.state.about,
+                                onChange: this.onChange,
+                                name: "about"
+                              }
+                            ]}
+                          />
+                        </Col>
+                      </Row>
+                      <Button className="success pullRight fill" type="submit">
+                        Update Profile
+                      </Button>
+                      <div className="clearfix" />
+                    </form>
+                  }
+                />
+              </Col>
+              <Col md={4}>
+                <UserCard
+                  bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
+                  avatar={
+                    this.state.image === ""
+                      ? "https://i.imgur.com/iMovaBD.png"
+                      : this.state.image
+                  }
+                  name={this.state.igUsername}
+                  userName={this.state.name}
+                  description={this.state.about}
+                  socials={
+                    <div style={{ paddingBottom: "10px" }}>
+                      <strong>Industry : {this.state.industry}</strong>
+                      <br />
+                      {/* <Button simple>
                       <i className="fa fa-facebook-square" />
                     </Button>
                     <Button simple>
@@ -273,14 +273,23 @@ class UserProfile extends Component {
                     <Button simple>
                       <i className="fa fa-google-plus-square" />
                     </Button> */}
-                  </div>
-                }
-              />
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    );
+                    </div>
+                  }
+                />
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h3 className="loading" style={{ textAlign: "center" }}>
+            Loading...
+          </h3>
+        </div>
+      );
+    }
   }
 }
 
