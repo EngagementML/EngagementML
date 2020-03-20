@@ -19,6 +19,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from pymongo import MongoClient
 import nltk
+nltk.download()
 import gensim
 
 
