@@ -1,6 +1,6 @@
 const  { PythonShell } = require("python-shell");
 console.log('hello niko!')
-let pyshell = new PythonShell("my_script.py");
+let pyshell = new PythonShell("./backend/my_script.py");
 // sends a message to the Python script via stdin
 pyshell.send("hello");
 pyshell.on("message", function(message) {
