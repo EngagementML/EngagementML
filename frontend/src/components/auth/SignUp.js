@@ -72,7 +72,7 @@ class SignUp extends Component {
                           type="email"
                           onChange={this.handleChange}
                         />
-                        <input
+                        {/* <input
                           placeholder="IG Username"
                           style={{
                             border: "0",
@@ -84,9 +84,9 @@ class SignUp extends Component {
                           name="igUsername"
                           type="text"
                           onChange={this.handleChange}
-                        />
+                        /> */}
                       </div>
-                      <div className="input-group mb-2">
+                      <div className="input-group mb-3">
                         <div className="input-group-append">
                           <span className="input-group-text">
                             <FaKey />
@@ -103,6 +103,27 @@ class SignUp extends Component {
                           }}
                           name="password"
                           type="password"
+                          onChange={this.handleChange}
+                        />
+                      </div>
+                      <div className="input-group mb-3">
+                        <div className="input-group-append">
+                          <span className="input-group-text">
+                            <FaUser />
+                          </span>
+                        </div>
+                        
+                        <input
+                          placeholder="IG Username"
+                          style={{
+                            border: "0",
+                            outline: "0",
+                            background: "transparent",
+                            borderBottom: "0.15rem solid #e5e6e7",
+                            borderRadius: "0"
+                          }}
+                          name="igUsername"
+                          type="text"
                           onChange={this.handleChange}
                         />
                       </div>

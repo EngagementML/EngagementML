@@ -44,33 +44,8 @@ setuptools==42.0.2
 six==1.14.0
 smart-open==1.10.0
 sqlparse==0.3.0
-<<<<<<< HEAD
-wheel==0.33.6
-
-
-
-
-
-
-
-
-
-# import pandas as pd
-# # import numpy as np
-# # import re
-# # import datetime
-# import statistics
-# import seaborn as sns
-# from matplotlib import pyplot
-# from wordcloud import WordCloud
-# import matplotlib.pyplot as plt
-# # from pymongo import MongoClient
-# import nltk
-# import gensim
-=======
 statistics==1.0.3.5
 urllib3==1.25.8
 wheel==0.33.6
 wordcloud==1.6.0
 zope.interface==5.0.0
->>>>>>> 9d7036d3e84bd2764a4a51fb86e3f666614fc3f3
