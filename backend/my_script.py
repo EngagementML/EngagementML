@@ -1157,6 +1157,7 @@ similarity1 = pd.DataFrame(key5_words[0], columns=[
 # In[170]:
 
 
+print(similarity1)
 similarity1
 
 
@@ -1170,6 +1171,7 @@ similarity2 = pd.DataFrame(key5_words[1], columns=[
 # In[172]:
 
 
+print(similarity2)
 similarity2
 
 
@@ -1183,6 +1185,7 @@ similarity3 = pd.DataFrame(key5_words[2], columns=[
 # In[174]:
 
 
+print(similarity3)
 similarity3
 
 
@@ -1196,8 +1199,8 @@ similarity4 = pd.DataFrame(key5_words[3], columns=[
 # In[176]:
 
 
+print(similarity4)
 similarity4
-
 
 # In[177]:
 
@@ -1208,5 +1211,5 @@ similarity5 = pd.DataFrame(key5_words[4], columns=[
 
 # In[178]:
 
-
+print(similarity5)
 similarity5
