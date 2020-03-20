@@ -562,19 +562,19 @@ weekly_post_analysis=day_week_post_analysis.merge(eg_day, left_on='index', right
 weekly_post_analysis=weekly_post_analysis.drop(['day_post'],axis=1)
 
 
-# In[167]:
+# In[86]:
 
 
 weekly_post_analysis.columns
 
 
-# In[168]:
+# In[87]:
 
 
 weekly_post_analysis=weekly_post_analysis.rename(columns={"index": "Week_Day_Post","%_post_weekday": "Week/Day_post%","likes_per_day(%)": "Likes_Rate_Week/Day",0: "Engagement_rate_Week/Day"})
 
 
-# In[169]:
+# In[88]:
 
 
 weekly_post_analysis
@@ -582,135 +582,129 @@ weekly_post_analysis
 
 # ### Time Publication Analysis - DAY
 
-# In[87]:
+# In[89]:
 
 
 time_post=pd.DataFrame(instagram['time_post'].value_counts())
 
 
-# In[88]:
+# In[90]:
 
 
 time_post['%_post_time']=list(map(lambda x: (x / (sum(time_post['time_post'])))*100,time_post['time_post']))
 
 
-# In[89]:
+# In[91]:
 
 
 time_post['%_post_time']=round(time_post['%_post_time'])
 
 
-# In[90]:
+# In[92]:
 
 
 time_post=time_post.drop(['time_post'], axis=1)
 
 
-# In[91]:
+# In[93]:
 
 
 instagram['text_len']=list(map(lambda x: len(x),instagram['text']))
 
 
-# In[92]:
+# In[94]:
 
 
 likes_p=pd.DataFrame(instagram.groupby('time_post')['like_count'].sum())
 
 
-# In[93]:
+# In[95]:
 
 
 likes_p['likes_rate(%)']=list(map(lambda x: (x / (sum(likes_p['like_count'])))*100,likes_p['like_count']))
 
 
-# In[94]:
+# In[96]:
 
 
 likes_p['likes_rate(%)']=round(likes_p['likes_rate(%)'])
 
 
-# In[95]:
+# In[97]:
 
 
 likes_p=likes_p.drop(['like_count'],axis=1)
 
 
-# In[96]:
+# In[98]:
 
 
 time_post=time_post.reset_index()
 
 
-# In[97]:
+# In[99]:
 
 
 day_time_post_analysis=time_post.merge(likes_p, left_on='index', right_on='time_post',
           suffixes=('_left', '_right'))
 
 
-# In[98]:
+# In[100]:
 
 
 x4=(instagram.groupby('time_post')['followers'].sum())
 
 
-# In[99]:
+# In[101]:
 
 
 x5=(instagram.groupby('time_post')['comment_count'].sum())
 
 
-# In[100]:
+# In[102]:
 
 
 x6=(instagram.groupby('time_post')['like_count'].sum())
 
 
-# In[101]:
+# In[103]:
 
 
 y2=((x5+x6)/x4)*100
 
 
-# In[102]:
+# In[104]:
 
 
 eg_time=pd.DataFrame(y2)
 
 
-# In[103]:
+# In[105]:
 
 
 eg_time=eg_time.reset_index()
 
 
-# In[104]:
+# In[106]:
 
 
 hourly_post_analysis=day_time_post_analysis.merge(eg_time, left_on='index', right_on='time_post',
           suffixes=('_left', '_right'))
 
 
-# In[105]:
+# In[107]:
 
 
 hourly_post_analysis=hourly_post_analysis.drop(['time_post'],axis=1)
 
 
-# In[ ]:
-
-
-df.rename(columns={"A": "a", "B": "b", "C": "c"}, errors="raise")
-
-
-# In[165]:
+# In[108]:
 
 
 hourly_post_analysis=hourly_post_analysis.rename(columns={"index": "Day_Time_Post", "%_post_time": "%_Post_Day", "likes_rate(%)": "Likes_Rate_Daytime%",0: "Engagement_Rate_day",})
 
 
-# In[166]:
+# In[109]:
 
 
 hourly_post_analysis
@@ -718,31 +712,31 @@ hourly_post_analysis
 
 # ### TOP 5 Hashtags
 
-# In[107]:
+# In[110]:
 
 
 top5_hashtag=pd.DataFrame(instagram.groupby('hashtag')['like_count'].sum())
 
 
-# In[108]:
+# In[111]:
 
 
 top5_hashtag=top5_hashtag.reset_index()
 
 
-# In[109]:
+# In[112]:
 
 
 top5_hashtag=top5_hashtag.sort_values(by='like_count', ascending=False)
 
 
-# In[110]:
+# In[113]:
 
 
 x = top5_hashtag.set_index('hashtag')[1:]
 
 
-# In[111]:
+# In[114]:
 
 
 hashtag_5=x.reset_index()[0:5]
@@ -750,13 +744,13 @@ hashtag_5=x.reset_index()[0:5]
 
 # Top 5 Hashtags
 
-# In[112]:
+# In[115]:
 
 
 top_5_hashtag=hashtag_5['hashtag']
 
 
-# In[113]:
+# In[116]:
 
 
 top_5_hashtag
@@ -764,31 +758,31 @@ top_5_hashtag
 
 # ### TOP 5 External Links 
 
-# In[114]:
+# In[117]:
 
 
 top5_links=pd.DataFrame(instagram.groupby('links')['like_count'].sum())
 
 
-# In[115]:
+# In[118]:
 
 
 top5_links=top5_links.reset_index()
 
 
-# In[116]:
+# In[119]:
 
 
 top5_links=top5_links.sort_values(by='like_count', ascending=False)
 
 
-# In[117]:
+# In[120]:
 
 
 y = top5_links.set_index('links')[1:]
 
 
-# In[118]:
+# In[121]:
 
 
 links_5=y.reset_index()[0:5]
@@ -796,13 +790,13 @@ links_5=y.reset_index()[0:5]
 
 # Top 5 Links
 
-# In[119]:
+# In[122]:
 
 
 top_5_links=links_5['links']
 
 
-# In[120]:
+# In[123]:
 
 
 top_5_links
@@ -810,19 +804,19 @@ top_5_links
 
 # ### TOP 5 Instagramers 
 
-# In[121]:
+# In[124]:
 
 
 top5_instagramers=pd.DataFrame(instagram.groupby('full_name')['like_count'].sum())
 
 
-# In[122]:
+# In[125]:
 
 
 top5_instagramers=top5_instagramers.reset_index()
 
 
-# In[123]:
+# In[126]:
 
 
 top5_instagramers=top5_instagramers.sort_values(by='like_count', ascending=False)
@@ -830,13 +824,13 @@ top5_instagramers=top5_instagramers.sort_values(by='like_count', ascending=False
 
 # top 5 instagramers
 
-# In[124]:
+# In[127]:
 
 
 top_5_instagramers=top5_instagramers['full_name'][0:5]
 
 
-# In[125]:
+# In[128]:
 
 
 top_5_instagramers
@@ -844,19 +838,19 @@ top_5_instagramers
 
 # ### Top 5  Business - Category
 
-# In[126]:
+# In[129]:
 
 
 top5_category=pd.DataFrame(instagram.groupby('business_category_name')['like_count'].sum())
 
 
-# In[127]:
+# In[130]:
 
 
 top5_category=top5_category.reset_index()[1:]
 
 
-# In[128]:
+# In[131]:
 
 
 top5_category=top5_category.sort_values(by='like_count', ascending=False)
@@ -864,13 +858,13 @@ top5_category=top5_category.sort_values(by='like_count', ascending=False)
 
 # top 5 categories
 
-# In[129]:
+# In[132]:
 
 
 top_5_categories= top5_category['business_category_name']
 
 
-# In[130]:
+# In[133]:
 
 
 top_5_categories.head(5)
@@ -878,7 +872,7 @@ top_5_categories.head(5)
 
 # ### CORRELATION MATRIX
 
-# In[131]:
+# In[134]:
 
 
 corr = instagram.corr()
@@ -895,57 +889,57 @@ ax.set_xticklabels(
 
 # ### VARIABLES CORRELATION ANALYSIS
 
-# In[132]:
+# In[135]:
 
 
 sns.regplot(instagram['followers'],instagram['like_count'])
 
 
-# In[133]:
+# In[136]:
 
 
 sns.regplot(instagram['followers'],instagram['comment_count'])
 
 
-# In[134]:
+# In[137]:
 
 
 sns.regplot(instagram['followers'],instagram['video_view_count'], x_estimator=np.mean)
 
 
-# In[135]:
+# In[138]:
 
 
 sns.regplot(instagram['text_len'],instagram['hashtag_count'])
 
 
-# In[136]:
+# In[139]:
 
 
 sns.regplot(instagram['text_len'],instagram['like_count'])
 
 
-# In[137]:
+# In[140]:
 
 
 sns.regplot(instagram['link_count'],instagram['like_count'])
 
 
-# In[138]:
+# In[141]:
 
 
 sns.scatterplot(x="followers", y="like_count", hue="is_verified", data=instagram)
 sns.set(rc={'figure.figsize':(10,10)})
 
 
-# In[139]:
+# In[142]:
 
 
 sns.scatterplot(x="followers", y="like_count", hue="business_category_name", data=instagram)
 sns.set(rc={'figure.figsize':(10,10)})
 
 
-# In[140]:
+# In[143]:
 
 
 sns.relplot(x='followers', y='like_count', hue="comment_count", size="hashtag_count", data=instagram)
@@ -954,55 +948,55 @@ sns.set(rc={'figure.figsize':(15,15)})
 
 # ### INSIGHTS 
 
-# In[141]:
+# In[144]:
 
 
 insight_follower_Likes='0 and 2,500,000 Followers'
 
 
-# In[142]:
+# In[145]:
 
 
 insight_follower_comments= 'Between 0 and 3,000,000 Followers'
 
 
-# In[143]:
+# In[146]:
 
 
 insight_follower_video_views = '0 and 2,000,000 Followers'
 
 
-# In[144]:
+# In[147]:
 
 
 insight_text_hashtag='500 charaters and 5 hashtags'
 
 
-# In[145]:
+# In[148]:
 
 
 insight_text_likes= 'Up to 500 Charaters'
 
 
-# In[146]:
+# In[149]:
 
 
 insight_links=' Up to 2 external links'
 
 
-# In[147]:
+# In[150]:
 
 
 insight_verified= "60 % Higher with verified accounts "
 
 
-# In[148]:
+# In[151]:
 
 
 insights=pd.DataFrame({'Action':['Followers Vs Likes','Followers Vs Comments','Followers Vs Video Views','Text Lenght and Hashtags','Post Text Lenght','Post External Links','Account type'],'Recommendation':[insight_follower_Likes,insight_follower_comments,insight_follower_video_views,insight_text_hashtag,insight_text_likes,insight_links,insight_verified]})
 
 
-# In[149]:
+# In[152]:
 
 
 insights
@@ -1010,7 +1004,7 @@ insights
 
 # ### WORD ANALYSIS
 
-# In[150]:
+# In[153]:
 
 
 words = []
@@ -1020,13 +1014,13 @@ for comments in instagram['text']:
         words.append(item)
 
 
-# In[151]:
+# In[154]:
 
 
 wordcloud = WordCloud(width = 800, height = 800, min_font_size = 10).generate(" ".join(words))
 
 
-# In[152]:
+# In[155]:
 
 
 plt.figure(figsize = (8, 8), facecolor = None) 
@@ -1034,7 +1028,9 @@ plt.imshow(wordcloud)
 plt.show()
 
 
-# In[153]:
+# ## Word Embedding  Word2Vec - Neural Network Model
+
+# In[156]:
 
 
 hashtagwords = []
@@ -1044,93 +1040,146 @@ for comments in instagram['hashtag']:
         hashtagwords.append(item)
 
 
-# In[154]:
+# In[157]:
 
 
 from gensim import corpora, models, similarities
 
 
-# In[155]:
+# In[158]:
 
 
 x=words
 
 
-# In[156]:
+# In[159]:
 
 
 y=hashtagwords
 
 
-# In[157]:
+# In[160]:
 
 
 corpus = x+y
 
 
-# In[158]:
+# In[161]:
 
 
 tok_corp=[nltk.word_tokenize(sent) for sent in corpus]
 
 
-# In[159]:
+# In[162]:
 
 
 import nltk
 
 
-# In[160]:
+# In[163]:
 
 
 model=gensim.models.Word2Vec(tok_corp,min_count=1,size=32)
 
 
-# In[170]:
+# ### TOP 5 HASHTAGS
+
+# In[164]:
 
 
 top_5_hashtag
 
 
-# In[181]:
+# In[165]:
 
 
 key_hashtags=[]
 for kw in top_5_hashtag:
     temp = re.findall('\w{4,}', kw)
     for item in temp:
-        key_hasht.append(item)
+        key_hashtags.append(item)
 
 
-# In[184]:
+# In[166]:
 
 
-top_10_key_hashtags=key_hashtags[:10]
+top_10_key_hashtags=key_hashtags[:5]
 
 
-# In[220]:
+# In[167]:
 
 
-top_10_key_hashtags
+top_10_key_hashtags[0]
 
 
-# In[225]:
+# In[168]:
 
 
-key_words={}
-def top_key_words(x):
+key5_words=[]
+def top_key_wordss(x):
     for item in x:
-        key_words[item] = model.most_similar(item)
-top_key_words(top_10_key_hashtags)
+        key5_words.append(model.most_similar(item)[:5])
+top_key_wordss(top_10_key_hashtags)
 
 
-# In[214]:
+# ### Similarities - Words 
+
+# In[169]:
 
 
-#model.most_similar('MothersDay')
+similarity1=pd.DataFrame(key5_words[0],columns = [top_10_key_hashtags[0], 'Similarity_%'])
 
 
-# In[232]:
+# In[170]:
 
 
-type(key_words)
+similarity1
+
+
+# In[171]:
+
+
+similarity2=pd.DataFrame(key5_words[1],columns = [top_10_key_hashtags[1], 'Similarity_%'])
+
+
+# In[172]:
+
+
+similarity2
+
+
+# In[173]:
+
+
+similarity3=pd.DataFrame(key5_words[2],columns = [top_10_key_hashtags[2], 'Similarity_%'])
+
+
+# In[174]:
+
+
+similarity3
+
+
+# In[175]:
+
+
+similarity4=pd.DataFrame(key5_words[3],columns = [top_10_key_hashtags[3], 'Similarity_%'])
+
+
+# In[176]:
+
+
+similarity4
+
+
+# In[177]:
+
+
+similarity5=pd.DataFrame(key5_words[4],columns = [top_10_key_hashtags[4], 'Similarity_%'])
+
+
+# In[178]:
+
+
+similarity5
+
