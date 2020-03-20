@@ -18,9 +18,16 @@ from matplotlib import pyplot
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from pymongo import MongoClient
-import nltk
-nltk.download()
 import gensim
+import nltk
+import ssl
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
+nltk.download()
 
 
 # In[2]:
