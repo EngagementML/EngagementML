@@ -4,6 +4,8 @@ import ChartistGraph from "react-chartist";
 import axios from "axios";
 import Card from "../components/Card/Card.jsx";
 import { thArray } from "../variables/Variables.jsx";
+import IGback from '../../../images/igback.jpg'
+
 
 class TableList extends Component {
 
@@ -123,6 +125,13 @@ var responsiveSales = [
 
 
     return (
+      // <div class="content" style={{
+      //   backgroundImage: `url(${IGback})`,
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundSize: "cover",
+      //   height: "20vh"
+      // }}>        
+      
       <div className="content">
       <h1 className="display-1">#Trending</h1>
       <Carousel>
@@ -230,6 +239,9 @@ var responsiveSales = [
          
         </Container>
       </div>
+
+      // </div>
+      
     );
   } else {
     return (
