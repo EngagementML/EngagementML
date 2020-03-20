@@ -90,6 +90,139 @@ class Research extends Component {
 
   </Carousel.Item>
 
+  <Carousel.Item>
+
+    <img
+      className="d-block alignItemsCenter"
+      src="https://egagementml.s3.us-east-1.amazonaws.com/Correlation%20Matrix.png"
+      alt="Correlation"
+    />
+
+  </Carousel.Item>
+
+  <Carousel.Item>
+
+    <img
+      className="d-block alignItemsCenter"
+      src="https://egagementml.s3.us-east-1.amazonaws.com/Correlation%20Matrix.png"
+      alt="Correlation"
+    />
+
+  </Carousel.Item>
+
+  <Carousel.Item>
+
+    <img
+      className="d-block alignItemsCenter"
+      src="https://egagementml.s3.us-east-1.amazonaws.com/Correlation%20Matrix.png"
+      alt="Correlation"
+    />
+
+  </Carousel.Item>
+
+  <Carousel.Item>
+
+    <img
+      className="d-block alignItemsCenter"
+      src="https://egagementml.s3.us-east-1.amazonaws.com/Correlation%20Matrix.png"
+      alt="Correlation"
+    />
+
+  </Carousel.Item>
+
+  <Carousel.Item>
+
+    <img
+      className="d-block alignItemsCenter"
+      src="https://egagementml.s3.us-east-1.amazonaws.com/Correlation%20Matrix.png"
+      alt="Correlation"
+    />
+
+  </Carousel.Item>
+
+  {/* new */}
+
+  <Carousel.Item>
+
+    <img
+      className="d-block alignItemsCenter"
+      src="https://egagementml.s3.amazonaws.com/post+analysis.png"
+                      alt="Post Analysis"
+    />
+
+  </Carousel.Item>
+
+  <Carousel.Item>
+
+    <img
+      className="d-block alignItemsCenter"
+      src="https://egagementml.s3.amazonaws.com/post+general+recommendations.jpg"
+                      alt="Post General Recommendations"
+    />
+
+  </Carousel.Item>
+
+  <Carousel.Item>
+
+    <img
+      className="d-block alignItemsCenter"
+      src="https://egagementml.s3.amazonaws.com/post+per+day+recommendation.jpg"
+                      alt="Post Per Day Recommendations"
+    />
+
+  </Carousel.Item>
+
+  <Carousel.Item>
+
+    <img
+      className="d-block alignItemsCenter"
+      src="https://egagementml.s3.amazonaws.com/post+per+day+recommendation.jpg"
+                      alt="Post Per Day Recommendations"
+    />
+
+  </Carousel.Item>
+
+  <Carousel.Item>
+
+    <img
+      className="d-block alignItemsCenter"
+      src="https://egagementml.s3.amazonaws.com/post+per+day+recommendation.jpg"
+                      alt="Post Per Day Recommendations"
+    />
+
+  </Carousel.Item>
+
+  <Carousel.Item>
+
+    <img
+      className="d-block alignItemsCenter"
+      src="https://egagementml.s3.amazonaws.com/post+per+day+recommendation.jpg"
+                      alt="Post Per Day Recommendations"
+    />
+
+  </Carousel.Item>
+
+  <Carousel.Item>
+
+    <img
+      className="d-block alignItemsCenter"
+      src="https://egagementml.s3.amazonaws.com/post+per+hour+recommendation.jpg"
+                      alt="Post Per Hour Recommendations"
+    />
+
+  </Carousel.Item>
+
+  <Carousel.Item>
+
+    <img
+      src="https://egagementml.s3.amazonaws.com/wordcloud+food+.png"
+      alt="Word Cloud"
+    />
+
+  </Carousel.Item>
+
+
+
 </Carousel>
 
 }

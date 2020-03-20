@@ -22,8 +22,7 @@ class HomeComp extends Component {
               </header>
               <p>
                 Welcome to <strong>EngagementML</strong> a machine learning
-                applications developed for social media management strategy and
-                released under the MIT license.
+                applications developed for social media management research and strategy
               </p>
               <footer>
                 <a
@@ -49,7 +48,7 @@ class HomeComp extends Component {
               <p>
                 This application lets its user analyze the data from the last 12
                 IG posts and runs our complex machine learning algorythm using
-                regression analysis to predict the future engagement rate.
+                regression analysis to reccomend optimizations which will increase your engagement rate.
               </p>
               <br />
               <br />
