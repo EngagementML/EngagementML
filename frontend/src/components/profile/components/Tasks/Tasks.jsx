@@ -32,8 +32,8 @@ export class Tasks extends Component {
     const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
     const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
     const tasks_title = [
-      "Posts eML - 500 charaters and 5 hashtags ",
-      "Links eML - Up to 2 external links ",
+      "Posts eML - Keep your post to 500 charaters and max of 5 hashtags ",
+      "Links eML - Up to 2 external links per post ",
       "Accounts eML - 60 % Higher engagement with verified accounts "
     ];
     var tasks = [];
@@ -43,10 +43,10 @@ export class Tasks extends Component {
       tasks.push(
         <tr key={i}>
           <td>
-            <Checkbox
+            {/* <Checkbox
               number={number}
               isChecked={i === 1 || i === 2 ? true : false}
-            />
+            /> */}
           </td>
           <td>{tasks_title[i]}</td>
           <td className="td-actions text-right">
