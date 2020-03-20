@@ -275,7 +275,7 @@ if (this.state.email !== undefined && this.state.profile !== undefined && this.s
 
           <Col md={6}>
             <Card
-              title="eML Hashtags"
+              title="eML Optimization Recommendations"
               category="Fix to Optimize your Strategy"
               stats="Updated 3 minutes ago"
               statsIcon="fa fa-history"
