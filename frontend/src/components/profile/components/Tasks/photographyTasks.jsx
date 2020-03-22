@@ -25,11 +25,11 @@ export class photographyTasks extends Component {
       [{"Week_Day_Post": "Wednesday", "Week/Day_post%": 18.0, "Likes_Rate_Week/Day": 10.0, "Engagement_rate_Week/Day": 0.8260356894}, {"Week_Day_Post": "Sunday", "Week/Day_post%": 17.0, "Likes_Rate_Week/Day": 13.0, "Engagement_rate_Week/Day": 1.2026166191}, {"Week_Day_Post": "Monday", "Week/Day_post%": 17.0, "Likes_Rate_Week/Day": 14.0, "Engagement_rate_Week/Day": 0.941260222}, {"Week_Day_Post": "Tuesday", "Week/Day_post%": 13.0, "Likes_Rate_Week/Day": 15.0, "Engagement_rate_Week/Day": 0.8558080439}, {"Week_Day_Post": "Thursday", "Week/Day_post%": 12.0, "Likes_Rate_Week/Day": 7.0, "Engagement_rate_Week/Day": 1.1847658057}, {"Week_Day_Post": "Friday", "Week/Day_post%": 12.0, "Likes_Rate_Week/Day": 22.0, "Engagement_rate_Week/Day": 1.0379751043}, {"Week_Day_Post": "Saturday", "Week/Day_post%": 11.0, "Likes_Rate_Week/Day": 19.0, "Engagement_rate_Week/Day": 1.3773987375}]
     ]
 
-    const tasks_title = [
-      "Posts eML - Keep your post to 500 charaters and max of 5 hashtags ",
-      "Links eML - Up to 2 external links per post ",
-      "Accounts eML - 60 % Higher engagement with verified accounts ",
-    ];
+    // const tasks_title = [
+    //   "Posts eML - Keep your post to 500 charaters and max of 5 hashtags ",
+    //   "Links eML - Up to 2 external links per post ",
+    //   "Accounts eML - 60 % Higher engagement with verified accounts ",
+    // ];
 
     const tasks_title = 
     
