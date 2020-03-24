@@ -6,10 +6,10 @@ import axios from "axios";
 import actions from "../../../services/index";
 import { Card } from "../components/Card/Card.jsx";
 import { StatsCard } from "../components/StatsCard/StatsCard.jsx";
-import { foodTasks} from "../components/Tasks/foodTasks";
-import { fashionTasks } from "../components/Tasks/fashionTasks";
-import { lifestyleTasks } from "../components/Tasks/lifestyleTasks";
-import { photographyTasks } from "../components/Tasks/photographyTasks";
+import { FoodTasks} from "../components/Tasks/foodTasks";
+import { FashionTasks } from "../components/Tasks/fashionTasks";
+import { LifestyleTasks } from "../components/Tasks/lifestyleTasks";
+import { PhotographyTasks } from "../components/Tasks/photographyTasks";
 
 import {
   // dataSales,
@@ -88,14 +88,14 @@ class Dashboard extends Component {
 
   actualTask(industry){
     if (industry==="Food"){
-      return <foodTasks />
+      return <FoodTasks />
     } else if (industry==="Fashion & Style"){
-      return <fashionTasks />
+      return <FashionTasks />
     } else if (industry==="Photography") {
-      return <photographyTasks />
+      return <PhotographyTasks />
     } else {
       // Lifestyle here
-      return <lifestyleTasks />
+      return <LifestyleTasks />
     }
   }
 

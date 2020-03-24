@@ -4,7 +4,7 @@ import Checkbox from "../CustomCheckbox/CustomCheckbox.jsx";
 import Button from "../CustomButton/CustomButton.jsx";
 import axios from "axios";
 
-export class foodTasks extends Component {
+export class FoodTasks extends Component {
 
   // state = {
     
@@ -125,4 +125,4 @@ export class foodTasks extends Component {
   }
 }
 
-export default foodTasks;
+export default FoodTasks;
