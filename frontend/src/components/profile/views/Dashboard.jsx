@@ -6,7 +6,11 @@ import axios from "axios";
 import actions from "../../../services/index";
 import { Card } from "../components/Card/Card.jsx";
 import { StatsCard } from "../components/StatsCard/StatsCard.jsx";
-import { foodTasks, fashionTasks, lifestyleTasks, photographyTasks } from "../components/Tasks/foodTasks.jsx";
+import { foodTasks} from "../components/Tasks/foodTasks";
+import { fashionTasks } from "../components/Tasks/fashionTasks";
+import { lifestyleTasks } from "../components/Tasks/lifestyleTasks";
+import { photographyTasks } from "../components/Tasks/photographyTasks";
+
 import {
   // dataSales,
   dataPie,

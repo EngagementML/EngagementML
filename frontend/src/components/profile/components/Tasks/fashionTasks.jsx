@@ -3,7 +3,7 @@ import { Tooltip, OverlayTrigger } from "react-bootstrap";
 import Checkbox from "../CustomCheckbox/CustomCheckbox.jsx";
 import Button from "../CustomButton/CustomButton.jsx";
 
-export class Tasks extends Component {
+export class fashionTasks extends Component {
   handleCheckbox = event => {
     const target = event.target;
     console.log(event.target);
@@ -92,4 +92,4 @@ export class Tasks extends Component {
   }
 }
 
-export default Tasks;
+export default fashionTasks;
