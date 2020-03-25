@@ -32,7 +32,7 @@ class UserProfile extends Component {
     // role: [],
     // competitor:[],
     profile: {
-      profile_pic_url_hd : profile
+      // profile_pic_url_hd : profile
     }
   };
 
@@ -42,6 +42,19 @@ class UserProfile extends Component {
     let user = await actions.isLoggedIn();
     this.setState({ ...user.data });
     console.log("Current User >> ", user);
+    
+    await axios
+      // .get("http://localhost:5000/profiles/")
+      .get("https://engagementml.herokuapp.com/profile/" + this.state.igUsername)
+      .then(res => {
+        // console.log(res, res.data);
+        this.setState({
+          profile: res.data
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
 
    await axios 
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
@@ -64,18 +77,6 @@ class UserProfile extends Component {
         console.log(error);
       });
   
-    await axios
-      // .get("http://localhost:5000/profiles/")
-      .get("https://engagementml.herokuapp.com/profile/" + this.state.igUsername)
-      .then(res => {
-        // console.log(res, res.data);
-        this.setState({
-          profile: res.data
-        });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
   
 
   }
@@ -116,7 +117,7 @@ class UserProfile extends Component {
 
   render() {
     console.log(this);
-    if (this.state.email !== undefined) {
+    if (this.state.email !== undefined && this.state.profile !== {}) {
       return (
         <div className="content">
           <Container fluid="true">
