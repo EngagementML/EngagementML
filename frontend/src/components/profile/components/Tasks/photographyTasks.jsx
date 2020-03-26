@@ -14,11 +14,7 @@ export class Tasks extends Component {
   render() {
     const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
     const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
-    const tasks_title = [
-      "Posts eML - Keep your post to 500 charaters and max of 5 hashtags ",
-      "Links eML - Up to 2 external links per post ",
-      "Accounts eML - 60 % Higher engagement with verified accounts ",
-
+    const mockD = [
       // Avg-Industry
       [{"Post_Information": "Average hashtag per publication", "Result": 1}, {"Post_Information": "Average external link per publication", "Result": 1}, {"Post_Information": "Maximum likes per publication", "Result": 172436}, {"Post_Information": "Maximun comments per publication", "Result": 3203}, {"Post_Information": "Average text length-Characters per post", "Result": 232}],
       // Hourly 
@@ -27,8 +23,14 @@ export class Tasks extends Component {
       [{"Action": "Followers Vs Likes", "Recommendation": "0 and 2,500,000 Followers"}, {"Action": "Followers Vs Comments", "Recommendation": "Between 0 and 3,000,000 Followers"}, {"Action": "Followers Vs Video Views", "Recommendation": "0 and 2,000,000 Followers"}, {"Action": "Text Lenght and Hashtags", "Recommendation": "500 charaters and 5 hashtags"}, {"Action": "Post Text Lenght", "Recommendation": "Up to 500 Charaters"}, {"Action": "Post External Links", "Recommendation": " Up to 2 external links"}, {"Action": "Account type", "Recommendation": "60 % Higher with verified accounts "}],
       // Weekly
       [{"Week_Day_Post": "Wednesday", "Week/Day_post%": 18.0, "Likes_Rate_Week/Day": 10.0, "Engagement_rate_Week/Day": 0.8260356894}, {"Week_Day_Post": "Sunday", "Week/Day_post%": 17.0, "Likes_Rate_Week/Day": 13.0, "Engagement_rate_Week/Day": 1.2026166191}, {"Week_Day_Post": "Monday", "Week/Day_post%": 17.0, "Likes_Rate_Week/Day": 14.0, "Engagement_rate_Week/Day": 0.941260222}, {"Week_Day_Post": "Tuesday", "Week/Day_post%": 13.0, "Likes_Rate_Week/Day": 15.0, "Engagement_rate_Week/Day": 0.8558080439}, {"Week_Day_Post": "Thursday", "Week/Day_post%": 12.0, "Likes_Rate_Week/Day": 7.0, "Engagement_rate_Week/Day": 1.1847658057}, {"Week_Day_Post": "Friday", "Week/Day_post%": 12.0, "Likes_Rate_Week/Day": 22.0, "Engagement_rate_Week/Day": 1.0379751043}, {"Week_Day_Post": "Saturday", "Week/Day_post%": 11.0, "Likes_Rate_Week/Day": 19.0, "Engagement_rate_Week/Day": 1.3773987375}]
-
+    ]
+    
+    const tasks_title = [
+      "Posts eML - Keep your post to 500 charaters and max of 5 hashtags ",
+      "Links eML - Up to 2 external links per post ",
+      "Accounts eML - 60 % Higher engagement with verified accounts ",
     ];
+
     var tasks = [];
     var number;
     for (var i = 0; i < tasks_title.length; i++) {
