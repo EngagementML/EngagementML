@@ -1,5 +1,4 @@
 <img src='https://engagementml.herokuapp.com/static/media/engagementMLb.eea9bdfd.png' alt='eML'>
-
 # <p align='center'>🧠 Machine Learning + Instagram = Powerful Insights 🚀</p>
 ---
 
@@ -7,8 +6,10 @@
 
 ---
 <p align='center'>
-<img src='https://riverapecunia.com/wp-content/uploads/2020/03/Screen-Shot-2020-03-26-at-12.00.53-AM.png' alt='eML' height='500'>
+<img src='https://riverapecunia.com/wp-content/uploads/2020/03/Screen-Shot-2020-03-26-at-12.00.53-AM.png' alt='eML' width='500'>
 </p>
+<br/>
+<br/>
 
 ## What EngagementML does?
 This application lets its user analyze the data from the last 12 IG posts and runs our complex machine learning algorythm to reccomend optimizations which will increase your engagement rate.
