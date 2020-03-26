@@ -198,13 +198,16 @@ var legendSales = {
     <div className="content">
       <Container fluid="true">
         <Row>
-        <Col lg={3} sm={6}>
+          <Col lg={3} sm={6}>
             <StatsCard
               bigIcon={<i className="pe-7s-users text-primary " />}
               statsText="Followers"
               statsValue={
                 this.state.profile !== []
-                  ? this.state.profile.edge_followed_by.count.toLocaleString(navigator.language, { minimumFractionDigits: 0 })
+                  ? this.state.profile.edge_followed_by.count.toLocaleString(
+                      navigator.language,
+                      { minimumFractionDigits: 0 }
+                    )
                   : "N/A"
               }
               statsIcon={<i className="pe-7s-refresh-2" />}
@@ -218,8 +221,8 @@ var legendSales = {
               statsValue={
                 this.state.posts !== []
                   ? (
-                      ((this.state.posts[0].like_count +
-                        this.state.posts[0].comment_count) /
+                      ((this.state.posts[this.state.posts.length - 1].like_count +
+                        this.state.posts[this.state.posts.length - 1].comment_count) /
                         this.state.profile.edge_followed_by.count) *
                       100
                     ).toFixed(1) + "%"
@@ -236,12 +239,12 @@ var legendSales = {
               statsValue={
                 this.state.posts !== []
                   ? (
-                      ((this.state.posts[0].like_count +
-                        this.state.posts[0].comment_count) /
+                      ((this.state.posts[this.state.posts.length - 1].like_count +
+                        this.state.posts[this.state.posts.length - 1].comment_count) /
                         this.state.profile.edge_followed_by.count) *
                         100 -
-                      ((this.state.posts[1].like_count +
-                        this.state.posts[1].comment_count) /
+                      ((this.state.posts[this.state.posts.length - 2].like_count +
+                        this.state.posts[this.state.posts.length - 2].comment_count) /
                         this.state.profile.edge_followed_by.count) *
                         100
                     ).toFixed(1) + "%"
@@ -257,10 +260,12 @@ var legendSales = {
               statsText="eML Rate"
               statsValue={
                 this.state.profile !== []
-                  ? (((this.state.posts[1].like_count +
-                      this.state.posts[1].comment_count) /
-                      this.state.profile.edge_followed_by.count) *
-                    100).toFixed(1) + '%'
+                  ? (
+                      ((this.state.posts[this.state.posts.length - 2].like_count +
+                        this.state.posts[this.state.posts.length - 2].comment_count) /
+                        this.state.profile.edge_followed_by.count) *
+                      100
+                    ).toFixed(1) + "%"
                   : "N/A"
               }
               statsIcon={<i className="pe-7s-refresh-2" />}
@@ -360,7 +365,6 @@ var legendSales = {
                   <table className="table">
                     {/* <Tasks className="flex-row" style={{display: "flex",alignItems: "center"}}/> */}
                     <Tasks />
-
                   </table>
                 </div>
               }
