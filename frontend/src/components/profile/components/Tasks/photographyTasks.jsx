@@ -31,29 +31,36 @@ export class Tasks extends Component {
       "Accounts eML - 60 % Higher engagement with verified accounts ",
     ];
 
-    const tasks_title = [
-      // "Posts eML - Keep your post to 500 charaters and max of 5 hashtags ",
-      // "Links eML - Up to 2 external links per post ",
-      // "Accounts eML - 60 % Higher engagement with verified accounts ",
+    const tasks_title = 
+    
       mockD.map(eachArrObj => {
+      console.log(eachArrObj)
+
+      // Avg Industry
+      if (eachArrObj[0].Post_Information){
+        return `The max likes we've discovered in your industry is ${eachArrObj[2].Result}`
+      // Avg Industry
+      } else if (eachArrObj[0].Day_Time_Post) {
+
+        eachArrObj.sort(function(x, y){
+          return y.Engagement_Rate_day - x.Engagement_Rate_day;
+        })
+        console.log("HEreeeeeeeeeee",eachArrObj)
+          return ` Your top post time is: ${ eachArrObj[0].Day_Time_Post} with an eML ${eachArrObj[0].Engagement_Rate_day.toLocaleString(navigator.language, { minimumFractionDigits: 1 })}` 
+      // Insights
+      } else if (eachArrObj[0].Action) {
+          return `You should use up to ${eachArrObj[3].Recommendation} in your captions.`
+      // Week 
+      } else {
+
+        eachArrObj.sort(function(x, y){
+          return y[`Engagement_rate_Week/Day`] - x[`Engagement_rate_Week/Day`];
+        })
         console.log(eachArrObj)
+        return ` Your top post day is: ${ eachArrObj[0].Week_Day_Post} with an eML ${eachArrObj[0][`Engagement_rate_Week/Day`].toLocaleString(navigator.language, { minimumFractionDigits: 1 })}` 
+        }
 
-        // Avg Industry
-        if (eachArrObj[0].Post_Information){
-          return "blah"
-        // Avg Industry
-        } else if (eachArrObj[0].Day_Time_Post) {
-            return "blah"
-        // Insights
-        } else if (eachArrObj[0].Action) {
-            return "blah"
-        // Week 
-        } else {
-            return "blah"
-          }
-
-      })
-    ];
+    })
 
     var tasks = [];
     var number;
