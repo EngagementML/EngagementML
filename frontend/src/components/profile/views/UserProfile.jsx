@@ -12,6 +12,7 @@ import { FormInputs } from "../components/FormInputs/FormInputs.jsx";
 import { UserCard } from "../components/UserCard/UserCard.jsx";
 import Button from "../components/CustomButton/CustomButton.jsx";
 import "font-awesome/css/font-awesome.min.css";
+import profile from "../assets/img/profile-placeholder.png";
 
 
 // const industryOptions = ['Food', 'Travel', 'Fashion & Style', 'Photography', 'Lifestyle', 'Design', 'Beauty', 'Sports & Fitness' ]
@@ -30,7 +31,9 @@ class UserProfile extends Component {
     industry: "",
     // role: [],
     // competitor:[],
-    profile: [],
+    profile: {
+      // profile_pic_url_hd : profile
+    }
   };
 
   
@@ -39,6 +42,19 @@ class UserProfile extends Component {
     let user = await actions.isLoggedIn();
     this.setState({ ...user.data });
     console.log("Current User >> ", user);
+    
+    await axios
+      // .get("http://localhost:5000/profiles/")
+      .get("https://engagementml.herokuapp.com/profile/" + this.state.igUsername)
+      .then(res => {
+        // console.log(res, res.data);
+        this.setState({
+          profile: res.data
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
 
    await axios 
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
@@ -60,22 +76,7 @@ class UserProfile extends Component {
       .catch(function(error) {
         console.log(error);
       });
-
-    
   
-  
-    await axios
-      // .get("http://localhost:5000/profiles/")
-      .get("https://engagementml.herokuapp.com/profile/" + this.state.igUsername)
-      .then(res => {
-        // console.log(res, res.data);
-        this.setState({
-          profile: res.data
-        });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
   
 
   }
@@ -116,7 +117,7 @@ class UserProfile extends Component {
 
   render() {
     console.log(this);
-    if (this.state.email !== undefined) {
+    if (this.state.email !== undefined && this.state.profile !== {}) {
       return (
         <div className="content">
           <Container fluid="true">
@@ -144,7 +145,8 @@ class UserProfile extends Component {
                             placeholder: "Username",
                             defaultValue: this.state.igUsername,
                             onChange: this.onChange,
-                            name: "igUsername"
+                            name: "igUsername",
+                            disabled: true
                           },
                           {
                             label: "Nickname",
@@ -180,7 +182,9 @@ class UserProfile extends Component {
                           }
                         ]}
                       />
-                      <FormInputs
+
+                      {/* // Future Dev - Competitors / Role Models */}
+                      {/* <FormInputs
                         ncols={["col-md-6", "col-md-6"]}
                         properties={[
                           {
@@ -202,7 +206,7 @@ class UserProfile extends Component {
                             name: "role"
                           }
                         ]}
-                      />
+                      /> */}
 
                       <Form.Group name="industry">
                         <Form.Label>Change your Industry</Form.Label>
@@ -253,9 +257,9 @@ class UserProfile extends Component {
                 <UserCard
                   bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
                   avatar={
-                    this.state.image === ""
-                      ? "https://i.imgur.com/iMovaBD.png"
-                      : this.state.image
+                    this.state.profile === {}
+                      ?  (profile)
+                      : this.state.profile.profile_pic_url_hd
                   }
                   name={this.state.igUsername}
                   userName={this.state.name}

@@ -10,7 +10,10 @@ class Footer extends Component {
         <footer
           className="page-footer font-small blue pt-4"
           style={{
-            backgroundColor: "cornflowerblue",
+            backgroundColor: "black",
+            backgroundImage:
+              "url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986)",
+            backgroundSize: "contain",
             paddingTop: "40px",
             paddingBottom: "20px",
             color: "white",
@@ -29,9 +32,17 @@ class Footer extends Component {
                   Application Project
                 </h5>
                 <p>
-                  This is an open source application intended as boilerplate for
-                  programmers that want a simple Bootstrap template to engage in
-                  fast prototyping for React Applications. <br />
+                  EngagementML is machine learning application developed for
+                  social media management research and strategy optimization.
+                  If you want to know more about the project be sure to conect
+                  with us!
+                  <br/>
+                  <br />
+                  Contact us:{" "}
+                  <a href="mailto:engagementml@gmail.com">
+                    engagementML@gmail.com
+                  </a>
+                  
                 </p>
               </div>
 
@@ -70,21 +81,21 @@ class Footer extends Component {
                 <ul className="list-unstyled" style={{ textAlign: "center" }}>
                   <li>
                     <a
-                      href="https://riverapecunia.com"
+                      href="https://github.com/EngagementML"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       {" "}
-                      Link #1
+                      Github
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://pecuniagroup.com/"
+                      href="https://instagram.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Link #2
+                      Instagram
                     </a>
                   </li>
                   <li>
@@ -93,16 +104,16 @@ class Footer extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Link #3
+                      Artificial Intelligence
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://www.npmjs.com/package/axios"
+                      href="https://google.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Link #4
+                      Machine Learning
                     </a>
                   </li>
                 </ul>

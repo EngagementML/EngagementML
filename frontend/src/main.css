@@ -2269,7 +2269,7 @@ input, select, textarea {
 /* One */
 
 	#one {
-		background: url("../src/images/image3.jpg"), url("../src/images/image3.jpg");
+		background: url("../src/images/image3.jpeg"), url("../src/images/image3.jpeg");
 		/* background-size: 256px 256px, cover; */
 		background-size:  cover;
 		background-attachment: fixed, fixed;
