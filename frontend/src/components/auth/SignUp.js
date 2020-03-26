@@ -21,7 +21,7 @@ class SignUp extends Component {
                 this.props.history.push("/profile/admin/user")
                 // console.log(this.props)
                  
-            }).catch(({ response }) => console.error(response.data))
+            }).catch(({ response }) => alert("This username has already been taken. Please try again with a different username!"))
     }
 
     render() {
