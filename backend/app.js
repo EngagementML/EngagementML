@@ -179,5 +179,18 @@ app.route("/addToFollow").post((req, res, next) => {
 });
 
 
+// Missing schema below for ml (Collection1)
+
+// app.route("/collection1").get((req, res, next) => {
+//   InstaPost.find({}, {date: 1, text: 1, owner_id: 1, like_count:1, comment_count:1, is_video: 1}, (err, instapost) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.json(instapost);
+//     }
+//   });
+// });
+
+
 
 module.exports = app;
