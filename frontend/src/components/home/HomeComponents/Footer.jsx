@@ -29,9 +29,9 @@ class Footer extends Component {
           >
             <div className="row" style={{ display: "align-space-evenly" }}>
               <div className="col-md-6 mt-md-0 mt-3">
-                <h5>
-                  <img src={logo} width="250" alt="EngagementML" />
-                </h5>
+                <h4>
+                  <img src={logo} width="300" alt="EngagementML" />
+                </h4>
                 <p>
                   <strong>EngagementML</strong> is machine learning application
                   developed for social media management research and strategy
@@ -57,7 +57,9 @@ class Footer extends Component {
                 className="col-md-3 mb-md-0 mb-3"
                 style={{ textAlign: "center" }}
               >
-                <h5 className="text-uppercase">Proudly Originated at</h5>
+                <h4 className="text-uppercase">
+                  <strong>Proudly Originated at</strong>
+                </h4>
                 <br />
                 <a
                   href="https://www.ironhack.com/en"
@@ -76,9 +78,9 @@ class Footer extends Component {
               </div>
 
               <div className="col-md-3 mb-md-0 mb-3">
-                <h5 className="text-uppercase" style={{ textAlign: "center" }}>
-                  Useful Links
-                </h5>
+                <h4 className="text-uppercase" style={{ textAlign: "center" }}>
+                  <strong>Useful Links</strong>
+                </h4>
 
                 <ul className="list-unstyled" style={{ textAlign: "center" }}>
                   <li>
@@ -126,8 +128,14 @@ class Footer extends Component {
           <br />
         </footer>
         <div className="footer-copyright text-center py-3">
-          <img src={logo} width="150" height="30" alt="EngagementML" /> | All
-          rights reserved © {new Date().getFullYear()}
+          <img
+            src={logo}
+            width="200"
+            height="40"
+            alt="EngagementML"
+            style={{ verticalAlign: "middle" }}
+          />{" "}
+          | All rights reserved © {new Date().getFullYear()}
         </div>
       </React.Fragment>
     );
