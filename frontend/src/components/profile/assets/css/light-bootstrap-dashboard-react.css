@@ -1896,7 +1896,7 @@ body > .navbar-collapse[data-color="purple"]:after {
 .ct-label {
   fill: rgba(0, 0, 0, 0.4);
   color: rgba(0, 0, 0, 0.4);
-  font-size: 0.3rem !important;
+  /* font-size: 0.3rem !important; */
   line-height: 1; }
 
 .ct-chart-line .ct-label,

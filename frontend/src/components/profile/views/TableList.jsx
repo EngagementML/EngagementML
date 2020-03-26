@@ -95,8 +95,8 @@ var dataSales = {
 
 var optionsSales = {
   low: 0,
-  high: ((((values.reduce((previous, current) => current += previous))/values.length)+((values.reduce((previous, current) => current += previous))))*0.18),
-  showArea: false,
+  // high: ((((values.reduce((previous, current) => current += previous))/values.length)+((values.reduce((previous, current) => current += previous))))*0.18).toExponential(2),
+  showArea: true,
   // height: "245px",
   axisX: {
     showGrid: false
@@ -109,9 +109,10 @@ var optionsSales = {
     right: 50
   }
 };
+
 var responsiveSales = [
   [
-    "screen and (max-width: 640px)",
+    "screen and (max-width: 50rem)",
     {
       axisX: {
         labelInterpolationFnc: function(value) {
@@ -174,6 +175,8 @@ var responsiveSales = [
                 // <div className="ct-chart" style={{fontSize:"20"}}>
                 <div className="ct-chart">
                   <ChartistGraph
+                    // labelFontWeight="900"
+                    // style={{fontSize:"20"}}
                     data={dataSales}
                     type="Line"
                     options={optionsSales}

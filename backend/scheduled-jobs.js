@@ -1,10 +1,10 @@
 const waitForData = require('./routes/InstaRoute')
 
 function sayHello() {
-    console.log('Hello');
+    console.log('Scheduled Jobs Starting');
 }
-sayHello();
 
+sayHello();
 
 waitForData()
 

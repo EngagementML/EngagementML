@@ -76,10 +76,14 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* Edited here .................................................................................................................. */
+
+
 .ct-label {
 	fill: rgba(0, 0, 0, 0.4);
 	color: rgba(0, 0, 0, 0.4);
-	font-size: 0.3rem !important;
+	/* font-size: 0.3rem !important; */
+	font-size: 0.7;
 	line-height: 1;
 }
 
@@ -2369,7 +2373,15 @@ input::placeholder {
 	font-family: 'Courier New', Courier, monospace;
 }
 
-/* .ct-label {
-    font-size: 15px;
-} */
+.ct-chart {
+	font-weight: bolder;
+}
 
+.ct-label{
+	font-size:0.45rem;
+}
+
+/* .ct-chart > svg > g {
+	display: inline;
+	perspective-origin: none;
+} */

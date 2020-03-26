@@ -60,7 +60,7 @@ class SignUp extends Component {
                           </span>
                         </div>
                         <input
-                          placeholder="Email here "
+                          placeholder="Email here"
                           style={{
                             border: "0",
                             outline: "0",
