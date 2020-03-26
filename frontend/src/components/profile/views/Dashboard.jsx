@@ -348,7 +348,14 @@ var legendSales = {
                 <div className="table-full-width">
                   <table className="table">
                     {/* <Tasks className="flex-row" style={{display: "flex",alignItems: "center"}}/> */}
+
+                    <React.Fragment>
+                      {/* {if (this.state.category ==)} */}
                     <Tasks />
+
+                    </React.Fragment>
+
+                    
                   </table>
                 </div>
               }
