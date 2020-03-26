@@ -1,12 +1,14 @@
-<img src='https://engagementml.herokuapp.com/static/media/engagementMLb.eea9bdfd.png' alt='eML'>
-<p align='center'>🧠 Machine Learning + Instagram = Powerful Insights 🚀</p>
+<p align='center'>
+<img width='700' src='https://engagementml.herokuapp.com/static/media/engagementMLb.eea9bdfd.png' alt='eML'> <br/>
+🧠 Machine Learning + Instagram = Powerful Insights 🚀
+</p>
 
 
-<blockquote><p align='center'><strong>Welcome to EngagementML a machine learning application developed for social media management research and strategy optimization!</strong></p></blockquote>
+<p align='center'><strong>Welcome to EngagementML a machine learning application developed for social media management research and strategy optimization!</strong></p>
 
 ---
 <p align='center'>
-<img src='https://riverapecunia.com/wp-content/uploads/2020/03/Screen-Shot-2020-03-26-at-12.00.53-AM.png' alt='eML' width='500'>
+<img src='https://riverapecunia.com/wp-content/uploads/2020/03/Screen-Shot-2020-03-26-at-11.43.01-AM.png' alt='eML' width='500'>
 </p>
 <br/>
 <br/>
@@ -24,5 +26,3 @@ We can help you by the power of predicting and reccomending strategies based on 
   <li><a href='https://github.com/lavila2010'>Leandro Avila  <img src="https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/ajracsdqu5gmyfl6nai0" alt='ironhack' width=15 ></a></li>
   <li><a href='https://github.com/grpecunia'>Gustavo Rivera Pecunia  <img src="https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/ajracsdqu5gmyfl6nai0" alt='ironhack' width=15 ></a></li>
 </ul>
-
-
