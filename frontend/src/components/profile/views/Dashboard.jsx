@@ -123,21 +123,21 @@ if (this.state.email !== undefined && this.state.profile !== undefined && this.s
 console.log(this.props);
 console.log(this.state);
 
-
-
-      
 // Data for Line Chart
 var dataSales = {
+
   labels: 
     // Here goes the engagement data
-      this.state.posts.map((currentPost) => {
+      this.state.posts.sort(function(x, y){
+        return x.date - y.date;
+      }).map((currentPost) => {
         // console.log(currentPost)
         let a = new Date(currentPost.date * 1000);
         let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-        let year = a.getFullYear();
+        let year = Number(a.getFullYear().toString().slice(0,2));
         let month = a.getMonth();
         let date = a.getDate();
-        let time = date+"/"+month;
+        let time = date+"/"+month+"/"+year;
         // console.log(time);
         return (
           String(time)
@@ -149,13 +149,12 @@ var dataSales = {
     this.state.posts.map((currentPost) => {
       console.log(currentPost)
       // console.log("HEREEEEE", currentPost.like_count);
-     let er = (((currentPost.like_count + currentPost.comment_count) / this.state.profile.edge_followed_by.count) * 100).toFixed(1) + "%"
+     let er = (((currentPost.like_count + currentPost.comment_count) / this.state.profile.edge_followed_by.count) * 100).toFixed(1)
     //  console.log("HERE 222222", er)
       return (
         er
       )
   })
-
 
   ]
 };
@@ -275,8 +274,8 @@ var legendSales = {
             <Card
               statsIcon="fa fa-history"
               id="chartHours"
-              title="User Engagement by Time of Day"
-              category="24 Hours performance"
+              title="Engagement Over Time"
+              category="Previous Posts"
               stats="Updated today"
               content={
                 <div className="ct-chart">
