@@ -292,8 +292,8 @@ var legendSales = {
             <Card
               statsIcon="fa fa-history"
               id="chartHours"
-              title="User Engagement by Time of Day"
-              category="24 Hours performance"
+              title="Engagement Over Time"
+              category="Previous Posts"
               stats="Updated today"
               content={
                 <div className="ct-chart">
