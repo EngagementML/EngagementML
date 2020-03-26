@@ -175,6 +175,7 @@ var optionsSales = {
     right: 50
   }
 };
+
 var responsiveSales = [
   [
     "screen and (max-width: 640px)",
@@ -187,18 +188,29 @@ var responsiveSales = [
     }
   ]
 ];
+
 var legendSales = {
   names: ["Competitor  ", "Role Model  ", "You - eML  "],
   types: ["info", "warning", "danger"]
 };
 
-
-
-
   return (
     <div className="content">
       <Container fluid="true">
         <Row>
+        <Col lg={3} sm={6}>
+            <StatsCard
+              bigIcon={<i className="pe-7s-users text-primary " />}
+              statsText="Followers"
+              statsValue={
+                this.state.profile !== []
+                  ? this.state.profile.edge_followed_by.count.toLocaleString(navigator.language, { minimumFractionDigits: 0 })
+                  : "N/A"
+              }
+              statsIcon={<i className="pe-7s-refresh-2" />}
+              statsIconText="Updated today"
+            />
+          </Col>
           <Col lg={3} sm={6}>
             <StatsCard
               bigIcon={<i className="pe-7s-leaf text-success" />}
@@ -255,7 +267,7 @@ var legendSales = {
               statsIconText="Previous Post"
             />
           </Col>
-          <Col lg={3} sm={6}>
+          {/* <Col lg={3} sm={6}>
             <StatsCard
               bigIcon={<i className="pe-7s-users text-primary " />}
               statsText="Followers"
@@ -267,7 +279,7 @@ var legendSales = {
               statsIcon={<i className="pe-7s-refresh-2" />}
               statsIconText="Updated today"
             />
-          </Col>
+          </Col> */}
         </Row>
         <Row>
           <Col md={8}>
