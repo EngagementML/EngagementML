@@ -123,18 +123,35 @@ if (this.state.email !== undefined && this.state.profile !== undefined && this.s
 console.log(this.props);
 console.log(this.state);
 
+let postArr = []
+
+const fillArr = () => {
+  this.state.posts.map( (currentPost) => {
+    postArr.push(currentPost.date)
+  })
+}
+
+fillArr()
+
+let theSorted = postArr.sort(function(x, y){
+  return x - y;
+});
 
 
+console.log("These are sorted ....", theSorted)
       
 // Data for Line Chart
 var dataSales = {
+
   labels: 
     // Here goes the engagement data
+      // theSorted.map((currentPost) => {
       this.state.posts.map((currentPost) => {
+
         // console.log(currentPost)
         let a = new Date(currentPost.date * 1000);
         let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-        let year = a.getFullYear();
+        let year = Number(a.getFullYear().toString().slice(0,2));
         let month = a.getMonth();
         let date = a.getDate();
         let time = date+"/"+month;
@@ -149,7 +166,7 @@ var dataSales = {
     this.state.posts.map((currentPost) => {
       console.log(currentPost)
       // console.log("HEREEEEE", currentPost.like_count);
-     let er = (((currentPost.like_count + currentPost.comment_count) / this.state.profile.edge_followed_by.count) * 100).toFixed(1) + "%"
+     let er = (((currentPost.like_count + currentPost.comment_count) / this.state.profile.edge_followed_by.count) * 100).toFixed(1)
     //  console.log("HERE 222222", er)
       return (
         er
