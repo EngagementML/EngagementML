@@ -49,7 +49,9 @@ class HomeComp extends Component {
           <section id="one" className="main style2 right dark fullscreen">
             <div className="content box style2">
               <header>
-                <h2>What EngagementML does?</h2>
+                <h2>
+                  <strong>What EngagementML does?</strong>
+                </h2>
               </header>
               <p>
                 This application lets its user analyze the data from the last 12
@@ -76,7 +78,9 @@ class HomeComp extends Component {
           <section id="two" className="main style2 left dark fullscreen">
             <div className="content box style2">
               <header>
-                <h2>How can EngagementML help you?</h2>
+                <h2>
+                  <strong>How can EngagementML help you?</strong>
+                </h2>
               </header>
               <p>
                 We can help you by the power of predicting and reccomending
@@ -102,8 +106,10 @@ class HomeComp extends Component {
           <section id="work" className="main style3 primary">
             <div className="content">
               <header>
-                <h2>Our Case Studies</h2>
-                <p>
+                <h2 style={{ color: "white" }}>
+                  <strong>SoMe Case Studies</strong>
+                </h2>
+                <p style={{ color: "white" }}>
                   Track and follow your competitors and infuencers with
                   EngagementML
                 </p>
@@ -189,14 +195,16 @@ class HomeComp extends Component {
           <section id="contact" className="main style3 secondary">
             <div className="content">
               <header>
-                <h2>Questions / Comments</h2>
+                <h2>
+                  <strong>Questions / Comments</strong>
+                </h2>
                 <p>
                   Interested in learning more about EngagementML or have a
                   questions for us? Drop us a line!
                 </p>
               </header>
               <div className="box">
-                <form method="post" action="#">
+                <form method="post" action="/#">
                   <div className="fields">
                     <div className="field half">
                       <input type="text" name="name" placeholder="Name" />
@@ -215,7 +223,11 @@ class HomeComp extends Component {
                   </div>
                   <ul className="actions special">
                     <li>
-                      <input type="submit" defaultValue="Send Message" />
+                      <input
+                        type="submit"
+                        className="btn btn-outline btn-success"
+                        defaultValue="Send Message"
+                      />
                     </li>
                   </ul>
                 </form>

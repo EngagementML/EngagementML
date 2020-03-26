@@ -2055,6 +2055,11 @@ input, select, textarea {
 
 			.main.style3.primary {
 				background: #ffffff;
+				background-image: url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986);
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
 				
 				
 			}
