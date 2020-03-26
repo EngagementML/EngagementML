@@ -53,13 +53,21 @@ class Icons extends Component {
             <h4>{profile.username}</h4>
             <br />
             {/* <br /> */}
-            <img alt={profile.username} style={{ width: "100%" }} src={profile.profile_pic_url_hd} />
+            <img
+              alt={profile.username}
+              style={{ width: "100%" }}
+              src={profile.profile_pic_url_hd}
+            />
             <br />
             <br />
             <h6>{profile.full_name}</h6>
             <br />
             <p>
-              <strong>Followers:</strong> {profile.edge_followed_by.count}
+              <strong>Followers:</strong>{" "}
+              {profile.edge_followed_by.count.toLocaleString(
+                navigator.language,
+                { minimumFractionDigits: 0 }
+              )}
             </p>
           </div>
         </Col>
