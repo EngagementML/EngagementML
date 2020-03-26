@@ -117,91 +117,53 @@ class Dashboard extends Component {
   }
 
   render() {
-    // if (this.state.profile.edge_followed_by.count !== undefined) {
-      console.log(this.props);
-      console.log(this.state);
+
+if (this.state.email !== undefined && this.state.profile !== undefined && this.state.posts !== undefined) {
+
+console.log(this.props);
+console.log(this.state);
 
 
 
       
 // Data for Line Chart
 var dataSales = {
-  labels: [
-    "9:00AM",
-    "12:00AM",
-    "3:00PM",
-    "6:00PM",
-    "9:00PM",
-    "12:00PM",
-    "3:00AM",
-    "6:00AM"
+  labels: 
     // Here goes the engagement data
-    //     this.state.posts.data.map((currentPost) => {
-    //   console.log(currentPost)
-    //   let unix_timestamp = currentPost.date
-    //   let date = new Date(unix_timestamp * 1000);
-    //   let minutes = "0" + date.getMinutes();
-    //   let seconds = "0" + date.getSeconds();
-    //   let formattedTime = date.getHours() + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-
-    //   return (
-    //     String(currentPost.date.slice(5,10))
-
-    //   )
-    // })
-
-  ],
+      this.state.posts.map((currentPost) => {
+        // console.log(currentPost)
+        let a = new Date(currentPost.date * 1000);
+        let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        let year = a.getFullYear();
+        let month = a.getMonth();
+        let date = a.getDate();
+        let time = date+"/"+month;
+        // console.log(time);
+        return (
+          String(time)
+        )
+    })
+  ,
   series: [
     // Here goes the data of engagement from the last 12 posts
+    this.state.posts.map((currentPost) => {
+      console.log(currentPost)
+      // console.log("HEREEEEE", currentPost.like_count);
+     let er = (((currentPost.like_count + currentPost.comment_count) / this.state.profile.edge_followed_by.count) * 100).toFixed(1) + "%"
+    //  console.log("HERE 222222", er)
+      return (
+        er
+      )
+  })
+
+
   ]
 };
 
-
-
-// var dataSales = {
-//   labels: 
-//     // "9:00AM",
-//     // "12:00AM",
-//     // "3:00PM",
-//     // "6:00PM",
-//     // "9:00PM",
-//     // "12:00PM",
-//     // "3:00AM",
-//     // "6:00AM"
-//     this.state.hashtagResultWordHistory.data.map((currentDate) => {
-//       console.log(currentDate)
-//       return (
-//         String(currentDate.date.slice(5,10))
-
-//       )
-//     })
-
-//   ,
-//   series: [
-//     this.state.hashtagResultWordHistory.data.map((currentExposure) => {
-//       console.log("Hereeeeeeee",currentExposure)
-//       values.push(currentExposure.exposure)
-//       return (
-//         String(currentExposure.exposure)
-//       )
-//     })
-//   ]
-//     // [287, 385, 490, 492, 554, 586, 698, 695],
-//     // [67, 152, 143, 240, 287, 335, 435, 437],
-//     // [23, 113, 67, 108, 190, 239, 307, 308]
-  
-// };
-
-
-
-
-
-
-
 var optionsSales = {
   low: 0,
-  high: 800,
-  showArea: false,
+  // high: 800,
+  showArea: true,
   height: "245px",
   axisX: {
     showGrid: false
@@ -234,7 +196,6 @@ var legendSales = {
 
 
 
-if (this.state.email !== undefined && this.state.profile !== undefined && this.state.posts !== undefined ) {
   return (
     <div className="content">
       <Container fluid="true">
