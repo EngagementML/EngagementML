@@ -123,38 +123,21 @@ if (this.state.email !== undefined && this.state.profile !== undefined && this.s
 console.log(this.props);
 console.log(this.state);
 
-let postArr = []
-
-const fillArr = () => {
-  this.state.posts.map( (currentPost) => {
-    postArr.push(currentPost.date)
-  })
-}
-
-fillArr()
-
-let theSorted = postArr.sort(function(x, y){
-  return x - y;
-});
-
-
-console.log("These are sorted ....", theSorted)
-      
 // Data for Line Chart
 var dataSales = {
 
   labels: 
     // Here goes the engagement data
-      // theSorted.map((currentPost) => {
-      this.state.posts.map((currentPost) => {
-
+      this.state.posts.sort(function(x, y){
+        return x.date - y.date;
+      }).map((currentPost) => {
         // console.log(currentPost)
         let a = new Date(currentPost.date * 1000);
         let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
         let year = Number(a.getFullYear().toString().slice(0,2));
         let month = a.getMonth();
         let date = a.getDate();
-        let time = date+"/"+month;
+        let time = date+"/"+month+"/"+year;
         // console.log(time);
         return (
           String(time)
@@ -172,7 +155,6 @@ var dataSales = {
         er
       )
   })
-
 
   ]
 };
