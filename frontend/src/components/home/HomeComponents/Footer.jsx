@@ -13,7 +13,10 @@ class Footer extends Component {
             backgroundColor: "black",
             backgroundImage:
               "url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986)",
-            backgroundSize: "contain",
+            backgroundAttachment: "fixed",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
             paddingTop: "40px",
             paddingBottom: "20px",
             color: "white",
@@ -27,22 +30,21 @@ class Footer extends Component {
             <div className="row" style={{ display: "align-space-evenly" }}>
               <div className="col-md-6 mt-md-0 mt-3">
                 <h5>
-                  About the{" "}
-                  <img src={logo} width="200" height="40" alt="EngagementML" />{" "}
-                  Application Project
+                  <img src={logo} width="250" alt="EngagementML" />
                 </h5>
                 <p>
-                  EngagementML is machine learning application developed for
-                  social media management research and strategy optimization.
-                  If you want to know more about the project be sure to conect
-                  with us!
-                  <br/>
+                  <strong>EngagementML</strong> is machine learning application
+                  developed for social media management research and strategy
+                  optimization. If you want to know more about the project be
+                  sure to conect with us!
                   <br />
-                  Contact us:{" "}
-                  <a href="mailto:engagementml@gmail.com">
-                    engagementML@gmail.com
-                  </a>
-                  
+                  <br />
+                  <strong>
+                    Contact us:{" "}
+                    <a href="mailto:engagementml@gmail.com">
+                      engagementML@gmail.com
+                    </a>
+                  </strong>
                 </p>
               </div>
 
@@ -124,7 +126,7 @@ class Footer extends Component {
           <br />
         </footer>
         <div className="footer-copyright text-center py-3">
-          <img src={logo} width="200" height="40" alt="EngagementML" /> | All
+          <img src={logo} width="150" height="30" alt="EngagementML" /> | All
           rights reserved © {new Date().getFullYear()}
         </div>
       </React.Fragment>
