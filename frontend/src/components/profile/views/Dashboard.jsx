@@ -134,7 +134,7 @@ var dataSales = {
         // console.log(currentPost)
         let a = new Date(currentPost.date * 1000);
         let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-        let year = Number(a.getFullYear().toString().slice(0,2));
+        let year = Number(a.getFullYear().toString().slice(2,4));
         let month = a.getMonth();
         let date = a.getDate();
         let time = date+"/"+month+"/"+year;
