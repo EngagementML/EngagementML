@@ -341,8 +341,8 @@ var legendSales = {
           <Col md={6}>
             <Card
               title="eML Optimization Recommendations"
-              category="Fix to Optimize your Strategy"
-              stats="Updated 3 minutes ago"
+              category="Based on your data vs Industry Influencers"
+              stats="Updated Daily"
               statsIcon="fa fa-history"
               content={
                 <div className="table-full-width">

@@ -30,9 +30,27 @@ export class Tasks extends Component {
     ]
 
     const tasks_title = [
-      "Posts eML - Keep your post to 500 charaters and max of 5 hashtags ",
-      "Links eML - Up to 2 external links per post ",
-      "Accounts eML - 60 % Higher engagement with verified accounts ",
+      // "Posts eML - Keep your post to 500 charaters and max of 5 hashtags ",
+      // "Links eML - Up to 2 external links per post ",
+      // "Accounts eML - 60 % Higher engagement with verified accounts ",
+      mockD.map(eachArrObj => {
+        console.log(eachArrObj)
+
+        // Avg Industry
+        if (eachArrObj[0].Post_Information){
+          return "blah"
+        // Avg Industry
+        } else if (eachArrObj[0].Day_Time_Post) {
+            return "blah"
+        // Insights
+        } else if (eachArrObj[0].Action) {
+            return "blah"
+        // Week 
+        } else {
+            return "blah"
+          }
+
+      })
     ];
 
     var tasks = [];

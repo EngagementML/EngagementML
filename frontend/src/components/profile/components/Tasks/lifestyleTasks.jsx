@@ -25,13 +25,30 @@ export class Tasks extends Component {
       [{"Week_Day_Post": "Sunday", "Week/Day_post%": 20.0, "Likes_Rate_Week/Day": 20.0, "Engagement_rate_Week/Day": 1.4684324526}, {"Week_Day_Post": "Tuesday", "Week/Day_post%": 19.0, "Likes_Rate_Week/Day": 24.0, "Engagement_rate_Week/Day": 1.6100502846}, {"Week_Day_Post": "Saturday", "Week/Day_post%": 16.0, "Likes_Rate_Week/Day": 16.0, "Engagement_rate_Week/Day": 1.7096174728}, {"Week_Day_Post": "Monday", "Week/Day_post%": 12.0, "Likes_Rate_Week/Day": 9.0, "Engagement_rate_Week/Day": 0.6688666395}, {"Week_Day_Post": "Wednesday", "Week/Day_post%": 12.0, "Likes_Rate_Week/Day": 9.0, "Engagement_rate_Week/Day": 0.8576519111}, {"Week_Day_Post": "Friday", "Week/Day_post%": 10.0, "Likes_Rate_Week/Day": 7.0, "Engagement_rate_Week/Day": 1.2637645284}, {"Week_Day_Post": "Thursday", "Week/Day_post%": 10.0, "Likes_Rate_Week/Day": 16.0, "Engagement_rate_Week/Day": 1.6984963638}]
     ]
 
-
     const tasks_title = [
-      "Posts eML - Keep your post to 500 charaters and max of 5 hashtags ",
-      "Links eML - Up to 2 external links per post ",
-      "Accounts eML - 60 % Higher engagement with verified accounts ",
-      
+      // "Posts eML - Keep your post to 500 charaters and max of 5 hashtags ",
+      // "Links eML - Up to 2 external links per post ",
+      // "Accounts eML - 60 % Higher engagement with verified accounts ",
+      mockD.map(eachArrObj => {
+        console.log(eachArrObj)
+
+        // Avg Industry
+        if (eachArrObj[0].Post_Information){
+          return "blah"
+        // Avg Industry
+        } else if (eachArrObj[0].Day_Time_Post) {
+            return "blah"
+        // Insights
+        } else if (eachArrObj[0].Action) {
+            return "blah"
+        // Week 
+        } else {
+            return "blah"
+          }
+
+      })
     ];
+    
     var tasks = [];
     var number;
     for (var i = 0; i < tasks_title.length; i++) {
