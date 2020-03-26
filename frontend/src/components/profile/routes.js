@@ -40,17 +40,17 @@ const dashboardRoutes = [
     layout: "/profile/admin"
   },
   {
-    path: "/table",
-    name: "Hashtags",
-    icon: "pe-7s-star",
-    component: TableList,
-    layout: "/profile/admin"
-  },
-  {
     path: "/research",
     name: "Research",
     icon: "pe-7s-search",
     component: Research,
+    layout: "/profile/admin"
+  },
+  {
+    path: "/table",
+    name: "Hashtags",
+    icon: "pe-7s-star",
+    component: TableList,
     layout: "/profile/admin"
   },
   {
