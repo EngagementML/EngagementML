@@ -1,6 +1,6 @@
 <img src='https://engagementml.herokuapp.com/static/media/engagementMLb.eea9bdfd.png' alt='eML'>
-# <p align='center'>🧠 Machine Learning + Instagram = Powerful Insights 🚀</p>
----
+<p align='center'>🧠 Machine Learning + Instagram = Powerful Insights 🚀</p>
+
 
 <blockquote><p align='center'><strong>Welcome to EngagementML a machine learning application developed for social media management research and strategy optimization!</strong></p></blockquote>
 
