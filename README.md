@@ -19,10 +19,12 @@ This application lets its user analyze the data from the last 12 IG posts and ru
 ## How can EngagementML help you?
 We can help you by the power of predicting and reccomending strategies based on your top competitors or infuencers in your industry. Excel in your content and engagement strategy!
 
-### Developement Team:
+### Development Team:
 <ul>
   <li><a href='https://github.com/ChabaJosa'>Chaba Josa  <img src="https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/ajracsdqu5gmyfl6nai0" alt='ironhack' width=15 ></a></li>    
   <li><a href='https://github.com/maylennunez'>Maylen Nunez  <img src="https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/ajracsdqu5gmyfl6nai0" alt='ironhack' width=15 ></a></li>
   <li><a href='https://github.com/lavila2010'>Leandro Avila  <img src="https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/ajracsdqu5gmyfl6nai0" alt='ironhack' width=15 ></a></li>
   <li><a href='https://github.com/grpecunia'>Gustavo Rivera Pecunia  <img src="https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/ajracsdqu5gmyfl6nai0" alt='ironhack' width=15 ></a></li>
 </ul>
+
+#### A very special mention of gratitude to one of the greatest - <a href='https://github.com/Tzikas'>Tzikas</a> 🚀
