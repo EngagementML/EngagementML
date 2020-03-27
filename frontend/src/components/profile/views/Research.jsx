@@ -86,7 +86,7 @@ class Research extends Component {
                 content={
                   <img
                     className="d-block alignItemsCenter"
-                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.profile.industry}/Followers_VS_Comments_Counts.jpeg`}
+                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Comments_Counts.jpeg`}
                     alt="Followers vs Comments Count"
                     height="105"
                   />
@@ -107,7 +107,7 @@ class Research extends Component {
                 content={
                   <img
                     className="d-block alignItemsCenter"
-                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.profile.industry}/Followers_VS_Likes.jpeg`}
+                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Likes.jpeg`}
                     alt="Followers Vs Likes"
                     width="270"
                   />
@@ -128,7 +128,7 @@ class Research extends Component {
                 content={
                   <img
                     className="d-block alignItemsCenter"
-                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.profile.industry}/Followers_VS_Video_view_Count.jpeg`}
+                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Video_view_Count.jpeg`}
                     alt="Followers vs Video View Count"
                     width="270"
                   />
@@ -149,7 +149,7 @@ class Research extends Component {
                 content={
                   <img
                     className="d-block alignItemsCenter"
-                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.profile.industry}/Correlation_Matrix.jpeg`}
+                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Correlation_Matrix.jpeg`}
                     alt="Correlation"
                     width="400"
                   />
@@ -170,7 +170,7 @@ class Research extends Component {
                 content={
                   <img
                     className="d-block alignItemsCenter"
-                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.profile.industry}/word_cloud.jpeg`}
+                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/word_cloud.jpeg`}
                     alt="Word Cloud"
                     width="350"
                   />
@@ -191,7 +191,7 @@ class Research extends Component {
                 content={
                   <img
                     className="d-block alignItemsCenter"
-                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.profile.industry}/Link_Count_VS_Like_Count.jpeg`}
+                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Link_Count_VS_Like_Count.jpeg`}
                     alt="Link Count vs Like Count"
                     width="400"
                   />
@@ -212,7 +212,7 @@ class Research extends Component {
                 content={
                   <img
                     className="d-block alignItemsCenter"
-                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.profile.industry}/Text_Lenght_VS_Hashtag_Count.jpeg`}
+                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Text_Lenght_VS_Hashtag_Count.jpeg`}
                     alt="Text Length vs Hashtag Count"
                     width="400"
                   />
@@ -233,7 +233,7 @@ class Research extends Component {
                 content={
                   <img
                     className="d-block alignItemsCenter"
-                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.profile.industry}/Text_Length_Vs_Like_Count.jpeg`}
+                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Text_Length_Vs_Like_Count.jpeg`}
                     alt="Text Length vs Like Count"
                     width="400"
                   />
@@ -254,7 +254,7 @@ class Research extends Component {
                 content={
                   <img
                     className="d-block alignItemsCenter"
-                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.profile.industry}/Followers_Vs_Like_Count_-_Segmented_by_Business_Categories.jpeg`}
+                    src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_Vs_Like_Count_-_Segmented_by_Business_Categories.jpeg`}
                     alt="Followers vs Likes by Business Category"
                     width="400"
                   />
