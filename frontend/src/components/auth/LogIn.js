@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import actions from '../../services/index'
-import logo from "../../images/engagementML.png";
+import logo from "../../images/engagementMLsm.png";
 import { Button } from 'react-bootstrap'
 import IGbackBlue from '../../images/backgroundBlue.png'
 // import { Link } from 'react-router-dom';
@@ -27,16 +27,31 @@ class LogIn extends Component {
   render() {
 
     return (
-      <div style={{backgroundImage:`url(${IGbackBlue})`, backgroundRepeat:"no-repeat", backgroundSize:"cover", height:"100vh"}}>
-      <div className="container h-100">
+      <div
+        style={{
+          backgroundImage: `url(${IGbackBlue})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          height: "100vh"
+        }}
+      >
+        <div className="container h-100">
           <div className="d-flex justify-content-center h-100">
             <div className="d-flex flex-column justify-content-center">
               <div className="d-flex justify-content-center">
                 <div className="brand_logo_container">
-                  <img src={logo} width='100%' className="brand_logo" alt="Logo" />
+                  <img
+                    src={logo}
+                    width="100%"
+                    className="brand_logo"
+                    alt="Logo"
+                  />
                 </div>
               </div>
-              <div className="d-flex justify-content-center form_container" id="signUpCopy">
+              <div
+                className="d-flex justify-content-center form_container"
+                id="signUpCopy"
+              >
                 <form onSubmit={this.handleSubmit}>
                   <div className="input-group mb-3">
                     <div className="input-group-append">
@@ -46,7 +61,13 @@ class LogIn extends Component {
                     </div>
                     <input
                       placeholder="Email here "
-                      style={{border: "0",outline: "0", background: "transparent", borderBottom: '0.15rem solid #e5e6e7', borderRadius:"0"}}
+                      style={{
+                        border: "0",
+                        outline: "0",
+                        background: "transparent",
+                        borderBottom: "0.15rem solid #e5e6e7",
+                        borderRadius: "0"
+                      }}
                       name="email"
                       type="email"
                       onChange={this.handleChange}
@@ -60,7 +81,13 @@ class LogIn extends Component {
                     </div>
                     <input
                       placeholder="Password here "
-                      style={{border: "0",outline: "0", background: "transparent", borderBottom: '0.15rem solid #e5e6e7', borderRadius:"0"}}
+                      style={{
+                        border: "0",
+                        outline: "0",
+                        background: "transparent",
+                        borderBottom: "0.15rem solid #e5e6e7",
+                        borderRadius: "0"
+                      }}
                       name="password"
                       type="password"
                       onChange={this.handleChange}
@@ -83,21 +110,34 @@ class LogIn extends Component {
                     </div>
                   </div> */}
                   <div className="d-flex justify-content-center mt-5 login_container">
-                      <Button type="submit" value="Log In" style={{borderColor:'#e5e6e7',color:"#e5e6e7"}}>
+                    <Button
+                      type="submit"
+                      value="Log In"
+                      style={{ borderColor: "#e5e6e7", color: "#e5e6e7" }}
+                    >
                       Log In
                     </Button>
                   </div>
                 </form>
               </div>
               <div className="mt-4">
-                <div className="d-flex justify-content-center links" style={{color:"whitesmoke",opacity:"0.5"}}>
+                <div
+                  className="d-flex justify-content-center links"
+                  style={{ color: "whitesmoke", opacity: "0.5" }}
+                >
                   Don't have an account?{" "}
-                  <a href="/sign-up" className="ml-2" style={{textDecoration:"underline"}}>
+                  <a
+                    href="/sign-up"
+                    className="ml-2"
+                    style={{ textDecoration: "underline" }}
+                  >
                     Sign Up
                   </a>
                 </div>
                 <div className="d-flex justify-content-center links">
-                  <a href="/#">Forgot your password?</a>
+                  <a href="mailto:engagementml@gmail.com?subject=Forgot%20my%20eML%20Password">
+                    Forgot your password?
+                  </a>
                 </div>
               </div>
             </div>
