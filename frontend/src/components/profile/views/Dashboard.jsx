@@ -6,7 +6,7 @@ import axios from "axios";
 import actions from "../../../services/index";
 import { Card } from "../components/Card/Card.jsx";
 import { StatsCard } from "../components/StatsCard/StatsCard.jsx";
-import { Tasks } from "../components/Tasks/foodTasks.jsx";
+import { foodTasks, fashionTasks, lifestyleTasks, photographyTasks } from "../components/Tasks/foodTasks.jsx";
 import {
   // dataSales,
   dataPie,
@@ -80,6 +80,19 @@ class Dashboard extends Component {
       });
 
     
+  }
+
+  actualTask(industry){
+    if (industry==="food"){
+      return <foodTasks />
+    } else if (industry==="food"){
+      return <fashionTasks />
+    } else if (industry==="food") {
+      return <photographyTasks />
+    } else {
+      // Lifestyle here
+      return <lifestyleTasks />
+    }
   }
 
   createLegend(json) {
@@ -347,15 +360,14 @@ var legendSales = {
               content={
                 <div className="table-full-width">
                   <table className="table">
-                    {/* <Tasks className="flex-row" style={{display: "flex",alignItems: "center"}}/> */}
 
                     {/* <Tasks /> */}
 
                     <React.Fragment>
-                      {/* {if (this.state.industry === "food") {
-                          return 
-                      })} */}
-                    
+
+                    {/* Uncomment the bottom to try the tasks out */}
+                      
+                    {this.actualTask(this.state.industry)}
 
                     </React.Fragment>
 
