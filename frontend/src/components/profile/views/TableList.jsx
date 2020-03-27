@@ -14,7 +14,7 @@ state = {tag:"Awesome"}
 componentDidMount(){
   this.getData()
 
-  const HashtagCallTrending = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/search/trending?latin=1&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
+  const HashtagCallTrending = `https://api.ritekit.com/v1/search/trending?latin=1&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
     axios.get(HashtagCallTrending).then(result => {
     console.log("Full Result Trending", result)
     this.setState({ hashtagResultTrending: result.data })
@@ -23,7 +23,7 @@ componentDidMount(){
 }
 
 getData() {
-  const HashtagCallWord = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/stats/hashtag-suggestions?text=${this.state.tag}&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
+  const HashtagCallWord = `https://api.ritekit.com/v1/stats/hashtag-suggestions?text=${this.state.tag}&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
     axios.get(HashtagCallWord).then(result => {
     console.log("Full Result Word", result)
     this.setState({ hashtagResultWord: result.data })
@@ -32,7 +32,7 @@ getData() {
 
   // There's something wrong with the history api link
 
-  const HashtagCallWordHistory = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/stats/history/${this.state.tag}?client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
+  const HashtagCallWordHistory = `https://api.ritekit.com/v1/stats/history/${this.state.tag}?client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
     axios.get(HashtagCallWordHistory).then(result => {
     console.log("Full Result Word History", result)
     this.setState({ hashtagResultWordHistory: result.data })
