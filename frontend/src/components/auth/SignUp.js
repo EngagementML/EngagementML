@@ -21,7 +21,7 @@ class SignUp extends Component {
                 this.props.history.push("/profile/admin/user")
                 // console.log(this.props)
                  
-            }).catch(({ response }) => console.log(response.data))
+            }).catch(({ response }) => console.error(response))
     }
  
     render() {
@@ -46,18 +46,18 @@ class SignUp extends Component {
                         className="brand_logo"
                         alt="Logo"
                       />
-                      <p style={{ textAlign: "center", color: "white" }}>
-                        <strong>
+                      <p style={{ textAlign: "center", color: "white", fontFamily: `'Courier New', Courier, monospace`}}>
+                        <strong  style={{fontFamily: `'Courier New', Courier, monospace`}}>
                           Please read before signing up!
                           <br />
-                        </strong>
+                        </strong >
                         In order to use the EngagementML application your
                         Instagram account{" "}
-                        <strong>
+                        <strong style={{fontFamily: `'Courier New', Courier, monospace`}}>
                           MUST BE PUBLIC. <br />
                           <span
                             className="loading"
-                            style={{color: "white" }}
+                            style={{color: "white",fontFamily: `'Courier New', Courier, monospace` }}
                           >
                             {" "}
                             ** If your account is private you WILL NOT BE ABLE
