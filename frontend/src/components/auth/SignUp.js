@@ -17,11 +17,13 @@ class SignUp extends Component {
     handleSubmit =  async e => {
         e.preventDefault( )
             actions.signUp(this.state).then( async user => {
+                console.log(user)
                 this.props.setUser({...user.data})
                 this.props.history.push("/profile/admin/user")
-                // console.log(this.props)
                  
-            }).catch(({ response }) => console.error(response))
+            }).catch(({ response }) => {
+                       console.error(response.data);
+                     })
     }
  
     render() {
