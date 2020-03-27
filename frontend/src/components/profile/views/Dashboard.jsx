@@ -6,10 +6,10 @@ import axios from "axios";
 import actions from "../../../services/index";
 import { Card } from "../components/Card/Card.jsx";
 import { StatsCard } from "../components/StatsCard/StatsCard.jsx";
-import { FoodTasks} from "../components/Tasks/foodTasks";
-import { FashionTasks } from "../components/Tasks/fashionTasks";
-import { LifestyleTasks } from "../components/Tasks/lifestyleTasks";
-import { PhotographyTasks } from "../components/Tasks/photographyTasks";
+import { FoodTasks} from "../components/Tasks/FoodTasks";
+import { FashionTasks } from "../components/Tasks/FashionTasks";
+import { LifestyleTasks } from "../components/Tasks/LifestyleTasks";
+import { PhotographyTasks } from "../components/Tasks/PhotographyTasks";
 
 import {
   // dataSales,
@@ -363,7 +363,7 @@ var legendSales = {
               statsIcon="fa fa-history"
               content={
                 <div className="table-full-width">
-                  <table className="table">
+                  {/* <table className="table"> */}
 
                     {/* <Tasks /> */}
 
@@ -376,7 +376,7 @@ var legendSales = {
                     </React.Fragment>
 
                     
-                  </table>
+                  {/* </table> */}
                 </div>
               }
             />
