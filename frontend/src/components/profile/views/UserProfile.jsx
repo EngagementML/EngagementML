@@ -263,7 +263,7 @@ class UserProfile extends Component {
               </Col>
               <Col md={4}>
                 <UserCard
-                  bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
+                  bgImage="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3"
                   avatar={
                     this.state.profile === {}
                       ? profile
