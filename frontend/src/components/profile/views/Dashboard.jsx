@@ -119,6 +119,8 @@ class Dashboard extends Component {
 
   render() {
 
+    // .toLocaleString(navigator.language, { minimumFractionDigits: 1 })
+
 if (this.state.email !== undefined && this.state.profile !== undefined && this.state.posts !== undefined) {
 
 console.log(this.props);

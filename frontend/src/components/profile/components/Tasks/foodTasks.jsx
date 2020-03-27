@@ -66,7 +66,7 @@ export class FoodTasks extends Component {
 
         // Avg Industry
         if (eachArrObj[0].Post_Information){
-          return `The max likes we've discovered in your industry is ${eachArrObj[2].Result}`
+          return `The max likes per single post we've discovered in your industry is ${eachArrObj[2].Result.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}`
         // Avg Industry
         } else if (eachArrObj[0].Day_Time_Post) {
 
@@ -74,7 +74,7 @@ export class FoodTasks extends Component {
             return y.Engagement_Rate_day - x.Engagement_Rate_day;
           })
           console.log("HEreeeeeeeeeee",eachArrObj)
-            return ` Your top post time is: ${ eachArrObj[0].Day_Time_Post} with an eML ${eachArrObj[0].Engagement_Rate_day.toLocaleString(navigator.language, { minimumFractionDigits: 1 })}` 
+            return ` Your top post time is: ${ eachArrObj[0].Day_Time_Post} with an eML ${eachArrObj[0].Engagement_Rate_day.toLocaleString(navigator.language, { minimumFractionDigits: 1 })}%` 
         // Insights
         } else if (eachArrObj[0].Action) {
             return `You should use up to ${eachArrObj[3].Recommendation} in your captions.`
@@ -85,7 +85,7 @@ export class FoodTasks extends Component {
             return y[`Engagement_rate_Week/Day`] - x[`Engagement_rate_Week/Day`];
           })
           console.log(eachArrObj)
-          return ` Your top post day is: ${ eachArrObj[0].Week_Day_Post} with an eML ${eachArrObj[0][`Engagement_rate_Week/Day`].toLocaleString(navigator.language, { minimumFractionDigits: 1 })}` 
+          return ` Your top post day is: ${ eachArrObj[0].Week_Day_Post} with an eML ${eachArrObj[0][`Engagement_rate_Week/Day`].toLocaleString(navigator.language, { minimumFractionDigits: 0 })}%` 
           }
 
       })
