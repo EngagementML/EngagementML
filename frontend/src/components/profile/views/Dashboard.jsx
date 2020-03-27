@@ -87,11 +87,11 @@ class Dashboard extends Component {
   }
 
   actualTask(industry){
-    if (industry==="food"){
+    if (industry==="Food"){
       return <foodTasks />
-    } else if (industry==="food"){
+    } else if (industry==="Fashion & Style"){
       return <fashionTasks />
-    } else if (industry==="food") {
+    } else if (industry==="Photography") {
       return <photographyTasks />
     } else {
       // Lifestyle here
