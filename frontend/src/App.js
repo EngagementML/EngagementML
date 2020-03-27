@@ -49,7 +49,6 @@ class App extends Component {
       updatedAt: null,
       _id: null
     })
-    //FIX  - we need to figure a way to upon logout -> push to home page **
   }
 
   render(){

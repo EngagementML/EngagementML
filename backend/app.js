@@ -101,7 +101,7 @@ app.route("/profiles").get((req, res, next) => {
         res.json(instaprofiles);
       }
     }
-  );
+  ).sort({ "edge_followed_by.count": -1 });
 });
 
 //Route to username profile 

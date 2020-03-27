@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Tooltip, OverlayTrigger } from "react-bootstrap";
-import Checkbox from "../CustomCheckbox/CustomCheckbox.jsx";
-import Button from "../CustomButton/CustomButton.jsx";
+// import { Tooltip, OverlayTrigger } from "react-bootstrap";
+// import Checkbox from "../CustomCheckbox/CustomCheckbox.jsx";
+// import Button from "../CustomButton/CustomButton.jsx";
 
 export class LifestyleTasks extends Component {
   handleCheckbox = event => {
@@ -12,8 +12,8 @@ export class LifestyleTasks extends Component {
     });
   };
   render() {
-    const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
-    const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
+    // const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
+    // const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
     const mockD = [
       // Industry Avg
       [{"Post_Information": "Average hashtag per publication", "Result": 2}, {"Post_Information": "Average external link per publication", "Result": 2}, {"Post_Information": "Maximum likes per publication", "Result": 268755}, {"Post_Information": "Maximun comments per publication", "Result": 6291}, {"Post_Information": "Average text length-Characters per post", "Result": 301}],
@@ -31,7 +31,7 @@ export class LifestyleTasks extends Component {
 
       // Avg Industry
       if (eachArrObj[0].Post_Information){
-        return `The max likes we've discovered in your industry is ${eachArrObj[2].Result.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}`
+        return `The max likes in posts we've discovered in your industry is ${eachArrObj[2].Result.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}`
       // Avg Industry
       } else if (eachArrObj[0].Day_Time_Post) {
 
@@ -39,7 +39,7 @@ export class LifestyleTasks extends Component {
           return y.Engagement_Rate_day - x.Engagement_Rate_day;
         })
         console.log("HEreeeeeeeeeee",eachArrObj)
-          return ` Your top post time is: ${ eachArrObj[0].Day_Time_Post} with an eML ${eachArrObj[0].Engagement_Rate_day.toLocaleString(navigator.language, { minimumFractionDigits: 1 })}%` 
+          return ` Your top post time is: ${ eachArrObj[0].Day_Time_Post} with an eML rate of ${eachArrObj[0].Engagement_Rate_day.toLocaleString(navigator.language, { minimumFractionDigits: 1 })}%` 
       // Insights
       } else if (eachArrObj[0].Action) {
           return `You should use up to ${eachArrObj[3].Recommendation} in your captions.`
@@ -50,7 +50,7 @@ export class LifestyleTasks extends Component {
           return y[`Engagement_rate_Week/Day`] - x[`Engagement_rate_Week/Day`];
         })
         console.log(eachArrObj)
-        return ` Your top post day is: ${ eachArrObj[0].Week_Day_Post} with an eML ${eachArrObj[0][`Engagement_rate_Week/Day`].toLocaleString(navigator.language, { minimumFractionDigits: 1 })}%` 
+        return ` Your top post day is: ${ eachArrObj[0].Week_Day_Post} with an eML rate of ${eachArrObj[0][`Engagement_rate_Week/Day`].toLocaleString(navigator.language, { minimumFractionDigits: 1 })}%` 
         }
 
     })
@@ -68,7 +68,8 @@ export class LifestyleTasks extends Component {
             /> */}
           </td>
           <td>{tasks_title[i]}</td>
-          <td className="td-actions text-right">
+          {/* // uncommenting action buttons */}
+          {/* <td className="td-actions text-right">
             <OverlayTrigger placement="top" overlay={edit}>
               <Button bsstyle="info" simple type="button" bssize="xs">
                 <i className="pe-7s-tools" />
@@ -80,7 +81,7 @@ export class LifestyleTasks extends Component {
                 <i className="pe-7s-trash" />
               </Button>
             </OverlayTrigger>
-          </td>
+          </td> */}
         </tr>
       );
     }

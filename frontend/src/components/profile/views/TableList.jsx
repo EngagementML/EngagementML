@@ -4,7 +4,7 @@ import ChartistGraph from "react-chartist";
 import axios from "axios";
 import Card from "../components/Card/Card.jsx";
 import { thArray } from "../variables/Variables.jsx";
-import IGback from '../../../images/igback.jpg'
+// import IGback from '../../../images/igback.jpg'
 
 
 class TableList extends Component {

@@ -81,7 +81,7 @@ class Research extends Component {
             >
               <Card
                 title="Followers vs Comments Count"
-                category="eML Comparative Analysis"
+                category={`eML Comparative Analysis for the ${this.state.industry} Category`}
                 content={
                   <img
                     className="d-block alignItemsCenter"
@@ -102,7 +102,7 @@ class Research extends Component {
             >
               <Card
                 title="Followers vs Likes"
-                category="eML Comparative Analysis"
+                category={`eML Comparative Analysis for the ${this.state.industry} Category`}
                 content={
                   <img
                     className="d-block alignItemsCenter"
@@ -123,7 +123,7 @@ class Research extends Component {
             >
               <Card
                 title="Followers vs Video View Count"
-                category="eML Comparative Analysis"
+                category={`eML Comparative Analysis for the ${this.state.industry} Category`}
                 content={
                   <img
                     className="d-block alignItemsCenter"
@@ -143,8 +143,8 @@ class Research extends Component {
               // key={i}
             >
               <Card
-                title="Correlation Matrix"
-                category="eML Comparative Analysis"
+                title={`🤖 Correlation Matrix `}
+                category={`${this.state.industry} Category Posts`}
                 content={
                   <img
                     className="d-block alignItemsCenter"
@@ -164,8 +164,8 @@ class Research extends Component {
               // key={i}
             >
               <Card
-                title="Word Cloud"
-                category="eML Comparative Analysis"
+                title={`☁️ Word Cloud `}
+                category={`${this.state.industry} Category Posts`}
                 content={
                   <img
                     className="d-block alignItemsCenter"
@@ -174,6 +174,7 @@ class Research extends Component {
                     width="410"
                   />
                 }
+                legend="Incorporate these keywords to your post captions to increase engagement"
               />
             </Col>
             <Col
@@ -186,7 +187,7 @@ class Research extends Component {
             >
               <Card
                 title="Link Count vs Like Count"
-                category="eML Comparative Analysis"
+                category={`eML Comparative Analysis for the ${this.state.industry} Category`}
                 content={
                   <img
                     className="d-block alignItemsCenter"
@@ -207,7 +208,7 @@ class Research extends Component {
             >
               <Card
                 title="Text Length vs Hashtag Count"
-                category="eML Comparative Analysis"
+                category={`eML Comparative Analysis for the ${this.state.industry} Category`}
                 content={
                   <img
                     className="d-block alignItemsCenter"
@@ -228,7 +229,7 @@ class Research extends Component {
             >
               <Card
                 title="Text Length vs Like Count"
-                category="eML Comparative Analysis"
+                category={`eML Comparative Analysis for the ${this.state.industry} Category`}
                 content={
                   <img
                     className="d-block alignItemsCenter"
@@ -249,7 +250,7 @@ class Research extends Component {
             >
               <Card
                 title="Followers vs Likes by Business Category"
-                category="eML Comparative Analysis"
+                category={`eML Comparative Analysis for the ${this.state.industry} Category`}
                 content={
                   <img
                     className="d-block alignItemsCenter"

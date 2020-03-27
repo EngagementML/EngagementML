@@ -13,14 +13,14 @@ import { PhotographyTasks } from "../components/Tasks/photographyTasks";
 
 import {
   // dataSales,
-  dataPie,
+  // dataPie,
   legendPie,
   // optionsSales,
   // responsiveSales,
-  legendSales,
-  dataBar,
-  optionsBar,
-  responsiveBar,
+  // legendSales,
+  // dataBar,
+  // optionsBar,
+  // responsiveBar,
   legendBar
 } from "../variables/Variables.jsx";
 
@@ -37,7 +37,7 @@ class Dashboard extends Component {
 
      await axios
       // .get("http://localhost:5000/profile/" + this.state.igUsername)
-      .get("https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/profile/" + this.state.igUsername)
+      .get("https://engagementml.herokuapp.com/profile/" + this.state.igUsername)
       .then(res => {
         // console.log(res, res.data);
         this.setState({
@@ -48,7 +48,7 @@ class Dashboard extends Component {
         console.log(error);
       });
 
-     await axios.get("https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
+     await axios.get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
       .then(res => {
         // console.log(res, res.data);
         this.setState({
@@ -62,7 +62,7 @@ class Dashboard extends Component {
      await axios
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get(
-        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/user/" +
+        "https://engagementml.herokuapp.com/eML/user/" +
           this.props.match.params.id
       )
       .then(res => {
@@ -136,11 +136,11 @@ var dataSales = {
       }).map((currentPost) => {
         // console.log(currentPost)
         let a = new Date(currentPost.date * 1000);
-        let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        // let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
         let year = Number(a.getFullYear().toString().slice(2,4));
         let month = a.getMonth()+1;
         let date = a.getDate();
-        let time = date+"/"+month+"/"+year;
+        let time = month+"/"+date+"/"+year;
         // console.log(time);
         return (
           String(time)
@@ -224,8 +224,10 @@ var legendSales = {
               statsValue={
                 this.state.posts !== []
                   ? (
-                      ((this.state.posts[this.state.posts.length - 1].like_count +
-                        this.state.posts[this.state.posts.length - 1].comment_count) /
+                      ((this.state.posts[this.state.posts.length - 1]
+                        .like_count +
+                        this.state.posts[this.state.posts.length - 1]
+                          .comment_count) /
                         this.state.profile.edge_followed_by.count) *
                       100
                     ).toFixed(1) + "%"
@@ -242,12 +244,16 @@ var legendSales = {
               statsValue={
                 this.state.posts !== []
                   ? (
-                      ((this.state.posts[this.state.posts.length - 1].like_count +
-                        this.state.posts[this.state.posts.length - 1].comment_count) /
+                      ((this.state.posts[this.state.posts.length - 1]
+                        .like_count +
+                        this.state.posts[this.state.posts.length - 1]
+                          .comment_count) /
                         this.state.profile.edge_followed_by.count) *
                         100 -
-                      ((this.state.posts[this.state.posts.length - 2].like_count +
-                        this.state.posts[this.state.posts.length - 2].comment_count) /
+                      ((this.state.posts[this.state.posts.length - 2]
+                        .like_count +
+                        this.state.posts[this.state.posts.length - 2]
+                          .comment_count) /
                         this.state.profile.edge_followed_by.count) *
                         100
                     ).toFixed(1) + "%"
@@ -264,15 +270,17 @@ var legendSales = {
               statsValue={
                 this.state.posts !== []
                   ? (
-                      ((this.state.posts[this.state.posts.length - 2].like_count +
-                        this.state.posts[this.state.posts.length - 2].comment_count) /
+                      ((this.state.posts[this.state.posts.length - 2]
+                        .like_count +
+                        this.state.posts[this.state.posts.length - 2]
+                          .comment_count) /
                         this.state.profile.edge_followed_by.count) *
                       100
                     ).toFixed(1) + "%"
                   : "N/A"
               }
               statsIcon={<i className="pe-7s-refresh-2" />}
-              statsIconText="Previous Post"
+              statsIconText="Last 12 Posts"
             />
           </Col>
           {/* <Col lg={3} sm={6}>
@@ -295,7 +303,7 @@ var legendSales = {
               statsIcon="fa fa-history"
               id="chartHours"
               title="Engagement Over Time"
-              category="Previous Posts"
+              category="Last 12 Posts"
               stats="Updated today"
               content={
                 <div className="ct-chart">
@@ -319,12 +327,17 @@ var legendSales = {
               category="Last 12 Posts"
               stats="Updated today"
               content={
-                <div
-                  id="chartPreferences"
-                  className="ct-chart ct-perfect-fourth"
-                >
-                  <ChartistGraph data={dataPie} type="Pie" />
-                </div>
+                <img
+                  src="https://engagementmlapp.s3.amazonaws.com/img/pie.png"
+                  height="275"
+                  alt="placeholder"
+                />
+                //   <div
+                //     id="chartPreferences"
+                //     className="ct-chart ct-perfect-fourth"
+                //   >
+                //     <ChartistGraph data={dataPie} type="Pie" />
+                //   </div>
               }
               legend={
                 <div className="legend">{this.createLegend(legendPie)}</div>
@@ -342,14 +355,19 @@ var legendSales = {
               stats="Data information certified"
               statsIcon="fa fa-check"
               content={
-                <div className="ct-chart">
-                  <ChartistGraph
-                    data={dataBar}
-                    type="Bar"
-                    options={optionsBar}
-                    responsiveOptions={responsiveBar}
-                  />
-                </div>
+                <img
+                  src="https://engagementmlapp.s3.amazonaws.com/img/graph.png"
+                  width="450"
+                  alt="placeholder"
+                />
+                //   <div className="ct-chart">
+                //     <ChartistGraph
+                //       data={dataBar}
+                //       type="Bar"
+                //       options={optionsBar}
+                //       responsiveOptions={responsiveBar}
+                //     />
+                //   </div>
               }
               legend={
                 <div className="legend">{this.createLegend(legendBar)}</div>
@@ -360,31 +378,25 @@ var legendSales = {
           <Col md={6}>
             <Card
               title="eML Optimization Recommendations"
-              category="Based on your data vs Industry Influencers"
+              category={`Based on your data vs ${this.state.industry} Influencers`}
               stats="Updated Daily"
               statsIcon="fa fa-history"
               content={
                 <div className="table-full-width">
                   <table className="table">
-
                     {/* <Tasks /> */}
 
                     <React.Fragment>
+                      {/* Uncomment the bottom to try the tasks out */}
 
-                    {/* Uncomment the bottom to try the tasks out */}
-                      
-                    {this.actualTask(this.state.industry)}
-
+                      {this.actualTask(this.state.industry)}
                     </React.Fragment>
-
-                    
                   </table>
                 </div>
               }
             />
           </Col>
         </Row>
-
       </Container>
     </div>
   );

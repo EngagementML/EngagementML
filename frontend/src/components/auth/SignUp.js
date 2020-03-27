@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import actions from '../../services/index'
-import logo from "../../images/engagementML.png";
+import logo from "../../images/engagementMLsm.png";
 import IGback from '../../images/igback.jpg'
 // frontend\src\images\instagram-background.jpg
 import { Button } from "react-bootstrap";
@@ -21,9 +21,9 @@ class SignUp extends Component {
                 this.props.history.push("/profile/admin/user")
                 // console.log(this.props)
                  
-            }).catch(({ response }) => alert("This username has already been taken. Please try again with a different username!"))
+            }).catch(({ response }) => console.log(response.data))
     }
-
+ 
     render() {
        
         return (
@@ -46,6 +46,25 @@ class SignUp extends Component {
                         className="brand_logo"
                         alt="Logo"
                       />
+                      <p style={{ textAlign: "center", color: "white" }}>
+                        <strong>
+                          Please read before signing up!
+                          <br />
+                        </strong>
+                        In order to use the EngagementML application your
+                        Instagram account{" "}
+                        <strong>
+                          MUST BE PUBLIC. <br />
+                          <span
+                            className="loading"
+                            style={{color: "white" }}
+                          >
+                            {" "}
+                            ** If your account is private you WILL NOT BE ABLE
+                            to access our platform! **{" "}
+                          </span>
+                        </strong>
+                      </p>
                     </div>
                   </div>
                   <div
@@ -112,7 +131,7 @@ class SignUp extends Component {
                             <FaUser />
                           </span>
                         </div>
-                        
+
                         <input
                           placeholder="IG Username"
                           style={{
