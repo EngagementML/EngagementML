@@ -23,7 +23,7 @@ class SignUp extends Component {
                  
             }).catch(({ response }) => alert("This username has already been taken. Please try again with a different username!"))
     }
-
+ 
     render() {
        
         return (
