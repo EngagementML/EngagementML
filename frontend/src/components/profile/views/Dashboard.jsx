@@ -13,14 +13,14 @@ import { PhotographyTasks } from "../components/Tasks/photographyTasks";
 
 import {
   // dataSales,
-  dataPie,
+  // dataPie,
   legendPie,
   // optionsSales,
   // responsiveSales,
-  legendSales,
-  dataBar,
-  optionsBar,
-  responsiveBar,
+  // legendSales,
+  // dataBar,
+  // optionsBar,
+  // responsiveBar,
   legendBar
 } from "../variables/Variables.jsx";
 
@@ -134,7 +134,7 @@ var dataSales = {
       }).map((currentPost) => {
         // console.log(currentPost)
         let a = new Date(currentPost.date * 1000);
-        let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        // let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
         let year = Number(a.getFullYear().toString().slice(2,4));
         let month = a.getMonth()+1;
         let date = a.getDate();
@@ -328,6 +328,7 @@ var legendSales = {
                 <img
                   src="https://engagementmlapp.s3.amazonaws.com/img/pie.png"
                   height="275"
+                  alt="placeholder"
                 />
                 //   <div
                 //     id="chartPreferences"
@@ -335,9 +336,9 @@ var legendSales = {
                 //   >
                 //     <ChartistGraph data={dataPie} type="Pie" />
                 //   </div>
-                }
-                legend={
-                  <div className="legend">{this.createLegend(legendPie)}</div>
+              }
+              legend={
+                <div className="legend">{this.createLegend(legendPie)}</div>
               }
             />
           </Col>
@@ -355,6 +356,7 @@ var legendSales = {
                 <img
                   src="https://engagementmlapp.s3.amazonaws.com/img/graph.png"
                   width="450"
+                  alt="placeholder"
                 />
                 //   <div className="ct-chart">
                 //     <ChartistGraph
@@ -364,9 +366,9 @@ var legendSales = {
                 //       responsiveOptions={responsiveBar}
                 //     />
                 //   </div>
-                }
-                legend={
-                  <div className="legend">{this.createLegend(legendBar)}</div>
+              }
+              legend={
+                <div className="legend">{this.createLegend(legendBar)}</div>
               }
             />
           </Col>

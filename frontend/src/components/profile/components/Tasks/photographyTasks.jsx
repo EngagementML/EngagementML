@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Tooltip, OverlayTrigger } from "react-bootstrap";
-import Checkbox from "../CustomCheckbox/CustomCheckbox.jsx";
-import Button from "../CustomButton/CustomButton.jsx";
+// import { Tooltip, OverlayTrigger } from "react-bootstrap";
+// import Checkbox from "../CustomCheckbox/CustomCheckbox.jsx";
+// import Button from "../CustomButton/CustomButton.jsx";
 
 export class PhotographyTasks extends Component {
   handleCheckbox = event => {
@@ -12,8 +12,8 @@ export class PhotographyTasks extends Component {
     });
   };
   render() {
-    const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
-    const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
+    // const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
+    // const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
     const mockD = [
       // Avg-Industry
       [{"Post_Information": "Average hashtag per publication", "Result": 1}, {"Post_Information": "Average external link per publication", "Result": 1}, {"Post_Information": "Maximum likes per publication", "Result": 172436}, {"Post_Information": "Maximun comments per publication", "Result": 3203}, {"Post_Information": "Average text length-Characters per post", "Result": 232}],

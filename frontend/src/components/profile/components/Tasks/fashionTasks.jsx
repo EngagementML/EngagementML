@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Tooltip, OverlayTrigger } from "react-bootstrap";
-import Checkbox from "../CustomCheckbox/CustomCheckbox.jsx";
-import Button from "../CustomButton/CustomButton.jsx";
+// import { Tooltip, OverlayTrigger } from "react-bootstrap";
+// import Checkbox from "../CustomCheckbox/CustomCheckbox.jsx";
+// import Button from "../CustomButton/CustomButton.jsx";
 
 export class FashionTasks extends Component {
   handleCheckbox = event => {
@@ -12,8 +12,8 @@ export class FashionTasks extends Component {
     });
   };
   render() {
-    const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
-    const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
+    // const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
+    // const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
 
     const mockD = [
       // Avg Industry
