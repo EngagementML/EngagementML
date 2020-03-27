@@ -17,42 +17,49 @@ import axios from "axios";
 import Icons from './components/profile/views/Icons';
 
 class App extends Component {
-  
-  state = { }
-  
-  async componentDidMount() {
-    let user = await actions.isLoggedIn()
-    this.setState({...user.data})
-    console.log('Current User >> ',user)
+  state = {
+    width: window.innerWidth
+  };
 
-    axios.get("https://engagementml.herokuapp.com/profiles/")
+  async componentDidMount() {
+    let user = await actions.isLoggedIn();
+    this.setState({ ...user.data });
+    console.log("Current User >> ", user);
+
+    axios
+      .get("https://engagementml.herokuapp.com/profiles/")
       .then(res => {
         // console.log(res, res.data);
         this.setState({
           profiles: res.data
         });
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
-  
-
   }
 
-  setUser = (user) => this.setState(user)
-  
+  setUser = user => this.setState(user);
+
   logOut = async () => {
-    let res = await actions.logOut()
+    let res = await actions.logOut();
     this.setUser({
       email: null,
       createdAt: null,
       updatedAt: null,
       _id: null
-    })
+    });
+  };
+
+  updateDimensions() {
+    this.setState({ width: window.innerWidth });
+  }
+  componentDidMount() {
+    this.updateDimensions();
+    window.addEventListener("resize", this.updateDimensions.bind(this));
   }
 
-  render(){
-
+  render() {
     return (
       <BrowserRouter>
         <MetaTags>
@@ -143,11 +150,52 @@ class App extends Component {
                     as={Link}
                     to="/"
                     onClick={this.logOut}
-                    variant="outline-warning mr-1"
+                    variant="danger mr-1"
                     className="btn"
                   >
                     Log Out
                   </Button>
+                  {this.state.width <= 991 ? (
+                    <>
+                    <br/>
+                      <Button
+                        as={Link}
+                        to="/profile/admin/dashboard"
+                        // onClick={this.logOut}
+                        variant="warning mr-10"
+                        className="btn"
+                      >
+                        Dashboard
+                      </Button>
+                      <Button
+                        as={Link}
+                        to="/profile/admin/user"
+                        // onClick={this.logOut}
+                        variant="secondary mr-1"
+                        className="btn"
+                      >
+                        Profile
+                      </Button>
+                      <Button
+                        as={Link}
+                        to="/profile/admin/research"
+                        // onClick={this.logOut}
+                        variant="success mr-1"
+                        className="btn"
+                      >
+                        eML Research
+                      </Button>
+                      <Button
+                        as={Link}
+                        to="/profile/admin/icons"
+                        // onClick={this.logOut}
+                        variant="primary mr-1"
+                        className="btn"
+                      >
+                        IG Influencers
+                      </Button>
+                    </>
+                  ) : null}{" "}
                 </Form>
               </Fragment>
             ) : (
