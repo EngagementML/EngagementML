@@ -15,6 +15,7 @@ import Dashboard from "../src/components/profile/views/Dashboard"
 // import StatsCard from "../src/components/profile/components/StatsCard/StatsCard"
 import MetaTags from "react-meta-tags";
 import axios from "axios";
+import Icons from './components/profile/views/Icons';
 
 class App extends Component {
   
@@ -214,6 +215,13 @@ class App extends Component {
             path="/profile/admin/dashboard"
             render={props => (
               <Dashboard {...props} user={this.state} setUser={this.setUser} />
+            )}
+          />
+
+          <Route
+            path="/profile/admin/research"
+            render={props => (
+              <Icons {...props} user={this.state} setUser={this.setUser} />
             )}
           />
 
