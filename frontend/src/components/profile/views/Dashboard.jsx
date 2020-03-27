@@ -363,7 +363,7 @@ var legendSales = {
               statsIcon="fa fa-history"
               content={
                 <div className="table-full-width">
-                  {/* <table className="table"> */}
+                  <table className="table">
 
                     {/* <Tasks /> */}
 
@@ -376,7 +376,7 @@ var legendSales = {
                     </React.Fragment>
 
                     
-                  {/* </table> */}
+                  </table>
                 </div>
               }
             />
