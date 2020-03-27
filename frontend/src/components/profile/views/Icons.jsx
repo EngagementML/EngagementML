@@ -78,7 +78,9 @@ class Icons extends Component {
   render() {
     console.log("this is props pon di icon page >>", this.props.profiles);
     if (
-      this.state.profiles !== undefined
+      this.state.email !== undefined &&
+      this.state.profile !== undefined &&
+      this.state.posts !== undefined
     ) {
       return (
         <div className="content">
@@ -86,11 +88,11 @@ class Icons extends Component {
             <Row>
               <Col md={12}>
                 <Card
-                  title="Top Infuencers"
+                  title="IG Influencer Tracking List"
                   ctAllIcons
                   category={
                     <span>
-                      Handcrafted by your friends from{" "}
+                      AI-crafted by your friends from{" "}
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
@@ -100,24 +102,22 @@ class Icons extends Component {
                       </a>
                     </span>
                   }
-                  content={
-                    <Row>
-                      {this.profileList()}
-                    </Row>
-                  }
+                  content={<Row>{this.profileList()}</Row>}
                 />
               </Col>
             </Row>
           </Container>
         </div>
-      ) } else {
-         return (
-           <div>
-             <h3 className='loading' style={{textAlign: 'center'}}>Loading...</h3>
-           </div>
-         );
-
-      }
+      );
+    } else {
+      return (
+        <div>
+          <h3 className="loading" style={{ textAlign: "center" }}>
+            Loading...
+          </h3>
+        </div>
+      );
+    }
   }
 }
 
