@@ -21,7 +21,9 @@ class SignUp extends Component {
                 this.props.history.push("/profile/admin/user")
                 // console.log(this.props)
                  
-            }).catch(({ response }) => console.log(response.data))
+            }).catch(({ response }) => {
+                       console.error(response.data);
+                     })
     }
  
     render() {
