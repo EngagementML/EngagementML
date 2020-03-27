@@ -216,14 +216,22 @@ class UserProfile extends Component {
                           onChange={this.onChange}
                           name="industry"
                         >
-                          <option>Beauty</option>
-                          <option>Design</option>
+                          <option disabled="disabled">
+                            Beauty - Coming Soon!
+                          </option>
+                          <option disabled="disabled">
+                            Design - Coming Soon!
+                          </option>
                           <option>Fashion & Style</option>
                           <option>Food</option>
                           <option>Lifestyle</option>
                           <option>Photography</option>
-                          <option>Sports & Fitness</option>
-                          <option>Travel</option>
+                          <option disabled="disabled">
+                            Sports & Fitness - Coming Soon!
+                          </option>
+                          <option disabled="disabled">
+                            Travel - Coming Soon!
+                          </option>
                         </Form.Control>
                       </Form.Group>
                       <Row>
@@ -258,7 +266,7 @@ class UserProfile extends Component {
                   bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
                   avatar={
                     this.state.profile === {}
-                      ?  (profile)
+                      ? profile
                       : this.state.profile.profile_pic_url_hd
                   }
                   name={this.state.igUsername}
