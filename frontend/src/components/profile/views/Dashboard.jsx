@@ -349,9 +349,13 @@ var legendSales = {
                   <table className="table">
                     {/* <Tasks className="flex-row" style={{display: "flex",alignItems: "center"}}/> */}
 
+                    {/* <Tasks /> */}
+
                     <React.Fragment>
-                      {/* {if (this.state.category ==)} */}
-                    <Tasks />
+                      {/* {if (this.state.industry === "food") {
+                          return 
+                      })} */}
+                    
 
                     </React.Fragment>
 
