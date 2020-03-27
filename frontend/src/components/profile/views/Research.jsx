@@ -1,6 +1,5 @@
-
 import React, { Component } from "react";
-import { Container, Row, Col, Carousel } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import actions from "../../../services/index";
 import Card from "../components/Card/Card.jsx";
@@ -88,7 +87,7 @@ class Research extends Component {
                     className="d-block alignItemsCenter"
                     src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Comments_Counts.jpeg`}
                     alt="Followers vs Comments Count"
-                    height="105"
+                    width="270"
                   />
                 }
               />
@@ -172,7 +171,7 @@ class Research extends Component {
                     className="d-block alignItemsCenter"
                     src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/word_cloud.jpeg`}
                     alt="Word Cloud"
-                    width="350"
+                    width="410"
                   />
                 }
               />
@@ -256,7 +255,7 @@ class Research extends Component {
                     className="d-block alignItemsCenter"
                     src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_Vs_Like_Count_-_Segmented_by_Business_Categories.jpeg`}
                     alt="Followers vs Likes by Business Category"
-                    width="400"
+                    width="450"
                   />
                 }
               />
