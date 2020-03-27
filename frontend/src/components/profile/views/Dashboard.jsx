@@ -174,8 +174,8 @@ var responsiveSales = [
 ];
 
 var legendSales = {
-  names: ["Competitor  ", "Role Model  ", "You - eML  "],
-  types: ["info", "warning", "danger"]
+  names: ["You - eML  "],
+  types: ["info"]
 };
 
   return (
@@ -187,7 +187,7 @@ var legendSales = {
               bigIcon={<i className="pe-7s-users text-primary " />}
               statsText="Followers"
               statsValue={
-                this.state.profile !== []
+                this.state.post !== []
                   ? this.state.profile.edge_followed_by.count.toLocaleString(
                       navigator.language,
                       { minimumFractionDigits: 0 }
@@ -243,7 +243,7 @@ var legendSales = {
               bigIcon={<i className="pe-7s-leaf text-warning" />}
               statsText="eML Rate"
               statsValue={
-                this.state.profile !== []
+                this.state.posts !== []
                   ? (
                       ((this.state.posts[this.state.posts.length - 2].like_count +
                         this.state.posts[this.state.posts.length - 2].comment_count) /
