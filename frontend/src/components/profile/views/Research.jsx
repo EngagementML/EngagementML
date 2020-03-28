@@ -262,6 +262,42 @@ class Research extends Component {
               />
             </Col>
           </Row>
+{/*
+          <Row>
+         <div className="row d-flex m-4 justify-content-around"> 
+
+          <div className="card mb-3" style={{ width: "18rem", backgroundColor:"transparent" }}>
+                        <div className="g-card">
+                            <div className="card-container">
+                                <div className="card-front">
+                                    <img className="card-img-top" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_Vs_Like_Count_-_Segmented_by_Business_Categories.jpeg`} alt="Card image cap" />
+                                    <div className="card-body d-flex align-items-center justify-content-center">
+                                        <p className="card-text">Followers vs Likes by Business Category</p>
+                                    </div>
+                                </div>
+                                <div className="card-back">
+                                    <div className="backContent">
+                                        <div className="card-text">{ "More Details:"} <a target="_blank" rel="nofollow" href={"www.marvel.com" }>Click Here</a></div>
+                                        <br></br>
+                                        <div className="card-text">{ "Want one?:"} <a target="_blank" rel="nofollow" href={"www.marvel.com" }>Click Here</a></div>                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    </div>
+
+
+
+
+          </Row>
+
+
+        */}
+
+
         </Container>
       </div>
     );

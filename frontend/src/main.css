@@ -2373,7 +2373,7 @@ input, select, textarea {
   }
 
 input::placeholder { 
-	color: whitesmoke;
+	color:#42D0ED;
 	opacity: 0.5; 
 	font-family: 'Courier New', Courier, monospace;
 }
@@ -2390,3 +2390,58 @@ input::placeholder {
 	display: inline;
 	perspective-origin: none;
 } */
+
+
+.g-card{
+  height: 35rem;
+  perspective: 1000px;
+}
+
+.g-card .card-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: ease-in 0.8s;
+}
+
+.g-card:hover .card-container{
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.card-front{
+  font-size: larger;
+  text-shadow: 2px 2px black;
+  text-decoration-color: black;
+}
+  
+.card-back{
+  font-size: larger;
+  text-shadow: 2px 2px black;
+  text-decoration-color: black;
+  /* background-color: grey; */
+  /* background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+    ),
+    url('./cardBackground.jpg');
+    transform: rotateY(180deg); */
+}
+  
+.backContent{
+  position: absolute;
+  top: 45%;
+  right:20%
+}

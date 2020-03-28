@@ -41,7 +41,7 @@ const dashboardRoutes = [
   },
   {
     path: "/research",
-    name: "ml Research",
+    name: "ml Data",
     icon: "pe-7s-search",
     component: Research,
     layout: "/profile/admin"
