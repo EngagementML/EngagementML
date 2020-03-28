@@ -135,7 +135,7 @@ const pickColor = (color) => {
       // }}>        
       
       <div className="content"> 
-      <h1 className="display-3">#TrendingNow</h1>
+      <div className="display-3">#TrendingNow</div>
       <Carousel>
       {this.state.hashtagResultTrending.tags.map((currentTag) => {
           return (
