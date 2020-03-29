@@ -26,6 +26,9 @@ const router = express.Router();
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ironplate'
 console.log('Connecting DB to ', MONGODB_URI)
 
+const USER = process.env.USER
+const PASS = process.env.PASS
+
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((x) => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
@@ -187,8 +190,8 @@ app.route("/addToFollow").post((req, res, next) => {
 const transport = {
   host: "smtp.gmail.com", // Don’t forget to replace with the SMTP host of your provider
   auth: {
-    user: creds.USER,
-    pass: creds.PASS
+    user: USER,
+    pass: PASS
   }
 };
 
