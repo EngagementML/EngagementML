@@ -42,13 +42,13 @@ class LogIn extends Component {
     return (
       <>
         <Modal
-          size="sm"
+          size="lg"
           show={this.state.show}
           onHide={() => this.hideAlert()}
-          aria-labelledby="example-modal-sizes-title-sm"
+          aria-labelledby="example-modal-sizes-title-lg"
         >
           <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-sm">
+            <Modal.Title id="example-modal-sizes-title-lg">
               <strong>Error on Login!</strong>
             </Modal.Title>
           </Modal.Header>
