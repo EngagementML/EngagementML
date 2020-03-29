@@ -59,14 +59,6 @@ let values=[]
 
 var dataSales = {
   labels: 
-    // "9:00AM",
-    // "12:00AM",
-    // "3:00PM",
-    // "6:00PM",
-    // "9:00PM",
-    // "12:00PM",
-    // "3:00AM",
-    // "6:00AM"
     this.state.hashtagResultWordHistory.data.map((currentDate) => {
       console.log(currentDate)
       return (
@@ -85,9 +77,6 @@ var dataSales = {
       )
     })
   ]
-    // [287, 385, 490, 492, 554, 586, 698, 695],
-    // [67, 152, 143, 240, 287, 335, 435, 437],
-    // [23, 113, 67, 108, 190, 239, 307, 308]
   
 };
 
@@ -96,7 +85,7 @@ var dataSales = {
 var optionsSales = {
   low: 0,
   // high: ((((values.reduce((previous, current) => current += previous))/values.length)+((values.reduce((previous, current) => current += previous))))*0.18).toExponential(2),
-  showArea: true,
+  showArea: false,
   // height: "245px",
   axisX: {
     showGrid: false
@@ -130,11 +119,11 @@ var responsiveSales = [
       //   backgroundImage: `url(${IGback})`,
       //   backgroundRepeat: "no-repeat",
       //   backgroundSize: "cover",
-      //   height: "20vh"
+      //   // height: "20vh"
       // }}>        
       
-      <div className="content">
-      <h1 className="display-1">#Trending</h1>
+      <div className="content"> 
+      <h1 className="display-3">#TrendingNow</h1>
       <Carousel>
       {this.state.hashtagResultTrending.tags.map((currentTag) => {
           return (
@@ -154,18 +143,20 @@ var responsiveSales = [
               <br />
             </Form.Group> */}
           <Form onSubmit={this.updateTag} >
-          <Form.Group className="d-flex flex-row align-items-center"role="form">
-              <Form.Control onChange={this.changeTag}  name="tagChanger" size="lg" type="text" placeholder="#SearchForAnything" />
+          <Form.Group className="d-flex flex-row align-items-center" role="form" >
+              <Form.Control onChange={this.changeTag}  name="tagChanger" size="lg" type="text" placeholder="#SearchForAnything" style={{borderColor:"#42D0ED",backgroundColor:"white"}}/>
               <br />
-              <Button className="ml-2" variant="info" type="submit" style={{padding:"0.5rem", height:"5%"}}>#</Button>
+              <Button className="ml-2" variant="info" type="submit" style={{padding:"0.5rem", height:"5%", backgroundColor:"white"}}>#</Button> 
           </Form.Group>
           </Form >
 
 
 
           <Row>
-          <Col md={12}>
+          <Col md={12} >
             <Card
+              // style={{borderColor:"#42D0ED"}}
+              // style={{ boxShadow: "0 1px 2px #42D0ED, 0 0 0 1px #42D0ED"}}
               statsIcon="fa fa-history"
               id="chartHours"
               title={"#"+this.state.tag+" Impressions"}
