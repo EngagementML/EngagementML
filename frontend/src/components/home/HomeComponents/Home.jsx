@@ -20,10 +20,10 @@ class HomeComp extends Component {
       }
     }).then(response => {
       if (response.data.msg === "success") {
-        alert("Message Sent.");
+        alert("Thank you for reaching out to us! Message Sent.");
         this.resetForm();
       } else if (response.data.msg === "fail") {
-        alert("Message failed to send.");
+        alert("Error upon sending form! Message failed to send. Please try again!");
       }
     });
   }

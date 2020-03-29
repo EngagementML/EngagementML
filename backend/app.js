@@ -188,7 +188,10 @@ app.route("/addToFollow").post((req, res, next) => {
 
 //Route for the homepage POST to nodemailer email server
 const transport = {
-  host: "smtp.gmail.com", // Don’t forget to replace with the SMTP host of your provider
+  // host: "smtp.gmail.com", // Don’t forget to replace with the SMTP host of your provider
+  service: 'Gmail',
+  port: 587,
+  secure: false,
   auth: {
     user: USER,
     pass: PASS
