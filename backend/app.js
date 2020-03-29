@@ -14,8 +14,8 @@ const InstaProfile = require('./models/InstaProfile')
 const InstaPost = require("./models/InstaPosts");
 const FollowList = require('./models/FollowList')
 const nodemailer = require("nodemailer");
-const creds = require("./config");
-const router = express.Router();
+// const creds = require("./config");
+// const router = express.Router();
 
 
 // require("./nodepy");
