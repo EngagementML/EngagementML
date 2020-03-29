@@ -51,10 +51,10 @@ class SignUp extends Component {
               size="lg"
               show={this.state.show}
               onHide={() => this.hideAlert()}
-              aria-labelledby="example-modal-sizes-title-lg"
+              aria-labelledby="modalError"
             >
               <Modal.Header closeButton>
-                <Modal.Title id="example-modal-sizes-title-lg">
+                <Modal.Title id="modalError">
                   <strong>Error on Sign-Up!</strong>
                 </Modal.Title>
               </Modal.Header>
