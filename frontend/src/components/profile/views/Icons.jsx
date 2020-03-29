@@ -13,8 +13,8 @@ class Icons extends Component {
     
   }
   
-  componentDidMount() {
-    axios
+  async componentDidMount() {
+   await axios
       // .get("http://localhost:5000/profiles/")
       .get("https://engagementml.herokuapp.com/profiles/")
       .then(res => {
@@ -26,17 +26,87 @@ class Icons extends Component {
       .catch(function(error) {
         console.log(error);
       });
+
+      await axios.get("https://engagementml.herokuapp.com/posts/")
+      .then(res => {
+        // console.log(res, res.data);
+        this.setState({
+          posts: res.data
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
+
+  
 
   profileList() {
     return this.state.profiles.map((profile, i) => {
       return (
         <Col lg={3} md={3} sm={4} xs={6} className="font-icon-list" key={i}>
-          <div className="font-icon-detail">
+          <div style={{ marginBottom: "2rem" }}>
+            <div
+              className="g-card m-2"
+              style={{ width: "12rem", height: "16rem" }}
+            >
+              {/* For full width Do 60rem for width above and 30rem for height on g card */}
+              <div className="card-container">
+                <div className="card-front  d-flex flex-column justify-content-between">
+                  <img
+                    className="card-img-top img-fluid"
+                    alt={profile.username}
+                    // style={{ width: "100%" }}
+                    src={profile.profile_pic_url_hd}
+                  />
+                  <div
+                    className="card-body d-flex align-items-center justify-content-center"
+                    style={{ background: "white" }}
+                  >
+                    <p className="card-text">
+                      <h4>{profile.username}</h4>
+                    </p>
+                  </div>
+                </div>
+                <div className="card-back d-flex flex-row justify-content-center">
+                  <div className="backContent">
+                    <div className="card-text backTitle">
+                      <h6>{profile.full_name}</h6>
+                    </div>
+                    <br></br>
+                    <p>
+                      <strong>Bio:</strong>{" "}
+                      {profile.biography !== ""
+                        ? profile.biography
+                        : "Not Available"}
+                    </p>
+                    <div className="card-text backInfo">
+                      <strong>Followers:</strong>{" "}
+                      {profile.edge_followed_by.count.toLocaleString(
+                        navigator.language,
+                        { minimumFractionDigits: 0 }
+                      )}
+                      <br />
+                      <p>
+                        {" "}
+                        <strong>Total Posts: </strong>{" "}
+                        {profile.edge_owner_to_timeline_media.count.toLocaleString(
+                          navigator.language,
+                          { minimumFractionDigits: 0 }
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="font-icon-detail">
             <h4>{profile.username}</h4>
-            <br />
-            {/* <br /> */}
-            <img
+            <br /> */}
+          {/* <br /> */}
+          {/* <img
               alt={profile.username}
               style={{ width: "100%" }}
               src={profile.profile_pic_url_hd}
@@ -52,14 +122,14 @@ class Icons extends Component {
                 { minimumFractionDigits: 0 }
               )}
             </p>
-          </div>
+          </div> */}
         </Col>
       );
     });
   }
 
   render() {
-    console.log("this is props pon di icon page >>", this.props.profiles);
+    // console.log("this is props pon di icon page >>", this.props.profiles);
     if (
       this.state.profiles !== undefined
     ) {

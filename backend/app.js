@@ -99,6 +99,9 @@ app.route("/profiles").get((req, res, next) => {
       username: 1,
       profile_pic_url_hd: 1,
       "edge_followed_by.count": 1,
+      "edge_follow.count": 1,
+      owner_id: 1,
+      "edge_owner_to_timeline_media.count": 1,
       _id: 0
     },
     { "edge_followed_by.count": -1 },
