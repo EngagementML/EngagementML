@@ -68,21 +68,21 @@ class Research extends Component {
 
   render() {
     return (
-      <div className="content" >
+      <div className="content container" >
         <Container fluid="true">
         
             <Row>
           {/* Col #1 */}
           <Col
               // The following is the same as col-lg-6 col-md-6 col-sm-10 col-12
-              lg={6}
+              lg={4}
               md={6}
               sm={12}
               xs={12}
             >
              
                     <div style={{marginBottom:"2rem"}}>
-                        <div className="g-card m-2"  style={{ width: "25rem", height: "16rem"}}>
+                        <div className="g-card m-2"  style={{ width: "19rem", height: "16rem"}}>
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
@@ -108,14 +108,14 @@ class Research extends Component {
           {/* Col #2 */}
           <Col
               // The following is the same as col-lg-6 col-md-6 col-sm-10 col-12
-              lg={6}
+              lg={4}
               md={6}
               sm={12}
               xs={12}
             >
              
                     <div style={{marginBottom:"2rem"}}>
-                        <div className="g-card m-2"  style={{ width: "25rem", height: "16rem"}}>
+                        <div className="g-card m-2"  style={{ width: "19rem", height: "16rem"}}>
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
@@ -141,7 +141,7 @@ class Research extends Component {
              {/* Col #3 */}
           <Col
               // The following is the same as col-lg-6 col-md-6 col-sm-10 col-12
-              lg={6}
+              lg={4}
               md={6}
               sm={12}
               xs={12}
@@ -149,7 +149,7 @@ class Research extends Component {
              
                
                     <div style={{marginBottom:"2rem"}}>
-                        <div className="g-card m-2"  style={{ width: "25rem", height: "16rem"}}>
+                        <div className="g-card m-2"  style={{ width: "19rem", height: "16rem"}}>
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
@@ -177,14 +177,14 @@ class Research extends Component {
           {/* Col #1 */}
           <Col
               // The following is the same as col-lg-6 col-md-6 col-sm-10 col-12
-              lg={6}
+              lg={4}
               md={6}
               sm={12}
               xs={12}
             >
              
                     <div style={{marginBottom:"2rem"}}>
-                        <div className="g-card m-2"  style={{  width: "25rem", height: "16rem"}}>
+                        <div className="g-card m-2"  style={{  width: "19rem", height: "16rem"}}>
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
@@ -210,7 +210,7 @@ class Research extends Component {
           {/* Col #2 */}
           <Col
               // The following is the same as col-lg-6 col-md-6 col-sm-10 col-12
-              lg={6}
+              lg={4}
               md={6}
               sm={12}
               xs={12}
@@ -218,7 +218,7 @@ class Research extends Component {
              
                
                     <div style={{marginBottom:"2rem"}}>
-                        <div className="g-card m-2"  style={{  width: "25rem", height: "16rem"}}>
+                        <div className="g-card m-2"  style={{  width: "19rem", height: "16rem"}}>
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
@@ -243,14 +243,14 @@ class Research extends Component {
              {/* Col #3 */}
           <Col
               // The following is the same as col-lg-6 col-md-6 col-sm-10 col-12
-              lg={6}
+              lg={4}
               md={6}
               sm={12}
               xs={12}
             >
              
                     <div style={{marginBottom:"2rem"}}>
-                        <div className="g-card m-2"  style={{  width: "25rem", height: "16rem"}}>
+                        <div className="g-card m-2"  style={{  width: "19rem", height: "16rem"}}>
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
