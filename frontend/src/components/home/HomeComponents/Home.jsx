@@ -12,7 +12,7 @@ class HomeComp extends Component {
     let message = document.getElementById("message").value;
     axios({
       method: "POST",
-      url: "http://localhost:5000/send",
+      url: "https://engagementml.herokuapp.com/send",
       data: {
         name: name,
         email: email,
