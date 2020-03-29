@@ -1,14 +1,36 @@
 import React, { Component } from "react";
 import logo from '../../../images/engagementML.png'
 import { Link } from 'react-router-dom'
-// import axios from "axios"
+import axios from "axios"
 
   
 class HomeComp extends Component {
-  
-  
+  handleSubmit(e) {
+    e.preventDefault();
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    axios({
+      method: "POST",
+      url: "https://engagementml.herokuapp.com/send",
+      data: {
+        name: name,
+        email: email,
+        message: message
+      }
+    }).then(response => {
+      if (response.data.msg === "success") {
+        alert("Message Sent.");
+        this.resetForm();
+      } else if (response.data.msg === "fail") {
+        alert("Message failed to send.");
+      }
+    });
+  }
 
-  
+  resetForm() {
+    document.getElementById("contact-form").reset();
+  }
 
   render() {
     return (
@@ -204,20 +226,39 @@ class HomeComp extends Component {
                 </p>
               </header>
               <div className="box">
-                <form method="post" action="/#">
+                <form
+                  action="/send"
+                  id="contact-form"
+                  onSubmit={e => this.handleSubmit(e)}
+                  method="POST"
+                  role="form"
+                >
                   <div className="fields">
                     <div className="field half">
-                      <input type="text" name="name" placeholder="Name" />
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Name"
+                        required
+                      />
                     </div>
                     <div className="field half">
-                      <input type="email" name="email" placeholder="Email" />
+                      <input
+                        type="text"
+                        name="email"
+                        id="email"
+                        placeholder="Email"
+                        required
+                      />
                     </div>
                     <div className="field">
                       <textarea
+                        id="message"
                         name="message"
-                        placeholder="Message"
-                        rows={6}
-                        defaultValue={""}
+                        placeholder="Enter your message here"
+                        rows="3"
+                        required
                       />
                     </div>
                   </div>
@@ -226,7 +267,6 @@ class HomeComp extends Component {
                       <input
                         type="submit"
                         className="btn btn-outline btn-success"
-                        defaultValue="Send Message"
                       />
                     </li>
                   </ul>
