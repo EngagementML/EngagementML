@@ -2386,14 +2386,10 @@ input::placeholder {
 	font-size:0.45rem;
 }
 
-/* .ct-chart > svg > g {
-	display: inline;
-	perspective-origin: none;
-} */
-
+/* Stuff From Card Flips below */
 
 .g-card{
-  height: 35rem;
+  height: 20rem;
   perspective: 1000px;
 }
 
@@ -2404,6 +2400,10 @@ input::placeholder {
   text-align: center;
   transform-style: preserve-3d;
   transition: ease-in 0.8s;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+  /* border: 1px solid rgba(0,0,0,.125); */
+  /* Commented the above out because it looks cooler without it */
 }
 
 .g-card:hover .card-container{
@@ -2414,7 +2414,7 @@ input::placeholder {
   position: absolute;
   width: 100%;
   height: 100%;
-  color: #fff;
+  color: black;
   border-radius: 5px;
   backface-visibility: hidden;
   overflow: hidden;
@@ -2422,26 +2422,31 @@ input::placeholder {
 
 .card-front{
   font-size: larger;
-  text-shadow: 2px 2px black;
-  text-decoration-color: black;
 }
   
 .card-back{
-  font-size: larger;
-  text-shadow: 2px 2px black;
-  text-decoration-color: black;
+	transform: rotateY(180deg);
+	padding:1rem;
+	/* font-size: larger; */
+  /* text-shadow: 2px 2px black;
+  text-decoration-color: black; */
   /* background-color: grey; */
   /* background-image: 
   linear-gradient(
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)
     ),
-    url('./cardBackground.jpg');
-    transform: rotateY(180deg); */
+    url('./cardBackground.jpg');  */
 }
   
-.backContent{
+/* .backContent{
   position: absolute;
-  top: 45%;
-  right:20%
-}
+} */
+
+/* .backInfo{
+
+} */
+
+/* .backTitle{
+
+} */
