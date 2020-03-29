@@ -13,6 +13,11 @@ const waitForData = require('./routes/InstaRoute')
 const InstaProfile = require('./models/InstaProfile')
 const InstaPost = require("./models/InstaPosts");
 const FollowList = require('./models/FollowList')
+const nodemailer = require("nodemailer");
+// const creds = require("./config");
+// const router = express.Router();
+
+
 // require("./nodepy");
 
 
@@ -20,6 +25,9 @@ const FollowList = require('./models/FollowList')
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ironplate'
 console.log('Connecting DB to ', MONGODB_URI)
+
+const USER = process.env.USER
+const PASS = process.env.PASS
 
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -177,6 +185,55 @@ app.route("/addToFollow").post((req, res, next) => {
       res.status(400).send("Adding to FollowList failed!!");
     });
 });
+
+//Route for the homepage POST to nodemailer email server
+const transport = {
+  // host: "smtp.gmail.com", // Don’t forget to replace with the SMTP host of your provider
+  service: 'Gmail',
+  port: 587,
+  secure: false,
+  auth: {
+    user: USER,
+    pass: PASS
+  }
+};
+
+const transporter = nodemailer.createTransport(transport);
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Server is ready to take messages");
+  }
+});
+
+app.post("/send", (req, res, next) => {
+  let name = req.body.name;
+  let email = req.body.email;
+  let message = req.body.message;
+  let content = `name: ${name} \n email: ${email} \n message: ${message} `;
+
+  let mail = {
+    from: name,
+    to: "engagementml@gmail.com", // Change to email address that you want to receive messages on
+    subject: "New Message from eML Contact Form",
+    text: content
+  };
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: "fail"
+      });
+    } else {
+      res.json({
+        msg: "success"
+      });
+    }
+  });
+});
+
 
 
 // Missing schema below for ml (Collection1)
