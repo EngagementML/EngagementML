@@ -26,10 +26,10 @@ class SignUp extends Component {
                       // console.log("before >>>")
                       this.setState({
                         show:true,
-                        error: response.data.err.message
+                        error: response.data
                       })
-                      //  console.error(response.data);
-                       console.log(response.data.err.message)
+                       console.error(response.data);
+                      //  console.log(response.data.err.message)
 
                      })
     }
