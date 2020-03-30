@@ -2427,6 +2427,7 @@ input::placeholder {
 .card-back{
 	transform: rotateY(180deg);
 	padding:1rem;
+	background: white;
 	/* font-size: larger; */
   /* text-shadow: 2px 2px black;
   text-decoration-color: black; */
