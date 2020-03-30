@@ -48,7 +48,7 @@ class Icons extends Component {
           <div style={{ marginBottom: "2rem" }}>
             <div
               className="g-card m-2"
-              style={{ width: "12rem", height: "16rem" }}
+              style={{ width: "12rem", height: "20rem" }}
             >
               {/* For full width Do 60rem for width above and 30rem for height on g card */}
               <div className="card-container">
@@ -65,20 +65,19 @@ class Icons extends Component {
                   >
                     <p className="card-text">
                       <h4>{profile.username}</h4>
+                      <br/>
+                      <h6>#{i+1} {profile.full_name}</h6>
                     </p>
                   </div>
                 </div>
                 <div className="card-back d-flex flex-row justify-content-center">
                   <div className="backContent">
                     <div className="card-text backTitle">
-                      <h6>{profile.full_name}</h6>
+                      <h4>{profile.full_name}</h4>
                     </div>
                     <br></br>
                     <p>
-                      <strong>Bio:</strong>{" "}
-                      {profile.biography !== ""
-                        ? profile.biography
-                        : "Not Available"}
+                    {profile.biography}
                     </p>
                     <div className="card-text backInfo">
                       <strong>Followers:</strong>{" "}
@@ -86,6 +85,7 @@ class Icons extends Component {
                         navigator.language,
                         { minimumFractionDigits: 0 }
                       )}
+                      <br />
                       <br />
                       <p>
                         {" "}

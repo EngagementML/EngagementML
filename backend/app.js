@@ -97,6 +97,7 @@ app.route("/profiles").get((req, res, next) => {
     {
       full_name: 1,
       username: 1,
+      biography: 1,
       profile_pic_url_hd: 1,
       "edge_followed_by.count": 1,
       "edge_follow.count": 1,
