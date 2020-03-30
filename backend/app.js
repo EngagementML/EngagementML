@@ -97,8 +97,12 @@ app.route("/profiles").get((req, res, next) => {
     {
       full_name: 1,
       username: 1,
+      biography: 1,
       profile_pic_url_hd: 1,
       "edge_followed_by.count": 1,
+      "edge_follow.count": 1,
+      owner_id: 1,
+      "edge_owner_to_timeline_media.count": 1,
       _id: 0
     },
     { "edge_followed_by.count": -1 },
@@ -124,6 +128,7 @@ app.route("/profile/:username").get((req, res) => {
       profile_pic_url_hd: 1,
       "edge_follow.count": 1,
       "edge_followed_by.count": 1,
+      "edge_owner_to_timeline_media.count": 1,
       id: 1,
       _id: 0
     },
@@ -147,7 +152,10 @@ app.route("/posts/:id").get((req, res) => {
       owner_id: 1,
       comment_count: 1,
       date:1,
-      like_count: 1
+      like_count: 1,
+      is_video: 1,
+      thumbnail: 1,
+      text:1,
     },
     (err, instaposts) => {
       if (err) {

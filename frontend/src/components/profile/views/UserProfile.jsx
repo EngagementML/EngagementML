@@ -56,6 +56,18 @@ class UserProfile extends Component {
         console.log(error);
       });
 
+    await axios
+      .get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
+      .then(res => {
+        // console.log(res, res.data);
+        this.setState({
+          posts: res.data
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });  
+
    await axios 
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get("https://engagementml.herokuapp.com/eML/user/" + this.props.match.params.id)
@@ -117,7 +129,11 @@ class UserProfile extends Component {
 
   render() {
     console.log(this);
-    if (this.state.email !== undefined && this.state.profile !== {}) {
+    if (
+      this.state.email !== undefined &&
+      this.state.profile !== {} &&
+      this.state.posts !== undefined
+    ) {
       return (
         <div className="content">
           <Container fluid="true">
@@ -271,7 +287,24 @@ class UserProfile extends Component {
                   }
                   name={this.state.igUsername}
                   userName={this.state.name}
-                  description={this.state.about}
+                  description={
+                    <div>
+                      {this.state.about}
+                      <br />
+                      <br />
+                      <strong>Followers: </strong>{" "}
+                      {this.state.profile.edge_followed_by.count.toLocaleString(
+                        navigator.language,
+                        { minimumFractionDigits: 0 }
+                      )}
+                      <br />
+                      <strong>Total IG Posts: </strong>{" "}
+                      {this.state.profile.edge_owner_to_timeline_media.count.toLocaleString(
+                        navigator.language,
+                        { minimumFractionDigits: 0 }
+                      )}
+                    </div>
+                  }
                   socials={
                     <div style={{ paddingBottom: "10px" }}>
                       <strong>Industry : {this.state.industry}</strong>

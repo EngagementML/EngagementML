@@ -20,9 +20,9 @@ import UserProfile from "../profile/views/UserProfile.jsx";
 import TableList from "../profile/views/TableList.jsx";
 import Research from "../profile/views/Research.jsx";
 import Icons from "../profile/views/Icons.jsx";
-// import Maps from "../profile/views/Maps.jsx";
+import Posts from "./views/Posts.jsx";
 // import Notifications from "../profile/views/Notifications.jsx";
-// import Upgrade from "../profile/views/Upgrade.jsx";
+import Upgrade from "../profile/views/Upgrade.jsx";
 
 const dashboardRoutes = [
   {
@@ -30,6 +30,13 @@ const dashboardRoutes = [
     name: "Dashboard",
     icon: "pe-7s-graph",
     component: Dashboard,
+    layout: "/profile/admin"
+  },
+  {
+    path: "/posts",
+    name: "My Posts",
+    icon: "pe-7s-leaf",
+    component: Posts,
     layout: "/profile/admin"
   },
   {
@@ -41,7 +48,7 @@ const dashboardRoutes = [
   },
   {
     path: "/research",
-    name: "ml Data",
+    name: "ML Data",
     icon: "pe-7s-search",
     component: Research,
     layout: "/profile/admin"
@@ -59,14 +66,7 @@ const dashboardRoutes = [
     icon: "pe-7s-repeat",
     component: Icons,
     layout: "/profile/admin"
-  }
-  // {
-  //   path: "/maps",
-  //   name: "Maps",
-  //   icon: "pe-7s-map-marker",
-  //   component: Maps,
-  //   layout: "/profile/admin"
-  // },
+  },
   // {
   //   path: "/notifications",
   //   name: "Notifications",
@@ -74,14 +74,14 @@ const dashboardRoutes = [
   //   component: Notifications,
   //   layout: "/profile/admin"
   // },
-  // {
-  //   upgrade: true,
-  //   path: "/upgrade",
-  //   name: "Upgrade to PRO",
-  //   icon: "pe-7s-rocket",
-  //   component: Upgrade,
-  //   layout: "/profile/admin"
-  // } 
+  {
+    upgrade: true,
+    path: "/upgrade",
+    name: "Contact Us",
+    icon: "pe-7s-rocket",
+    component: Upgrade,
+    layout: "/profile/admin"
+  }
 ];
 
 export default dashboardRoutes;

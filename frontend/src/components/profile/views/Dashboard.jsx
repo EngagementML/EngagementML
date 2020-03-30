@@ -24,6 +24,31 @@ import {
   legendBar
 } from "../variables/Variables.jsx";
 
+ // Configuration Array for the Formating of the Follower Count
+const countFormat =
+[
+  { // 0 - 999
+    letter: '',
+    limit: 1e3
+  },
+  { // 1,000 - 999,999
+    letter: 'K',
+    limit: 1e6
+  },
+  { // 1,000,000 - 999,999,999
+    letter: 'M',
+    limit: 1e9
+  },
+  { // 1,000,000,000 - 999,999,999,999
+    letter: 'B',
+    limit: 1e12
+  },
+  { // 1,000,000,000,000 - 999,999,999,999,999
+    letter: 'T',
+    limit: 1e15
+  }
+];
+
 class Dashboard extends Component {
   
   state = {
@@ -116,6 +141,16 @@ class Dashboard extends Component {
       return sums;
     }, {});
   }
+    
+// Format Method:
+formatCount = (value) => {
+  let format = countFormat.find(format => (value < format.limit));
+
+  value = (1000 * value / format.limit);
+  value = Math.round(value * 10) / 10; // keep one decimal number, only if needed
+
+  return (value + format.letter);
+}
 
   render() {
 
@@ -207,10 +242,7 @@ var legendSales = {
               statsText="Followers"
               statsValue={
                 this.state.post !== []
-                  ? this.state.profile.edge_followed_by.count.toLocaleString(
-                      navigator.language,
-                      { minimumFractionDigits: 0 }
-                    )
+                  ? this.formatCount(this.state.profile.edge_followed_by.count)
                   : "N/A"
               }
               statsIcon={<i className="pe-7s-refresh-2" />}

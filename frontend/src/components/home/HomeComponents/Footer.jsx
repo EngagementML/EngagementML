@@ -33,10 +33,10 @@ class Footer extends Component {
                   <img src={logo} width="300" alt="EngagementML" />
                 </h4>
                 <p>
-                  <strong>EngagementML</strong> is machine learning application
-                  developed for social media management research and strategy
-                  optimization. If you want to know more about the project be
-                  sure to conect with us!
+                  <strong>EngagementML</strong> is a machine learning
+                  application developed for social media management research and
+                  strategy optimization. If you want to know more about the
+                  project, be sure to connect with us!
                   <br />
                   <br />
                   <strong>
@@ -104,7 +104,7 @@ class Footer extends Component {
                   </li>
                   <li>
                     <a
-                      href="https://google.com/"
+                      href="https://en.wikipedia.org/wiki/Artificial_intelligence"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -113,7 +113,7 @@ class Footer extends Component {
                   </li>
                   <li>
                     <a
-                      href="https://google.com/"
+                      href="https://en.wikipedia.org/wiki/Machine_learning"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
