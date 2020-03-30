@@ -48,7 +48,7 @@ class Icons extends Component {
           <div style={{ marginBottom: "2rem" }}>
             <div
               className="g-card m-2"
-              style={{ width: "12rem", height: "20rem" }}
+              style={{ width: "12rem", height: "27rem" }}
             >
               {/* For full width Do 60rem for width above and 30rem for height on g card */}
               <div className="card-container">
