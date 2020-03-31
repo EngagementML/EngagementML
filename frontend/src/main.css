@@ -2389,7 +2389,7 @@ input::placeholder {
 /* Stuff From Card Flips below */
 
 .g-card{
-  height: 20rem;
+  /* height: 20rem; */
   perspective: 1000px;
 }
 
@@ -2440,14 +2440,10 @@ input::placeholder {
     url('./cardBackground.jpg');  */
 }
   
-/* .backContent{
-  position: absolute;
-} */
+#topWords{
+	height:85%
+}
 
-/* .backInfo{
-
-} */
-
-/* .backTitle{
-
-} */
+#topCorr{
+	height:85%
+}
