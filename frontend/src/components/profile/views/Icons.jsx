@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import axios from 'axios'
 import Card from "../components/Card/Card";
 // import { iconsArray } from "../variables/Variables.jsx";
@@ -66,6 +66,11 @@ class Icons extends Component {
     return true;
   };
 
+  showPosts = e => {
+    console.log('Selected IG Username', e.target.value)
+    this.props.history.push(`/profile/admin/iconposts/${e.target.value}`);
+  }
+
   profileList() {
     return this.state.filteredItems.map((profile, i) => {
       return (
@@ -86,13 +91,13 @@ class Icons extends Component {
                     className="card-body d-flex align-items-center justify-content-center"
                     style={{ background: "white" }}
                   >
-                    <p className="card-text">
+                    <div className="card-text">
                       <h4>{profile.username}</h4>
                       <br />
                       <h6>
                         #{i + 1} {profile.full_name}
                       </h6>
-                    </p>
+                    </div>
                   </div>
                 </div>
                 <div
@@ -121,6 +126,18 @@ class Icons extends Component {
                           { minimumFractionDigits: 0 }
                         )}
                       </p>
+                      <br />
+                      <br />
+                      <Button
+                        value={profile.username}
+                        onClick={e => this.showPosts(e)}
+                        variant="warning"
+                        className="btn"
+                      >
+                        View Posts
+                      </Button>
+                      <br />
+                      <br />
                     </div>
                   </div>
                 </div>
