@@ -358,6 +358,7 @@ var legendSales = {
               title="Post Type"
               category="Last 12 Posts"
               stats="Updated today"
+              // style={{weight:"5rem"}}
               content={
                 <img
                   src="https://engagementmlapp.s3.amazonaws.com/img/pie.png"
@@ -389,7 +390,7 @@ var legendSales = {
               content={
                 <img
                   src="https://engagementmlapp.s3.amazonaws.com/img/graph.png"
-                  width="450"
+                  style={{width:"20rem"}}
                   alt="placeholder"
                 />
                 //   <div className="ct-chart">
