@@ -157,7 +157,6 @@ app.route("/posts/:id").get((req, res) => {
       thumbnail: 1,
       text:1,
     },
-    {date : -1},
     (err, instaposts) => {
       if (err) {
         console.log(err);
@@ -165,7 +164,7 @@ app.route("/posts/:id").get((req, res) => {
         res.json(instaposts);
       }
     }
-  );
+  ).sort({date : -1})
 });
 
 //Route to return all available profiles 
