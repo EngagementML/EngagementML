@@ -66,26 +66,56 @@ class Posts extends Component {
       });
   }
 
-  renderDate = (postDate) =>{
-            let a = new Date(postDate * 1000);
-            let year = Number(a.getFullYear().toString().slice(2, 4));
-            let month = a.getMonth() + 1;
-            let date = a.getDate();
-            let time = month + "/" + date + "/" + year;
-            return String(time);
-  }
+  renderDate = postDate => {
+    let a = new Date(postDate * 1000);
+    let year = Number(
+      a
+        .getFullYear()
+        .toString()
+        .slice(2, 4)
+    );
+    let month = a.getMonth() + 1;
+    let date = a.getDate();
+    let time = month + "/" + date + "/" + year;
+    return String(time);
+  };
 
-  onImgErrorSmall = (e) => {
-    console.log(e.target)
+  renderTime = postDate => {
+    let a = new Date(postDate * 1000);
+    let hours = a.getHours();
+    hours = hours % 12 || 12;
+    let AmOrPm = hours >= 12 ? "pm" : "am";
+    let minutes = "0" + a.getMinutes();
+    // let seconds = "0" + a.getSeconds();
+    // let time = hours + ":" + minutes.substr(-2) + ":" + seconds.substr(-2) + AmOrPm
+    let time = hours + ":" + minutes.substr(-2) + " " + AmOrPm;
+
+    return String(time);
+  };
+
+  renderDay = postDate => {
+    let a = new Date(postDate * 1000);
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ];
+    let dayOfWeek = days[a.getDay()];
+    return dayOfWeek
+  };
+
+  onImgErrorSmall = e => {
+    console.log(e.target);
     e.target.src =
       "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg";
     // disable onerror to prevent endless loop
     e.target.onError = "";
     return true;
-  }
-
-
-  
+  };
 
   postList() {
     return this.state.posts.map((posts, i) => {
@@ -95,8 +125,7 @@ class Posts extends Component {
             <div className="g-card m-2" style={{ height: "70vh" }}>
               {/* For full width Do 60rem for width above and 30rem for height on g card */}
               <div className="card-container">
-                <div
-                  className="card-front  d-flex flex-column justify-content-between">
+                <div className="card-front  d-flex flex-column justify-content-between">
                   <img
                     className="card-img-top img-fluid"
                     onError={e => this.onImgErrorSmall(e)}
@@ -147,6 +176,11 @@ class Posts extends Component {
                       <strong>Date Posted</strong>
                       <br />
                       {this.renderDate(posts.date)}
+                      <br />
+                      <br />
+                      <strong>Weekday</strong> - {this.renderDay(posts.date)}
+                      <br />
+                      <strong>Time Posted</strong> - {this.renderTime(posts.date)}
                     </div>
                     <br></br>
                     <p>{posts.text}</p>
@@ -193,15 +227,18 @@ class Posts extends Component {
                   paddingBottom: "15px"
                 }}
               >
-                <h2>
-                  Post Engagement Analysis
-                </h2>
+                <h2>Post Engagement Analysis</h2>
               </Col>
               <Col md={12}>
                 <Card
                   title={
                     <React.Fragment>
-                      <img src={logo} alt="EngagementML" width="70%" height="70%" />
+                      <img
+                        src={logo}
+                        alt="EngagementML"
+                        width="70%"
+                        height="70%"
+                      />
                     </React.Fragment>
                   }
                   ctAllIcons

@@ -8,9 +8,7 @@ import Card from "../components/Card/Card";
 
 
 class Icons extends Component {
-  state = {
-    
-  };
+  state = {};
 
   async componentDidMount() {
     await axios
@@ -20,7 +18,7 @@ class Icons extends Component {
         // console.log(res, res.data);
         this.setState({
           profiles: res.data,
-          filteredItems: res.data,
+          filteredItems: res.data
         });
       })
       .catch(function(error) {
@@ -45,7 +43,9 @@ class Icons extends Component {
     let filteredItems = this.state.profiles.filter(profile => {
       if (profile.username) {
         return (
-          profile.username.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          profile.username
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase()) ||
           profile.full_name.toLowerCase().includes(e.target.value.toLowerCase())
         );
       }
@@ -56,23 +56,29 @@ class Icons extends Component {
     });
     console.log(filteredItems, filteredItems.length);
   };
-
+  
+  onImgErrorSmall = e => {
+    console.log(e.target);
+    e.target.src =
+      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg";
+    // disable onerror to prevent endless loop
+    e.target.onError = "";
+    return true;
+  };
 
   profileList() {
     return this.state.filteredItems.map((profile, i) => {
       return (
         <Col lg={3} md={4} sm={6} xs={12} className="font-icon-list" key={i}>
           <div style={{ marginBottom: "2rem" }}>
-            <div
-              className="g-card m-2"
-              style={{ height: "27rem" }}
-            >
+            <div className="g-card m-2" style={{ height: "27rem" }}>
               {/* For full width Do 60rem for width above and 30rem for height on g card */}
               <div className="card-container">
                 <div className="card-front  d-flex flex-column justify-content-between">
                   <img
                     className="card-img-top img-fluid"
                     alt={profile.username}
+                    onError={e => this.onImgErrorSmall(e)}
                     // style={{ width: "100%" }}
                     src={profile.profile_pic_url_hd}
                   />
@@ -89,7 +95,10 @@ class Icons extends Component {
                     </p>
                   </div>
                 </div>
-                <div className="card-back d-flex flex-row justify-content-center" style={{overflowY:"scroll"}}>
+                <div
+                  className="card-back d-flex flex-row justify-content-center"
+                  style={{ overflowY: "scroll" }}
+                >
                   <div className="backContent">
                     <div className="card-text backTitle">
                       <h4>{profile.full_name}</h4>

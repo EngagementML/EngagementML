@@ -36,16 +36,16 @@ class UserProfile extends Component {
     }
   };
 
-  
-
   async componentDidMount() {
     let user = await actions.isLoggedIn();
     this.setState({ ...user.data });
     console.log("Current User >> ", user);
-    
+
     await axios
       // .get("http://localhost:5000/profiles/")
-      .get("https://engagementml.herokuapp.com/profile/" + this.state.igUsername)
+      .get(
+        "https://engagementml.herokuapp.com/profile/" + this.state.igUsername
+      )
       .then(res => {
         // console.log(res, res.data);
         this.setState({
@@ -66,11 +66,14 @@ class UserProfile extends Component {
       })
       .catch(function(error) {
         console.log(error);
-      });  
+      });
 
-   await axios 
+    await axios
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
-      .get("https://engagementml.herokuapp.com/eML/user/" + this.props.match.params.id)
+      .get(
+        "https://engagementml.herokuapp.com/eML/user/" +
+          this.props.match.params.id
+      )
       .then(res => {
         this.setState({
           email: res.data.email,
@@ -80,7 +83,7 @@ class UserProfile extends Component {
           igUsername: res.data.igUsername,
           image: res.data.image,
           about: res.data.about,
-          industry: res.data.industry,
+          industry: res.data.industry
           // role: res.data.role,
           // competitor: res.data.competitor,
         });
@@ -88,22 +91,18 @@ class UserProfile extends Component {
       .catch(function(error) {
         console.log(error);
       });
-  
-  
-
   }
 
-
-  onChange = (e) => {
-    console.log(e.target.name, e.target.value)
+  onChange = e => {
+    console.log(e.target.name, e.target.value);
     this.setState({
-      [e.target.name] : e.target.value
-    })
-  }
+      [e.target.name]: e.target.value
+    });
+  };
 
-  onSubmit= (e) =>  {
+  onSubmit = e => {
     e.preventDefault();
-    console.log('submit triggered....')
+    console.log("submit triggered....");
     const obj = {
       email: this.state.email,
       name: this.state.name,
@@ -112,20 +111,30 @@ class UserProfile extends Component {
       igUsername: this.state.igUsername,
       image: this.state.image,
       about: this.state.about,
-      industry: this.state.industry,
+      industry: this.state.industry
       // role: this.state.role,
       // competitor: this.state.competitor,
     };
     console.log(obj, this);
     axios
-      .post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id, obj)
+      .post(
+        "https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,
+        obj
+      )
       .then(res => console.log(res.data));
 
     // this.props.history.push("/")
-    alert('User Profile has been updated!');
-  }
+    alert("User Profile has been updated!");
+  };
 
-  
+  onImgErrorSmall = e => {
+    console.log(e.target);
+    e.target.src =
+      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg";
+    // disable onerror to prevent endless loop
+    e.target.onError = "";
+    return true;
+  };
 
   render() {
     console.log(this);
@@ -196,6 +205,7 @@ class UserProfile extends Component {
                               .thumbnail
                           }
                           alt="Post"
+                          onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
 
@@ -205,6 +215,7 @@ class UserProfile extends Component {
                               .thumbnail
                           }
                           alt="Post"
+                          onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
 
@@ -214,6 +225,7 @@ class UserProfile extends Component {
                               .thumbnail
                           }
                           alt="Post"
+                          onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
 
@@ -223,6 +235,7 @@ class UserProfile extends Component {
                               .thumbnail
                           }
                           alt="Post"
+                          onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
 
@@ -232,6 +245,7 @@ class UserProfile extends Component {
                               .thumbnail
                           }
                           alt="Post"
+                          onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
 
@@ -241,6 +255,7 @@ class UserProfile extends Component {
                               .thumbnail
                           }
                           alt="Post"
+                          onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
 
@@ -250,9 +265,9 @@ class UserProfile extends Component {
                               .thumbnail
                           }
                           alt="Post"
+                          onError={e => this.onImgErrorSmall(e)}
                           width="50px"
                         />
-
                       </>
                     }
                   />
