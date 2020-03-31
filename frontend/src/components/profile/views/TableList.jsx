@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Table, Form, Button, Carousel } from "react-bootstrap";
+import { Container, Row, Col, Table, Form, Button, Carousel, ProgressBar } from "react-bootstrap";
 import ChartistGraph from "react-chartist";
 import axios from "axios";
 import Card from "../components/Card/Card.jsx";
@@ -9,7 +9,7 @@ import { thArray } from "../variables/Variables.jsx";
 
 class TableList extends Component {
 
-state = {tag:"Awesome"}
+state = {tag:"Awesome", hashtags:[]}
   
 componentDidMount(){
   this.getData()
@@ -51,6 +51,15 @@ updateTag = (e) =>{
   this.getData()
 }
 
+addHashtag = (newTag) => {
+  console.log("addHashtag Log",newTag);
+  // this.setState({
+  //   hashtags: [...this.state.hashtags,newTag]
+  // }).then( res => {
+  //   console.log("2nd addHashtag log after state is set",this.satate)
+  // })
+}
+
   render() {
     if (this.state.hashtagResultWord !== undefined && this.state.hashtagResultTrending !== undefined &&  this.state.tag !== 'undefined' && this.state.hashtagResultWordHistory !== undefined && this.state.hashtagResultWordHistory.data !== undefined) {
     console.log("Current State at Render", this.state)
@@ -60,7 +69,7 @@ let values=[]
 var dataSales = {
   labels: 
     this.state.hashtagResultWordHistory.data.map((currentDate) => {
-      console.log(currentDate)
+      // console.log(currentDate)
       return (
         String(currentDate.date.slice(5,10))
 
@@ -70,7 +79,7 @@ var dataSales = {
   ,
   series: [
     this.state.hashtagResultWordHistory.data.map((currentExposure) => {
-      console.log("Hereeeeeeee",currentExposure)
+      // console.log("Hereeeeeeee",currentExposure)
       values.push(currentExposure.exposure)
       return (
         String(currentExposure.exposure)
@@ -114,13 +123,25 @@ var responsiveSales = [
 
 const pickColor = (color) => {
   if(color == 0){
-    return "Extremely Niche"
+    return "danger"
   } else if (color == 1){
-    return "Too many people currently using it"
+    return "warinig"
   } else if (color == 2){
-    return "Use this to get seen over time"
+    return "info"
   } else {
-    return "Use this to get seen now"
+    return "success"
+  }
+}
+
+const pickSize = (color) => {
+  if(color == 0){
+    return 25
+  } else if (color == 1){
+    return 50
+  } else if (color == 2){
+    return 75
+  } else {
+    return 100
   }
 }
 
@@ -196,6 +217,13 @@ const pickColor = (color) => {
           
         </Row>
 
+        {/* The whole usage index thing goes here */}
+
+        <Row>
+
+
+        </Row>
+
 
 
           <Row>
@@ -223,12 +251,17 @@ const pickColor = (color) => {
                       {this.state.hashtagResultWord.data.map((currentTag) => {
                         return (
                           <tr>
+                            <td><Button variant="info" onClick={() => this.addHashtag(currentTag.hashtag)} >Add</Button></td>
                             <td>{"#"+currentTag.hashtag}</td>
                             <td style={{textAlign:"right"}}>{currentTag.exposure.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</td>
                             <td style={{textAlign:"right"}}>{currentTag.images}</td>
                             <td style={{textAlign:"right"}}>{currentTag.links}</td>
                             <td style={{textAlign:"right"}}>{currentTag.mentions}</td>
-                            <td style={{textAlign:"right"}}>{pickColor(currentTag.color)}</td>
+                            <td style={{textAlign:"right"}}>
+                              <div>
+                                <ProgressBar variant={pickColor(currentTag.color)} now={pickSize(currentTag.color)} />
+                              </div>
+                            </td>
                           </tr>
                         )
                         })
@@ -236,14 +269,14 @@ const pickColor = (color) => {
 
                     </tbody>
                   </Table>
+                  
                 }
               />
             </Col>
             {/* Add Graph here */}
 
           </Row>
-         
-         
+          
         </Container>
       </div>
 
