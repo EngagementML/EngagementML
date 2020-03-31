@@ -126,8 +126,7 @@ class Icons extends Component {
                           { minimumFractionDigits: 0 }
                         )}
                       </p>
-                      <br />
-                      <br />
+                      <br/>
                       <Button
                         value={profile.username}
                         onClick={e => this.showPosts(e)}
