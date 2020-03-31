@@ -157,6 +157,7 @@ app.route("/posts/:id").get((req, res) => {
       thumbnail: 1,
       text:1,
     },
+    {date : -1},
     (err, instaposts) => {
       if (err) {
         console.log(err);
