@@ -51,13 +51,15 @@ updateTag = (e) =>{
   this.getData()
 }
 
-addHashtag = (newTag) => {
+addHashtag = async (newTag) => {
   console.log("addHashtag Log",newTag);
-  // this.setState({
-  //   hashtags: [...this.state.hashtags,newTag]
-  // }).then( res => {
-  //   console.log("2nd addHashtag log after state is set",this.satate)
-  // })
+  await this.setState({
+    hashtags: [...this.state.hashtags,newTag]
+  })
+  console.log("2nd addHashtag log after state is set",this.state)
+  // axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,obj)
+  // .then(res => console.log(res.data));
+  alert(`Added #${newTag} to collection!`);
 }
 
   render() {
