@@ -199,7 +199,7 @@ class IconPosts extends Component {
                           navigator.language,
                           { minimumFractionDigits: 0 }
                         )}
-                      </p>
+                      </p> 
                     </div> */}
                   </div>
                 </div>
