@@ -178,9 +178,9 @@ class Posts extends Component {
                       {this.renderDate(posts.date)}
                       <br />
                       <br />
-                      <strong>Weekday</strong> - {this.renderDay(posts.date)}
+                      <h7><strong>Weekday</strong> - {this.renderDay(posts.date)}
                       <br />
-                      <strong>Time Posted</strong> - {this.renderTime(posts.date)}
+                      <strong>Time</strong> - {this.renderTime(posts.date)}</h7>
                     </div>
                     <br></br>
                     <p>{posts.text}</p>
