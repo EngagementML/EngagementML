@@ -142,7 +142,7 @@ class App extends Component {
                   <Button
                     as={Link}
                     to="/profile/admin/dashboard"
-                    variant="info mr-1"
+                    variant="primary mr-1"
                   >
                     {this.state.email}
                   </Button>
@@ -157,29 +157,26 @@ class App extends Component {
                   </Button>
                   {this.state.width <= 991 ? (
                     <>
-                    <br/>
-                      <Button
-                        as={Link}
-                        to="/profile/admin/dashboard"
-                        // onClick={this.logOut}
-                        variant="warning mr-10"
-                        className="btn"
-                      >
-                        Dashboard
-                      </Button>
+                      <br />
                       <Button
                         as={Link}
                         to="/profile/admin/user"
-                        // onClick={this.logOut}
-                        variant="secondary mr-1"
+                        variant="info mr-1"
                         className="btn"
                       >
                         Profile
                       </Button>
                       <Button
                         as={Link}
+                        to="/profile/admin/posts"
+                        variant="warning mr-10"
+                        className="btn"
+                      >
+                        Posts
+                      </Button>
+                      <Button
+                        as={Link}
                         to="/profile/admin/research"
-                        // onClick={this.logOut}
                         variant="success mr-1"
                         className="btn"
                       >
@@ -188,7 +185,6 @@ class App extends Component {
                       <Button
                         as={Link}
                         to="/profile/admin/icons"
-                        // onClick={this.logOut}
                         variant="primary mr-1"
                         className="btn"
                       >

@@ -65,7 +65,7 @@ class Icons extends Component {
           <div style={{ marginBottom: "2rem" }}>
             <div
               className="g-card m-2"
-              style={{ width: "13rem", height: "27rem" }}
+              style={{ height: "25rem" }}
             >
               {/* For full width Do 60rem for width above and 30rem for height on g card */}
               <div className="card-container">
@@ -89,7 +89,7 @@ class Icons extends Component {
                     </p>
                   </div>
                 </div>
-                <div className="card-back d-flex flex-row justify-content-center">
+                <div className="card-back d-flex flex-row justify-content-center" style={{overflowY:"scroll"}}>
                   <div className="backContent">
                     <div className="card-text backTitle">
                       <h4>{profile.full_name}</h4>

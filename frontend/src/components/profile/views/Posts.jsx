@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import Card from "../components/Card/Card";
-import logo from "../../../images/engagementMLbsm.png";
+import logo from "../../../images/engagementMLb.png";
 import axios from "axios";
 import actions from "../../../services/index";
 
@@ -92,16 +92,14 @@ class Posts extends Component {
       return (
         <Col lg={3} md={4} sm={6} xs={12} className="font-icon-list" key={i}>
           <div style={{ marginBottom: "2rem" }}>
-            <div
-              className="g-card m-2"
-              style={{ width: "13rem", height: "27rem" }}
-            >
+            <div className="g-card m-2" style={{ height: "70vh" }}>
               {/* For full width Do 60rem for width above and 30rem for height on g card */}
               <div className="card-container">
-                <div className="card-front  d-flex flex-column justify-content-between">
+                <div
+                  className="card-front  d-flex flex-column justify-content-between">
                   <img
                     className="card-img-top img-fluid"
-                    onError={(e)=>this.onImgErrorSmall(e)}
+                    onError={e => this.onImgErrorSmall(e)}
                     alt={this.state.profile.username}
                     // style={{ width: "100%" }}
                     src={posts.thumbnail}
@@ -141,7 +139,7 @@ class Posts extends Component {
                   </div>
                 </div>
                 <div className="card-back d-flex flex-row justify-content-center">
-                  <div className="backContent">
+                  <div className="backContent" style={{ overflowY: "scroll" }}>
                     <div className="card-text backTitle">
                       <h4>{this.state.profile.username}</h4>
                       <h5>{this.state.profile.full_name}</h5>
@@ -203,7 +201,7 @@ class Posts extends Component {
                 <Card
                   title={
                     <React.Fragment>
-                      <img src={logo} alt="EngagementML" width="400" />
+                      <img src={logo} alt="EngagementML" width="70%" height="70%" />
                     </React.Fragment>
                   }
                   ctAllIcons
