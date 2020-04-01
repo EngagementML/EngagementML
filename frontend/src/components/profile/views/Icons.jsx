@@ -46,7 +46,12 @@ class Icons extends Component {
           profile.username
             .toLowerCase()
             .includes(e.target.value.toLowerCase()) ||
-          profile.full_name.toLowerCase().includes(e.target.value.toLowerCase())
+          profile.full_name
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase()) ||
+          profile.emlcategory
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase())
         );
       }
     });
