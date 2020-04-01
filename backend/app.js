@@ -103,6 +103,7 @@ app.route("/profiles").get((req, res, next) => {
       "edge_follow.count": 1,
       owner_id: 1,
       "edge_owner_to_timeline_media.count": 1,
+      emlcategory : 1,
       _id: 0
     },
     { "edge_followed_by.count": -1 },
@@ -151,12 +152,13 @@ app.route("/posts/:id").get((req, res) => {
       _id: 1,
       owner_id: 1,
       comment_count: 1,
-      date:1,
+      date: 1,
       like_count: 1,
       is_video: 1,
       thumbnail: 1,
-      text:1,
+      text: 1,
     },
+    {date : -1},
     (err, instaposts) => {
       if (err) {
         console.log(err);
@@ -169,13 +171,24 @@ app.route("/posts/:id").get((req, res) => {
 
 //Route to return all available profiles 
 app.route("/posts").get((req, res, next) => {
-  InstaPost.find({}, {date: 1, text: 1, owner_id: 1, like_count:1, comment_count:1, is_video: 1}, (err, instapost) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.json(instapost);
+  InstaPost.find(
+    {},
+    {
+      date: 1,
+      text: 1,
+      owner_id: 1,
+      like_count: 1,
+      comment_count: 1,
+      is_video: 1
+    },
+    (err, instapost) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(instapost);
+      }
     }
-  });
+  ).sort({ date: -1 });
 });
 
 //Route to add a new username to follow (add to FollowList array)

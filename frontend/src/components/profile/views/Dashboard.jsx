@@ -100,7 +100,7 @@ class Dashboard extends Component {
           image: res.data.image,
           about: res.data.about,
           industry: res.data.industry
-          // role: res.data.role,
+          // role: res.data.role, 
           // competitor: res.data.competitor,
         });
       })
@@ -158,8 +158,8 @@ formatCount = (value) => {
 
 if (this.state.email !== undefined && this.state.profile !== undefined && this.state.posts !== undefined) {
 
-console.log(this.props);
-console.log(this.state);
+// console.log(this.props);
+// console.log(this.state);
 
 // Data for Line Chart
 var dataSales = {
@@ -256,9 +256,9 @@ var legendSales = {
               statsValue={
                 this.state.posts !== []
                   ? (
-                      ((this.state.posts[0]
+                      ((this.state.posts[this.state.posts.length - 1]
                         .like_count +
-                        this.state.posts[0]
+                        this.state.posts[this.state.posts.length - 1]
                           .comment_count) /
                         this.state.profile.edge_followed_by.count) *
                       100
@@ -276,15 +276,15 @@ var legendSales = {
               statsValue={
                 this.state.posts !== []
                   ? (
-                      ((this.state.posts[0]
+                      ((this.state.posts[this.state.posts.length - 1]
                         .like_count +
-                        this.state.posts[0]
+                        this.state.posts[this.state.posts.length - 1]
                           .comment_count) /
                         this.state.profile.edge_followed_by.count) *
                         100 -
-                      ((this.state.posts[1]
+                      ((this.state.posts[this.state.posts.length - 2]
                         .like_count +
-                        this.state.posts[1]
+                        this.state.posts[this.state.posts.length - 2]
                           .comment_count) /
                         this.state.profile.edge_followed_by.count) *
                         100
@@ -302,9 +302,9 @@ var legendSales = {
               statsValue={
                 this.state.posts !== []
                   ? (
-                      ((this.state.posts[1]
+                      ((this.state.posts[this.state.posts.length - 2]
                         .like_count +
-                        this.state.posts[1]
+                        this.state.posts[this.state.posts.length - 2]
                           .comment_count) /
                         this.state.profile.edge_followed_by.count) *
                       100
@@ -390,7 +390,7 @@ var legendSales = {
               content={
                 <img
                   src="https://engagementmlapp.s3.amazonaws.com/img/graph.png"
-                  style={{width:"20rem"}}
+                  style={{ width: "20rem" }}
                   alt="placeholder"
                 />
                 //   <div className="ct-chart">

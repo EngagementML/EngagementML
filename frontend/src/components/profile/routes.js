@@ -4,6 +4,7 @@ import UserProfile from "../profile/views/UserProfile.jsx";
 import TableList from "../profile/views/TableList.jsx";
 import Research from "../profile/views/Research.jsx";
 import Icons from "../profile/views/Icons.jsx";
+import IconPosts from "../profile/views/IconPosts.jsx"
 import Posts from "./views/Posts.jsx";
 // import Notifications from "../profile/views/Notifications.jsx";
 import Upgrade from "../profile/views/Upgrade.jsx";
@@ -51,13 +52,14 @@ const dashboardRoutes = [
     component: Icons,
     layout: "/profile/admin"
   },
-  // {
-  //   path: "/notifications",
-  //   name: "Notifications",
-  //   icon: "pe-7s-bell",
-  //   component: Notifications,
-  //   layout: "/profile/admin"
-  // },
+  {
+    path: "/iconposts/:id",
+    name: "IconPosts",
+    icon: "pe-7s-bell",
+    component: IconPosts,
+    layout: "/profile/admin",
+    invisible: true
+  },
   {
     upgrade: true,
     path: "/upgrade",
