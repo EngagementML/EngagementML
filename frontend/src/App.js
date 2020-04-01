@@ -54,10 +54,10 @@ class App extends Component {
   updateDimensions() {
     this.setState({ width: window.innerWidth });
   }
-  componentDidMount() {
-    this.updateDimensions();
-    window.addEventListener("resize", this.updateDimensions.bind(this));
-  }
+  // componentDidMount() {
+  //   this.updateDimensions();
+  //   window.addEventListener("resize", this.updateDimensions.bind(this));
+  // }
 
   render() {
     return (

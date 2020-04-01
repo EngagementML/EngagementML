@@ -14,6 +14,7 @@ const InstaProfile = require('./models/InstaProfile')
 const InstaPost = require("./models/InstaPosts");
 const FollowList = require('./models/FollowList')
 const nodemailer = require("nodemailer");
+const secure = require("ssl-express-www");
 // const creds = require("./config");
 // const router = express.Router();
 
@@ -46,6 +47,7 @@ const app = express();
 //   })
 // );
 
+app.use(secure);
 
 app.use(cors({
   origin: function (origin, callback) {

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import actions from "../../../services/index";
-import Card from "../components/Card/Card.jsx";
+// import Card from "../components/Card/Card.jsx";
 
 // axios.get("http://localhost:5000/profiles").then(res => console.log(res.data));
 
@@ -99,7 +99,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Likes.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" alt='eML Analysis1' src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Likes.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center">
                                         <p className="card-text" style={{fontFamily:"monospace"}}>Followers vs Likes</p>
                                     </div>
@@ -133,7 +133,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Comments_Counts.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" alt='eML Analysis2' src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Comments_Counts.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center">
                                         <p className="card-text" style={{fontFamily:"monospace"}}>Followers vs Comments</p>
                                     </div>
@@ -169,7 +169,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Video_view_Count.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" alt='eML Analysis3' src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_VS_Video_view_Count.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center">
                                         <p className="card-text" style={{fontFamily:"monospace"}}>Followers vs Video View Count</p>
                                     </div>
@@ -203,7 +203,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Link_Count_VS_Like_Count.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" alt='eML Analysis4' src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Link_Count_VS_Like_Count.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center">
                                         <p className="card-text" style={{fontFamily:"monospace"}}>Link Count VS Like Count</p>
                                     </div>
@@ -238,7 +238,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Text_Lenght_VS_Hashtag_Count.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" alt='eML Analysis5' src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Text_Lenght_VS_Hashtag_Count.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center">
                                         <p className="card-text" style={{fontFamily:"monospace"}}>Text Length vs Hashtag Count</p>
                                     </div>
@@ -272,7 +272,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Text_Length_Vs_Like_Count.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" alt='eML Analysis6' src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Text_Length_Vs_Like_Count.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center">
                                         <p className="card-text" style={{fontFamily:"monospace"}}>Text Length vs Like Count</p>
                                     </div>
@@ -305,7 +305,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" id="topCorr" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Correlation_Matrix.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" alt='eML Analysis7' id="topCorr" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Correlation_Matrix.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center" style={{background:"white"}}>
                                         <p className="card-text" style={{fontFamily:"monospace"}}>Correlation matrix</p>
                                     </div>
@@ -340,7 +340,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_Vs_Like_Count_-_Segmented_by_Business_Categories.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" alt='eML Analysis8' src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/Followers_Vs_Like_Count_-_Segmented_by_Business_Categories.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center" style={{background:"white"}}>
                                         <p className="card-text" style={{fontFamily:"monospace"}}>Followers vs Likes</p>
                                     </div>
@@ -375,7 +375,7 @@ class Research extends Component {
                           {/* For full width Do 60rem for width above and 30rem for height on g card */}
                             <div className="card-container">
                                 <div className="card-front  d-flex flex-column justify-content-between">
-                                    <img className="card-img-top img-fluid" id="topWords" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/word_cloud.jpeg`} alt="Card image cap" />
+                                    <img className="card-img-top img-fluid" alt='eML Analysis9' id="topWords" src={`https://engagementmlapp.s3.amazonaws.com/${this.state.industry}/word_cloud.jpeg`} alt="Card image cap" />
                                     <div className="card-body d-flex align-items-center justify-content-center" style={{background:"white"}}>
                                         <p className="card-text" style={{fontFamily:"monospace"}}>Key Words</p>
                                     </div>
