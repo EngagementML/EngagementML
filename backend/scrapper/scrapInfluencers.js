@@ -22,7 +22,7 @@ instagramScraper = async () => {
     // "jenselter",
     // "simeonpanda",
 
-    //Beauty Category
+    // //Beauty Category
     // "michellephan",
     // "shaaanxo",
     // "jeffreestar",
@@ -36,7 +36,7 @@ instagramScraper = async () => {
     // "jamescharles",
     // "makeupshayla",
 
-    //Lifestyle Category
+    // //Lifestyle Category
     // "jannid",
     // "proudlock",
     // "brunchboys",
@@ -52,7 +52,7 @@ instagramScraper = async () => {
     // "lilly",
     // "rosannapansino",
 
-    //Design Category
+    // //Design Category
     // "mariekondo",
     // "ashleytstark",
     // "casachicks",
@@ -67,7 +67,7 @@ instagramScraper = async () => {
     // "saudahsaleeminteriors",
     // "ninawilliamsblog",
 
-    //Photography Category
+    // //Photography Category
     // "benleowy",
     // "muradosmann",
     // "yamashitaphoto",
@@ -85,7 +85,7 @@ instagramScraper = async () => {
     // "jackharries",
     // "ilhan1077",
 
-    //Fashion & Style Category
+    // //Fashion & Style Category
     // "alexachung",
     // "juliahengel",
     // "oscarcobo8",
@@ -105,7 +105,7 @@ instagramScraper = async () => {
     // "weworewhat",
     // "gabifresh",
 
-    //Travel Category
+    // //Travel Category
     // "bucketlistjourney",
     // "expertvagabond",
     // "thepointsguy",
@@ -119,9 +119,9 @@ instagramScraper = async () => {
     // "thebucketlistfamily",
     // "fatgirlstraveling",
     // "muradosmann",
-    // "taramilktea"
+    // "taramilktea",
 
-    //Food Category
+    // //Food Category
     // "jamieoliver",
     // "ladyironchef",
     // "detoxinista",
