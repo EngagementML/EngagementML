@@ -3,6 +3,11 @@ let ig = require("instagram-scraping");
 instagramScraper = async () => {
   let influencers = [
     
+    // "camilla_cabello",
+    // "maluma",
+    // "justintimberlake",
+    // "nba",
+    // "ronaldinho",
     // "grpecunia",
     // "iampecu",
 

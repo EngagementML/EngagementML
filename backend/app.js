@@ -90,6 +90,13 @@ console.log('client', client)
 //   res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
 // })
 
+//SSL cert validation
+app.get("/.well-known/acme-challenge/:content", function(req, res) {
+  res.send(
+    "5aRV_2Fmi0beVs_hmRLBrkgYbftoRs_dqX8RivvQq1k.ULS4eissHcF38ymxQgMjmhQ18a754aCKgzLdWx0olQs"
+  );
+});
+
 //Route to return all available profiles 
 app.route("/profiles").get((req, res, next) => {
   InstaProfile.find(
