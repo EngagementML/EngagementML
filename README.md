@@ -4,7 +4,7 @@
 </p>
 
 
-<p align='center'><strong>Welcome to EngagementML a machine learning application developed for social media management research and strategy optimization!</strong></p>
+<p align='center'><strong>Welcome to EngagementML a machine learning application developed for social media research and strategy optimization!</strong></p>
 
 ---
 <p align='center'>
@@ -14,10 +14,10 @@
 <br/>
 
 ## What EngagementML does?
-This application lets its user analyze the data from the last 12 IG posts and runs our complex machine learning algorythm to reccomend optimizations which will increase your engagement rate.
+This application lets its users analyze the data from the last twelve Instagram posts, running our sophisticated machine-learning algorithm to recommend optimizations, which will increase your engagement rate.
 
 ## How can EngagementML help you?
-We can help you by the power of predicting and reccomending strategies based on your top competitors or infuencers in your industry. Excel in your content and engagement strategy!
+We can help you by the power of predicting and recommending strategies based on your top competitors or influencers in your industry. Excel in your content and engagement strategy!
 
 ### Development Team:
 <ul>
