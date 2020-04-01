@@ -1,5 +1,7 @@
-import React, { Component } from "react";
-import { Container, Row, Col, Table, Form, Button, Carousel, ProgressBar } from "react-bootstrap";
+import React, { Component, useState } from "react";
+import { Container, Row, Col, Table, Form, Button, Carousel, ProgressBar,Collapse } from "react-bootstrap";
+// import React, { useState } from 'react';
+
 import ChartistGraph from "react-chartist";
 import axios from "axios";
 import Card from "../components/Card/Card.jsx";
@@ -62,13 +64,151 @@ addHashtag = async (newTag) => {
   alert(`Added #${newTag} to collection!`);
 }
 
+
+
   render() {
     if (this.state.hashtagResultWord !== undefined && this.state.hashtagResultTrending !== undefined &&  this.state.tag !== 'undefined' && this.state.hashtagResultWordHistory !== undefined && this.state.hashtagResultWordHistory.data !== undefined) {
     console.log("Current State at Render", this.state)
 
+// Format Method:
+
+// const countFormat =
+// [
+//   { // 0 - 999
+//     letter: '',
+//     limit: 1e3
+//   },
+//   { // 1,000 - 999,999
+//     letter: 'K',
+//     limit: 1e6
+//   },
+//   { // 1,000,000 - 999,999,999
+//     letter: 'M',
+//     limit: 1e9
+//   },
+//   { // 1,000,000,000 - 999,999,999,999
+//     letter: 'B',
+//     limit: 1e12
+//   },
+//   { // 1,000,000,000,000 - 999,999,999,999,999
+//     letter: 'T',
+//     limit: 1e15
+//   }
+// ];
+
+// const formatCount = (value) => {
+//   let format = countFormat.find(format => (value < format.limit));
+
+//   value = (1000 * value / format.limit);
+//   value = Math.round(value * 10) / 10; // keep one decimal number, only if needed
+
+//   return (value + format.letter);
+// }
+
+const groupBy = function(xs, key) {
+  return xs.reduce(function(rv, x) {
+    (rv[x[key]] = rv[x[key]] || []).push(x);
+    return rv;
+  }, {});
+};
+
+function InfoButtons() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+    
+    {/* <Row> */}
+    <div className="d-flex flex-row justify-content-center">
+
+    <Col md={3} className="d-flex flex-row justify-content-left"  > 
+       <div >
+      <Button
+        onClick={() => setOpen(!open)}
+        aria-controls="example-collapse-text"
+        aria-expanded={open}
+        className="mb-4"
+        style={{backgroundColor:"#DC3545", borderColor:"white", color:"white", borderRadius:"1rem"}}
+
+        >
+        Color Info
+      </Button>
+      <Collapse in={open}>
+        <div id="example-collapse-text" className="mb-1" style={{fontFamily:"monospace"}} >
+          This hashtag is unused.
+        </div>
+      </Collapse>
+        </div>
+        </Col>
+
+        <Col md={3} className="d-flex flex-row justify-content-left"  > 
+        <div>
+      <Button
+        onClick={() => setOpen(!open)}
+        aria-controls="example-collapse-text"
+        aria-expanded={open}
+        className="mb-4"
+        style={{backgroundColor:"#FFC107", borderColor:"white", color:"white", borderRadius:"1rem"}}
+
+        >
+        Color Info
+      </Button>
+      <Collapse in={open}>
+        <div id="example-collapse-text" className="mb-1" style={{fontFamily:"monospace"}}>
+        This hashtag is overused.
+        </div>
+      </Collapse>
+        </div>
+        </Col>
+
+        <Col md={3} className="d-flex flex-row justify-content-left"  > 
+        <div>
+      <Button
+        onClick={() => setOpen(!open)}
+        aria-controls="example-collapse-text"
+        aria-expanded={open}
+        className="mb-4"
+        style={{backgroundColor:"#17A2B8", borderColor:"white", color:"white", borderRadius:"1rem"}}
+        >
+        Color Info
+      </Button>
+      <Collapse in={open}>
+        <div id="example-collapse-text" className="mb-1" style={{fontFamily:"monospace"}}>
+        Use hashtags with this color to get seen over time.
+        </div>
+      </Collapse>
+        </div>
+        </Col>
+
+        <Col md={3} className="d-flex flex-row justify-content-left"  > 
+        <div>
+      <Button
+        onClick={() => setOpen(!open)}
+        aria-controls="example-collapse-text"
+        aria-expanded={open}
+        className="mb-4"
+        style={{backgroundColor:"#28A745", borderColor:"white", color:"white", borderRadius:"1rem"}}
+                >
+        Color Info
+      </Button>
+      <Collapse in={open}>
+        <div id="example-collapse-text" className="mb-1" style={{fontFamily:"monospace"}}>
+        Use hashtags with this color to get seen now.
+        </div>
+      </Collapse>
+        </div>
+        </Col>
+
+        </div>
+        {/* </Row> */}
+    </>
+    
+  );
+}
+
 let values=[]
 
-var dataSales = {
+var dataLine = {
   labels: 
     this.state.hashtagResultWordHistory.data.map((currentDate) => {
       // console.log(currentDate)
@@ -91,9 +231,25 @@ var dataSales = {
   
 };
 
+var dataPie = {
+    series: [20, 10, 30]
+  // series: [
+  //   groupBy(
+  //     this.state.hashtagResultWordHistory.data.map((currentPoint) => {
+  //     console.log("Hereeeeeeee",currentPoint)
+  //     // values.push(currentPoint.color)
+  //     return (
+  //       String(currentPoint.color)
+  //     )
+  //   }),"length"
+  //   )
+  // ]
+  
+};
+
 // let sum = values.reduce((previous, current) => current += previous);
 
-var optionsSales = {
+var optionsLine = {
   low: 0,
   // high: ((((values.reduce((previous, current) => current += previous))/values.length)+((values.reduce((previous, current) => current += previous))))*0.18).toExponential(2),
   showArea: false,
@@ -110,7 +266,15 @@ var optionsSales = {
   }
 };
 
-var responsiveSales = [
+var optionsPie = {
+  donut: true,
+  donutWidth: 60,
+  startAngle: 270,
+  total: 200,
+  showLabel: false
+}
+
+var responsiveLine = [
   [
     "screen and (max-width: 50rem)",
     {
@@ -148,19 +312,13 @@ const pickSize = (color) => {
 }
 
 
-
-    return (
-      // <div class="content" style={{
-      //   backgroundImage: `url(${IGback})`,
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundSize: "cover",
-      //   // height: "20vh"
-      // }}>        
+  return (
       
       <div className="content"> 
       <div className="display-3">#TrendingNow</div>
       <Carousel>
       {this.state.hashtagResultTrending.tags.map((currentTag) => {
+
           return (
           <Carousel.Item>
             <h1 style={{color:"black",textAlign:"center"}} >{"#"+currentTag.tag}</h1>
@@ -172,11 +330,6 @@ const pickSize = (color) => {
       </Carousel>
 
         <Container fluid="true">
-          {/* This below works like Gustavo's ticker search bar but we'll run out of api calls */}
-          {/* <Form.Group >
-              <Form.Control onChange={this.ChangeTag} name="tagChanger" size="lg" type="text" placeholder="#Anything" />
-              <br />
-            </Form.Group> */}
           <Form onSubmit={this.updateTag} >
           <Form.Group className="d-flex flex-row align-items-center" role="form" >
               <Form.Control onChange={this.changeTag}  name="tagChanger" size="lg" type="text" placeholder="#SearchForAnything" style={{borderColor:"#42D0ED",backgroundColor:"white"}}/>
@@ -190,43 +343,58 @@ const pickSize = (color) => {
           <Row>
           <Col md={12} >
             <Card
-              // style={{borderColor:"#42D0ED"}}
-              // style={{ boxShadow: "0 1px 2px #42D0ED, 0 0 0 1px #42D0ED"}}
               statsIcon="fa fa-history"
               id="chartHours"
               title={"#"+this.state.tag+" Impressions"}
-              category="Last 30"
+              category={`Last 30 Days of #${this.state.tag}`}
               stats="Updated today"
               content={
-                // <div className="ct-chart" style={{fontSize:"20"}}>
                 <div className="ct-chart">
                   <ChartistGraph
                     // labelFontWeight="900"
-                    // style={{fontSize:"20"}}
-                    data={dataSales}
+                    data={dataLine}
                     type="Line"
-                    options={optionsSales}
-                    responsiveOptions={responsiveSales}
-                    // style={{fontSize:"0.5rem"}}
+                    options={optionsLine}
+                    responsiveOptions={responsiveLine}
                   />
                 </div>
               }
-              // // legend={
-              // //   <div className="legend">{this.createLegend(legendSales)}</div>
-              // }
             />
           </Col>
           
         </Row>
 
-        {/* The whole usage index thing goes here */}
+         <Row>
+          <div className="col">
+          <InfoButtons />
+          </div>
 
-        <Row>
+          {/* <div className="col auto">
+          
+          <Card
+            statsIcon="fa fa-history"
+            id="chartHours"
+            title={"#"+this.state.tag+" Usage"}
+            category="Last 30"
+            stats="Updated today"
+            style = {{}}
+            content={
+              <div className="ct-chart">
+                <ChartistGraph
+                  // labelFontWeight="900"
+                  data={dataPie}
+                  type="Pie"
+                  options={optionsPie}
+                  // responsiveOptions={responsiveLine}
+                />
+              </div>
+            }
+          />
+          </div> */}
 
+       
 
         </Row>
-
-
 
           <Row>
             <Col md={12}>
@@ -250,7 +418,9 @@ const pickSize = (color) => {
                     </thead>
                     <tbody>
 
-                      {this.state.hashtagResultWord.data.map((currentTag) => {
+                      {this.state.hashtagResultWord.data.sort(function(x, y){
+                          return y.color - x.color;
+                        }).map((currentTag) => {
                         return (
                           <tr>
                             <td><Button variant="info" onClick={() => this.addHashtag(currentTag.hashtag)} >Add</Button></td>
@@ -276,13 +446,10 @@ const pickSize = (color) => {
               />
             </Col>
             {/* Add Graph here */}
-
           </Row>
           
         </Container>
       </div>
-
-      // </div>
       
     );
   } else {
