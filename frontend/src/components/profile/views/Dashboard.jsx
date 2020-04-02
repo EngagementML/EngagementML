@@ -299,7 +299,7 @@ var legendSales = {
                   : "N/A"
               }
               statsIcon={<i className="pe-7s-refresh-2" />}
-              statsIconText="Last Two Posts Trend"
+              statsIconText="Last Two Posts"
             />
           </Col>
           <Col lg={3} sm={6}>
