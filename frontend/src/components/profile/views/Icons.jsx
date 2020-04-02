@@ -13,7 +13,9 @@ class Icons extends Component {
   async componentDidMount() {
     await axios
       // .get("http://localhost:5000/profiles/")
-      .get("https://engagementml.herokuapp.com/profiles/")
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/profiles/"
+      )
       .then(res => {
         // console.log(res, res.data);
         this.setState({
@@ -26,7 +28,9 @@ class Icons extends Component {
       });
 
     await axios
-      .get("https://engagementml.herokuapp.com/posts/")
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/posts/"
+      )
       .then(res => {
         // console.log(res, res.data);
         this.setState({
