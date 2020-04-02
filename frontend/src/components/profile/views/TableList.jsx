@@ -105,12 +105,12 @@ addHashtag = async (newTag) => {
 //   return (value + format.letter);
 // }
 
-// const groupBy = function(xs, key) {
-//   return xs.reduce(function(rv, x) {
-//     (rv[x[key]] = rv[x[key]] || []).push(x);
-//     return rv;
-//   }, {});
-// };
+const groupBy = function(xs, key) {
+  return xs.reduce(function(rv, x) {
+    (rv[x[key]] = rv[x[key]] || []).push(x);
+    return rv;
+  }, {});
+};
 
 function InfoButtons() {
   const [open, setOpen] = useState(false);
@@ -231,21 +231,21 @@ var dataLine = {
   
 };
 
-// var dataPie = {
-//     series: [20, 10, 30]
-//   // series: [
-//   //   groupBy(
-//   //     this.state.hashtagResultWordHistory.data.map((currentPoint) => {
-//   //     console.log("Hereeeeeeee",currentPoint)
-//   //     // values.push(currentPoint.color)
-//   //     return (
-//   //       String(currentPoint.color)
-//   //     )
-//   //   }),"length"
-//   //   )
-//   // ]
+var dataPie = {
+    series: [20, 10, 30]
+  // series: [
+  //   groupBy(
+  //     this.state.hashtagResultWordHistory.data.map((currentPoint) => {
+  //     console.log("Hereeeeeeee",currentPoint)
+  //     // values.push(currentPoint.color)
+  //     return (
+  //       String(currentPoint.color)
+  //     )
+  //   }),"length"
+  //   )
+  // ]
   
-// };
+};
 
 // let sum = values.reduce((previous, current) => current += previous);
 
@@ -265,7 +265,7 @@ var optionsLine = {
     right: 50
   }
 };
-// eslint-disable-next-line
+
 var optionsPie = {
   donut: true,
   donutWidth: 60,
@@ -288,11 +288,11 @@ var responsiveLine = [
 ];
 
 const pickColor = (color) => {
-  if(color === 0){
+  if(color == 0){
     return "danger"
-  } else if (color === 1){
+  } else if (color == 1){
     return "warinig"
-  } else if (color === 2){
+  } else if (color == 2){
     return "info"
   } else {
     return "success"
@@ -300,11 +300,11 @@ const pickColor = (color) => {
 }
 
 const pickSize = (color) => {
-  if(color === 0){
+  if(color == 0){
     return 25
-  } else if (color === 1){
+  } else if (color == 1){
     return 50
-  } else if (color === 2){
+  } else if (color == 2){
     return 75
   } else {
     return 100

@@ -148,7 +148,7 @@ instagramScraper = async () => {
     // "yumnajawad",
 
     //TOP-50
-    // "rctv",
+    "rctv",
     // "cristiano",
     // "kyliejenner",
     // "selenagomez",
