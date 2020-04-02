@@ -3,7 +3,8 @@ import {
   Container,
   Row,
   Col,
-  Form
+  Form,
+  Modal
 } from "react-bootstrap";
 import axios from "axios";
 import actions from "../../../services/index";
@@ -21,6 +22,8 @@ import profile from "../assets/img/profile-placeholder.png";
 
 class UserProfile extends Component {
   state = {
+    show:false,
+    error: '',
     email: "",
     name: "",
     fname: "",
@@ -118,14 +121,17 @@ class UserProfile extends Component {
     // console.log(obj, this);
     axios
       .post(
-        "https://engagementml.herokuapp.com/eML/users/update/" +
-          this.state._id,
+        "https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,
         obj
       )
       .then(res => console.log(res.data));
 
     // this.props.history.push("/")
-    alert("User Profile has been updated!");
+    // alert("User Profile has been updated!");
+    this.setState({
+      show: true,
+      msg: 'Your EngagementML User Profile has been updated successfully!'
+    });
   };
 
   onImgErrorSmall = e => {
@@ -137,6 +143,14 @@ class UserProfile extends Component {
     return true;
   };
 
+  showAlert = () => {
+    this.setState({ show: true });
+  };
+
+  hideAlert = () => {
+    this.setState({ show: false });
+  };
+
   render() {
     // console.log(this);
     if (
@@ -145,6 +159,20 @@ class UserProfile extends Component {
       this.state.posts !== undefined
     ) {
       return (
+        <>
+        <Modal
+              size="sm"
+              show={this.state.show}
+              onHide={() => this.hideAlert()}
+              aria-labelledby="modalError"
+            >
+              <Modal.Header closeButton>
+                <Modal.Title id="modalError">
+                  <strong>User Profile</strong>
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>{this.state.msg}</Modal.Body>
+            </Modal>
         <div className="content">
           <Container fluid="true">
             <Row>
@@ -395,6 +423,7 @@ class UserProfile extends Component {
             </Row>
           </Container>
         </div>
+        </>
       );
     } else {
       return (
