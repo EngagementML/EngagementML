@@ -246,7 +246,7 @@ var legendSales = {
           <Col lg={3} sm={6}>
             <StatsCard
               bigIcon={<i className="pe-7s-users text-primary " />}
-              statsText="Followers"
+              statsText="Instagram Followers"
               statsValue={
                 this.state.post !== []
                   ? this.formatCount(this.state.profile.edge_followed_by.count)
@@ -259,7 +259,7 @@ var legendSales = {
           <Col lg={3} sm={6}>
             <StatsCard
               bigIcon={<i className="pe-7s-leaf text-success" />}
-              statsText="eML Rate"
+              statsText="Engagement Rate (eML)"
               statsValue={
                 this.state.posts !== []
                   ? (
@@ -299,13 +299,13 @@ var legendSales = {
                   : "N/A"
               }
               statsIcon={<i className="pe-7s-refresh-2" />}
-              statsIconText="Last Two Posts"
+              statsIconText="Last Two Posts Trend"
             />
           </Col>
           <Col lg={3} sm={6}>
             <StatsCard
               bigIcon={<i className="pe-7s-leaf text-warning" />}
-              statsText="eML Rate"
+              statsText="Engagement Rate (eML)"
               statsValue={
                 this.state.posts !== []
                   ? (
