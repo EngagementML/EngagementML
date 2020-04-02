@@ -11,6 +11,9 @@ class Icons extends Component {
   state = {};
 
   async componentDidMount() {
+    let user = await actions.isLoggedIn();
+    this.setState({ ...user.data });
+    
     await axios
       // .get("http://localhost:5000/profiles/")
       .get(

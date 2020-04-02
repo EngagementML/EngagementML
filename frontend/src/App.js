@@ -28,7 +28,7 @@ class App extends Component {
 
     axios
       .get(
-        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/profiles/"
+        "https://engagementml.herokuapp.com/profiles/"
       )
       .then(res => {
         // console.log(res, res.data);

@@ -118,7 +118,7 @@ class UserProfile extends Component {
     // console.log(obj, this);
     axios
       .post(
-        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/users/update/" +
+        "https://engagementml.herokuapp.com/eML/users/update/" +
           this.state._id,
         obj
       )
