@@ -18,7 +18,7 @@ class SignUp extends Component {
     handleSubmit =  async e => {
         e.preventDefault( )
             await actions.signUp(this.state).then( async user => {
-                console.log(user)
+                // console.log(user)
                 this.props.setUser({...user.data})
                 this.props.history.push("/profile/admin/user")
                  

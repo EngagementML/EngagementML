@@ -24,10 +24,12 @@ class App extends Component {
   async componentDidMount() {
     let user = await actions.isLoggedIn();
     this.setState({ ...user.data });
-    console.log("Current User >> ", user);
+    // console.log("Current User >> ", user);
 
     axios
-      .get("https://engagementml.herokuapp.com/profiles/")
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/profiles/"
+      )
       .then(res => {
         // console.log(res, res.data);
         this.setState({

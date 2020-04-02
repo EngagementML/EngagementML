@@ -76,7 +76,7 @@ class Icons extends Component {
   };
 
   showPosts = e => {
-    console.log('Selected IG Username', e.target.value)
+    // console.log('Selected IG Username', e.target.value)
     this.props.history.push(`/profile/admin/iconposts/${e.target.value}`);
   }
 

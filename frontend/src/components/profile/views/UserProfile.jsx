@@ -115,10 +115,11 @@ class UserProfile extends Component {
       // role: this.state.role,
       // competitor: this.state.competitor,
     };
-    console.log(obj, this);
+    // console.log(obj, this);
     axios
       .post(
-        "https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,
+        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/users/update/" +
+          this.state._id,
         obj
       )
       .then(res => console.log(res.data));
@@ -137,7 +138,7 @@ class UserProfile extends Component {
   };
 
   render() {
-    console.log(this);
+    // console.log(this);
     if (
       this.state.email !== undefined &&
       this.state.profile !== {} &&

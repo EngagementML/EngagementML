@@ -6,7 +6,7 @@ import React, { Component } from "react";
 export class PhotographyTasks extends Component {
   handleCheckbox = event => {
     const target = event.target;
-    console.log(event.target);
+    // console.log(event.target);
     this.setState({
       [target.name]: target.checked
     });
@@ -34,7 +34,7 @@ export class PhotographyTasks extends Component {
     const tasks_title = 
     
       mockD.map(eachArrObj => {
-      console.log(eachArrObj)
+      // console.log(eachArrObj)
 
       // Avg Industry
       if (eachArrObj[0].Post_Information){
@@ -45,7 +45,7 @@ export class PhotographyTasks extends Component {
         eachArrObj.sort(function(x, y){
           return y.Engagement_Rate_day - x.Engagement_Rate_day;
         })
-        console.log("HEreeeeeeeeeee",eachArrObj)
+        // console.log("HEreeeeeeeeeee",eachArrObj)
           return ` Your top post time is: ${ eachArrObj[0].Day_Time_Post} with an eML rate of ${eachArrObj[0].Engagement_Rate_day.toLocaleString(navigator.language, { minimumFractionDigits: 1 })}%` 
       // Insights
       } else if (eachArrObj[0].Action) {
@@ -56,7 +56,7 @@ export class PhotographyTasks extends Component {
         eachArrObj.sort(function(x, y){
           return y[`Engagement_rate_Week/Day`] - x[`Engagement_rate_Week/Day`];
         })
-        console.log(eachArrObj)
+        // console.log(eachArrObj)
         return ` Your top post day is: ${ eachArrObj[0].Week_Day_Post} with an eML rate of ${eachArrObj[0][`Engagement_rate_Week/Day`].toLocaleString(navigator.language, { minimumFractionDigits: 1 })}%` 
         }
 

@@ -22,7 +22,7 @@ class LogIn extends Component {
         this.props.history.push("/profile/admin/dashboard");
       })
       .catch(({ response }) => {
-        console.log("before >>>");
+        // console.log("before >>>");
         this.setState({
           show: true
         });

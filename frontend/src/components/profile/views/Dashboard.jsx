@@ -61,52 +61,59 @@ class Dashboard extends Component {
     // console.log("Current User >> ", user);
 
      await axios
-      // .get("http://localhost:5000/profile/" + this.state.igUsername)
-      .get("https://engagementml.herokuapp.com/profile/" + this.state.igUsername)
-      .then(res => {
-        // console.log(res, res.data);
-        this.setState({
-          profile: res.data
-        });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-     await axios.get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
-      .then(res => {
-        // console.log(res, res.data);
-        this.setState({
-          posts: res.data
-        });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+       // .get("http://localhost:5000/profile/" + this.state.igUsername)
+       .get(
+         "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/profile/" +
+           this.state.igUsername
+       )
+       .then(res => {
+         // console.log(res, res.data);
+         this.setState({
+           profile: res.data
+         });
+       })
+       .catch(function(error) {
+         console.log(error);
+       });
 
      await axios
-      // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
-      .get(
-        "https://engagementml.herokuapp.com/eML/user/" +
-          this.props.match.params.id
-      )
-      .then(res => {
-        this.setState({
-          email: res.data.email,
-          name: res.data.name,
-          fname: res.data.fname,
-          lname: res.data.lname,
-          igUsername: res.data.igUsername,
-          image: res.data.image,
-          about: res.data.about,
-          industry: res.data.industry
-          // role: res.data.role, 
-          // competitor: res.data.competitor,
-        });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+       .get(
+         "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/posts/" +
+           this.state.profile.id
+       )
+       .then(res => {
+         // console.log(res, res.data);
+         this.setState({
+           posts: res.data
+         });
+       })
+       .catch(function(error) {
+         console.log(error);
+       });
+
+     await axios
+       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
+       .get(
+         "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/user/" +
+           this.props.match.params.id
+       )
+       .then(res => {
+         this.setState({
+           email: res.data.email,
+           name: res.data.name,
+           fname: res.data.fname,
+           lname: res.data.lname,
+           igUsername: res.data.igUsername,
+           image: res.data.image,
+           about: res.data.about,
+           industry: res.data.industry
+           // role: res.data.role,
+           // competitor: res.data.competitor,
+         });
+       })
+       .catch(function(error) {
+         console.log(error);
+       });
 
     
   }
@@ -185,7 +192,7 @@ var dataSales = {
   series: [
     // Here goes the data of engagement from the last 12 posts
     this.state.posts.map((currentPost) => {
-      console.log(currentPost)
+      // console.log(currentPost)
       // console.log("HEREEEEE", currentPost.like_count);
      let er = (((currentPost.like_count + currentPost.comment_count) / this.state.profile.edge_followed_by.count) * 100).toFixed(1)
     //  console.log("HERE 222222", er)

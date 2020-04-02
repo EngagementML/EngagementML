@@ -231,7 +231,7 @@ class HomeComp extends Component {
                   id="contact-form"
                   onSubmit={e => this.handleSubmit(e)}
                   method="POST"
-                  role="form"
+                  // role="form"
                 >
                   <div className="fields">
                     <div className="field half">
