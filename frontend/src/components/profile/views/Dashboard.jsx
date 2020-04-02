@@ -63,7 +63,7 @@ class Dashboard extends Component {
      await axios
        // .get("http://localhost:5000/profile/" + this.state.igUsername)
        .get(
-         "https://localhost:5000/profile/" +
+         "http://localhost:5000/profile/" +
            this.state.igUsername
        )
        .then(res => {
@@ -78,7 +78,7 @@ class Dashboard extends Component {
 
      await axios
        .get(
-         "https://localhost:5000/posts/" +
+         "http://localhost:5000/posts/" +
            this.state.profile.id
        )
        .then(res => {
@@ -93,7 +93,10 @@ class Dashboard extends Component {
 
      await axios
        // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
-       .get("https://localhost:5000/eML/user/" + this.props.match.params.id)
+       .get(
+         "http://localhost:5000/eML/user/" +
+           this.props.match.params.id
+       )
        .then(res => {
          this.setState({
            email: res.data.email,
