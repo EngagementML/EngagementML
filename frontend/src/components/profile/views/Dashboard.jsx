@@ -63,7 +63,7 @@ class Dashboard extends Component {
      await axios
        // .get("http://localhost:5000/profile/" + this.state.igUsername)
        .get(
-         "http://localhost:5000/profile/" +
+         "https://engagementml.herokuapp.com/profile/" +
            this.state.igUsername
        )
        .then(res => {
@@ -78,7 +78,7 @@ class Dashboard extends Component {
 
      await axios
        .get(
-         "http://localhost:5000/posts/" +
+         "https://engagementml.herokuapp.com/posts/" +
            this.state.profile.id
        )
        .then(res => {
@@ -94,7 +94,7 @@ class Dashboard extends Component {
      await axios
        // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
        .get(
-         "http://localhost:5000/eML/user/" +
+         "https://engagementml.herokuapp.com/eML/user/" +
            this.props.match.params.id
        )
        .then(res => {
