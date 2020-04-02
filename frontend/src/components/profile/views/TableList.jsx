@@ -265,7 +265,7 @@ var optionsLine = {
     right: 50
   }
 };
-
+// eslint-disable-next-line
 var optionsPie = {
   donut: true,
   donutWidth: 60,

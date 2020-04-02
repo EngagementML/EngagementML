@@ -42,71 +42,212 @@ export class FoodTasks extends Component {
   };
 
   render() {
-    // const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
-    // const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
-    const mockD = [
-      
-      // Industry Average
-      [{"Post_Information": "Average hashtag per publication", "Result": 4}, {"Post_Information": "Average external link per publication", "Result": 1}, {"Post_Information": "Maximum likes per publication", "Result": 141359}, {"Post_Information": "Maximun comments per publication", "Result": 3816}, {"Post_Information": "Average text length-Characters per post", "Result": 366}],
-      // Hourly
-      [{"Day_Time_Post": "Morning (8Am-12PM)", "%_Post_Day": 29.0, "Likes_Rate_Daytime%": 20.0, "Engagement_Rate_day": 1.6389896946}, {"Day_Time_Post": "Noon (12-4PM)", "%_Post_Day": 28.0, "Likes_Rate_Daytime%": 29.0, "Engagement_Rate_day": 1.1262506761}, {"Day_Time_Post": "Eve (4PM-8PM)", "%_Post_Day": 20.0, "Likes_Rate_Daytime%": 17.0, "Engagement_Rate_day": 1.0588422823}, {"Day_Time_Post": "Late Night (12Am-4AM)", "%_Post_Day": 8.0, "Likes_Rate_Daytime%": 13.0, "Engagement_Rate_day": 0.6771226769}, {"Day_Time_Post": "Early Morning (4AM-8Am)", "%_Post_Day": 8.0, "Likes_Rate_Daytime%": 17.0, "Engagement_Rate_day": 0.9028508387}, {"Day_Time_Post": "Night (8PM-12AM)", "%_Post_Day": 7.0, "Likes_Rate_Daytime%": 4.0, "Engagement_Rate_day": 1.8364929642}],
-      // Insights
-      [{"Action": "Followers Vs Likes", "Recommendation": "0 and 2,500,000 Followers"}, {"Action": "Followers Vs Comments", "Recommendation": "Between 0 and 3,000,000 Followers"}, {"Action": "Followers Vs Video Views", "Recommendation": "0 and 2,000,000 Followers"}, {"Action": "Text Lenght and Hashtags", "Recommendation": "500 charaters and 5 hashtags"}, {"Action": "Post Text Lenght", "Recommendation": "Up to 500 Charaters"}, {"Action": "Post External Links", "Recommendation": " Up to 2 external links"}, {"Action": "Account type", "Recommendation": "60 % Higher with verified accounts "}],
-      // Weekly
-      [{"Week_Day_Post": "Sunday", "Week/Day_post%": 17.0, "Likes_Rate_Week/Day": 25.0, "Engagement_rate_Week/Day": 1.3751923219}, {"Week_Day_Post": "Monday", "Week/Day_post%": 16.0, "Likes_Rate_Week/Day": 12.0, "Engagement_rate_Week/Day": 0.759275869}, {"Week_Day_Post": "Saturday", "Week/Day_post%": 15.0, "Likes_Rate_Week/Day": 21.0, "Engagement_rate_Week/Day": 1.0637611501}, {"Week_Day_Post": "Tuesday", "Week/Day_post%": 15.0, "Likes_Rate_Week/Day": 10.0, "Engagement_rate_Week/Day": 1.0446179718}, {"Week_Day_Post": "Friday", "Week/Day_post%": 14.0, "Likes_Rate_Week/Day": 8.0, "Engagement_rate_Week/Day": 0.8635165118}, {"Week_Day_Post": "Thursday", "Week/Day_post%": 12.0, "Likes_Rate_Week/Day": 16.0, "Engagement_rate_Week/Day": 1.2179420881}, {"Week_Day_Post": "Wednesday", "Week/Day_post%": 11.0, "Likes_Rate_Week/Day": 9.0, "Engagement_rate_Week/Day": 0.9500955362}]
+             // const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
+             // const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
+             const mockD = [
+               // Industry Average
+               [
+                 {
+                   Post_Information: "Average hashtag per publication",
+                   Result: 4
+                 },
+                 {
+                   Post_Information: "Average external link per publication",
+                   Result: 1
+                 },
+                 {
+                   Post_Information: "Maximum likes per publication",
+                   Result: 141359
+                 },
+                 {
+                   Post_Information: "Maximun comments per publication",
+                   Result: 3816
+                 },
+                 {
+                   Post_Information: "Average text length-Characters per post",
+                   Result: 366
+                 }
+               ],
+               // Hourly
+               [
+                 {
+                   Day_Time_Post: "Morning (8Am-12PM)",
+                   "%_Post_Day": 29.0,
+                   "Likes_Rate_Daytime%": 20.0,
+                   Engagement_Rate_day: 1.6389896946
+                 },
+                 {
+                   Day_Time_Post: "Noon (12-4PM)",
+                   "%_Post_Day": 28.0,
+                   "Likes_Rate_Daytime%": 29.0,
+                   Engagement_Rate_day: 1.1262506761
+                 },
+                 {
+                   Day_Time_Post: "Eve (4PM-8PM)",
+                   "%_Post_Day": 20.0,
+                   "Likes_Rate_Daytime%": 17.0,
+                   Engagement_Rate_day: 1.0588422823
+                 },
+                 {
+                   Day_Time_Post: "Late Night (12Am-4AM)",
+                   "%_Post_Day": 8.0,
+                   "Likes_Rate_Daytime%": 13.0,
+                   Engagement_Rate_day: 0.6771226769
+                 },
+                 {
+                   Day_Time_Post: "Early Morning (4AM-8Am)",
+                   "%_Post_Day": 8.0,
+                   "Likes_Rate_Daytime%": 17.0,
+                   Engagement_Rate_day: 0.9028508387
+                 },
+                 {
+                   Day_Time_Post: "Night (8PM-12AM)",
+                   "%_Post_Day": 7.0,
+                   "Likes_Rate_Daytime%": 4.0,
+                   Engagement_Rate_day: 1.8364929642
+                 }
+               ],
+               // Insights
+               [
+                 {
+                   Action: "Followers Vs Likes",
+                   Recommendation: "0 and 2,500,000 Followers"
+                 },
+                 {
+                   Action: "Followers Vs Comments",
+                   Recommendation: "Between 0 and 3,000,000 Followers"
+                 },
+                 {
+                   Action: "Followers Vs Video Views",
+                   Recommendation: "0 and 2,000,000 Followers"
+                 },
+                 {
+                   Action: "Text Lenght and Hashtags",
+                   Recommendation: "500 charaters and 5 hashtags"
+                 },
+                 {
+                   Action: "Post Text Lenght",
+                   Recommendation: "Up to 500 Charaters"
+                 },
+                 {
+                   Action: "Post External Links",
+                   Recommendation: " Up to 2 external links"
+                 },
+                 {
+                   Action: "Account type",
+                   Recommendation: "60 % Higher with verified accounts "
+                 }
+               ],
+               // Weekly
+               [
+                 {
+                   Week_Day_Post: "Sunday",
+                   "Week/Day_post%": 17.0,
+                   "Likes_Rate_Week/Day": 25.0,
+                   "Engagement_rate_Week/Day": 1.3751923219
+                 },
+                 {
+                   Week_Day_Post: "Monday",
+                   "Week/Day_post%": 16.0,
+                   "Likes_Rate_Week/Day": 12.0,
+                   "Engagement_rate_Week/Day": 0.759275869
+                 },
+                 {
+                   Week_Day_Post: "Saturday",
+                   "Week/Day_post%": 15.0,
+                   "Likes_Rate_Week/Day": 21.0,
+                   "Engagement_rate_Week/Day": 1.0637611501
+                 },
+                 {
+                   Week_Day_Post: "Tuesday",
+                   "Week/Day_post%": 15.0,
+                   "Likes_Rate_Week/Day": 10.0,
+                   "Engagement_rate_Week/Day": 1.0446179718
+                 },
+                 {
+                   Week_Day_Post: "Friday",
+                   "Week/Day_post%": 14.0,
+                   "Likes_Rate_Week/Day": 8.0,
+                   "Engagement_rate_Week/Day": 0.8635165118
+                 },
+                 {
+                   Week_Day_Post: "Thursday",
+                   "Week/Day_post%": 12.0,
+                   "Likes_Rate_Week/Day": 16.0,
+                   "Engagement_rate_Week/Day": 1.2179420881
+                 },
+                 {
+                   Week_Day_Post: "Wednesday",
+                   "Week/Day_post%": 11.0,
+                   "Likes_Rate_Week/Day": 9.0,
+                   "Engagement_rate_Week/Day": 0.9500955362
+                 }
+               ]
+             ];
 
-    ]
+             const tasks_title =
+               // "Posts eML - Keep your post to 500 charaters and max of 5 hashtags ",
+               // "Links eML - Up to 2 external links per post ",
+               // "Accounts eML - 60 % Higher engagement with verified accounts ",
+               mockD.map(eachArrObj => {
+                 console.log(eachArrObj);
 
-    const tasks_title = 
-      // "Posts eML - Keep your post to 500 charaters and max of 5 hashtags ",
-      // "Links eML - Up to 2 external links per post ",
-      // "Accounts eML - 60 % Higher engagement with verified accounts ",
-      mockD.map(eachArrObj => {
-        console.log(eachArrObj)
+                 // Avg Industry
+                 if (eachArrObj[0].Post_Information) {
+                   return `The max likes in posts we've discovered in your industry is ${eachArrObj[2].Result.toLocaleString(
+                     navigator.language,
+                     { minimumFractionDigits: 0 }
+                   )}`;
+                   // Avg Industry
+                 } else if (eachArrObj[0].Day_Time_Post) {
+                   eachArrObj.sort(function(x, y) {
+                     return y.Engagement_Rate_day - x.Engagement_Rate_day;
+                   });
+                   console.log("HEreeeeeeeeeee", eachArrObj);
+                   return ` Your top post time is: ${
+                     eachArrObj[0].Day_Time_Post
+                   } with an eML rate of ${eachArrObj[0].Engagement_Rate_day.toLocaleString(
+                     navigator.language,
+                     { minimumFractionDigits: 1 }
+                   )}%`;
+                   // Insights
+                 } else if (eachArrObj[0].Action) {
+                   return `You should use up to ${eachArrObj[3].Recommendation} in your captions.`;
+                   // Week
+                 } else {
+                   eachArrObj.sort(function(x, y) {
+                     return (
+                       y[`Engagement_rate_Week/Day`] -
+                       x[`Engagement_rate_Week/Day`]
+                     );
+                   });
+                   console.log(eachArrObj);
+                   return ` Your top post day is: ${
+                     eachArrObj[0].Week_Day_Post
+                   } with an eML rate of ${eachArrObj[0][
+                     `Engagement_rate_Week/Day`
+                   ].toLocaleString(navigator.language, {
+                     minimumFractionDigits: 1
+                   })}%`;
+                 }
+               });
 
-        // Avg Industry
-        if (eachArrObj[0].Post_Information){
-          return `The max likes in posts we've discovered in your industry is ${eachArrObj[2].Result.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}`
-        // Avg Industry
-        } else if (eachArrObj[0].Day_Time_Post) {
-
-          eachArrObj.sort(function(x, y){
-            return y.Engagement_Rate_day - x.Engagement_Rate_day;
-          })
-          console.log("HEreeeeeeeeeee",eachArrObj)
-            return ` Your top post time is: ${ eachArrObj[0].Day_Time_Post} with an eML rate of ${eachArrObj[0].Engagement_Rate_day.toLocaleString(navigator.language, { minimumFractionDigits: 1 })}%` 
-        // Insights
-        } else if (eachArrObj[0].Action) {
-            return `You should use up to ${eachArrObj[3].Recommendation} in your captions.`
-        // Week 
-        } else {
-
-          eachArrObj.sort(function(x, y){
-            return y[`Engagement_rate_Week/Day`] - x[`Engagement_rate_Week/Day`];
-          })
-          console.log(eachArrObj)
-          return ` Your top post day is: ${ eachArrObj[0].Week_Day_Post} with an eML rate of ${eachArrObj[0][`Engagement_rate_Week/Day`].toLocaleString(navigator.language, { minimumFractionDigits: 1 })}%` 
-          }
-
-      })
-   
-
-
-    var tasks = [];
-    var number;
-    for (var i = 0; i < tasks_title.length; i++) {
-      number = "checkbox" + i;
-      tasks.push(
-        <tr key={i}>
-          <td>
-            {/* <Checkbox
+             var tasks = [];
+             // eslint-disable-next-line
+             var number;
+             for (var i = 0; i < tasks_title.length; i++) {
+               number = "checkbox" + i;
+               tasks.push(
+                 <tr key={i}>
+                   <td>
+                     {/* <Checkbox
               number={number}
               isChecked={i === 1 || i === 2 ? true : false}
             /> */}
-          </td>
-          <td>{tasks_title[i]}</td>
-          {/* // uncommenting action buttons */}
-          {/* <td className="td-actions text-right">
+                   </td>
+                   <td>{tasks_title[i]}</td>
+                   {/* // uncommenting action buttons */}
+                   {/* <td className="td-actions text-right">
             <OverlayTrigger placement="top" overlay={edit}>
               <Button bsstyle="info" simple type="button" bssize="xs">
                 <i className="pe-7s-tools" />
@@ -119,11 +260,11 @@ export class FoodTasks extends Component {
               </Button>
             </OverlayTrigger>
           </td> */}
-        </tr>
-      );
-    }
-    return <tbody>{tasks}</tbody>;
-  }
+                 </tr>
+               );
+             }
+             return <tbody>{tasks}</tbody>;
+           }
 }
 
 export default FoodTasks;

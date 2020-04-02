@@ -44,7 +44,9 @@ class Icons extends Component {
 
   filterProfiles = e => {
     // console.log(this.props);
+    // eslint-disable-next-line
     let filteredItems = this.state.profiles.filter(profile => {
+      // eslint-disable-next-line
       if (profile.username) {
         return (
           profile.username
@@ -63,7 +65,7 @@ class Icons extends Component {
       filteredItems,
       search: e.target.value
     });
-    console.log(filteredItems, filteredItems.length);
+    // console.log(filteredItems, filteredItems.length);
   };
   
   onImgErrorSmall = e => {

@@ -44,14 +44,15 @@ class App extends Component {
   setUser = user => this.setState(user);
 
   logOut = async () => {
-    let res = await actions.logOut();
-    this.setUser({
-      email: null,
-      createdAt: null,
-      updatedAt: null,
-      _id: null
-    });
-  };
+                         // eslint-disable-next-line
+                         let res = await actions.logOut();
+                         this.setUser({
+                           email: null,
+                           createdAt: null,
+                           updatedAt: null,
+                           _id: null
+                         });
+                       };
 
   updateDimensions() {
     this.setState({ width: window.innerWidth });
