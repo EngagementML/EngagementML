@@ -190,7 +190,7 @@ export class FashionTasks extends Component {
                      x[`Engagement_rate_Week/Day`]
                    );
                  });
-                 console.log(eachArrObj);
+                //  console.log(eachArrObj);
                  return ` Your top post day is: ${
                    eachArrObj[0].Week_Day_Post
                  } with an eML rate of ${eachArrObj[0][
