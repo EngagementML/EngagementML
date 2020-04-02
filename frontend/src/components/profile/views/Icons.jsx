@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import axios from 'axios'
+import actions from "../../../services/index";
 import Card from "../components/Card/Card";
 // import { iconsArray } from "../variables/Variables.jsx";
 
@@ -13,7 +14,7 @@ class Icons extends Component {
   async componentDidMount() {
     let user = await actions.isLoggedIn();
     this.setState({ ...user.data });
-    
+
     await axios
       // .get("http://localhost:5000/profiles/")
       .get(
