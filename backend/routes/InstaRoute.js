@@ -17,14 +17,14 @@ mongoose
     let data = await InstaScraper();
    
     await data.forEach(profile => {
-        console.log(profile.user.id)
+        console.log("Logging Profile ID",profile.user.id)
         InstaProfile.findOneAndUpdate(
             {id: profile.user.id}, 
             {...profile.user}, 
             {upsert:true}
             )
-            .then(res => console.log(res))
-            .catch(err => console.log("Panda",err))
+            .then(res => console.log("Logging InstaProfile Res",res))
+            .catch(err => console.log("Pandaaaaaaaaaaaaaa",err))
         profile.medias.forEach(media => {
             console.log(media, '??????', media.media_id)
             InstaPosts.findOneAndUpdate(
@@ -33,9 +33,9 @@ mongoose
                 {upsert:true}
                 )
                 .then(res => {
-                    console.log(res);
+                    console.log("Logging InstaPosts Res", res);
                 })
-                .catch(err => console.log("Cat",err))
+                .catch(err => console.log("Catttttttttttt",err))
     })
 
 
