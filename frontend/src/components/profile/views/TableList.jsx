@@ -17,7 +17,7 @@ state = {tag:"Awesome", hashtags:[]}
 async componentDidMount(){
 
   let user = await actions.isLoggedIn();
-  this.setState({...user.data });
+  this.setState({ tag:this.state.tag,...user.data });
   console.log("Current User >> ", user);
 
   this.getData()
@@ -65,9 +65,9 @@ addHashtag = async (newTag) => {
     hashtags: [...this.state.hashtags, newTag]
   })
   console.log("2nd addHashtag log after state is set",this.state)
-  // axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id, this.state )
-  // .then(res => {console.log(res.data); alert(`Added #${newTag} to collection!`);})
-  // .catch(err => {console.log("Error in post request", err)})
+  axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id, this.state )
+  .then(res => {console.log(res.data); alert(`Added #${newTag} to collection!`);})
+  .catch(err => {console.log("Error in post request", err)})
 }
 
 

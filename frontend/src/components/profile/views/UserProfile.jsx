@@ -88,7 +88,7 @@ class UserProfile extends Component {
           image: res.data.image,
           about: res.data.about,
           industry: res.data.industry,
-          // hashtags:res.data.hashtags
+          hashtags:res.data.hashtags
           // role: res.data.role,
           // competitor: res.data.competitor,
         });
