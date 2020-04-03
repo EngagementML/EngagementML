@@ -13,6 +13,7 @@ const userSchema = new Schema(
     industry: {type: String, enum: ['Food', 'Travel', 'Fashion & Style', 'Photography', 'Lifestyle', 'Design', 'Beauty', 'Sports & Fitness' ], default : 'Lifestyle'},
     role: Array,
     competitor: Array,	
+    hashtags:Array
   },
   {
     timestamps: true,

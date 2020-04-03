@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import actions from "../../../services/index";
 import { Container, Row, Col, Table, Form, Button, Carousel, ProgressBar,Collapse } from "react-bootstrap";
 // import React, { useState } from 'react';
 
@@ -13,7 +14,12 @@ class TableList extends Component {
 
 state = {tag:"Awesome", hashtags:[]}
   
-componentDidMount(){
+async componentDidMount(){
+
+  let user = await actions.isLoggedIn();
+  this.setState({ tag:this.state.tag,...user.data });
+  console.log("Current User >> ", user);
+
   this.getData()
 
   const HashtagCallTrending = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/search/trending?latin=1&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
@@ -59,9 +65,9 @@ addHashtag = async (newTag) => {
     hashtags: [...this.state.hashtags,newTag]
   })
   console.log("2nd addHashtag log after state is set",this.state)
-  // axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,obj)
-  // .then(res => console.log(res.data));
-  alert(`Added #${newTag} to collection!`);
+  axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id, this.state.hashtags )
+  .then(res => {console.log(res.data); alert(`Added #${newTag} to collection!`);})
+  .catch(err => {console.log("Error in post request", err)})
 }
 
 
