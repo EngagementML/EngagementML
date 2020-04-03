@@ -62,10 +62,10 @@ updateTag = (e) =>{
 addHashtag = async (newTag) => {
   console.log("addHashtag Log",newTag);
   await this.setState({
-    hashtags: [...this.state.hashtags,newTag]
+    hashtags: [...this.state.hashtags, newTag]
   })
   console.log("2nd addHashtag log after state is set",this.state)
-  axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id, this.state.hashtags )
+  axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id, this.state )
   .then(res => {console.log(res.data); alert(`Added #${newTag} to collection!`);})
   .catch(err => {console.log("Error in post request", err)})
 }

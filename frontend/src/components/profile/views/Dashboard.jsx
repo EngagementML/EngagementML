@@ -91,29 +91,30 @@ class Dashboard extends Component {
          console.log(error);
        });
 
-     await axios
-       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
-       .get(
-         "https://engagementml.herokuapp.com/eML/user/" +
-           this.props.match.params.id
-       )
-       .then(res => {
-         this.setState({
-           email: res.data.email,
-           name: res.data.name,
-           fname: res.data.fname,
-           lname: res.data.lname,
-           igUsername: res.data.igUsername,
-           image: res.data.image,
-           about: res.data.about,
-           industry: res.data.industry
-           // role: res.data.role,
-           // competitor: res.data.competitor,
-         });
-       })
-       .catch(function(error) {
-         console.log(error);
-       });
+    //  await axios
+    //    // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
+    //    .get(
+    //      "https://engagementml.herokuapp.com/eML/user/" +
+    //        this.props.match.params.id
+    //    )
+    //    .then(res => {
+    //      this.setState({
+    //        email: res.data.email,
+    //        name: res.data.name,
+    //        fname: res.data.fname,
+    //        lname: res.data.lname,
+    //        igUsername: res.data.igUsername,
+    //        image: res.data.image,
+    //        about: res.data.about,
+    //        industry: res.data.industry,
+    //       //  hashtags:res.data.hashtags
+    //        // role: res.data.role,
+    //        // competitor: res.data.competitor,
+    //      });
+    //    })
+    //    .catch(function(error) {
+    //      console.log(error);
+    //    });
 
     
   }
