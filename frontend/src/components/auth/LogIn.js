@@ -15,7 +15,7 @@ class LogIn extends Component {
   handleSubmit = e => {
     e.preventDefault();
     actions
-      .logIn("Trying to log in with",this.state)
+      .logIn(this.state)
       .then(user => {
         this.props.setUser({ ...user.data });
         // console.log(this.props)
