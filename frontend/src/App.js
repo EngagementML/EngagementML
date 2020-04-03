@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 import logo from './images/engagementMLb.png'
 import AdminLayout from "./components/profile/layouts/Admin.jsx";
 import UserProfile from "../src/components/profile/views/UserProfile"
-import Tables from "../src/components/profile/views/TableList"
 import Dashboard from "../src/components/profile/views/Dashboard"
 import MetaTags from "react-meta-tags";
 import axios from "axios";
@@ -251,18 +250,6 @@ class App extends Component {
             path="/profile/admin/user"
             render={props => (
               <UserProfile
-                {...props}
-                user={this.state}
-                setUser={this.setUser}
-              />
-            )}
-          />
-
-          <Route
-            exact
-            path="/profile/admin/table"
-            render={props => (
-              <Tables
                 {...props}
                 user={this.state}
                 setUser={this.setUser}
