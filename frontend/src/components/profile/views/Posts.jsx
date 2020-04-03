@@ -118,7 +118,7 @@ class Posts extends Component {
   };
 
   postList() {
-    return this.state.posts.slice(0, 12).map((posts, i) => {
+    return this.state.posts.map((posts, i) => {
       return (
         <Col lg={3} md={4} sm={6} xs={12} className="font-icon-list" key={i}>
           <div style={{ marginBottom: "2rem" }}>
@@ -178,11 +178,9 @@ class Posts extends Component {
                       {this.renderDate(posts.date)}
                       <br />
                       <br />
-                      <h7>
-                        <strong>Weekday</strong> - {this.renderDay(posts.date)}
-                        <br />
-                        <strong>Time</strong> - {this.renderTime(posts.date)}
-                      </h7>
+                      <h7><strong>Weekday</strong> - {this.renderDay(posts.date)}
+                      <br />
+                      <strong>Time</strong> - {this.renderTime(posts.date)}</h7>
                     </div>
                     <br></br>
                     <p>{posts.text}</p>

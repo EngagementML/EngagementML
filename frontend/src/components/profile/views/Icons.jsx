@@ -3,6 +3,9 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import axios from 'axios'
 import actions from "../../../services/index";
 import Card from "../components/Card/Card";
+// import { iconsArray } from "../variables/Variables.jsx";
+
+// axios.get("http://localhost:5000/profiles").then(res => console.log(res.data));
 
 
 class Icons extends Component {
@@ -28,19 +31,19 @@ class Icons extends Component {
         console.log(error);
       });
 
-    // await axios
-    //   .get(
-    //     "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/posts/"
-    //   )
-    //   .then(res => {
-    //     // console.log(res, res.data);
-    //     this.setState({
-    //       posts: res.data
-    //     });
-    //   })
-    //   .catch(function(error) {
-    //     console.log(error);
-    //   });
+    await axios
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/posts/"
+      )
+      .then(res => {
+        // console.log(res, res.data);
+        this.setState({
+          posts: res.data
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 
   filterProfiles = e => {
@@ -84,7 +87,7 @@ class Icons extends Component {
   }
 
   profileList() {
-    return this.state.filteredItems.slice(0, 50).map((profile, i) => {
+    return this.state.filteredItems.map((profile, i) => {
       return (
         <Col lg={3} md={4} sm={6} xs={12} className="font-icon-list" key={i}>
           <div style={{ marginBottom: "2rem" }}>
@@ -138,7 +141,7 @@ class Icons extends Component {
                           { minimumFractionDigits: 0 }
                         )}
                       </p>
-                      <br />
+                      <br/>
                       <Button
                         value={profile.username}
                         onClick={e => this.showPosts(e)}
