@@ -16,9 +16,9 @@ state = {tag:"Awesome", hashtags:[]}
   
 async componentDidMount(){
 
-  // let user = await actions.isLoggedIn();
-  // this.setState({...user.data });
-  // console.log("Current User >> ", user);
+  let user = await actions.isLoggedIn();
+  this.setState({...user.data });
+  console.log("Current User >> ", user);
 
   this.getData()
 
