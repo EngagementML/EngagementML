@@ -57,7 +57,7 @@ class Dashboard extends Component {
 
    async componentDidMount() {
     let user = await actions.isLoggedIn();
-    this.setState( { ...user.data }); 
+    this.setState({ ...user.data }); 
     // console.log("Current User >> ", user);
 
      await axios

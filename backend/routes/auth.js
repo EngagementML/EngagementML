@@ -57,7 +57,6 @@ router.route("/eML/users/update/:id").post(function(req, res) {
     user.industry = req.body.industry;
     user.role = req.body.role;
     user.competitor = req.body.competitor;
-    // user.hashtags = req.body.hashtags
 
     user
       .save()

@@ -32,7 +32,6 @@ class UserProfile extends Component {
     image: "",
     about: "",
     industry: "",
-    // hashtags:"",
     // role: [],
     // competitor:[],
     profile: {
@@ -87,8 +86,7 @@ class UserProfile extends Component {
           igUsername: res.data.igUsername,
           image: res.data.image,
           about: res.data.about,
-          industry: res.data.industry,
-          hashtags:res.data.hashtags
+          industry: res.data.industry
           // role: res.data.role,
           // competitor: res.data.competitor,
         });
@@ -116,8 +114,7 @@ class UserProfile extends Component {
       igUsername: this.state.igUsername,
       image: this.state.image,
       about: this.state.about,
-      industry: this.state.industry,
-      // hashtag:this.state.hashtags
+      industry: this.state.industry
       // role: this.state.role,
       // competitor: this.state.competitor,
     };
