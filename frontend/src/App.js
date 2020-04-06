@@ -12,6 +12,7 @@ import logo from './images/engagementMLb.png'
 import AdminLayout from "./components/profile/layouts/Admin.jsx";
 import UserProfile from "../src/components/profile/views/UserProfile"
 import Dashboard from "../src/components/profile/views/Dashboard"
+import TableList from "../src/components/profile/views/TableList"
 import MetaTags from "react-meta-tags";
 import axios from "axios";
 import Icons from './components/profile/views/Icons';
@@ -261,6 +262,13 @@ class App extends Component {
             path="/profile/admin/dashboard"
             render={props => (
               <Dashboard {...props} user={this.state} setUser={this.setUser} />
+            )}
+          />
+
+          <Route
+            path="/profile/admin/table"
+            render={props => (
+              <TableList {...props} user={this.state} setUser={this.setUser} />
             )}
           />
 

@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import { Container, Row, Col, Table, Form, Button, Carousel, ProgressBar,Collapse } from "react-bootstrap";
 // import React, { useState } from 'react';
-
+import actions from "../../../services/index";
 import ChartistGraph from "react-chartist";
 import axios from "axios";
 import Card from "../components/Card/Card.jsx";
@@ -13,7 +13,12 @@ class TableList extends Component {
 
 state = {tag:"Awesome", hashtags:[]}
   
-componentDidMount(){
+async componentDidMount(){
+
+  let user = await actions.isLoggedIn();
+  this.setState({ ...user.data });
+  console.log("Current User >> ", user);
+
   this.getData()
 
   const HashtagCallTrending = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/search/trending?latin=1&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
@@ -59,8 +64,8 @@ addHashtag = async (newTag) => {
     hashtags: [...this.state.hashtags,newTag]
   })
   console.log("2nd addHashtag log after state is set",this.state)
-  // axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,obj)
-  // .then(res => console.log(res.data));
+  axios.post("https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/users/update/" + this.props.match.params.id,this.state.hashtags)
+  .then(res => console.log(res.data));
   alert(`Added #${newTag} to collection!`);
 }
 

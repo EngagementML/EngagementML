@@ -47,16 +47,17 @@ router.post('/signup', (req, res, next) => {
 router.route("/eML/users/update/:id").post(function(req, res) {
   User.findById(req.params.id, (err, user) => {
     if (!user) res.status(404).send("User is not found");
-    else user.email = req.body.email;
-    user.name = req.body.name;
-    user.fname = req.body.fname;
-    user.lname = req.body.lname;
-    user.image = req.body.image;
-    user.about = req.body.about;
-    user.igUsername = req.body.igUsername;
-    user.industry = req.body.industry;
-    user.role = req.body.role;
-    user.competitor = req.body.competitor;
+    else user.email   = req.body.email;
+    user.name         = req.body.name;
+    user.fname        = req.body.fname;
+    user.lname        = req.body.lname;
+    user.image        = req.body.image;
+    user.about        = req.body.about;
+    user.igUsername   = req.body.igUsername;
+    user.industry     = req.body.industry;
+    user.role         = req.body.role;
+    user.competitor   = req.body.competitor;
+    user.hashtags     = req.body.hashtags;
 
     user
       .save()

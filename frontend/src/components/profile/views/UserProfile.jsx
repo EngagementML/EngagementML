@@ -86,7 +86,9 @@ class UserProfile extends Component {
           igUsername: res.data.igUsername,
           image: res.data.image,
           about: res.data.about,
-          industry: res.data.industry
+          industry: res.data.industry,
+          // hashtags: res.data.hashtags,
+
           // role: res.data.role,
           // competitor: res.data.competitor,
         });
