@@ -19,7 +19,7 @@ class Posts extends Component {
     await axios
       // .get("http://localhost:5000/profile/" + this.state.igUsername)
       .get(
-        "https://engagementml.herokuapp.com/profile/" + this.state.igUsername
+        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/profile/" + this.state.igUsername
       )
       .then(res => {
         // console.log(res, res.data);
@@ -32,7 +32,7 @@ class Posts extends Component {
       });
 
     await axios
-      .get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
+      .get("https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
       .then(res => {
         // console.log(res, res.data);
         this.setState({
@@ -46,7 +46,7 @@ class Posts extends Component {
     await axios
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get(
-        "https://engagementml.herokuapp.com/eML/user/" +
+        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/user/" +
           this.props.match.params.id
       )
       .then(res => {
@@ -180,11 +180,9 @@ class Posts extends Component {
                       {this.renderDate(posts.date)}
                       <br />
                       <br />
-                      <h7>
-                        <strong>Weekday</strong> - {this.renderDay(posts.date)}
-                        <br />
-                        <strong>Time</strong> - {this.renderTime(posts.date)}
-                      </h7>
+                      <h7><strong>Weekday</strong> - {this.renderDay(posts.date)}
+                      <br />
+                      <strong>Time</strong> - {this.renderTime(posts.date)}</h7>
                     </div>
                     <br></br>
                     <p>{posts.text}</p>

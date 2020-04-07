@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import { Container, Row, Col, Table, Form, Button, Carousel, ProgressBar,Collapse } from "react-bootstrap";
 // import React, { useState } from 'react';
-
+import actions from "../../../services/index";
 import ChartistGraph from "react-chartist";
 import axios from "axios";
 import Card from "../components/Card/Card.jsx";
@@ -13,7 +13,12 @@ class TableList extends Component {
 
 state = {tag:"Awesome", hashtags:[]}
   
-componentDidMount(){
+async componentDidMount(){
+
+  let user = await actions.isLoggedIn();
+  this.setState({ ...user.data });
+  console.log("Current User >> ", user);
+
   this.getData()
 
   const HashtagCallTrending = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/search/trending?latin=1&client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
@@ -53,15 +58,58 @@ updateTag = (e) =>{
   this.getData()
 }
 
-addHashtag = async (newTag) => {
-  console.log("addHashtag Log",newTag);
-  await this.setState({
-    hashtags: [...this.state.hashtags,newTag]
-  })
+// addHashtag = async (newTag) => {
+//   console.log("addHashtag Log",newTag);
+//   await this.setState({
+//     hashtags: [...this.state.hashtags,newTag]
+//   })
+//   console.log("2nd addHashtag log after state is set",this.state)
+//   const newObj = {hashtags:this.state.hashtags}
+//   console.log("Behold thyy hashtags ------->",this.state.hashtags)
+//   axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.props.match.params.id,newObj)
+//   .then(res => console.log(res.data));
+//   alert(`Added #${newTag} to collection!`);
+// }
+
+sendPost = async () => {
   console.log("2nd addHashtag log after state is set",this.state)
-  // axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,obj)
-  // .then(res => console.log(res.data));
-  alert(`Added #${newTag} to collection!`);
+  // const newObj = {hashtags:this.state.hashtags}
+  const obj = {
+    email: this.state.email,
+    name: this.state.name,
+    fname: this.state.fname,
+    lname: this.state.lname,
+    igUsername: this.state.igUsername,
+    image: this.state.image,
+    about: this.state.about,
+    industry: this.state.industry,
+    hashtags:this.state.hashtags
+    // role: this.state.role,
+    // competitor: this.state.competitor,
+  };
+  console.log("Behold thyy hashtags ------->",this.state.hashtags)
+  await axios.post(`https://engagementml.herokuapp.com/eML/users/update/`+ this.state._id,obj)
+    .then(res => console.log(res.data));
+    alert(`Added #${this.state.hashtags} to collection!`);
+}
+
+
+addHashtag = async (e) => {
+  e.preventDefault()
+  console.log("addHashtag Log",e.target.value);
+  await this.setState({
+    email: this.state.email,
+    name: this.state.name,
+    fname: this.state.fname,
+    lname: this.state.lname,
+    igUsername: this.state.igUsername,
+    image: this.state.image,
+    about: this.state.about,
+    industry: this.state.industry,
+    hashtags: e.target.value
+  })
+  console.log(this.state)
+  this.sendPost()
 }
 
 
@@ -104,6 +152,37 @@ addHashtag = async (newTag) => {
 
 //   return (value + format.letter);
 // }
+
+
+// const sendPost = async function (newTag){
+//   console.log("2nd addHashtag log after state is set",this.state)
+//   const newObj = {hashtags:this.state.hashtags}
+//   console.log("Behold thyy hashtags ------->",this.state.hashtags)
+//   await axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.props.match.params.id,newObj)
+//     .then(res => console.log(res.data));
+//     alert(`Added #${newTag} to collection!`);
+// }
+
+
+// const addHashtag = async function (e, newTag) {
+//   console.log("addHashtag Log",newTag);
+//   await this.setState({
+//     hashtags: [newTag]
+//   })
+//   sendPost(newTag)
+
+// }
+
+// const sendPost =  function (newTag){
+//   console.log("2nd addHashtag log after state is set",this.state)
+//   const newObj = {hashtags:this.state.hashtags}
+//   console.log("Behold thyy hashtags ------->",this.state.hashtags)
+//   await axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.props.match.params.id,newObj)
+//     .then(res => console.log(res.data));
+//     alert(`Added #${newTag} to collection!`);
+// }
+
+
 
 const groupBy = function(xs, key) {
   return xs.reduce(function(rv, x) {
@@ -423,7 +502,7 @@ const pickSize = (color) => {
                         }).map((currentTag) => {
                         return (
                           <tr>
-                            <td><Button variant="info" onClick={() => this.addHashtag(currentTag.hashtag)} >Add</Button></td>
+                            <td><Button variant="info" onClick={(e) => this.addHashtag(e)} name="hashtags" value={currentTag.tag} >Add</Button></td>
                             <td>{"#"+currentTag.hashtag}</td>
                             <td style={{textAlign:"right"}}>{currentTag.exposure.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</td>
                             <td style={{textAlign:"right"}}>{currentTag.images}</td>
