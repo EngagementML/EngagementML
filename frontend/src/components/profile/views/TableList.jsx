@@ -73,9 +73,22 @@ updateTag = (e) =>{
 
 sendPost = async () => {
   console.log("2nd addHashtag log after state is set",this.state)
-  const newObj = {hashtags:this.state.hashtags}
+  // const newObj = {hashtags:this.state.hashtags}
+  const obj = {
+    email: this.state.email,
+    name: this.state.name,
+    fname: this.state.fname,
+    lname: this.state.lname,
+    igUsername: this.state.igUsername,
+    image: this.state.image,
+    about: this.state.about,
+    industry: this.state.industry,
+    hashtags:this.state.hashtags
+    // role: this.state.role,
+    // competitor: this.state.competitor,
+  };
   console.log("Behold thyy hashtags ------->",this.state.hashtags)
-  await axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,newObj)
+  await axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,obj)
     .then(res => console.log(res.data));
     alert(`Added #${this.state.hashtags} to collection!`);
 }
