@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import Card from "../components/Card/Card";
 import logo from "../../../images/engagementMLb.png";
 import axios from "axios";
@@ -7,7 +7,9 @@ import actions from "../../../services/index";
 
 
 class Posts extends Component {
-  state = {};
+  state = {
+    postCount: 12
+  };
 
   async componentDidMount() {
     let user = await actions.isLoggedIn();
@@ -105,7 +107,7 @@ class Posts extends Component {
       "Saturday"
     ];
     let dayOfWeek = days[a.getDay()];
-    return dayOfWeek
+    return dayOfWeek;
   };
 
   onImgErrorSmall = e => {
@@ -118,7 +120,7 @@ class Posts extends Component {
   };
 
   postList() {
-    return this.state.posts.map((posts, i) => {
+    return this.state.posts.slice(0, this.state.postCount).map((posts, i) => {
       return (
         <Col lg={3} md={4} sm={6} xs={12} className="font-icon-list" key={i}>
           <div style={{ marginBottom: "2rem" }}>
@@ -210,6 +212,14 @@ class Posts extends Component {
     });
   }
 
+  viewMore = e => {
+    let count = this.state.postCount;
+    let newCount = count + 8;
+    this.setState({
+      postCount: newCount
+    });
+  };
+
   render() {
     if (this.state.profile !== undefined && this.state.posts !== undefined) {
       return (
@@ -243,7 +253,21 @@ class Posts extends Component {
                   }
                   ctAllIcons
                   category="Additional Metrics Coming Soon!"
-                  content={<Row>{this.postList()}</Row>}
+                  content={
+                    <>
+                      <Row>{this.postList()}</Row>
+                      <br />
+                      <Button
+                        onClick={e => this.viewMore(e)}
+                        variant="primary"
+                        className="btn-primary"
+                      >
+                        View More
+                      </Button>
+                      <br />
+                      <br />
+                    </>
+                  }
                 />
               </Col>
             </Row>
