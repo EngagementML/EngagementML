@@ -58,15 +58,37 @@ updateTag = (e) =>{
   this.getData()
 }
 
-addHashtag = async (newTag) => {
-  console.log("addHashtag Log",newTag);
-  await this.setState({
-    hashtags: [...this.state.hashtags,newTag]
-  })
+// addHashtag = async (newTag) => {
+//   console.log("addHashtag Log",newTag);
+//   await this.setState({
+//     hashtags: [...this.state.hashtags,newTag]
+//   })
+//   console.log("2nd addHashtag log after state is set",this.state)
+//   const newObj = {hashtags:this.state.hashtags}
+//   console.log("Behold thyy hashtags ------->",this.state.hashtags)
+//   axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.props.match.params.id,newObj)
+//   .then(res => console.log(res.data));
+//   alert(`Added #${newTag} to collection!`);
+// }
+
+sendPost = async () => {
   console.log("2nd addHashtag log after state is set",this.state)
-  axios.post("https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/users/update/" + this.props.match.params.id,this.state.hashtags)
-  .then(res => console.log(res.data));
-  alert(`Added #${newTag} to collection!`);
+  const newObj = {hashtags:this.state.hashtags}
+  console.log("Behold thyy hashtags ------->",this.state.hashtags)
+  await axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,newObj)
+    .then(res => console.log(res.data));
+    alert(`Added #${this.state.hashtags} to collection!`);
+}
+
+
+addHashtag = async (e) => {
+  e.preventDefault()
+  console.log("addHashtag Log",e.target.value);
+  await this.setState({
+    [e.target.name]: e.target.value
+  })
+  console.log(this.state)
+  this.sendPost()
 }
 
 
@@ -109,6 +131,37 @@ addHashtag = async (newTag) => {
 
 //   return (value + format.letter);
 // }
+
+
+// const sendPost = async function (newTag){
+//   console.log("2nd addHashtag log after state is set",this.state)
+//   const newObj = {hashtags:this.state.hashtags}
+//   console.log("Behold thyy hashtags ------->",this.state.hashtags)
+//   await axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.props.match.params.id,newObj)
+//     .then(res => console.log(res.data));
+//     alert(`Added #${newTag} to collection!`);
+// }
+
+
+// const addHashtag = async function (e, newTag) {
+//   console.log("addHashtag Log",newTag);
+//   await this.setState({
+//     hashtags: [newTag]
+//   })
+//   sendPost(newTag)
+
+// }
+
+// const sendPost =  function (newTag){
+//   console.log("2nd addHashtag log after state is set",this.state)
+//   const newObj = {hashtags:this.state.hashtags}
+//   console.log("Behold thyy hashtags ------->",this.state.hashtags)
+//   await axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.props.match.params.id,newObj)
+//     .then(res => console.log(res.data));
+//     alert(`Added #${newTag} to collection!`);
+// }
+
+
 
 const groupBy = function(xs, key) {
   return xs.reduce(function(rv, x) {
@@ -428,7 +481,7 @@ const pickSize = (color) => {
                         }).map((currentTag) => {
                         return (
                           <tr>
-                            <td><Button variant="info" onClick={() => this.addHashtag(currentTag.hashtag)} >Add</Button></td>
+                            <td><Button variant="info" onClick={(e) => this.addHashtag(e)} name="hashtags" value={currentTag.tag} >Add</Button></td>
                             <td>{"#"+currentTag.hashtag}</td>
                             <td style={{textAlign:"right"}}>{currentTag.exposure.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</td>
                             <td style={{textAlign:"right"}}>{currentTag.images}</td>

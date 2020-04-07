@@ -63,7 +63,7 @@ class Dashboard extends Component {
      await axios
        // .get("http://localhost:5000/profile/" + this.state.igUsername)
        .get(
-         "https://engagementml.herokuapp.com/profile/" +
+         "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/profile/" +
            this.state.igUsername
        )
        .then(res => {
@@ -78,7 +78,7 @@ class Dashboard extends Component {
 
      await axios
        .get(
-         "https://engagementml.herokuapp.com/posts/" +
+         "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/posts/" +
            this.state.profile.id
        )
        .then(res => {
@@ -94,7 +94,7 @@ class Dashboard extends Component {
      await axios
        // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
        .get(
-         "https://engagementml.herokuapp.com/eML/user/" +
+         "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/user/" +
            this.props.match.params.id
        )
        .then(res => {

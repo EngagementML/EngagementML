@@ -47,7 +47,7 @@ class UserProfile extends Component {
     await axios
       // .get("http://localhost:5000/profiles/")
       .get(
-        "https://engagementml.herokuapp.com/profile/" + this.state.igUsername
+        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/profile/" + this.state.igUsername
       )
       .then(res => {
         // console.log(res, res.data);
@@ -60,7 +60,7 @@ class UserProfile extends Component {
       });
 
     await axios
-      .get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
+      .get("https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
       .then(res => {
         // console.log(res, res.data);
         this.setState({
@@ -74,7 +74,7 @@ class UserProfile extends Component {
     await axios
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get(
-        "https://engagementml.herokuapp.com/eML/user/" +
+        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/user/" +
           this.props.match.params.id
       )
       .then(res => {
@@ -123,7 +123,7 @@ class UserProfile extends Component {
     // console.log(obj, this);
     axios
       .post(
-        "https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,
+        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,
         obj
       )
       .then(res => console.log(res.data));
@@ -139,7 +139,7 @@ class UserProfile extends Component {
   onImgErrorSmall = e => {
     console.log(e.target);
     e.target.src =
-      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg";
+      "https://cors-anywhere.herokuapp.com/https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg";
     // disable onerror to prevent endless loop
     e.target.onError = "";
     return true;
