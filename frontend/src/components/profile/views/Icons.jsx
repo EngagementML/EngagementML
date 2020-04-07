@@ -87,7 +87,7 @@ class Icons extends Component {
   }
 
   profileList() {
-    return this.state.filteredItems.map((profile, i) => {
+    return this.state.filteredItems.slice(0,52).map((profile, i) => {
       return (
         <Col lg={3} md={4} sm={6} xs={12} className="font-icon-list" key={i}>
           <div style={{ marginBottom: "2rem" }}>

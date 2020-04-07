@@ -14,7 +14,7 @@ import { PhotographyTasks } from "../components/Tasks/photographyTasks";
 import {
   // dataSales,
   // dataPie,
-  legendPie,
+  // legendPie,
   // optionsSales,
   // responsiveSales,
   // legendSales,
@@ -91,6 +91,17 @@ class Dashboard extends Component {
          console.log(error);
        });
 
+       let videoCount = this.state.posts.filter((val) => {
+         return val.is_video;
+       });
+
+       this.setState({
+         videoCount: videoCount.length,
+         videoPercentage: (videoCount.length / this.state.posts.length).toFixed(1) * 100,
+         postCount: this.state.posts.length - videoCount.length,
+         postPercentage: ((this.state.posts.length - videoCount.length) / this.state.posts.length).toFixed(1) * 100,
+       });
+
      await axios
        // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
        .get(
@@ -142,12 +153,18 @@ class Dashboard extends Component {
     return legend;
   }
 
-  splitPostType = () => {
-    this.state.posts.reduce((sums, entry) => {
-      sums[entry.is_video] = (sums[entry.is_video] || 0) + 1;
-      return sums;
-    }, {});
-  }
+  // countVideos = () => {
+  //   // let videoCount = this.state.posts.filter((val) => {
+  //   //   return val.is_video;
+  //   // });
+  //   //   this.setState({
+  //   //     videoCount: videoCount.length,
+  //   //     videoPercentage: (videoCount.length / this.state.posts.length).toFixed(0),
+  //   //     postCount: videoCount.length - this.state.posts.length,
+  //   //     postPercentage: ((videoCount.length - this.state.posts.length) / this.state.posts.length).toFixed(0),
+  //   //   });
+  //   // return (videoCount.length / this.state.posts.length).toFixed(0)
+  // }
     
 // Format Method:
 formatCount = (value) => {
@@ -166,7 +183,7 @@ formatCount = (value) => {
 if (this.state.email !== undefined && this.state.profile !== undefined && this.state.posts !== undefined) {
 
 // console.log(this.props);
-// console.log(this.state);
+console.log(this.state);
 
 // Data for Line Chart
 var dataSales = {
@@ -237,6 +254,19 @@ var responsiveSales = [
 var legendSales = {
   names: ["You - eML  "],
   types: ["info"]
+};
+
+var legendPie = {
+  names: [
+    "Videos (" + this.state.videoCount + " count)  ",
+    "Images (" + this.state.postCount + " count)  ",
+  ],
+  types: ["info", "danger"],
+};
+
+var dataPie = {
+  labels: [this.state.videoPercentage + "%", this.state.postPercentage + "%"],
+  series: [this.state.videoPercentage, this.state.postPercentage],
 };
 
   return (
@@ -367,17 +397,17 @@ var legendSales = {
               stats="Updated today"
               // style={{weight:"5rem"}}
               content={
-                <img
-                  src="https://engagementmlapp.s3.amazonaws.com/img/pie.png"
-                  height="275"
-                  alt="placeholder"
-                />
-                //   <div
-                //     id="chartPreferences"
-                //     className="ct-chart ct-perfect-fourth"
-                //   >
-                //     <ChartistGraph data={dataPie} type="Pie" />
-                //   </div>
+                // <img
+                //   src="https://engagementmlapp.s3.amazonaws.com/img/pie.png"
+                //   height="275"
+                //   alt="placeholder"
+                // />
+                  <div
+                    id="chartPreferences"
+                    className="ct-chart ct-perfect-fourth"
+                  >
+                    <ChartistGraph data={dataPie} type="Pie" />
+                  </div>
               }
               legend={
                 <div className="legend">{this.createLegend(legendPie)}</div>
