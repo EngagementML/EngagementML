@@ -88,7 +88,7 @@ sendPost = async () => {
     // competitor: this.state.competitor,
   };
   console.log("Behold thyy hashtags ------->",this.state.hashtags)
-  await axios.post("https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,obj)
+  await axios.post(`https://engagementml.herokuapp.com/eML/users/update/`+ this.state._id,obj)
     .then(res => console.log(res.data));
     alert(`Added #${this.state.hashtags} to collection!`);
 }
@@ -98,7 +98,15 @@ addHashtag = async (e) => {
   e.preventDefault()
   console.log("addHashtag Log",e.target.value);
   await this.setState({
-    [e.target.name]: e.target.value
+    email: this.state.email,
+    name: this.state.name,
+    fname: this.state.fname,
+    lname: this.state.lname,
+    igUsername: this.state.igUsername,
+    image: this.state.image,
+    about: this.state.about,
+    industry: this.state.industry,
+    hashtags: e.target.value
   })
   console.log(this.state)
   this.sendPost()
