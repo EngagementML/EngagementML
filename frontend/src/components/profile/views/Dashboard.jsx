@@ -269,6 +269,14 @@ var dataPie = {
   series: [this.state.videoPercentage, this.state.postPercentage],
 };
 
+var optionsPie = {
+  donut: true,
+  // donutWidth: 60,
+  // donutSolid: true,
+  startAngle: 270,
+  showLabel: true,
+};
+
   return (
     <div className="content">
       <Container fluid="true">
@@ -402,12 +410,16 @@ var dataPie = {
                 //   height="275"
                 //   alt="placeholder"
                 // />
-                  <div
-                    id="chartPreferences"
-                    className="ct-chart ct-perfect-fourth"
-                  >
-                    <ChartistGraph data={dataPie} type="Pie" />
-                  </div>
+                <div
+                  id="chartPreferences"
+                  className="ct-chart ct-perfect-fourth"
+                >
+                  <ChartistGraph
+                    data={dataPie}
+                    type="Pie"
+                    options={optionsPie}
+                  />
+                </div>
               }
               legend={
                 <div className="legend">{this.createLegend(legendPie)}</div>
