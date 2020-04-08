@@ -4,7 +4,8 @@ import {
   Row,
   Col,
   Form,
-  Modal
+  Modal,
+  Carousel
 } from "react-bootstrap";
 import axios from "axios";
 import actions from "../../../services/index";
@@ -32,6 +33,7 @@ class UserProfile extends Component {
     image: "",
     about: "",
     industry: "",
+    hashtags:[],
     // role: [],
     // competitor:[],
     profile: {
@@ -87,7 +89,7 @@ class UserProfile extends Component {
           image: res.data.image,
           about: res.data.about,
           industry: res.data.industry,
-          // hashtags: res.data.hashtags,
+          hashtags:res.data.hashtags
 
           // role: res.data.role,
           // competitor: res.data.competitor,
@@ -116,7 +118,8 @@ class UserProfile extends Component {
       igUsername: this.state.igUsername,
       image: this.state.image,
       about: this.state.about,
-      industry: this.state.industry
+      industry: this.state.industry,
+      hashtags:this.state.hashtags
       // role: this.state.role,
       // competitor: this.state.competitor,
     };
@@ -153,8 +156,30 @@ class UserProfile extends Component {
     this.setState({ show: false });
   };
 
+  getCarousel = () => {
+
+    let bootstrapArray = ["info","danger","primary","warning","success"]
+ 
+    const randomNumber = (min, max) => {  
+      return Math.floor(Math.random() * (max - min) + min); 
+    }  
+
+    return (
+      this.state.hashtags.map(eachHashtag => {
+        console.log(randomNumber(0,5))
+      return (
+
+        <Carousel.Item style={{textAlign:"center", padding:"1.5rem"}}>
+          <Button className= {`btn btn-${bootstrapArray[randomNumber(0,5)]}`} >{`# ${eachHashtag}`}</Button>
+        </Carousel.Item>
+
+      )
+      })
+    )
+  }
+
   render() {
-    // console.log(this);
+    console.log(this.state);
     if (
       this.state.email !== undefined &&
       this.state.profile !== {} &&
@@ -227,7 +252,7 @@ class UserProfile extends Component {
                 />
                 <Col md={12} style={{ textAlign: "center" }}>
                   <Card
-                    title="Lastest Posts"
+                    title="Latest Posts"
                     content={
                       <>
                         <img
@@ -414,9 +439,19 @@ class UserProfile extends Component {
                           />
                         </Col>
                       </Row>
-                      <Button className="success pullRight fill" type="submit">
+                      <Button className="success pullRight fill mb-5" type="submit">
                         Update Profile
                       </Button>
+                  <Card
+                    // className = "m-4"
+                    // style = {{height:"5rem"}}
+                    // title="These are your saved hashtags"
+                    content={
+                        <Carousel>
+                          {this.getCarousel()}
+                        </Carousel>
+                    }
+                  />
                       <div className="clearfix" />
                     </form>
                   }
