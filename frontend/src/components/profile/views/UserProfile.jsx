@@ -138,8 +138,9 @@ class UserProfile extends Component {
 
   onImgErrorSmall = e => {
     console.log(e.target);
+    // Don't cors this placeholder
     e.target.src =
-      "https://cors-anywhere.herokuapp.com/https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg";
+      "https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg";
     // disable onerror to prevent endless loop
     e.target.onError = "";
     return true;
