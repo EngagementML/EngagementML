@@ -19,7 +19,7 @@ class IconPosts extends Component {
     await axios
       // .get("http://localhost:5000/profile/" + this.state.igUsername)
       .get(
-        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/profile/" +
+        "https://engagementml.herokuapp.com/profile/" +
           this.props.match.params.id
       )
       .then(res => {
@@ -33,7 +33,7 @@ class IconPosts extends Component {
       });
 
     await axios
-      .get("https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
+      .get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
       .then(res => {
         // console.log(res, res.data);
         this.setState({
@@ -47,7 +47,7 @@ class IconPosts extends Component {
     await axios
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get(
-        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/user/" +
+        "https://engagementml.herokuapp.com/eML/user/" +
           this.props.match.params.id
       )
       .then(res => {

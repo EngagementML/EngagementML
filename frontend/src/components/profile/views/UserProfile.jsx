@@ -49,7 +49,7 @@ class UserProfile extends Component {
     await axios
       // .get("http://localhost:5000/profiles/")
       .get(
-        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/profile/" + this.state.igUsername
+        "https://engagementml.herokuapp.com/profile/" + this.state.igUsername
       )
       .then(res => {
         // console.log(res, res.data);
@@ -62,7 +62,7 @@ class UserProfile extends Component {
       });
 
     await axios
-      .get("https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
+      .get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
       .then(res => {
         // console.log(res, res.data);
         this.setState({
@@ -76,7 +76,7 @@ class UserProfile extends Component {
     await axios
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get(
-        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/user/" +
+        "https://engagementml.herokuapp.com/eML/user/" +
           this.props.match.params.id
       )
       .then(res => {
@@ -126,7 +126,7 @@ class UserProfile extends Component {
     // console.log(obj, this);
     axios
       .post(
-        "https://cors-anywhere.herokuapp.com/https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,
+        "https://engagementml.herokuapp.com/eML/users/update/" + this.state._id,
         obj
       )
       .then(res => console.log(res.data));
