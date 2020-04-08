@@ -11,7 +11,7 @@ import { thArray } from "../variables/Variables.jsx";
 
 class TableList extends Component {
 
-state = {tag:"Awesome", hashtags:[]}
+state = {tag:"Marketing", hashtags:[]}
   
 async componentDidMount(){
 
@@ -77,7 +77,7 @@ sendPost = async () => {
   console.log("Behold thyy hashtags ------->",this.state.hashtags)
   await axios.post(`https://engagementml.herokuapp.com/eML/users/update/`+ this.state._id,obj)
     .then(res => console.log(res.data));
-    alert(`Added #${this.state.hashtags} to collection!`);
+    alert(`Your Hashtag collection has been updated! Check the Edit Profile tab! #${this.state.hashtags[this.state.hashtags.length-1]}`);
 }
 
 
@@ -411,8 +411,8 @@ const pickSize = (color) => {
             <Card
               statsIcon="fa fa-history"
               id="chartHours"
-              title={"#"+this.state.tag+" Impressions"}
-              category={`Last 30 Days of #${this.state.tag}`}
+              title={"#"+this.state.tag}
+              category={`Last 30 Days of #${this.state.tag} Impressions Worldwide`}
               stats="Updated today"
               content={
                 <div className="ct-chart">
@@ -465,7 +465,7 @@ const pickSize = (color) => {
           <Row>
             <Col md={12}>
               <Card
-                title={"#"+this.state.tag+" & Related Hashtags"}
+                title={"#"+this.state.tag+" & Related Hashtags Insights"}
                 category="Per hour"
                 ctTableFullWidth
                 ctTableResponsive

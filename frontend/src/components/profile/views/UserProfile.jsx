@@ -159,20 +159,23 @@ class UserProfile extends Component {
 
   getCarousel = () => {
 
-    let bootstrapArray = ["info","danger","primary","warning","success"]
- 
+    let bootstrapArray = ["info","danger","primary","secondary","success","light","dark","warning","primary"]
+    // Colors that work (locally): Danger, Warning, Primary, Info
+    // Colors that don't work (locally): Light
     const randomNumber = (min, max) => {  
       return Math.floor(Math.random() * (max - min) + min); 
     }  
 
     return (
       this.state.hashtags.map(eachHashtag => {
-        console.log(randomNumber(0,5))
+
+        let randomColor = bootstrapArray[randomNumber(0,6)]
+        console.log("Hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee","#",eachHashtag, randomColor)
       return (
 
-        <Carousel.Item style={{textAlign:"center", padding:"1.5rem"}}>
-          <Button className= {`btn btn-${bootstrapArray[randomNumber(0,5)]}`} >{`# ${eachHashtag}`}</Button>
-        </Carousel.Item>
+        // <Carousel.Item style={{textAlign:"center", padding:"1.5rem"}}>
+          <Button className= {`btn btn-${randomColor} m-1`} >{`# ${eachHashtag}`}</Button>
+        // </Carousel.Item>
 
       )
       })
@@ -448,9 +451,11 @@ class UserProfile extends Component {
                     // style = {{height:"5rem"}}
                     // title="These are your saved hashtags"
                     content={
-                        <Carousel>
+                        // <Carousel>
+                        <React.Fragment>
                           {this.getCarousel()}
-                        </Carousel>
+                        </React.Fragment>
+                        // </Carousel>
                     }
                   />
                       <div className="clearfix" />
