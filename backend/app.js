@@ -40,22 +40,34 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
-// app.use(
-//   cors({
-//     credentials: true,
-//     origin: ["http://localhost:3000", "https://distracted-leavitt-b3a623.netlify.com"] //Swap this with the client url 
-//   })
-// );
+app.use(
+  cors({
+    credentials: true,
+    origin: [
+      "https://engagementml.herokuapp.com",
+      "https://engagementml.co",
+      "http://localhost:3000",
+    ], //Swap this with the client url
+  })
+);
 
 app.use(secure);
 
-app.use(cors({
-  origin: function (origin, callback) {
-    return callback(null, true);
-  },
-  optionsSuccessStatus: 200,
-  credentials: true
-}));
+app.use(
+  cors({
+    // origin: function (origin, callback) {
+    //   return callback(null, true);
+    // },
+    //Fix for the cors origin errors
+    origin: [
+      "https://engagementml.herokuapp.com",
+      "https://engagementml.co",
+      "http://localhost:3000",
+    ],
+    optionsSuccessStatus: 200,
+    credentials: true,
+  })
+);
 
 app.use(
   session({
