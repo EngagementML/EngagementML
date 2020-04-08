@@ -159,7 +159,7 @@ class UserProfile extends Component {
 
   getCarousel = () => {
 
-    let bootstrapArray = ["info","danger","primary","secondary","success","light","dark","warning","primary"]
+    let bootstrapArray = ["info","danger","success","dark","warning","primary"]
     // Colors that work (locally): Danger, Warning, Primary, Info
     // Colors that don't work (locally): Light
     const randomNumber = (min, max) => {  
@@ -169,7 +169,7 @@ class UserProfile extends Component {
     return (
       this.state.hashtags.map(eachHashtag => {
 
-        let randomColor = bootstrapArray[randomNumber(0,6)]
+        let randomColor = bootstrapArray[randomNumber(0,5)]
         console.log("Hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee","#",eachHashtag, randomColor)
       return (
 
