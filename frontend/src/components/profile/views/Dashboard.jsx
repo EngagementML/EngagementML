@@ -400,16 +400,11 @@ var optionsPie = {
           <Col md={4}>
             <Card
               statsIcon="fa fa-clock-o"
-              title="Post Type"
-              category="Last 12 Posts"
+              title="IG Post Types"
+              category="eML Tracked Posts"
               stats="Updated today"
               // style={{weight:"5rem"}}
               content={
-                // <img
-                //   src="https://engagementmlapp.s3.amazonaws.com/img/pie.png"
-                //   height="275"
-                //   alt="placeholder"
-                // />
                 <div
                   id="chartPreferences"
                   className="ct-chart ct-perfect-fourth"
