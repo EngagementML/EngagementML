@@ -40,16 +40,16 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
-app.use(
-  cors({
-    credentials: true,
-    origin: [
-      "https://engagementml.herokuapp.com",
-      "https://engagementml.co",
-      "http://localhost:3000",
-    ], //Swap this with the client url
-  })
-);
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: [
+//       "https://engagementml.herokuapp.com",
+//       "https://engagementml.co",
+//       "http://localhost:3000",
+//     ], //Swap this with the client url
+//   })
+// );
 
 app.use(secure);
 
