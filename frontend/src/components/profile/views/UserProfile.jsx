@@ -15,6 +15,8 @@ import { UserCard } from "../components/UserCard/UserCard.jsx";
 import Button from "../components/CustomButton/CustomButton.jsx";
 import "font-awesome/css/font-awesome.min.css";
 import profile from "../assets/img/profile-placeholder.png";
+import logo from "../assets/img/emllogo.png";
+
 
 
 // const industryOptions = ['Food', 'Travel', 'Fashion & Style', 'Photography', 'Lifestyle', 'Design', 'Beauty', 'Sports & Fitness' ]
@@ -474,6 +476,17 @@ class UserProfile extends Component {
           <h3 className="loading" style={{ textAlign: "center" }}>
             Loading...
           </h3>
+          <img
+            src={logo}
+            alt="eML"
+            width="500"
+            style={{
+              textAlign: "center",
+              transformOrigin: "50% 50%",
+              animation:
+                "3.0303s linear 0s infinite reverse forwards running spin",
+            }}
+          />
         </div>
       );
     }
