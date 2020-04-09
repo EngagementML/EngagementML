@@ -4,6 +4,8 @@ import Card from "../components/Card/Card";
 import logo from "../../../images/engagementMLb.png";
 import axios from "axios";
 import actions from "../../../services/index";
+import logo2 from "../assets/img/emllogo.png";
+
 
 
 class IconPosts extends Component {
@@ -281,6 +283,17 @@ class IconPosts extends Component {
           <h3 className="loading" style={{ textAlign: "center" }}>
             Loading...
           </h3>
+          <img
+            src={logo2}
+            alt="eML"
+            width="500"
+            style={{
+              textAlign: "center",
+              transformOrigin: "50% 50%",
+              animation:
+                "3.0303s linear 0s infinite reverse forwards running spin",
+            }}
+          />
         </div>
       );
     }

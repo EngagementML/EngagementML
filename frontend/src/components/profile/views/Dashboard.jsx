@@ -10,6 +10,7 @@ import { FoodTasks} from "../components/Tasks/foodTasks";
 import { FashionTasks } from "../components/Tasks/fashionTasks";
 import { LifestyleTasks } from "../components/Tasks/lifestyleTasks";
 import { PhotographyTasks } from "../components/Tasks/photographyTasks";
+import logo  from "../assets/img/emllogo.png"
 
 import {
   // dataSales,
@@ -483,6 +484,16 @@ var optionsPie = {
       <h3 className="loading" style={{ textAlign: "center" }}>
         Loading...
       </h3>
+      <img
+        src={logo}
+        alt="eML"
+        width="500"
+        style={{
+          textAlign: "center",
+          transformOrigin: "50% 50%",
+          animation: "3.0303s linear 0s infinite reverse forwards running spin"
+        }}
+      />
     </div>
   );
 }

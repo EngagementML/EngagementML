@@ -6,6 +6,8 @@ import ChartistGraph from "react-chartist";
 import axios from "axios";
 import Card from "../components/Card/Card.jsx";
 import { thArray } from "../variables/Variables.jsx";
+import logo from "../assets/img/emllogo.png";
+
 // import IGback from '../../../images/igback.jpg'
 
 
@@ -524,6 +526,17 @@ const pickSize = (color) => {
         <h3 className="loading" style={{ textAlign: "center" }}>
           Loading...
         </h3>
+        <img
+          src={logo}
+          alt="eML"
+          width="500"
+          style={{
+            textAlign: "center",
+            transformOrigin: "50% 50%",
+            animation:
+              "3.0303s linear 0s infinite reverse forwards running spin",
+          }}
+        />
       </div>
     );
     }
