@@ -3,6 +3,8 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import axios from 'axios'
 import actions from "../../../services/index";
 import Card from "../components/Card/Card";
+import logo from "../assets/img/emllogo.png";
+
 // import { iconsArray } from "../variables/Variables.jsx";
 
 // axios.get("http://localhost:5000/profiles").then(res => console.log(res.data));
@@ -246,6 +248,17 @@ class Icons extends Component {
           <h3 className="loading" style={{ textAlign: "center" }}>
             Loading...
           </h3>
+          <img
+            src={logo}
+            alt="eML"
+            width="500"
+            style={{
+              textAlign: "center",
+              transformOrigin: "50% 50%",
+              animation:
+                "3.0303s linear 0s infinite reverse forwards running spin",
+            }}
+          />
         </div>
       );
     }

@@ -1,27 +1,40 @@
-/*!
-
-=========================================================
-* Light Bootstrap Dashboard React - v1.3.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React, { Component } from "react";
 import {Container, Row, Col } from "react-bootstrap";
 import Card from "../components/Card/Card";
 import logo from "../../../images/engagementMLbsm.png";
-// import Button from "../components/CustomButton/CustomButton";
+import axios from "axios";
+
 
 class Icons extends Component {
+  handleSubmit(e) {
+    e.preventDefault();
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    axios({
+      method: "POST",
+      url: "https://engagementml.herokuapp.com/send",
+      data: {
+        name: name,
+        email: email,
+        message: message,
+      },
+    }).then((response) => {
+      if (response.data.msg === "success") {
+        alert("Thank you for reaching out to us! Message Sent.");
+        this.resetForm();
+      } else if (response.data.msg === "fail") {
+        alert(
+          "Error upon sending form! Message failed to send. Please try again!"
+        );
+      }
+    });
+  }
+
+  resetForm() {
+    document.getElementById("contact-form").reset();
+  }
+
   render() {
     return (
       <div className="content">
@@ -36,9 +49,58 @@ class Icons extends Component {
                 // ctTableFullWidth
                 // ctTableUpgrade
                 content={
-                  <div style={{textAlign:'center'}}>
-                  <img src={logo} alt='EngagementML' width='400'/><br/>
-                    Email us at <a href='mailto:engagementml@gmail.com'>engagementML@gmail.com</a>!
+                  <div style={{ textAlign: "center" }}>
+                    <img src={logo} alt="EngagementML" width="400" />
+                    <br />
+                    <div className="box">
+                      <div className="col-lg-10 offset-lg-1">
+                        <form
+                          action="/send"
+                          id="contact-form"
+                          onSubmit={(e) => this.handleSubmit(e)}
+                          method="POST"
+                          // role="form"
+                        >
+                          <div className="fields">
+                            <div className="field half">
+                              <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="Name"
+                                required
+                              />
+                            </div>
+                            <div className="field half">
+                              <input
+                                type="text"
+                                name="email"
+                                id="email"
+                                placeholder="Email"
+                                required
+                              />
+                            </div>
+                            <div className="field">
+                              <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Enter your message here"
+                                rows="3"
+                                required
+                              />
+                            </div>
+                          </div>
+                          <ul className="actions special">
+                            <li>
+                              <input
+                                type="submit"
+                                className="btn btn-outline btn-success"
+                              />
+                            </li>
+                          </ul>
+                        </form>
+                      </div>
+                    </div>
                   </div>
 
                   // <Table>
