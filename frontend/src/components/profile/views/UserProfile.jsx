@@ -186,7 +186,7 @@ class UserProfile extends Component {
       )
 
     } else {
-      return <div className="display-6" >You haven't added any hashtags yet.</div>
+      return <div className="display-6" >You haven't added any hashtags yet, to do so visit the Hashtags Tab.</div>
     }
 
   }
