@@ -157,29 +157,36 @@ class UserProfile extends Component {
     this.setState({ show: false });
   };
 
-  getCarousel = () => {
+  getHashtagCollection = () => {
 
     let bootstrapArray = ["info","danger","success","dark","warning","primary"]
     // Colors that work (locally): Danger, Warning, Primary, Info
     // Colors that don't work (locally): Light
+
     const randomNumber = (min, max) => {  
       return Math.floor(Math.random() * (max - min) + min); 
     }  
 
-    return (
-      this.state.hashtags.map(eachHashtag => {
-
-        let randomColor = bootstrapArray[randomNumber(0,5)]
-        console.log("Hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee","#",eachHashtag, randomColor)
+    if (this.state.hashtags.length!= 0){
       return (
-
-        // <Carousel.Item style={{textAlign:"center", padding:"1.5rem"}}>
-          <Button className= {`btn btn-${randomColor} m-1`} >{`# ${eachHashtag}`}</Button>
-        // </Carousel.Item>
-
+        this.state.hashtags.map(eachHashtag => {
+  
+          let randomColor = bootstrapArray[randomNumber(0,5)]
+          console.log("Hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee","#",eachHashtag, randomColor)
+        return (
+  
+          // <Carousel.Item style={{textAlign:"center", padding:"1.5rem"}}>
+            <Button className= {`btn btn-${randomColor} m-1`} >{`# ${eachHashtag}`}</Button>
+          // </Carousel.Item>
+  
+        )
+        })
       )
-      })
-    )
+
+    } else {
+      return <div className="display-6" >You haven't added any hashtags yet.</div>
+    }
+
   }
 
   render() {
@@ -449,11 +456,11 @@ class UserProfile extends Component {
                   <Card
                     // className = "m-4"
                     // style = {{height:"5rem"}}
-                    // title="These are your saved hashtags"
+                    title="Your Hashtag Collection"
                     content={
                         // <Carousel>
                         <React.Fragment>
-                          {this.getCarousel()}
+                          {this.getHashtagCollection()}
                         </React.Fragment>
                         // </Carousel>
                     }
