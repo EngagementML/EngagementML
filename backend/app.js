@@ -24,7 +24,9 @@ const secure = require("ssl-express-www");
 
 
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ironplate'
+const MONGODB_URI =
+  process.env.MONGODB_URI ||
+  "mongodb+srv://chaba:ironhack01@cluster0-0i68o.azure.mongodb.net/test";
 console.log('Connecting DB to ', MONGODB_URI)
 
 const USER = process.env.USER

@@ -28,7 +28,7 @@ class SignUp extends Component {
                         show:true,
                         error: response.data.err.message
                       })
-                       console.error(response.data);
+                       console.error(response);
                        console.log(response.data.err.message)
 
                      })
