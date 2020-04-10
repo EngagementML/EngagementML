@@ -141,7 +141,7 @@ class Posts extends Component {
                     className="card-body d-flex align-items-center justify-content-center"
                     style={{ background: "white" }}
                   >
-                    <p className="card-text">
+                    <div className="card-text">
                       <h5>
                         <strong>Post eML Rate: </strong>{" "}
                         {(
@@ -168,7 +168,7 @@ class Posts extends Component {
                           { minimumFractionDigits: 0 }
                         )}
                       </h6>
-                    </p>
+                    </div>
                   </div>
                 </div>
                 <div className="card-back d-flex flex-row justify-content-center">
@@ -182,9 +182,9 @@ class Posts extends Component {
                       {this.renderDate(posts.date)}
                       <br />
                       <br />
-                      <h7><strong>Weekday</strong> - {this.renderDay(posts.date)}
+                      <h5><strong>Day</strong> - {this.renderDay(posts.date)}
                       <br />
-                      <strong>Time</strong> - {this.renderTime(posts.date)}</h7>
+                      <strong>Time</strong> - {this.renderTime(posts.date)}</h5>
                     </div>
                     <br></br>
                     <p>{posts.text}</p>

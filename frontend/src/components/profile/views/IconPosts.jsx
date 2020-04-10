@@ -150,7 +150,7 @@ class IconPosts extends Component {
                     className="card-body d-flex align-items-center justify-content-center"
                     style={{ background: "white" }}
                   >
-                    <p className="card-text">
+                    <div className="card-text">
                       <h5>
                         <strong>Post eML Rate: </strong>{" "}
                         {(
@@ -177,7 +177,7 @@ class IconPosts extends Component {
                           { minimumFractionDigits: 0 }
                         )}
                       </h6>
-                    </p>
+                    </div>
                   </div>
                 </div>
                 <div className="card-back d-flex flex-row justify-content-center">
@@ -191,28 +191,12 @@ class IconPosts extends Component {
                       {this.renderDate(posts.date)}
                       <br />
                       <br />
-                      <h7><strong>Weekday</strong> - {this.renderDay(posts.date)}
+                      <h5><strong>Weekday</strong> - {this.renderDay(posts.date)}
                       <br />
-                      <strong>Time</strong> - {this.renderTime(posts.date)}</h7>
+                      <strong>Time</strong> - {this.renderTime(posts.date)}</h5>
                     </div>
                     <br></br>
                     <p>{posts.text}</p>
-                    {/* <div className="card-text backInfo">
-                      <strong>Likes:</strong>{" "}
-                      {posts.like_count.toLocaleString(navigator.language, {
-                        minimumFractionDigits: 0
-                      })}
-                      <br />
-                      <br />
-                      <p>
-                        {" "}
-                        <strong>Comments: </strong>{" "}
-                        {posts.comment_count.toLocaleString(
-                          navigator.language,
-                          { minimumFractionDigits: 0 }
-                        )}
-                      </p> 
-                    </div> */}
                   </div>
                 </div>
               </div>

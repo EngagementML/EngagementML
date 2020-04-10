@@ -20,30 +20,30 @@ class Icons extends Component {
     await axios
       // .get("http://localhost:5000/profiles/")
       .get(
-        "https://engagementml.herokuapp.com/profiles/"
+        "https://aqueous-wave-46255.herokuapp.com/https://engagementml.herokuapp.com/profiles/"
       )
-      .then(res => {
+      .then((res) => {
         // console.log(res, res.data);
         this.setState({
           profiles: res.data,
-          filteredItems: res.data
+          filteredItems: res.data,
         });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
 
     await axios
       .get(
-        "https://engagementml.herokuapp.com/posts/"
+        "https://aqueous-wave-46255.herokuapp.com/https://engagementml.herokuapp.com/posts/"
       )
-      .then(res => {
+      .then((res) => {
         // console.log(res, res.data);
         this.setState({
-          posts: res.data
+          posts: res.data,
         });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   }
