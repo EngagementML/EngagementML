@@ -51,37 +51,41 @@ class UserProfile extends Component {
     await axios
       // .get("http://localhost:5000/profiles/")
       .get(
-        "https://engagementml.herokuapp.com/profile/" + this.state.igUsername
+        "https://aqueous-wave-46255.herokuapp.com/https://engagementml.herokuapp.com/profile/" +
+          this.state.igUsername
       )
-      .then(res => {
+      .then((res) => {
         // console.log(res, res.data);
         this.setState({
-          profile: res.data
+          profile: res.data,
         });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
 
     await axios
-      .get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
-      .then(res => {
+      .get(
+        "https://aqueous-wave-46255.herokuapp.com/https://engagementml.herokuapp.com/posts/" +
+          this.state.profile.id
+      )
+      .then((res) => {
         // console.log(res, res.data);
         this.setState({
-          posts: res.data
+          posts: res.data,
         });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
 
     await axios
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get(
-        "https://engagementml.herokuapp.com/eML/user/" +
+        "https://aqueous-wave-46255.herokuapp.com/https://engagementml.herokuapp.com/eML/user/" +
           this.props.match.params.id
       )
-      .then(res => {
+      .then((res) => {
         this.setState({
           email: res.data.email,
           name: res.data.name,
@@ -91,13 +95,13 @@ class UserProfile extends Component {
           image: res.data.image,
           about: res.data.about,
           industry: res.data.industry,
-          hashtags:res.data.hashtags
+          hashtags: res.data.hashtags,
 
           // role: res.data.role,
           // competitor: res.data.competitor,
         });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   }
