@@ -3,8 +3,9 @@ let ig = require("instagram-scraping");
 instagramScraper = async () => {
   let influencers = [
     
-    // "camilla_cabello",
-    // "maluma",
+    "camila_cabello",
+    "maluma",
+    "michelle_lewin",
     // "justintimberlake",
     // "nba",
     // "ronaldinho",
@@ -127,7 +128,7 @@ instagramScraper = async () => {
     // "taramilktea",
 
     // //Food Category
-    // "jamieoliver",
+    "jamieoliver",
     // "ladyironchef",
     // "detoxinista",
     // "ashrod",
@@ -150,13 +151,13 @@ instagramScraper = async () => {
     //TOP-50
     "rctv",
     // "cristiano",
-    // "kyliejenner",
+    "kyliejenner",
     // "selenagomez",
     // "leomessi",
     // "marko",
     // "billieeilish",
     // "kendalljenner",
-    // "arianagrande",
+    "arianagrande",
     // "neymarjr",
     // "zendaya",
     // "kimkardashian",
@@ -165,7 +166,7 @@ instagramScraper = async () => {
     // "badgalriri",
     // "taylorswift",
     // "jenniferaniston",
-    // "therock",
+    "therock",
     // "kingjames",
     // "khloekardashian",
     // "ddlovato",
@@ -173,9 +174,9 @@ instagramScraper = async () => {
     // "robertdowneyjr",
     // "iamcardib",
     // "virat.kohli",
-    // "lelepons",
+    "lelepons",
     // "kourtneykardash",
-    // "jlo",
+    "jlo",
     // "narendramodi",
     // "justinbieber",
     // "chrishemsworth",
@@ -186,11 +187,11 @@ instagramScraper = async () => {
     // "champagnepapi",
     // "davidbeckham",
     // "jennierubyjane",
-    // "mileycyrus",
+    "mileycyrus",
     // "roses_are_rosie",
     // "priyankachopra",
     // "emmawatson",
-    // "nasa",
+    "nasa",
     // "blakelively",
     // "k.mbappe",
     // "gigihadid",
@@ -198,8 +199,8 @@ instagramScraper = async () => {
     // "aliaabhatt",
     // "bts.bighitofficial",
     // "madelame",
-    // "shakira",
-    // "mahi7781"
+    "shakira",
+    "mahi7781"
   ];
 
   let posts = [];
