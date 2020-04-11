@@ -173,16 +173,20 @@ class UserProfile extends Component {
   };
 
   modalData = async (tag) => {
-
     const HashtagCallWordHistory = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/stats/history/${tag}?client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
     await axios.get(HashtagCallWordHistory).then(async result => {
     console.log("Full Result Word History", result.data)
+    await this.setState({ hashtagResultWordHistory: result.data })
 
+    })
+  }
+
+  modalGraph = () => {
     var values = []
 
     var dataLine = {
       labels: 
-        result.data.data.map((currentDate) => {
+        this.state.hashtagResultWordHistory.data.map((currentDate) => {
           // console.log(currentDate)
           return (
             String(currentDate.date.slice(5,10))
@@ -192,7 +196,7 @@ class UserProfile extends Component {
     
       ,
       series: [
-        result.data.data.map((currentExposure) => {
+        this.state.hashtagResultWordHistory.data.map((currentExposure) => {
           console.log("Hereeeeeeee",currentExposure)
           values.push(currentExposure.exposure)
           return (
@@ -244,7 +248,6 @@ class UserProfile extends Component {
               content={
                 <div className="ct-chart">
                   <ChartistGraph
-                    // labelFontWeight="900"
                     data={dataLine}
                     type="Line"
                     options={optionsLine}
@@ -257,10 +260,6 @@ class UserProfile extends Component {
       </React.Fragment>
     )
   
-    })
-    // await this.setState({ hashtagResultWordHistory: result.data })
-    // })
-    // .catch((err) => console.log("Can’t access " + HashtagCallWordHistory, err))
   }
 
   getHashtagCollection = () => {
@@ -280,7 +279,7 @@ class UserProfile extends Component {
           console.log("Hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee","#",eachHashtag, randomColor)
         return (
             // <Button className= {`btn btn-${randomColor} m-1`} onClick={(eachHashtag) => this.modalHashtag}>{`# ${eachHashtag}`}</Button>
-            <Button className= {`btn btn-${randomColor} m-1`} onClick={() => this.showHashtagAlert(eachHashtag)}>{`# ${eachHashtag}`}</Button>
+            <Button className= {`btn btn-${randomColor} m-1`} onClick={() => {this.modalData(eachHashtag);this.showHashtagAlert(eachHashtag)}}>{`# ${eachHashtag}`}</Button>
         )
         })
       )
@@ -329,20 +328,20 @@ class UserProfile extends Component {
         <Modal.Body>
           <Container>
             <Row className="show-grid">
-             
-              {() => this.modalData(this.state.currentHashtag)}
+              {/* <Button onClick={() => this.modalData(this.state.currentHashtag)}>Get Stuff</Button> */}
+              {this.modalGraph}
           
             </Row>
 
             <Row className="show-grid">
               <Col xs={6} md={4}>
-                <code>.col-xs-6 .col-md-4</code>
+                <code>We are still working getting you specific</code>
               </Col>
               <Col xs={6} md={4}>
-                <code>.col-xs-6 .col-md-4</code>
+                <code>Hashtag Data</code>
               </Col>
               <Col xs={6} md={4}>
-                <code>.col-xs-6 .col-md-4</code>
+                <code>@EngagementML</code>
               </Col>
             </Row>
           </Container>
