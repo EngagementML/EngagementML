@@ -39,7 +39,6 @@ getData() {
   })
     .catch((err) => console.log("Can’t access " + HashtagCallWord, err))
 
-  // There's something wrong with the history api link
 
   const HashtagCallWordHistory = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/stats/history/${this.state.tag}?client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
     axios.get(HashtagCallWordHistory).then(result => {
@@ -334,13 +333,13 @@ var optionsLine = {
   }
 };
 
-var optionsPie = {
-  donut: true,
-  donutWidth: 60,
-  startAngle: 270,
-  total: 200,
-  showLabel: false
-}
+// var optionsPie = {
+//   donut: true,
+//   donutWidth: 60,
+//   startAngle: 270,
+//   total: 200,
+//   showLabel: false
+// }
 
 var responsiveLine = [
   [

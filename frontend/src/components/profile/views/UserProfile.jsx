@@ -4,8 +4,7 @@ import {
   Row,
   Col,
   Form,
-  Modal,
-  Carousel
+  Modal
 } from "react-bootstrap";
 import axios from "axios";
 import actions from "../../../services/index";
@@ -16,6 +15,8 @@ import Button from "../components/CustomButton/CustomButton.jsx";
 import "font-awesome/css/font-awesome.min.css";
 import profile from "../assets/img/profile-placeholder.png";
 import logo from "../assets/img/emllogo.png";
+import ChartistGraph from "react-chartist";
+
 
 
 
@@ -26,7 +27,7 @@ import logo from "../assets/img/emllogo.png";
 class UserProfile extends Component {
   state = {
     show:false,
-    // showHashtag:false,
+    showHashtag:false,
     error: '',
     email: "",
     name: "",
@@ -41,7 +42,7 @@ class UserProfile extends Component {
     // competitor:[],
     profile: {
       // profile_pic_url_hd : profile
-    }
+    },
   };
 
   async componentDidMount() {
@@ -52,41 +53,37 @@ class UserProfile extends Component {
     await axios
       // .get("http://localhost:5000/profiles/")
       .get(
-        "https://aqueous-wave-46255.herokuapp.com/https://engagementml.herokuapp.com/profile/" +
-          this.state.igUsername
+        "https://engagementml.herokuapp.com/profile/" + this.state.igUsername
       )
-      .then((res) => {
+      .then(res => {
         // console.log(res, res.data);
         this.setState({
-          profile: res.data,
+          profile: res.data
         });
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       });
 
     await axios
-      .get(
-        "https://aqueous-wave-46255.herokuapp.com/https://engagementml.herokuapp.com/posts/" +
-          this.state.profile.id
-      )
-      .then((res) => {
+      .get("https://engagementml.herokuapp.com/posts/" + this.state.profile.id)
+      .then(res => {
         // console.log(res, res.data);
         this.setState({
-          posts: res.data,
+          posts: res.data
         });
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       });
 
     await axios
       // .get("http://localhost:5000/eML/user/" + this.props.match.params.id)
       .get(
-        "https://aqueous-wave-46255.herokuapp.com/https://engagementml.herokuapp.com/eML/user/" +
+        "https://engagementml.herokuapp.com/eML/user/" +
           this.props.match.params.id
       )
-      .then((res) => {
+      .then(res => {
         this.setState({
           email: res.data.email,
           name: res.data.name,
@@ -96,13 +93,13 @@ class UserProfile extends Component {
           image: res.data.image,
           about: res.data.about,
           industry: res.data.industry,
-          hashtags: res.data.hashtags,
+          hashtags:res.data.hashtags
 
           // role: res.data.role,
           // competitor: res.data.competitor,
         });
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       });
   }
@@ -164,69 +161,109 @@ class UserProfile extends Component {
     this.setState({ show: false });
   };
 
-  // showHashtagAlert = () => {
-  //   console.log("Clicked on hashtag alert!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-  //   this.setState({ showHashtag: true });
-  // };
+  showHashtagAlert = async (tag) => {
+    console.log("Clicked on hashtag alert!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    await this.setState({ showHashtag: true, currentHashtag: tag });
+    console.log("Full state---",this.state)
+    // this.modalData(tag)
+  };
 
-  // hideHashtagAlert = () => {
-  //   this.setState({ showHashtag: false });
-  // };
+  hideHashtagAlert = () => {
+    this.setState({ showHashtag: false });
+  };
 
-  // modalComp = () => {
-  //   return (
+  modalData = async (tag) => {
 
-  //     <Modal aria-labelledby="contained-modal-title-vcenter">
-  //     <Modal.Header closeButton>
-  //       <Modal.Title id="contained-modal-title-vcenter">
-  //         Using Grid in Modal
-  //       </Modal.Title>
-  //     </Modal.Header>
-  //     <Modal.Body>
-  //       <Container>
-  //         <Row className="show-grid">
-  //           <Col xs={12} md={8}>
-  //             <code>.col-xs-12 .col-md-8</code>
-  //           </Col>
-  //           <Col xs={6} md={4}>
-  //             <code>.col-xs-6 .col-md-4</code>
-  //           </Col>
-  //         </Row>
+    const HashtagCallWordHistory = `https://cors-anywhere.herokuapp.com/https://api.ritekit.com/v1/stats/history/${tag}?client_id=0c6df3574f5c1c81c1541d575b506bcbcd261454eca9`
+    await axios.get(HashtagCallWordHistory).then(async result => {
+    console.log("Full Result Word History", result.data)
 
-  //         <Row className="show-grid">
-  //           <Col xs={6} md={4}>
-  //             <code>.col-xs-6 .col-md-4</code>
-  //           </Col>
-  //           <Col xs={6} md={4}>
-  //             <code>.col-xs-6 .col-md-4</code>
-  //           </Col>
-  //           <Col xs={6} md={4}>
-  //             <code>.col-xs-6 .col-md-4</code>
-  //           </Col>
-  //         </Row>
-  //       </Container>
-  //     </Modal.Body>
-  //     <Modal.Footer>
-  //       <Button onClick={() => this.hideHashtagAlert()}>Close</Button>
-  //     </Modal.Footer>
-  //   </Modal>
+    var values = []
 
-    // <React.Fragment>
-    // <Modal size="sm" show={this.state.showHashtag} onHide={() => this.hideHashtagAlert()} aria-labelledby="modalError">
-    //   <Modal.Header closeButton>
-    //     <Modal.Title id="modalError">
-    //       <strong>{"Heyoooo",Hashtag}</strong>
-    //     </Modal.Title>
-    //   </Modal.Header>
-    //   <Modal.Body>{Hashtag}</Modal.Body>
-    // </Modal>
-    // </React.Fragment>
-  //   )
-  // }
+    var dataLine = {
+      labels: 
+        result.data.data.map((currentDate) => {
+          // console.log(currentDate)
+          return (
+            String(currentDate.date.slice(5,10))
+    
+          )
+        })
+    
+      ,
+      series: [
+        result.data.data.map((currentExposure) => {
+          console.log("Hereeeeeeee",currentExposure)
+          values.push(currentExposure.exposure)
+          return (
+            String(currentExposure.exposure)
+          )
+        })
+      ]
+      
+    };
 
+    var optionsLine = {
+      low: 0,
+      showArea: false,
+      // height: "245px",
+      axisX: {
+        showGrid: false
+      },
+      lineSmooth: true,
+      showLine: true,
+      showPoint: true,
+      fullWidth: true,
+      chartPadding: {
+        right: 50
+      }
+    };
+    
+    var responsiveLine = [
+      [
+        "screen and (max-width: 50rem)",
+        {
+          axisX: {
+            labelInterpolationFnc: function(value) {
+              return value[0];
+            }
+          }
+        }
+      ]
+    ];
+
+    return (
+      <React.Fragment>
+         <Col md={12} >
+            <Card
+              statsIcon="fa fa-history"
+              id="chartHours"
+              title={"#"+this.state.currentHashtag}
+              category={`Last 30 Days of #${this.state.currentHashtag} Impressions Worldwide`}
+              stats="Updated today"
+              content={
+                <div className="ct-chart">
+                  <ChartistGraph
+                    // labelFontWeight="900"
+                    data={dataLine}
+                    type="Line"
+                    options={optionsLine}
+                    responsiveOptions={responsiveLine}
+                  />
+                </div>
+              }
+            />
+          </Col>
+      </React.Fragment>
+    )
+  
+    })
+    // await this.setState({ hashtagResultWordHistory: result.data })
+    // })
+    // .catch((err) => console.log("Can’t access " + HashtagCallWordHistory, err))
+  }
 
   getHashtagCollection = () => {
-
     let bootstrapArray = ["info","danger","success","dark","warning","primary"]
     // Colors that work (locally): Danger, Warning, Primary, Info
     // Colors that don't work (locally): Light
@@ -243,7 +280,7 @@ class UserProfile extends Component {
           console.log("Hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee","#",eachHashtag, randomColor)
         return (
             // <Button className= {`btn btn-${randomColor} m-1`} onClick={(eachHashtag) => this.modalHashtag}>{`# ${eachHashtag}`}</Button>
-            <Button className= {`btn btn-${randomColor} m-1`} >{`# ${eachHashtag}`}</Button>
+            <Button className= {`btn btn-${randomColor} m-1`} onClick={() => this.showHashtagAlert(eachHashtag)}>{`# ${eachHashtag}`}</Button>
         )
         })
       )
@@ -262,7 +299,8 @@ class UserProfile extends Component {
       this.state.email !== undefined &&
       this.state.profile !== {} &&
       this.state.posts !== undefined
-    ) {
+    ) {    
+      
       return (
         <>
         {/* User Profile Update Modal */}
@@ -280,9 +318,39 @@ class UserProfile extends Component {
           <Modal.Body>{this.state.msg}</Modal.Body>
         </Modal>
 
-        {/* Hashtag Modal */}
 
-        {/* <this.modalComp /> */}
+        {/* Hashtag Modal */}
+      <Modal aria-labelledby="contained-modal-title-vcenter" show={this.state.showHashtag} >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Last 30 of #Something
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Container>
+            <Row className="show-grid">
+             
+              {() => this.modalData(this.state.currentHashtag)}
+          
+            </Row>
+
+            <Row className="show-grid">
+              <Col xs={6} md={4}>
+                <code>.col-xs-6 .col-md-4</code>
+              </Col>
+              <Col xs={6} md={4}>
+                <code>.col-xs-6 .col-md-4</code>
+              </Col>
+              <Col xs={6} md={4}>
+                <code>.col-xs-6 .col-md-4</code>
+              </Col>
+            </Row>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => this.hideHashtagAlert()}>Close</Button>
+        </Modal.Footer>
+      </Modal>
 
         <div className="content">
           <Container fluid="true">
