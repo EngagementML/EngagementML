@@ -34,9 +34,11 @@ singleScraper = async (igName) => {
       return result
     }).catch(err => console.error(err))
   });
-  return Promise.all(dataArr).then(res => { 
-    return res
-  });
+  return Promise.all(dataArr)
+    .then((res) => {
+      return res;
+    })
+    .catch((err) => console.error(err));
   
 };
 
