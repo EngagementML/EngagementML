@@ -26,6 +26,7 @@ import logo from "../assets/img/emllogo.png";
 class UserProfile extends Component {
   state = {
     show:false,
+    // showHashtag:false,
     error: '',
     email: "",
     name: "",
@@ -159,6 +160,67 @@ class UserProfile extends Component {
     this.setState({ show: false });
   };
 
+  // showHashtagAlert = () => {
+  //   console.log("Clicked on hashtag alert!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+  //   this.setState({ showHashtag: true });
+  // };
+
+  // hideHashtagAlert = () => {
+  //   this.setState({ showHashtag: false });
+  // };
+
+  // modalComp = () => {
+  //   return (
+
+  //     <Modal aria-labelledby="contained-modal-title-vcenter">
+  //     <Modal.Header closeButton>
+  //       <Modal.Title id="contained-modal-title-vcenter">
+  //         Using Grid in Modal
+  //       </Modal.Title>
+  //     </Modal.Header>
+  //     <Modal.Body>
+  //       <Container>
+  //         <Row className="show-grid">
+  //           <Col xs={12} md={8}>
+  //             <code>.col-xs-12 .col-md-8</code>
+  //           </Col>
+  //           <Col xs={6} md={4}>
+  //             <code>.col-xs-6 .col-md-4</code>
+  //           </Col>
+  //         </Row>
+
+  //         <Row className="show-grid">
+  //           <Col xs={6} md={4}>
+  //             <code>.col-xs-6 .col-md-4</code>
+  //           </Col>
+  //           <Col xs={6} md={4}>
+  //             <code>.col-xs-6 .col-md-4</code>
+  //           </Col>
+  //           <Col xs={6} md={4}>
+  //             <code>.col-xs-6 .col-md-4</code>
+  //           </Col>
+  //         </Row>
+  //       </Container>
+  //     </Modal.Body>
+  //     <Modal.Footer>
+  //       <Button onClick={() => this.hideHashtagAlert()}>Close</Button>
+  //     </Modal.Footer>
+  //   </Modal>
+
+    // <React.Fragment>
+    // <Modal size="sm" show={this.state.showHashtag} onHide={() => this.hideHashtagAlert()} aria-labelledby="modalError">
+    //   <Modal.Header closeButton>
+    //     <Modal.Title id="modalError">
+    //       <strong>{"Heyoooo",Hashtag}</strong>
+    //     </Modal.Title>
+    //   </Modal.Header>
+    //   <Modal.Body>{Hashtag}</Modal.Body>
+    // </Modal>
+    // </React.Fragment>
+  //   )
+  // }
+
+
   getHashtagCollection = () => {
 
     let bootstrapArray = ["info","danger","success","dark","warning","primary"]
@@ -176,11 +238,8 @@ class UserProfile extends Component {
           let randomColor = bootstrapArray[randomNumber(0,5)]
           console.log("Hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee","#",eachHashtag, randomColor)
         return (
-  
-          // <Carousel.Item style={{textAlign:"center", padding:"1.5rem"}}>
+            // <Button className= {`btn btn-${randomColor} m-1`} onClick={(eachHashtag) => this.modalHashtag}>{`# ${eachHashtag}`}</Button>
             <Button className= {`btn btn-${randomColor} m-1`} >{`# ${eachHashtag}`}</Button>
-          // </Carousel.Item>
-  
         )
         })
       )
@@ -191,6 +250,8 @@ class UserProfile extends Component {
 
   }
 
+ 
+
   render() {
     console.log(this.state);
     if (
@@ -200,19 +261,25 @@ class UserProfile extends Component {
     ) {
       return (
         <>
+        {/* User Profile Update Modal */}
         <Modal
-              size="sm"
-              show={this.state.show}
-              onHide={() => this.hideAlert()}
-              aria-labelledby="modalError"
-            >
-              <Modal.Header closeButton>
-                <Modal.Title id="modalError">
-                  <strong>User Profile</strong>
-                </Modal.Title>
-              </Modal.Header>
-              <Modal.Body>{this.state.msg}</Modal.Body>
-            </Modal>
+          size="sm"
+          show={this.state.show}
+          onHide={() => this.hideAlert()}
+          aria-labelledby="modalError"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="modalError">
+              <strong>User Profile</strong>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>{this.state.msg}</Modal.Body>
+        </Modal>
+
+        {/* Hashtag Modal */}
+
+        {/* <this.modalComp /> */}
+
         <div className="content">
           <Container fluid="true">
             <Row>
