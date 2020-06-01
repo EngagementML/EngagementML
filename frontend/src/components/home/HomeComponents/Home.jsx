@@ -140,11 +140,11 @@ class HomeComp extends Component {
               <div className="gallery">
                 <article className="from-left">
                   <a
-                    href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FDrizzy%2Fcomments%2Fe75s4m%2Fdrakes_new_instagram_profile_picture%2F&psig=AOvVaw1muw7FUbeUtfz0HcN9G2AD&ust=1591098461059000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLi0jenF4OkCFQAAAAAdAAAAABAI"
+                    href="https://i.redd.it/moigifebc3341.jpg"
                     className="image fit"
                   >
                     <img
-                      src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FDrizzy%2Fcomments%2Fe75s4m%2Fdrakes_new_instagram_profile_picture%2F&psig=AOvVaw1muw7FUbeUtfz0HcN9G2AD&ust=1591098461059000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLi0jenF4OkCFQAAAAAdAAAAABAI"
+                      src="https://i.redd.it/moigifebc3341.jpg"
                       title="Drake"
                       alt="Drake"
                     />
