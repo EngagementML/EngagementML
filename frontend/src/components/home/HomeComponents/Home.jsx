@@ -49,8 +49,8 @@ class HomeComp extends Component {
               </header>
               <p>
                 Welcome to <strong>EngagementML</strong> a machine learning
-                applications developed for social media research and
-                strategy optimizations
+                applications developed for social media research and strategy
+                optimizations
               </p>
               <footer>
                 <a
@@ -140,11 +140,11 @@ class HomeComp extends Component {
               <div className="gallery">
                 <article className="from-left">
                   <a
-                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/78964845_582853779208367_1558803722329391104_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=MaFcSJEOyz8AX-Ck7bI&oh=0206e796d9fcca04c441ffba6be22aa3&oe=5EA47B7C"
+                    href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FDrizzy%2Fcomments%2Fe75s4m%2Fdrakes_new_instagram_profile_picture%2F&psig=AOvVaw1muw7FUbeUtfz0HcN9G2AD&ust=1591098461059000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLi0jenF4OkCFQAAAAAdAAAAABAI"
                     className="image fit"
                   >
                     <img
-                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/78964845_582853779208367_1558803722329391104_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=MaFcSJEOyz8AX-Ck7bI&oh=0206e796d9fcca04c441ffba6be22aa3&oe=5EA47B7C"
+                      src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FDrizzy%2Fcomments%2Fe75s4m%2Fdrakes_new_instagram_profile_picture%2F&psig=AOvVaw1muw7FUbeUtfz0HcN9G2AD&ust=1591098461059000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLi0jenF4OkCFQAAAAAdAAAAABAI"
                       title="Drake"
                       alt="Drake"
                     />
@@ -152,11 +152,11 @@ class HomeComp extends Component {
                 </article>
                 <article className="from-right">
                   <a
-                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/71594249_1125833014288751_8012044229767331840_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=5Y-RG_D12YMAX92Inoy&oh=7568e195b25d372e12db1c7542063d03&oe=5EA20F3A"
+                    href="https://pbs.twimg.com/profile_images/1184438834555060224/Pmu-m_Xu_400x400.jpg"
                     className="image fit"
                   >
                     <img
-                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/71594249_1125833014288751_8012044229767331840_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=5Y-RG_D12YMAX92Inoy&oh=7568e195b25d372e12db1c7542063d03&oe=5EA20F3A"
+                      src="https://pbs.twimg.com/profile_images/1184438834555060224/Pmu-m_Xu_400x400.jpg"
                       title="Jennifer Aniston"
                       alt="Jennifer Aniston"
                     />
@@ -164,11 +164,11 @@ class HomeComp extends Component {
                 </article>
                 <article className="from-left">
                   <a
-                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/87485911_2595250347427294_7578127957344911360_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=dX6me_iuGlAAX-EOeE3&oh=f849a55d014fe72a797b47e64d244192&oe=5EA3CDEF"
+                    href="https://pbs.twimg.com/profile_images/1235946276178583552/yx5AzxxP_400x400.jpg"
                     className="image fit"
                   >
                     <img
-                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/87485911_2595250347427294_7578127957344911360_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=dX6me_iuGlAAX-EOeE3&oh=f849a55d014fe72a797b47e64d244192&oe=5EA3CDEF"
+                      src="https://pbs.twimg.com/profile_images/1235946276178583552/yx5AzxxP_400x400.jpg"
                       title="Shakira"
                       alt="Shakira"
                     />
@@ -176,11 +176,11 @@ class HomeComp extends Component {
                 </article>
                 <article className="from-right">
                   <a
-                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/71718204_448894825985782_2989796854381674496_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=6hPWKuGMvGwAX-HkJOy&oh=55da1033e98cce0bb1a3a8912a7a2865&oe=5E9F2CA9"
+                    href="https://scontent-atl3-1.cdninstagram.com/v/t51.2885-19/s320x320/71718204_448894825985782_2989796854381674496_n.jpg?_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_ohc=gjqddZkSNO4AX9_CNtX&oh=a150a6410e0c284cc1f769a2c64df0cc&oe=5EFD7FD7"
                     className="image fit"
                   >
                     <img
-                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/71718204_448894825985782_2989796854381674496_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=6hPWKuGMvGwAX-HkJOy&oh=55da1033e98cce0bb1a3a8912a7a2865&oe=5E9F2CA9"
+                      src="https://scontent-atl3-1.cdninstagram.com/v/t51.2885-19/s320x320/71718204_448894825985782_2989796854381674496_n.jpg?_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_ohc=gjqddZkSNO4AX9_CNtX&oh=a150a6410e0c284cc1f769a2c64df0cc&oe=5EFD7FD7"
                       title="Billie Eilish"
                       alt="Billie Eilish"
                     />
@@ -188,11 +188,11 @@ class HomeComp extends Component {
                 </article>
                 <article className="from-left">
                   <a
-                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/72873456_425339975028135_3038321055589466112_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=MKkZivG9pn8AX-XN7_P&oh=a0e437709b7e20de627957a616131007&oe=5E9C9FA3"
+                    href="https://pbs.twimg.com/profile_images/1195009386189639682/JLZgJ-S3_400x400.jpg"
                     className="image fit"
                   >
                     <img
-                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/72873456_425339975028135_3038321055589466112_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=MKkZivG9pn8AX-XN7_P&oh=a0e437709b7e20de627957a616131007&oe=5E9C9FA3"
+                      src="https://pbs.twimg.com/profile_images/1195009386189639682/JLZgJ-S3_400x400.jpg"
                       title="Priyanka Chopra"
                       alt="Priyanka Chopra"
                     />
@@ -200,11 +200,11 @@ class HomeComp extends Component {
                 </article>
                 <article className="from-right">
                   <a
-                    href="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/60069326_2844010522491121_8257963186574065664_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=tzw6nxWj6JIAX_uKbbu&oh=df8754150a8b8a54b71d1984dee08085&oe=5EA45B85"
+                    href="https://iprofile.kolsquare.com/profile/user_188222091.jpg"
                     className="image fit"
                   >
                     <img
-                      src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-19/s320x320/60069326_2844010522491121_8257963186574065664_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_ohc=tzw6nxWj6JIAX_uKbbu&oh=df8754150a8b8a54b71d1984dee08085&oe=5EA45B85"
+                      src="https://iprofile.kolsquare.com/profile/user_188222091.jpg"
                       title="James Rodriguez"
                       alt="James Rodriguez"
                     />
@@ -229,7 +229,7 @@ class HomeComp extends Component {
                 <form
                   action="/send"
                   id="contact-form"
-                  onSubmit={e => this.handleSubmit(e)}
+                  onSubmit={(e) => this.handleSubmit(e)}
                   method="POST"
                   // role="form"
                 >
