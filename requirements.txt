@@ -25,7 +25,7 @@ matplotlib==3.2.1
 nltk==3.4.5
 numpy==1.18.1
 pandas==1.0.2
-Pillow==7.0.0
+Pillow==9.3.0
 pip==19.3.1
 protobuf==3.11.3
 pyasn1==0.4.8
