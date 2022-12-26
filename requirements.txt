@@ -46,6 +46,6 @@ smart-open==1.10.0
 sqlparse==0.3.0
 statistics==1.0.3.5
 urllib3==1.25.8
-wheel==0.33.6
+wheel==0.38.1
 wordcloud==1.6.0
 zope.interface==5.0.0
